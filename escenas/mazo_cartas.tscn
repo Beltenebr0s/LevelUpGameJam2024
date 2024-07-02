@@ -26,3 +26,5 @@ titulo = "leed amadis de gaula"
 desbloquea_pasiva = true
 requisitos = 35
 coste = 30
+
+[connection signal="jugar_carta" from="Carta2" to="." method="_on_carta_2_jugar_carta"]

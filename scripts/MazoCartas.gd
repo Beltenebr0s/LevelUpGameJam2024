@@ -3,10 +3,12 @@ extends Node2D
 var baraja_cartas = []
 var nivel_locura = 50
 var mano = []
+signal carta_seleccionada(carta)
 
 func _ready():
 	baraja_cartas = get_children()
-	barajar_cartas(3)
+	for carta in baraja_cartas:
+		carta.jugar_carta.connect(carta_jugada)
 
 func barajar_cartas(num_cartas : int):
 	mano = []
@@ -23,3 +25,7 @@ func barajar_cartas(num_cartas : int):
 func debug_print_array_cartas(array):
 	for carta in array:
 		print(carta.titulo)
+		
+func carta_jugada(carta):
+	carta_seleccionada.emit(carta)
+
