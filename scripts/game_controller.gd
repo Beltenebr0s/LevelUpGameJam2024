@@ -11,15 +11,6 @@ var n_jugada = 0
 func _ready():
 	mazo_jugador.carta_seleccionada.connect(seleccionar_carta)
 	inicar_juego()
-	
-# QUITAR ESTO QUE ES SÓLO PARA DEBUG!!!
-func _process(delta):
-	if Input.is_action_just_pressed("jugar_carta_1"):
-		mazo_jugador.mano[0].jugar()
-	if Input.is_action_just_pressed("jugar_carta_2"):
-		mazo_jugador.mano[1].jugar()
-	if Input.is_action_just_pressed("jugar_carta_3"):
-		mazo_jugador.mano[2].jugar()
 
 func inicar_juego():
 	while (n_jugada < n_max_jugadas):
@@ -51,6 +42,10 @@ func jugada_ia():
 	print("		* Carta seleccionada por la IA:", ai_selected_card.titulo)
 
 func aplicar_efecto_turno():
+	# 1. Mirar los efectos que aplican (modificadores de pasivas, etc)
+	# 2. Mirar si la carta elegida es una pasiva
+		# 2.1.(true) Actualizar UI de habilidades pasivas
+	# 3. Aplicar efectos normales
 	print("		-- Aplicando efecto de las cartas:", selected_card.titulo, " y ", ai_selected_card.titulo)
 	var resultado = selected_card.valor - ai_selected_card.valor
 	print("			-> Resultado del turno: ", resultado)
