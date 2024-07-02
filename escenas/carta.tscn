@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://b47xbta5payek"]
+
+[ext_resource type="Texture2D" uid="uid://cfdf68gf38qpm" path="res://icon.svg" id="1_xfuek"]
+[ext_resource type="Script" path="res://scripts/Carta.gd" id="2_dshxt"]
+
+[node name="Carta" type="Sprite2D"]
+texture = ExtResource("1_xfuek")
+script = ExtResource("2_dshxt")
