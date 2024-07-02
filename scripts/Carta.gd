@@ -16,6 +16,7 @@ func iniciar_carta():
 	self.carta_usada = false
 
 func jugar():
+	# self.carta_usada = true # Descomentar esto cuando tengamos cartas de verdad para que no se repitan en el mazo
 	jugar_carta.emit(self)
 	
 func es_jugable(nivel_locura : int):

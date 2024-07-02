@@ -17,8 +17,6 @@ func barajar_cartas(num_cartas : int):
 		if carta_elegida.es_jugable(nivel_locura):
 			mano.append(carta_elegida)
 			carta_elegida.set_carta_usada(true) # para que no salgan cartas repetidas en una mano
-	print("Cartas en la mano: ")
-	debug_print_array_cartas(mano)
 	for carta in mano:
 		carta.set_carta_usada(false) # para que las cartas que no se usen vuelvan a la baraja en el siguiente turno??
 	
@@ -28,5 +26,5 @@ func debug_print_array_cartas(array):
 		
 func carta_jugada(carta):
 	carta_seleccionada.emit(carta)
-	print("carta jugada")
+
 

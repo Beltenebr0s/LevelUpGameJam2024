@@ -10,6 +10,15 @@ var n_jugada = 0
 func _ready():
 	mazo_jugador.carta_seleccionada.connect(seleccionar_carta)
 	inicar_juego()
+	
+# QUITAR ESTO QUE ES SÓLO PARA DEBUG!!!
+func _process(delta):
+	if Input.is_action_just_pressed("jugar_carta_1"):
+		mazo_jugador.mano[0].jugar()
+	if Input.is_action_just_pressed("jugar_carta_2"):
+		mazo_jugador.mano[1].jugar()
+	if Input.is_action_just_pressed("jugar_carta_3"):
+		mazo_jugador.mano[2].jugar()
 
 func inicar_juego():
 	while (n_jugada < n_max_jugadas):
@@ -21,9 +30,9 @@ func inicar_juego():
 func jugar_turno():
 	print("Nuevo turno: ", n_jugada)
 	crear_manos()
-	print("espero a la jugada")
+	print("		- espero a la jugada")
 	await mazo_jugador.carta_seleccionada
-	print("jugada realizada")
+	print("		- jugada realizada")
 	jugada_ia()
 	aplicar_efecto_turno()
 	
@@ -33,14 +42,18 @@ func crear_manos():
 
 func seleccionar_carta(carta):
 	selected_card = carta
-	print("Carta seleccionada por el jugador:", selected_card)
+	print("		- Carta seleccionada por el jugador:", selected_card.titulo)
 
 func jugada_ia():
-	ai_selected_card = mazo_ia.mano.pickrandom()
-	print("Carta seleccionada por la IA:", ai_selected_card)
+	ai_selected_card = mazo_ia.mano.pick_random()
+	print("		* Carta seleccionada por la IA:", ai_selected_card.titulo)
 
 func aplicar_efecto_turno():
-	print("Aplicando efecto de las cartas:", selected_card, "y", ai_selected_card)
+	print("		-- Aplicando efecto de las cartas:", selected_card.titulo, " y ", ai_selected_card.titulo)
+	var resultado = selected_card.valor - ai_selected_card.valor
+	print("			-> Resultado del turno: ", resultado)
+	if selected_card.desbloquea_pasiva:
+		print("pasiva")
 
 func decidir_final():
 	print("Fin del juego")

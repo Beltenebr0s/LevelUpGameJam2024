@@ -79,12 +79,20 @@ offset_bottom = 566.0
 [node name="Settings" parent="LibroAbierto/PaginaDerecha" instance=ExtResource("2_rx15a")]
 visible = false
 layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 406.0
+offset_bottom = 526.0
 
 [node name="Titulo" parent="LibroAbierto/PaginaDerecha/Settings" index="0"]
 text = "AJUSTES"
 
 [node name="Credits" parent="LibroAbierto/PaginaDerecha" instance=ExtResource("2_rx15a")]
 layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 406.0
+offset_bottom = 526.0
 
 [node name="Titulo" parent="LibroAbierto/PaginaDerecha/Credits" index="0"]
 text = "CRÉDITOS"
