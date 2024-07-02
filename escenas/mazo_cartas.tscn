@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://b80mbbnuqe78v"]
+
+[ext_resource type="Script" path="res://MazoCartas.gd" id="1_pf761"]
+[ext_resource type="PackedScene" uid="uid://b47xbta5payek" path="res://escenas/carta.tscn" id="2_y5ux8"]
+
+[node name="MazoCartas" type="Node2D"]
+script = ExtResource("1_pf761")
+
+[node name="Carta" parent="." instance=ExtResource("2_y5ux8")]
+titulo = "carta 1"
+requisitos = 60
+
+[node name="Carta2" parent="." instance=ExtResource("2_y5ux8")]
+titulo = "otra carta"
+requisitos = 25
+
+[node name="Carta3" parent="." instance=ExtResource("2_y5ux8")]
+titulo = "bea mola"
+
+[node name="Carta4" parent="." instance=ExtResource("2_y5ux8")]
+titulo = "aaaaaa"
+requisitos = 80
+
+[node name="Carta5" parent="." instance=ExtResource("2_y5ux8")]
+titulo = "leed amadis de gaula"
+desbloquea_pasiva = true
+requisitos = 35
+coste = 30
