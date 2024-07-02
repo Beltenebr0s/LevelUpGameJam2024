@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://blxd0lf0072de"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nye3j"]
+font_size = 25
+
+[node name="Menu" type="Panel"]
+offset_left = 26.0
+offset_top = 21.0
+offset_right = 432.0
+offset_bottom = 547.0
+
+[node name="Titulo" type="Label" parent="."]
+layout_mode = 0
+offset_right = 404.0
+offset_bottom = 68.0
+text = "TÍTULO DEL MENÚ"
+label_settings = SubResource("LabelSettings_nye3j")
+horizontal_alignment = 1
+vertical_alignment = 1

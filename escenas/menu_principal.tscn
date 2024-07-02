@@ -1,0 +1,191 @@
+[gd_scene load_steps=6 format=3 uid="uid://byeqj6jd7r2vl"]
+
+[ext_resource type="Script" path="res://scripts/MenuPrincipal.gd" id="1_xdxr6"]
+[ext_resource type="Texture2D" uid="uid://0bettd6a02js" path="res://texturas/placeholder/libro_cerrado.png" id="2_ege76"]
+[ext_resource type="PackedScene" uid="uid://blxd0lf0072de" path="res://escenas/panel_menu.tscn" id="2_rx15a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekryt"]
+bg_color = Color(0.908176, 0.766672, 0.0279374, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i5yx5"]
+bg_color = Color(0.974582, 0.327121, 0.557629, 1)
+
+[node name="MenuPrincipal" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xdxr6")
+
+[node name="LibroAbierto" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -462.0
+offset_top = -283.0
+offset_right = 441.0
+offset_bottom = 283.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ekryt")
+
+[node name="PaginaIzquierda" type="Panel" parent="LibroAbierto"]
+layout_mode = 0
+offset_right = 452.0
+offset_bottom = 568.0
+
+[node name="Play" type="Button" parent="LibroAbierto/PaginaIzquierda"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 81.0
+offset_right = 305.0
+offset_bottom = 146.0
+text = "JUGAR"
+
+[node name="Settings" type="Button" parent="LibroAbierto/PaginaIzquierda"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 187.0
+offset_right = 305.0
+offset_bottom = 252.0
+text = "SETTINGS"
+
+[node name="Credits" type="Button" parent="LibroAbierto/PaginaIzquierda"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 289.0
+offset_right = 305.0
+offset_bottom = 354.0
+text = "CREDITS"
+
+[node name="Exit" type="Button" parent="LibroAbierto/PaginaIzquierda"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 401.0
+offset_right = 305.0
+offset_bottom = 466.0
+text = "SALIR :("
+
+[node name="PaginaDerecha" type="Panel" parent="LibroAbierto"]
+layout_mode = 0
+offset_left = 452.0
+offset_right = 905.0
+offset_bottom = 566.0
+
+[node name="Settings" parent="LibroAbierto/PaginaDerecha" instance=ExtResource("2_rx15a")]
+visible = false
+layout_mode = 0
+
+[node name="Titulo" parent="LibroAbierto/PaginaDerecha/Settings" index="0"]
+text = "AJUSTES"
+
+[node name="Credits" parent="LibroAbierto/PaginaDerecha" instance=ExtResource("2_rx15a")]
+layout_mode = 0
+
+[node name="Titulo" parent="LibroAbierto/PaginaDerecha/Credits" index="0"]
+text = "CRÉDITOS"
+
+[node name="SeccionArte" type="Label" parent="LibroAbierto/PaginaDerecha/Credits"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 72.0
+offset_right = 213.0
+offset_bottom = 100.0
+text = "ARTE"
+
+[node name="TextoArte" type="RichTextLabel" parent="LibroAbierto/PaginaDerecha/Credits/SeccionArte"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 28.0
+offset_right = 352.0
+offset_bottom = 118.0
+text = "Juan
+Nubi"
+
+[node name="SeccionProgramacion" type="Label" parent="LibroAbierto/PaginaDerecha/Credits"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 198.0
+offset_right = 212.0
+offset_bottom = 226.0
+text = "PROGRAMACIÓN"
+
+[node name="TextoProgramacion" type="RichTextLabel" parent="LibroAbierto/PaginaDerecha/Credits/SeccionProgramacion"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 36.0
+offset_right = 353.0
+offset_bottom = 145.0
+text = "Darío
+Alejandro
+Bea
+"
+
+[node name="SeccionSonido" type="Label" parent="LibroAbierto/PaginaDerecha/Credits"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 356.0
+offset_right = 215.0
+offset_bottom = 384.0
+text = "SONIDO
+"
+
+[node name="TextoSonido" type="RichTextLabel" parent="LibroAbierto/PaginaDerecha/Credits/SeccionSonido"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 31.0
+offset_right = 350.0
+offset_bottom = 121.0
+
+[node name="LibroCerrado" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -219.0
+offset_top = -283.0
+offset_right = 219.0
+offset_bottom = 283.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_i5yx5")
+
+[node name="Fondo" type="TextureRect" parent="LibroCerrado"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -291.0
+offset_top = -470.0
+offset_right = 1463.0
+offset_bottom = 2010.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("2_ege76")
+
+[node name="TituloJuego" type="Button" parent="LibroCerrado"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = -4.0
+offset_right = 450.0
+offset_bottom = 512.0
+text = "Título del juego"
+
+[connection signal="pressed" from="LibroAbierto/PaginaIzquierda/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="LibroAbierto/PaginaIzquierda/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="LibroAbierto/PaginaIzquierda/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="LibroAbierto/PaginaIzquierda/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="LibroCerrado/TituloJuego" to="." method="_on_titulo_juego_pressed"]
+
+[editable path="LibroAbierto/PaginaDerecha/Settings"]
+[editable path="LibroAbierto/PaginaDerecha/Credits"]
