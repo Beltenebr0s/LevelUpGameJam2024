@@ -23,7 +23,7 @@ libraries = {
 "": SubResource("AnimationLibrary_j3r5g")
 }
 
-[node name="cartaMano" type="Button" parent="."]
+[node name="cartaMano" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
