@@ -1,11 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddmxbpwae2x3s"]
+[gd_scene load_steps=4 format=3 uid="uid://ddmxbpwae2x3s"]
 
 [ext_resource type="PackedScene" uid="uid://0k1iv56f0qty" path="res://escenas/board.tscn" id="1_gf5lf"]
 [ext_resource type="Script" path="res://scripts/game_controller.gd" id="1_jtev3"]
+[ext_resource type="PackedScene" uid="uid://bgmop8u4t4stj" path="res://escenas/card_ui.tscn" id="3_nj2pg"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_jtev3")
 
 [node name="Board" parent="." instance=ExtResource("1_gf5lf")]
+
+[node name="MazoCartas" parent="Board" index="1"]
+position = Vector2(-123, 25)
+
+[node name="MazoCartasIA" parent="Board" index="2"]
+position = Vector2(-123, 25)
+
+[node name="cartasUI" parent="." instance=ExtResource("3_nj2pg")]
 
 [editable path="Board"]

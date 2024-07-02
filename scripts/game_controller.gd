@@ -6,6 +6,7 @@ var n_max_jugadas = 6
 var n_jugada = 0
 @onready var mazo_jugador = $Board/MazoCartas
 @onready var mazo_ia = $Board/MazoCartasIA
+@onready var mano_ui = $cartasUI
 
 func _ready():
 	mazo_jugador.carta_seleccionada.connect(seleccionar_carta)
@@ -30,6 +31,7 @@ func inicar_juego():
 func jugar_turno():
 	print("Nuevo turno: ", n_jugada)
 	crear_manos()
+	mostrar_mano_jugador()
 	print("		- espero a la jugada")
 	await mazo_jugador.carta_seleccionada
 	print("		- jugada realizada")
@@ -58,3 +60,5 @@ func aplicar_efecto_turno():
 func decidir_final():
 	print("Fin del juego")
 	
+func mostrar_mano_jugador():
+	$cartasUI.colocar_cartas_en_mano(mazo_jugador.mano)

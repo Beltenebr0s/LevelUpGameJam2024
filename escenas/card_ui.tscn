@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://7ptc5hsta7vq"]
+[gd_scene load_steps=3 format=3 uid="uid://bgmop8u4t4stj"]
 
-[ext_resource type="PackedScene" uid="uid://jpvu5vll8it0" path="res://escenas/carta_mano.tscn" id="1_p4iwu"]
+[ext_resource type="PackedScene" uid="uid://c2twrq4x3lu5h" path="res://escenas/carta_mano.tscn" id="1_p4iwu"]
+[ext_resource type="Script" path="res://scripts/card_ui.gd" id="1_qb28j"]
 
 [node name="cartasUI" type="Control"]
 layout_mode = 3
@@ -9,6 +10,7 @@ offset_left = 24.0
 offset_top = -88.0
 offset_right = 24.0
 offset_bottom = -88.0
+script = ExtResource("1_qb28j")
 
 [node name="cartaMano" parent="." instance=ExtResource("1_p4iwu")]
 offset_left = 168.0
@@ -44,3 +46,5 @@ offset_top = 704.0
 offset_right = 936.0
 offset_bottom = 704.0
 scale = Vector2(0.541939, 0.541939)
+
+[editable path="cartaMano"]

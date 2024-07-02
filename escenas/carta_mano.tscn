@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://jpvu5vll8it0"]
+[gd_scene load_steps=5 format=3 uid="uid://c2twrq4x3lu5h"]
 
 [ext_resource type="Script" path="res://scripts/carta_mano.gd" id="1_pyoub"]
 [ext_resource type="PackedScene" uid="uid://b47xbta5payek" path="res://escenas/carta.tscn" id="2_0b7xr"]

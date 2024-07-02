@@ -13,20 +13,24 @@ valor = 10
 
 [node name="Carta2" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "otra carta"
+descripcion = "bea la mejor"
 requisitos = 25
 valor = 50
 
 [node name="Carta3" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "bea mola"
+descripcion = "aaaaaaaaa"
 valor = 30
 
 [node name="Carta4" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "aaaaaa"
+descripcion = "en un lugar de la mancha de cuyo nombre no quiero acordarme"
 requisitos = 80
 valor = 40
 
 [node name="Carta5" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "leed amadis de gaula"
+descripcion = "qué buen librito el amadís"
 desbloquea_pasiva = true
 requisitos = 35
 coste = 30

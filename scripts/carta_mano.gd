@@ -3,7 +3,7 @@ extends Control
 @onready var card_is_up : bool = false
 @onready var descripcion : Sprite2D = find_child("descripcion")
 @onready var animation_player = find_child("AnimationPlayer")
-
+@onready var carta = $carta
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -32,9 +32,13 @@ func _on_carta_mano_mouse_exited():
 	pass  
 
 func _on_carta_mano_pressed():
-	pass # Replace with function body.
+	self.carta.jugar()
 
 func actualizar_descripcion():
-	descripcion.find_child("titulo").text = find_child("carta").titulo
-	descripcion.find_child("descripcion").text = find_child("carta").descripcion
+	descripcion.find_child("titulo").text = self.carta.titulo
+	descripcion.find_child("descripcion").text = self.carta.descripcion
 	pass
+
+func set_carta(_carta):
+	self.carta = _carta
+	actualizar_descripcion()
