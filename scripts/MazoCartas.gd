@@ -28,4 +28,5 @@ func debug_print_array_cartas(array):
 		
 func carta_jugada(carta):
 	carta_seleccionada.emit(carta)
+	print("carta jugada")
 

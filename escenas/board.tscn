@@ -1,6 +1,5 @@
-[gd_scene load_steps=3 format=3 uid="uid://0k1iv56f0qty"]
+[gd_scene load_steps=2 format=3 uid="uid://0k1iv56f0qty"]
 
-[ext_resource type="Script" path="res://scripts/game_controller.gd" id="1_0mesb"]
 [ext_resource type="PackedScene" uid="uid://b80mbbnuqe78v" path="res://escenas/mazo_cartas.tscn" id="2_hmrd3"]
 
 [node name="Board" type="Node2D"]
@@ -8,7 +7,6 @@
 [node name="Polygon2D" type="Polygon2D" parent="."]
 color = Color(0.0518784, 0.299205, 0.0498445, 1)
 polygon = PackedVector2Array(0, 0, 1152, 0, 1152, 648, 0, 648)
-script = ExtResource("1_0mesb")
 
 [node name="MazoCartas" parent="." instance=ExtResource("2_hmrd3")]
 

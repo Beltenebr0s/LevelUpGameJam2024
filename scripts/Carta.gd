@@ -1,5 +1,5 @@
 extends Sprite2D
-
+class_name Carta
 @export var titulo : String
 @export var descripcion : String
 @export var tipo : int
