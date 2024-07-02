@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cu4ruf7b0vci4"]
+
+[ext_resource type="Script" path="res://medidor_locura.gd" id="1_0oanv"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7rjjs"]
+
+[sub_resource type="Gradient" id="Gradient_ytl7o"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gl0eb"]
+gradient = SubResource("Gradient_ytl7o")
+
+[node name="medidor_locura" type="Node2D"]
+script = ExtResource("1_0oanv")
+
+[node name="borde_exterior" type="Sprite2D" parent="."]
+clip_children = 2
+scale = Vector2(56, 384)
+texture = SubResource("PlaceholderTexture2D_7rjjs")
+
+[node name="barra_interior" type="Sprite2D" parent="borde_exterior"]
+scale = Vector2(0.0117188, 0.015625)
+texture = SubResource("GradientTexture2D_gl0eb")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 32.0
+offset_top = -192.0
+offset_right = 80.0
+offset_bottom = -152.0
+theme_override_font_sizes/font_size = 20
+placeholder_text = "100"

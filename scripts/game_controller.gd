@@ -7,6 +7,7 @@ var n_jugada = 0
 @onready var mazo_jugador = $Board/MazoCartas
 @onready var mazo_ia = $Board/MazoCartasIA
 @onready var mano_ui = $cartasUI
+@onready var medidor_locura = $medidor_locura
 
 func _ready():
 	mazo_jugador.carta_seleccionada.connect(seleccionar_carta)
@@ -51,6 +52,7 @@ func aplicar_efecto_turno():
 	print("		-- Aplicando efecto de las cartas:", selected_card.titulo, " y ", ai_selected_card.titulo)
 	var resultado = selected_card.valor - ai_selected_card.valor
 	print("			-> Resultado del turno: ", resultado)
+	medidor_locura.suma_locos(resultado)
 	if selected_card.desbloquea_pasiva:
 		print("pasiva")
 
