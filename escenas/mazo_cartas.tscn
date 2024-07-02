@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b80mbbnuqe78v"]
 
-[ext_resource type="Script" path="res://MazoCartas.gd" id="1_pf761"]
+[ext_resource type="Script" path="res://scripts/MazoCartas.gd" id="1_pf761"]
 [ext_resource type="PackedScene" uid="uid://b47xbta5payek" path="res://escenas/carta.tscn" id="2_y5ux8"]
 
 [node name="MazoCartas" type="Node2D"]

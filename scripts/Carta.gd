@@ -26,9 +26,5 @@ func es_jugable(nivel_locura : int):
 		b_carta_valida = b_carta_valida && nivel_locura > self.coste
 	return b_carta_valida
 	
-func usar_carta():
-	carta_usada = true
-	
-func devolver_carta():
-	carta_usada = false
-	
+func set_carta_usada(valor):
+	carta_usada = valor
