@@ -4,6 +4,7 @@ extends Control
 @onready var descripcion : Sprite2D = find_child("descripcion")
 @onready var animation_player = find_child("AnimationPlayer")
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
@@ -32,3 +33,8 @@ func _on_carta_mano_mouse_exited():
 
 func _on_carta_mano_pressed():
 	pass # Replace with function body.
+
+func actualizar_descripcion():
+	descripcion.find_child("titulo").text = find_child("carta").titulo
+	descripcion.find_child("descripcion").text = find_child("carta").descripcion
+	pass
