@@ -1,0 +1,77 @@
+[gd_scene load_steps=5 format=3 uid="uid://jpvu5vll8it0"]
+
+[ext_resource type="Script" path="res://scripts/carta_mano.gd" id="1_pyoub"]
+[ext_resource type="PackedScene" uid="uid://b47xbta5payek" path="res://escenas/carta.tscn" id="2_0b7xr"]
+
+[sub_resource type="Animation" id="Animation_yi0wp"]
+resource_name = "card_up"
+length = 0.5
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j3r5g"]
+_data = {
+"card_up": SubResource("Animation_yi0wp")
+}
+
+[node name="cartaMano" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_pyoub")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_j3r5g")
+}
+
+[node name="cartaMano" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.0
+offset_top = -162.0
+offset_right = 129.0
+offset_bottom = 162.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="carta" parent="." instance=ExtResource("2_0b7xr")]
+scale = Vector2(2, 2.5625)
+
+[node name="descripcion" type="Sprite2D" parent="."]
+position = Vector2(0, -240.749)
+
+[node name="titulo" type="RichTextLabel" parent="descripcion"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.048
+offset_top = -75.9852
+offset_right = 159.952
+offset_bottom = -51.9852
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "Titulo guachi "
+
+[node name="descripcion" type="RichTextLabel" parent="descripcion"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -40.0
+offset_right = 160.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor. Una olla de algo más vaca que carnero, salpicón las más noches, duelos y quebrantos los sábados, lentejas los viernes, algún palomino de añadidura los domingos, consumían las tres partes de su hacienda. "
+
+[connection signal="mouse_entered" from="cartaMano" to="." method="_on_carta_mano_mouse_entered"]
+[connection signal="mouse_exited" from="cartaMano" to="." method="_on_carta_mano_mouse_exited"]
+[connection signal="pressed" from="cartaMano" to="." method="_on_carta_mano_pressed"]

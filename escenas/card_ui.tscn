@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://7ptc5hsta7vq"]
+
+[ext_resource type="PackedScene" uid="uid://jpvu5vll8it0" path="res://escenas/carta_mano.tscn" id="1_p4iwu"]
+
+[node name="cartasUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 24.0
+offset_top = -88.0
+offset_right = 24.0
+offset_bottom = -88.0
+
+[node name="cartaMano" parent="." instance=ExtResource("1_p4iwu")]
+offset_left = 168.0
+offset_top = 704.0
+offset_right = 168.0
+offset_bottom = 704.0
+scale = Vector2(0.541939, 0.541939)
+
+[node name="cartaMano2" parent="." instance=ExtResource("1_p4iwu")]
+offset_left = 360.0
+offset_top = 704.0
+offset_right = 360.0
+offset_bottom = 704.0
+scale = Vector2(0.541939, 0.541939)
+
+[node name="cartaMano3" parent="." instance=ExtResource("1_p4iwu")]
+offset_left = 552.0
+offset_top = 704.0
+offset_right = 552.0
+offset_bottom = 704.0
+scale = Vector2(0.541939, 0.541939)
+
+[node name="cartaMano4" parent="." instance=ExtResource("1_p4iwu")]
+offset_left = 744.0
+offset_top = 704.0
+offset_right = 744.0
+offset_bottom = 704.0
+scale = Vector2(0.541939, 0.541939)
+
+[node name="cartaMano5" parent="." instance=ExtResource("1_p4iwu")]
+offset_left = 936.0
+offset_top = 704.0
+offset_right = 936.0
+offset_bottom = 704.0
+scale = Vector2(0.541939, 0.541939)
