@@ -8,70 +8,100 @@ script = ExtResource("1_pf761")
 
 [node name="Carta" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "Tirar petardos"
+descripcion = "Un pequeño espectáculo de pirotecnia ayudará a tu causa, privando del sueño a los vecinos."
+tipo = 1
+reutilizable = true
 valor = 10
 
 [node name="Carta2" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "Explotar almacén"
+descripcion = "Los campesinos no podrán trabajar las tierras del príncipe Adetokumbo si el almacén donde guardan sus herramientas vuela por los aires..."
+tipo = 1
 valor = 15
 
 [node name="Carta3" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "Quemar molino"
+descripcion = "Se pronostica un invierno especialmente frío y duro. Prender fuego a las reservas de harina y trigo del pueblo minará la moral de los habitantes."
+tipo = 1
 requisitos = 20
 valor = 20
 
 [node name="Carta4" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "Toro de fuego"
+descripcion = "Esta noche, en la fiesta, habrá un encierro. No se requiere de mucha habilidad mágica para hacer que los cuernos escupan fuego."
+tipo = 1
 requisitos = 30
 valor = 50
 
 [node name="Carta5" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "Lluvia de fuego"
+descripcion = "¡Tus hechizos se hacen más poderosos! Esta noche se iluminará el cielo con la lluvia de fuego que conjurarás."
+tipo = 1
 requisitos = 40
 valor = 60
 
 [node name="Carta6" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "Pudrir el pan"
+descripcion = "Un poco de agua en las hogazas de pan y mañana estarán cubiertas de una deliciosa capa de moho."
+tipo = 2
+reutilizable = true
 valor = 10
 
 [node name="Carta7" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "Bombas fétidas"
+descripcion = "Un juglar viene a interpretar el famoso poema del Cantar de Cio Mid. Plaga el escenario de bombas fétidas para amargarle el espectáculo.."
+tipo = 2
+reutilizable = true
 valor = 15
 
 [node name="Carta8" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "Pozo envenenado"
+descripcion = "Tu ejército de simios está creciendo y cada vez es más difícil mantener sus jaulas limpias. Es momento de enseñarles a utilizar la letrina, el pozo del pueblo será un buen campo de entrenamiento."
+tipo = 2
 requisitos = 20
 valor = 30
 
 [node name="Carta9" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "Niebla venenosa"
+descripcion = "El cirujano del pueblo no da abasto, pero seguro que no le importa atender a unos cuantos vecinos envenenados..."
+tipo = 2
 requisitos = 40
 valor = 50
 
 [node name="Carta10" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "Plaga de ratas"
+descripcion = "Desde muebles roídos hasta terribles enfermedades, nadie dormirá tranquilo cuando vea la primera rata."
+tipo = 2
 requisitos = 50
 valor = 70
 
 [node name="Carta11" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "Cabeza de caballo"
-valor = 15
+descripcion = "Nada asusta más que amanecer junto a la cabeza de tu caballo, y da la casualidad de que el noble más paranoico del pueblo acaba de hacerse con un corcel nuevo..."
+requisitos = 30
+valor = 40
 
 [node name="Carta12" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "Cegar el pozo"
+descripcion = "Mañana hará un calor infernal y nadie podrá beber agua."
+reutilizable = true
 valor = 15
 
 [node name="Carta13" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "¡Defenestren a la enana!"
+descripcion = "La enana Ximiaca es muy manejable, será fácil tirarla de la torre más alta del pueblo."
 requisitos = 30
 valor = 40
 
 [node name="Carta14" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "Perro de tres cabezas"
+descripcion = "Un paseo nocturno a tu simpática mascota tricéfala aterrará a los más trasnochadores."
 requisitos = 40
 valor = 40
 
 [node name="Carta15" parent="." instance=ExtResource("2_y5ux8")]
-titulo = "El médico"
+titulo = "El cirujano"
+descripcion = "Los pacientes del cirujano están paranoicos, acuden a él por nimiedades. Ha deicidido que les dará motivos para contratar sus servicios."
 desbloquea_pasiva = true
 requisitos = 30
 valor = -30
@@ -79,6 +109,9 @@ valida_ia = false
 
 [node name="Carta16" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "El vigil"
+descripcion = "La casa del vigil ha ardido, calcinando a toda su familia. No sabe quién ha sido, pero piensa vengarse y prender fuego a todo lo que pueda.
+
+"
 desbloquea_pasiva = true
 requisitos = 50
 valor = -20
@@ -86,6 +119,7 @@ valida_ia = false
 
 [node name="Carta17" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "El sacerdote"
+descripcion = "Puede que aún no tengas poder para invocar a tu dios, pero algún demonio menor puede atraer al sacerdote a tu causa."
 desbloquea_pasiva = true
 requisitos = 20
 valor = -10
@@ -93,17 +127,20 @@ valida_ia = false
 
 [node name="Carta18" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "El caballero maldito"
+descripcion = "El norte y lucero de la caballería oculta una maldición. Aquel que no puede perder la vida, acaba perdiendo el alma. Si los vecinos se enteran de su condición, no vivirán tranquilos a su lado."
 requisitos = 15
 valor = 10
 valida_ia = false
 
 [node name="Carta19" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "Simios agresivos"
-requisitos = 20
-valor = 20
+descripcion = "¡Libera a tu ejército de simios para que cause estragos en el pueblo! Unos van armados, otros usan sus propios excrementos como arma arrojadiza."
+requisitos = 25
+valor = 30
 
 [node name="Carta20" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "Amanece, que no es poco"
+descripcion = "El pueblo tiene un amanecer precioso. Sería una lástima que, tras tan catastróficas desdichas, el sol saliese por el oeste."
 requisitos = 120
 valor = 150
 valida_ia = false
