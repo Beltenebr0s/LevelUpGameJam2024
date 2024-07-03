@@ -1,25 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhmjeb0ta4p58"]
+[gd_scene load_steps=5 format=3 uid="uid://bhmjeb0ta4p58"]
 
 [ext_resource type="Script" path="res://scripts/carta_pasiva.gd" id="2_kbbva"]
 [ext_resource type="PackedScene" uid="uid://b47xbta5payek" path="res://escenas/carta.tscn" id="2_m2n4f"]
+[ext_resource type="Texture2D" uid="uid://dtkhu4jup0q2u" path="res://texturas/Dorso_Azul.png" id="3_xfggq"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_vsbf5"]
 
-[node name="carta_pasiva" type="Button"]
-offset_left = -40.0
-offset_top = -40.0
-offset_right = 56.0
-offset_bottom = 56.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+[node name="carta_pasiva" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -48.0
+offset_top = -67.0
+offset_right = 48.0
+offset_bottom = 66.0
 script = ExtResource("2_kbbva")
 
+[node name="Boton" type="Button" parent="."]
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 133.0
+
 [node name="Carta" parent="." instance=ExtResource("2_m2n4f")]
-position = Vector2(49.6842, 50.3158)
-scale = Vector2(0.723684, 0.713816)
+position = Vector2(48, 67)
+scale = Vector2(0.144144, 0.142179)
+texture = ExtResource("3_xfggq")
 
 [node name="descripcion" type="Sprite2D" parent="."]
-position = Vector2(184, 48)
+position = Vector2(195, 64)
 texture = SubResource("PlaceholderTexture2D_vsbf5")
 
 [node name="TextEdit" type="TextEdit" parent="descripcion"]
@@ -42,3 +49,6 @@ wrap_mode = 1
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Boton" to="." method="_on_boton_mouse_entered"]
+[connection signal="mouse_exited" from="Boton" to="." method="_on_boton_mouse_exited"]
+[connection signal="pressed" from="Boton" to="." method="_on_boton_pressed"]

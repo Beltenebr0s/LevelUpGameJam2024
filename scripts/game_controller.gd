@@ -59,15 +59,15 @@ func seleccionar_carta(carta):
 	print("		- Carta seleccionada por el jugador:", selected_card.titulo)
 
 func jugada_ia():
-	mano_iai.mostrar_cartas()
+	mostrar_mano_ia()
 	await get_tree().create_timer(1.0).timeout
 	ai_selected_card_in_hand = mano_iai.cartas.pick_random()
 	ai_selected_card = ai_selected_card_in_hand.carta
 	print("		* Carta seleccionada por la IA:", ai_selected_card.titulo)
 	ai_selected_card_in_hand.seleccionar_carta()
 	mano_iai.ocultar_cartas(true)
-	await get_tree().create_timer(2.0).timeout
 	aplicar_efecto_carta(false)
+	await get_tree().create_timer(2.0).timeout
 	mano_iai.ocultar_cartas(false)
 
 func aplicar_efecto_carta(b_is_player : bool):
@@ -104,6 +104,7 @@ func mulligan():
 		mulligan_usado = true
 		mano_ui.ocultar_cartas(-1)
 		crear_manos()
+		await get_tree().create_timer(2.0).timeout
 		mostrar_mano_jugador()
 	pass
 
@@ -116,3 +117,6 @@ func decidir_final():
 	
 func mostrar_mano_jugador():
 	mano_ui.colocar_cartas_en_mano(mazo_jugador.mano)
+
+func mostrar_mano_ia():
+	mano_iai.colocar_cartas_en_mano(mazo_ia.mano)

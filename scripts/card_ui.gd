@@ -15,7 +15,6 @@ func colocar_cartas_en_mano(mano):
 	var n = mano.size()
 	for i in range(n):
 		cartas[i].set_carta(mano[i])
-	await get_tree().create_timer(1.0).timeout
 	mostrar_cartas()
 	mano_lista = true
 
