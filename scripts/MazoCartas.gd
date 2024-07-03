@@ -10,11 +10,11 @@ func _ready():
 	for carta in baraja_cartas:
 		carta.jugar_carta.connect(carta_jugada)
 
-func barajar_cartas(num_cartas : int):
+func barajar_cartas(num_cartas : int , b_ia : bool):
 	mano = []
 	while (mano.size() < num_cartas):
 		var carta_elegida = baraja_cartas.pick_random()
-		if carta_elegida.es_jugable(nivel_locura):
+		if carta_elegida.es_jugable(nivel_locura, b_ia):
 			mano.append(carta_elegida)
 			carta_elegida.set_carta_usada(true) # para que no salgan cartas repetidas en una mano
 	for carta in mano:

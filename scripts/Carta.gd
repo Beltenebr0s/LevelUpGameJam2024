@@ -22,10 +22,10 @@ func jugar():
 	# self.carta_usada = true # Descomentar esto cuando tengamos cartas de verdad para que no se repitan en el mazo
 	jugar_carta.emit(self)
 	
-func es_jugable(nivel_locura : int):
+func es_jugable(nivel_locura : int, b_ia : bool):
 	var b_carta_valida = true
-	b_carta_valida = b_carta_valida && !self.carta_usada
-	b_carta_valida = b_carta_valida && nivel_locura > self.requisitos
+	if ((self.carta_usada)||(b_ia && !valida_ia)||(nivel_locura < self.requisitos)):
+		b_carta_valida = false
 	if (self.desbloquea_pasiva):
 		b_carta_valida = b_carta_valida && nivel_locura > self.valor
 	return b_carta_valida
