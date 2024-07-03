@@ -1,7 +1,6 @@
 extends Node2D
 
 var baraja_cartas = []
-var nivel_locura = 50
 var mano = []
 signal carta_seleccionada(carta)
 
@@ -10,7 +9,7 @@ func _ready():
 	for carta in baraja_cartas:
 		carta.jugar_carta.connect(carta_jugada)
 
-func barajar_cartas(num_cartas : int):
+func barajar_cartas(num_cartas : int, nivel_locura : int):
 	mano = []
 	while (mano.size() < num_cartas):
 		var carta_elegida = baraja_cartas.pick_random()

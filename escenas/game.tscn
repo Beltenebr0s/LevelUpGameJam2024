@@ -25,8 +25,7 @@ offset_right = 33.0
 
 [node name="pasivasUI" parent="." instance=ExtResource("5_88sux")]
 offset_left = 880.0
-offset_top = 72.0
-offset_right = 976.0
-offset_bottom = 416.0
+offset_right = 880.0
+offset_bottom = 48.0
 
 [editable path="Board"]

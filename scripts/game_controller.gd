@@ -30,15 +30,15 @@ func jugar_turno():
 	mostrar_mano_jugador()
 	print("		- espero a la jugada")
 	await mazo_jugador.carta_seleccionada
-	$cartasUI.ocultar_cartas(true)
+	mano_ui.ocultar_cartas(true)
 	print("		- jugada realizada")
 	jugada_ia()
 	aplicar_efecto_turno()
 	await get_tree().create_timer(1.0).timeout
 	
 func crear_manos():
-	mazo_jugador.barajar_cartas(3)
-	mazo_ia.barajar_cartas(3)
+	mazo_jugador.barajar_cartas(5, medidor_locura.value)
+	mazo_ia.barajar_cartas(3, 200)
 
 func seleccionar_carta(carta):
 	selected_card = carta
@@ -70,4 +70,4 @@ func decidir_final():
 	print("Fin del juego")
 	
 func mostrar_mano_jugador():
-	$cartasUI.colocar_cartas_en_mano(mazo_jugador.mano)
+	mano_ui.colocar_cartas_en_mano(mazo_jugador.mano)
