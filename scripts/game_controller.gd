@@ -9,7 +9,6 @@ var n_jugada = 0
 @onready var mano_ui = $cartasUI
 @onready var medidor_locura = $medidor_locura
 @onready var pasivas_ui = $pasivasUI
-
 func _ready():
 	mazo_jugador.carta_seleccionada.connect(seleccionar_carta)
 	inicar_juego()
@@ -68,6 +67,10 @@ func aplicar_efecto_turno():
 
 func decidir_final():
 	print("Fin del juego")
+	n_jugada = 0
+	Global.puntos_locura = medidor_locura.value
+	Global.b_first_game = false
+	get_tree().change_scene_to_file("res://escenas/menu_principal.tscn")
 	
 func mostrar_mano_jugador():
 	mano_ui.colocar_cartas_en_mano(mazo_jugador.mano)

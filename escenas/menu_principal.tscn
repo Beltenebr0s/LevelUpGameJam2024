@@ -1,11 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://byeqj6jd7r2vl"]
+[gd_scene load_steps=8 format=3 uid="uid://byeqj6jd7r2vl"]
 
 [ext_resource type="Script" path="res://scripts/MenuPrincipal.gd" id="1_xdxr6"]
 [ext_resource type="Texture2D" uid="uid://0bettd6a02js" path="res://texturas/placeholder/libro_cerrado.png" id="2_ege76"]
 [ext_resource type="PackedScene" uid="uid://blxd0lf0072de" path="res://escenas/panel_menu.tscn" id="2_rx15a"]
+[ext_resource type="Texture2D" uid="uid://cfdf68gf38qpm" path="res://icon.svg" id="3_gtpdf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekryt"]
 bg_color = Color(0.908176, 0.766672, 0.0279374, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nye3j"]
+font_size = 25
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i5yx5"]
 bg_color = Color(0.974582, 0.327121, 0.557629, 1)
@@ -87,7 +91,84 @@ offset_bottom = 526.0
 [node name="Titulo" parent="LibroAbierto/PaginaDerecha/Settings" index="0"]
 text = "AJUSTES"
 
+[node name="Final" parent="LibroAbierto/PaginaDerecha" instance=ExtResource("2_rx15a")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 406.0
+offset_bottom = 526.0
+
+[node name="Titulo" parent="LibroAbierto/PaginaDerecha/Final" index="0"]
+text = "ME CAGO EN EL MISTERIO"
+
+[node name="Score" type="Label" parent="LibroAbierto/PaginaDerecha/Final"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 459.0
+offset_right = 406.0
+offset_bottom = 527.0
+label_settings = SubResource("LabelSettings_nye3j")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Victoria" type="Label" parent="LibroAbierto/PaginaDerecha/Final"]
+visible = false
+layout_mode = 0
+offset_left = -1.0
+offset_top = 397.0
+offset_right = 403.0
+offset_bottom = 465.0
+text = "Victoria"
+label_settings = SubResource("LabelSettings_nye3j")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fondo" type="TextureRect" parent="LibroAbierto/PaginaDerecha/Final/Victoria"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -139.0
+offset_top = -365.0
+offset_right = 667.0
+offset_bottom = 555.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("3_gtpdf")
+
+[node name="Derrota" type="Label" parent="LibroAbierto/PaginaDerecha/Final"]
+visible = false
+layout_mode = 0
+offset_left = 2.0
+offset_top = 398.0
+offset_right = 406.0
+offset_bottom = 466.0
+text = "Derrota"
+label_settings = SubResource("LabelSettings_nye3j")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fondo" type="TextureRect" parent="LibroAbierto/PaginaDerecha/Final/Derrota"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -139.0
+offset_top = -365.0
+offset_right = 667.0
+offset_bottom = 555.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("3_gtpdf")
+
 [node name="Credits" parent="LibroAbierto/PaginaDerecha" instance=ExtResource("2_rx15a")]
+visible = false
 layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
@@ -236,4 +317,5 @@ text = "start game"
 [connection signal="pressed" from="tutorial/start_game" to="." method="_on_start_game_pressed"]
 
 [editable path="LibroAbierto/PaginaDerecha/Settings"]
+[editable path="LibroAbierto/PaginaDerecha/Final"]
 [editable path="LibroAbierto/PaginaDerecha/Credits"]
