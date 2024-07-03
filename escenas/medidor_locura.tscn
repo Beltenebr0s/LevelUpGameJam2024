@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cu4ruf7b0vci4"]
 
-[ext_resource type="Script" path="res://medidor_locura.gd" id="1_0oanv"]
+[ext_resource type="Script" path="res://scripts/medidor_locura.gd" id="1_0oanv"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7rjjs"]
 

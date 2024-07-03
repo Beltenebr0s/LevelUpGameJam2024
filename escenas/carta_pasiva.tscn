@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhmjeb0ta4p58"]
+
+[ext_resource type="Texture2D" uid="uid://cfdf68gf38qpm" path="res://icon.svg" id="1_5q3i7"]
+[ext_resource type="Script" path="res://scripts/carta_pasiva.gd" id="2_kbbva"]
+
+[node name="carta_pasiva" type="Sprite2D"]
+texture = ExtResource("1_5q3i7")
+script = ExtResource("2_kbbva")

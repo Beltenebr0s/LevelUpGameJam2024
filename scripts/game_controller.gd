@@ -8,12 +8,14 @@ var n_jugada = 0
 @onready var mazo_ia = $Board/MazoCartasIA
 @onready var mano_ui = $cartasUI
 @onready var medidor_locura = $medidor_locura
+@onready var pasivas_ui = $pasivasUI
 
 func _ready():
 	mazo_jugador.carta_seleccionada.connect(seleccionar_carta)
 	inicar_juego()
 
 func inicar_juego():
+	pasivas_ui.desactivar(-1)
 	while (n_jugada < n_max_jugadas):
 		await jugar_turno()
 		n_jugada = n_jugada+1    
@@ -49,12 +51,18 @@ func aplicar_efecto_turno():
 	# 2. Mirar si la carta elegida es una pasiva
 		# 2.1.(true) Actualizar UI de habilidades pasivas
 	# 3. Aplicar efectos normales
+	var valor_carta = selected_card.valor
+	print("		-- Comprobando si está activada la pasiva correspondiente: ", selected_card.tipo)
+	if pasivas_ui.pasiva_activada(selected_card.tipo):
+		valor_carta = roundi(1.5 * valor_carta)
+		print("		-- La pasiva ", selected_card.tipo, " está activada. La carta ahora vale ", valor_carta)
 	print("		-- Aplicando efecto de las cartas:", selected_card.titulo, " y ", ai_selected_card.titulo)
-	var resultado = selected_card.valor - ai_selected_card.valor
+	var resultado = valor_carta - ai_selected_card.valor
 	print("			-> Resultado del turno: ", resultado)
 	medidor_locura.suma_locos(resultado)
 	if selected_card.desbloquea_pasiva:
-		print("pasiva")
+		print("		-- activando pasiva tipo:", selected_card.tipo)
+		pasivas_ui.activar(selected_card.tipo)
 
 func decidir_final():
 	print("Fin del juego")
