@@ -3,7 +3,6 @@ extends Control
 @onready var carta_arriba = false
 @onready var carta_jugada = false
 @onready var descripcion = $descripcion
-@onready var animation_player = $AnimationPlayer
 @onready var carta = $carta
 @onready var pos_ini = position
 
@@ -29,11 +28,9 @@ func _on_carta_mano_mouse_exited():
 		descripcion.visible = false
 
 func subir_carta():
-	# animation_player.play("card_up")
 	position = pos_ini + Vector2.UP * 80
 
 func bajar_carta():
-	# animation_player.play_backwards("card_up")
 	position = pos_ini
 
 func ocultar_carta(no_jugadas : bool):

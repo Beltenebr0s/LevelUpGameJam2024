@@ -13,38 +13,42 @@ offset_bottom = -88.0
 script = ExtResource("1_qb28j")
 
 [node name="cartaMano" parent="." instance=ExtResource("1_p4iwu")]
-offset_left = 168.0
+offset_left = 280.0
 offset_top = 704.0
-offset_right = 168.0
+offset_right = 280.0
 offset_bottom = 704.0
-scale = Vector2(0.541939, 0.541939)
+scale = Vector2(0.400523, 0.400523)
 
 [node name="cartaMano2" parent="." instance=ExtResource("1_p4iwu")]
-offset_left = 360.0
+offset_left = 416.0
 offset_top = 704.0
-offset_right = 360.0
+offset_right = 416.0
 offset_bottom = 704.0
-scale = Vector2(0.541939, 0.541939)
+scale = Vector2(0.400523, 0.400523)
 
 [node name="cartaMano3" parent="." instance=ExtResource("1_p4iwu")]
 offset_left = 552.0
 offset_top = 704.0
 offset_right = 552.0
 offset_bottom = 704.0
-scale = Vector2(0.541939, 0.541939)
+scale = Vector2(0.400523, 0.400523)
 
 [node name="cartaMano4" parent="." instance=ExtResource("1_p4iwu")]
-offset_left = 744.0
+offset_left = 688.0
 offset_top = 704.0
-offset_right = 744.0
+offset_right = 688.0
 offset_bottom = 704.0
-scale = Vector2(0.541939, 0.541939)
+scale = Vector2(0.400523, 0.400523)
 
 [node name="cartaMano5" parent="." instance=ExtResource("1_p4iwu")]
-offset_left = 936.0
+offset_left = 824.0
 offset_top = 704.0
-offset_right = 936.0
+offset_right = 824.0
 offset_bottom = 704.0
-scale = Vector2(0.541939, 0.541939)
+scale = Vector2(0.400523, 0.400523)
 
 [editable path="cartaMano"]
+[editable path="cartaMano2"]
+[editable path="cartaMano3"]
+[editable path="cartaMano4"]
+[editable path="cartaMano5"]

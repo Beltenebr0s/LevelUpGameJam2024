@@ -1,27 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2twrq4x3lu5h"]
+[gd_scene load_steps=3 format=3 uid="uid://c2twrq4x3lu5h"]
 
 [ext_resource type="Script" path="res://scripts/carta_mano.gd" id="1_pyoub"]
 [ext_resource type="PackedScene" uid="uid://b47xbta5payek" path="res://escenas/carta.tscn" id="2_0b7xr"]
-
-[sub_resource type="Animation" id="Animation_yi0wp"]
-resource_name = "card_up"
-length = 0.5
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_j3r5g"]
-_data = {
-"card_up": SubResource("Animation_yi0wp")
-}
 
 [node name="cartaMano" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_pyoub")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../..")
-libraries = {
-"": SubResource("AnimationLibrary_j3r5g")
-}
 
 [node name="cartaMano" type="TextureButton" parent="."]
 layout_mode = 1
@@ -33,7 +18,7 @@ anchor_bottom = 0.5
 offset_left = -129.0
 offset_top = -162.0
 offset_right = 129.0
-offset_bottom = 162.0
+offset_bottom = 384.0
 grow_horizontal = 2
 grow_vertical = 2
 
