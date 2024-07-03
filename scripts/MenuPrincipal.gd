@@ -2,12 +2,14 @@ extends Panel
 
 @onready var libro_cerrado = $LibroCerrado
 @onready var libro_abierto = $LibroAbierto
+@onready var tutorial = $tutorial
 
 @onready var escena_juego = preload("res://escenas/game.tscn")
 
 func _ready():
 	libro_abierto.visible = false
 	libro_cerrado.visible = true
+	tutorial.visible = false
 
 func _on_titulo_juego_pressed():
 	libro_abierto.visible = true
@@ -16,9 +18,13 @@ func _on_titulo_juego_pressed():
 
 
 func _on_play_pressed():
-	get_tree().change_scene_to_packed(escena_juego)
-	
+	libro_abierto.visible = false
+	libro_cerrado.visible = false
+	tutorial.visible = true
 
+
+func _on_start_game_pressed():
+	get_tree().change_scene_to_packed(escena_juego)
 
 func _on_settings_pressed():
 	print("Ajustes")

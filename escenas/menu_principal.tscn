@@ -189,11 +189,51 @@ offset_right = 450.0
 offset_bottom = 512.0
 text = "Título del juego"
 
+[node name="tutorial" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -219.0
+offset_top = -283.0
+offset_right = 219.0
+offset_bottom = 283.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_i5yx5")
+
+[node name="Fondo" type="TextureRect" parent="tutorial"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -291.0
+offset_top = -470.0
+offset_right = 1463.0
+offset_bottom = 2010.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.35, 0.35)
+
+[node name="start_game" type="Button" parent="tutorial"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = -4.0
+offset_right = 450.0
+offset_bottom = 512.0
+text = "start game"
+
 [connection signal="pressed" from="LibroAbierto/PaginaIzquierda/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="LibroAbierto/PaginaIzquierda/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="LibroAbierto/PaginaIzquierda/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="LibroAbierto/PaginaIzquierda/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="LibroCerrado/TituloJuego" to="." method="_on_titulo_juego_pressed"]
+[connection signal="pressed" from="tutorial/start_game" to="." method="_on_start_game_pressed"]
 
 [editable path="LibroAbierto/PaginaDerecha/Settings"]
 [editable path="LibroAbierto/PaginaDerecha/Credits"]
