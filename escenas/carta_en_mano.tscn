@@ -1,0 +1,120 @@
+[gd_scene load_steps=8 format=3 uid="uid://c2vaypkno5i1"]
+
+[ext_resource type="Script" path="res://CartaEnMano.gd" id="1_0wtpl"]
+[ext_resource type="PackedScene" uid="uid://b47xbta5payek" path="res://escenas/carta.tscn" id="2_e66ig"]
+
+[sub_resource type="Animation" id="Animation_tcygl"]
+resource_name = "subir_carta"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Carta:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -100), Vector2(0, -86)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"visibilidad_descripcion"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_dea5w"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dhyg4"]
+_data = {
+"RESET": SubResource("Animation_dea5w"),
+"subir_carta": SubResource("Animation_tcygl")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_wv4o7"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_kbo2h"]
+font_size = 20
+
+[node name="CartaEnMano" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0wtpl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dhyg4")
+}
+
+[node name="Carta" parent="." instance=ExtResource("2_e66ig")]
+titulo = "Bea mola"
+descripcion = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+
+[node name="descripcion" type="Control" parent="Carta"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -93.9508
+offset_bottom = -93.9508
+scale = Vector2(0.5, 0.390244)
+
+[node name="titulo" type="Label" parent="Carta/descripcion"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -151.5
+offset_top = -241.751
+offset_right = 168.5
+offset_bottom = -199.751
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "Titulo guachi "
+label_settings = SubResource("LabelSettings_wv4o7")
+horizontal_alignment = 1
+
+[node name="descripcion" type="Label" parent="Carta/descripcion"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.5
+offset_top = -198.751
+offset_right = 172.5
+offset_bottom = 232.249
+grow_horizontal = 2
+grow_vertical = 2
+text = "En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor. Una olla de algo más vaca que carnero, salpicón las más noches, duelos y quebrantos los sábados, lentejas los viernes, algún palomino de añadidura los domingos, consumían las tres partes de su hacienda. "
+label_settings = SubResource("LabelSettings_kbo2h")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="BotonCarta" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = -66.0
+offset_top = -65.0
+offset_right = 65.0
+offset_bottom = 64.0
+
+[connection signal="mouse_entered" from="BotonCarta" to="." method="_on_boton_carta_mouse_entered"]
+[connection signal="mouse_exited" from="BotonCarta" to="." method="_on_boton_carta_mouse_exited"]
+[connection signal="pressed" from="BotonCarta" to="." method="_on_boton_carta_pressed"]

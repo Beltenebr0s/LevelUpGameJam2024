@@ -23,5 +23,5 @@ func ocultar_cartas(no_jugadas : bool):
 	# false para ocultar todas las cartas
 	# true para ocultar solo las no jugadas
 	mano_lista = false
-	for i in cartas:
-		i.ocultar_carta(no_jugadas)
+	for carta in cartas:
+		carta.ocultar_carta(no_jugadas)
