@@ -11,20 +11,19 @@ titulo = "Tirar petardos"
 descripcion = "Un pequeño espectáculo de pirotecnia ayudará a tu causa, privando del sueño a los vecinos."
 tipo = 1
 reutilizable = true
-valor = 10
+valor = 15
 
 [node name="Carta2" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "Explotar almacén"
 descripcion = "Los campesinos no podrán trabajar las tierras del príncipe Adetokumbo si el almacén donde guardan sus herramientas vuela por los aires..."
 tipo = 1
-valor = 15
+valor = 25
 
 [node name="Carta3" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "Quemar molino"
 descripcion = "Se pronostica un invierno especialmente frío y duro. Prender fuego a las reservas de harina y trigo del pueblo minará la moral de los habitantes."
 tipo = 1
-requisitos = 20
-valor = 20
+valor = 30
 
 [node name="Carta4" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "Toro de fuego"
@@ -45,14 +44,14 @@ titulo = "Pudrir el pan"
 descripcion = "Un poco de agua en las hogazas de pan y mañana estarán cubiertas de una deliciosa capa de moho."
 tipo = 2
 reutilizable = true
-valor = 10
+valor = 20
 
 [node name="Carta7" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "Bombas fétidas"
 descripcion = "Un juglar viene a interpretar el famoso poema del Cantar de Cio Mid. Plaga el escenario de bombas fétidas para amargarle el espectáculo.."
 tipo = 2
 reutilizable = true
-valor = 15
+valor = 20
 
 [node name="Carta8" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "Pozo envenenado"
@@ -78,8 +77,7 @@ valor = 70
 [node name="Carta11" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "Cabeza de caballo"
 descripcion = "Nada asusta más que amanecer junto a la cabeza de tu caballo, y da la casualidad de que el noble más paranoico del pueblo acaba de hacerse con un corcel nuevo..."
-requisitos = 30
-valor = 40
+valor = 35
 
 [node name="Carta12" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "Cegar el pozo"
@@ -90,14 +88,14 @@ valor = 15
 [node name="Carta13" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "¡Defenestren a la enana!"
 descripcion = "La enana Ximiaca es muy manejable, será fácil tirarla de la torre más alta del pueblo."
-requisitos = 30
-valor = 40
+requisitos = 20
+valor = 50
 
 [node name="Carta14" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "Perro de tres cabezas"
 descripcion = "Un paseo nocturno a tu simpática mascota tricéfala aterrará a los más trasnochadores."
-requisitos = 40
-valor = 40
+requisitos = 30
+valor = 60
 
 [node name="Carta15" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "El cirujano"
@@ -135,8 +133,7 @@ valida_ia = false
 [node name="Carta19" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "Simios agresivos"
 descripcion = "¡Libera a tu ejército de simios para que cause estragos en el pueblo! Unos van armados, otros usan sus propios excrementos como arma arrojadiza."
-requisitos = 25
-valor = 30
+valor = 25
 
 [node name="Carta20" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "Amanece, que no es poco"

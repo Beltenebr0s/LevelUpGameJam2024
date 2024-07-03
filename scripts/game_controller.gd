@@ -38,7 +38,7 @@ func jugar_turno():
 	
 func crear_manos():
 	mazo_jugador.barajar_cartas(5, medidor_locura.value, false)
-	mazo_ia.barajar_cartas(3, 200, true)
+	mazo_ia.barajar_cartas(3, medidor_locura.value, true)
 
 func seleccionar_carta(carta):
 	selected_card = carta
@@ -56,10 +56,10 @@ func aplicar_efecto_turno():
 	var valor_carta = selected_card.valor
 	print("		-- Comprobando si está activada la pasiva correspondiente: ", selected_card.tipo)
 	if pasivas_ui.pasiva_activada(selected_card.tipo):
-		valor_carta = roundi(1.5 * valor_carta)
+		valor_carta = roundi(2 * valor_carta)
 		print("		-- La pasiva ", selected_card.tipo, " está activada. La carta ahora vale ", valor_carta)
 	print("		-- Aplicando efecto de las cartas:", selected_card.titulo, " y ", ai_selected_card.titulo)
-	var resultado = valor_carta - ai_selected_card.valor
+	var resultado = valor_carta - ai_selected_card.valor * 0.8
 	print("			-> Resultado del turno: ", resultado)
 	medidor_locura.suma_locos(resultado)
 	if selected_card.desbloquea_pasiva:
