@@ -126,6 +126,7 @@ valida_ia = false
 [node name="Carta18" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "El caballero maldito"
 descripcion = "El norte y lucero de la caballería oculta una maldición. Aquel que no puede perder la vida, acaba perdiendo el alma. Si los vecinos se enteran de su condición, no vivirán tranquilos a su lado."
+desbloquea_pasiva = true
 requisitos = 15
 valor = 10
 valida_ia = false
