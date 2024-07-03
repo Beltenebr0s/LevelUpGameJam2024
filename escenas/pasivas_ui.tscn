@@ -21,33 +21,33 @@ script = ExtResource("1_hg818")
 
 [node name="Caballero" parent="." instance=ExtResource("2_q6wbb")]
 layout_mode = 0
-offset_left = -8.0
+offset_left = 0.0
 offset_top = 0.0
-offset_right = 89.0
+offset_right = 97.0
 offset_bottom = 132.0
 texto_descripcion = "Todo el pueblo teme al caballero, enloquecen mínimo 10 personas en cada turno."
 
 [node name="Vigil" parent="." instance=ExtResource("2_q6wbb")]
 layout_mode = 0
-offset_left = -8.0
+offset_left = 0.0
 offset_top = 136.0
-offset_right = 89.0
+offset_right = 97.0
 offset_bottom = 268.0
 texto_descripcion = "El vigil esá fuera de sí, ansía vengar a su familia. Las cartas de fuego reciben una bonificación."
 
 [node name="Cirujano" parent="." instance=ExtResource("2_q6wbb")]
 layout_mode = 0
-offset_left = -8.0
+offset_left = 0.0
 offset_top = 272.0
-offset_right = 89.0
+offset_right = 97.0
 offset_bottom = 404.0
 texto_descripcion = "El cirujano ha decidido que su negocio es poco rentable, ayudará a propagar enfermedades. Las cartas de peste reciben una bonificación."
 
 [node name="Sacerdote" parent="." instance=ExtResource("2_q6wbb")]
 layout_mode = 0
-offset_left = -8.0
+offset_left = 0.0
 offset_top = 408.0
-offset_right = 89.0
+offset_right = 97.0
 offset_bottom = 540.0
 texto_descripcion = "El sacerdote ligó con el demonio que invocaste. Juntos, hacen un ritual que te permite robar otra mano de cartas sin perder el turno (click para activar)."
 
