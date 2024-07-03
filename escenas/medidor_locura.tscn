@@ -2,29 +2,30 @@
 
 [ext_resource type="Script" path="res://scripts/medidor_locura.gd" id="1_0oanv"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7rjjs"]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_76du4"]
 
-[sub_resource type="Gradient" id="Gradient_ytl7o"]
+[sub_resource type="Gradient" id="Gradient_wfp4g"]
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_gl0eb"]
-gradient = SubResource("Gradient_ytl7o")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wkr3f"]
+gradient = SubResource("Gradient_wfp4g")
+height = 319
 
-[node name="medidor_locura" type="Node2D"]
+[node name="medidor_locura" type="TextureProgressBar"]
+offset_right = 1.0
+offset_bottom = 1.0
+value = 100.0
+allow_greater = true
+fill_mode = 3
+texture_under = SubResource("PlaceholderTexture2D_76du4")
+texture_progress = SubResource("GradientTexture2D_wkr3f")
+tint_under = Color(0, 0, 1, 1)
+tint_progress = Color(0.446116, 0.68583, 0.970498, 1)
 script = ExtResource("1_0oanv")
 
-[node name="borde_exterior" type="Sprite2D" parent="."]
-clip_children = 2
-scale = Vector2(56, 384)
-texture = SubResource("PlaceholderTexture2D_7rjjs")
-
-[node name="barra_interior" type="Sprite2D" parent="borde_exterior"]
-scale = Vector2(0.0117188, 0.015625)
-texture = SubResource("GradientTexture2D_gl0eb")
-
 [node name="TextEdit" type="TextEdit" parent="."]
-offset_left = 32.0
-offset_top = -192.0
-offset_right = 80.0
-offset_bottom = -152.0
+layout_mode = 0
+offset_left = 80.0
+offset_right = 128.0
+offset_bottom = 40.0
 theme_override_font_sizes/font_size = 20
 placeholder_text = "100"
