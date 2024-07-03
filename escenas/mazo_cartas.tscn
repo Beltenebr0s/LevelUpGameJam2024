@@ -100,6 +100,7 @@ valor = 60
 [node name="Carta15" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "El cirujano"
 descripcion = "Los pacientes del cirujano están paranoicos, acuden a él por nimiedades. Ha deicidido que les dará motivos para contratar sus servicios."
+tipo = 2
 desbloquea_pasiva = true
 requisitos = 30
 valor = -30
@@ -110,6 +111,7 @@ titulo = "El vigil"
 descripcion = "La casa del vigil ha ardido, calcinando a toda su familia. No sabe quién ha sido, pero piensa vengarse y prender fuego a todo lo que pueda.
 
 "
+tipo = 1
 desbloquea_pasiva = true
 requisitos = 50
 valor = -20
@@ -118,6 +120,7 @@ valida_ia = false
 [node name="Carta17" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "El sacerdote"
 descripcion = "Puede que aún no tengas poder para invocar a tu dios, pero algún demonio menor puede atraer al sacerdote a tu causa."
+tipo = 3
 desbloquea_pasiva = true
 requisitos = 20
 valor = -10

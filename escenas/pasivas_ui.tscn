@@ -59,6 +59,8 @@ offset_bottom = 459.0
 [node name="TextEdit" parent="Sacerdote/descripcion" index="0"]
 text = "El sacerdote ligó con el demonio que invocaste. Juntos, hacen un ritual que te permite robar otra mano de cartas sin perder el turno (click para activar)."
 
+[connection signal="pressed" from="Sacerdote" to="." method="_on_carta_pasiva_4_pressed"]
+
 [editable path="Caballero"]
 [editable path="Vigil"]
 [editable path="Cirujano"]

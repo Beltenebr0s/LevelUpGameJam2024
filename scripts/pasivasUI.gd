@@ -2,6 +2,8 @@ extends Control
 
 @onready var cartas_pasivas = []
 
+signal mulligan()
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	cartas_pasivas = get_children()
@@ -31,3 +33,6 @@ func activar(n : int):
 func pasiva_activada(n : int):
 	# devuelve true si la pasiva está activada
 	return cartas_pasivas[n].visible
+
+func _on_carta_pasiva_4_pressed():
+	mulligan.emit()

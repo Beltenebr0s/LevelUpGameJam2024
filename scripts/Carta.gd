@@ -1,7 +1,7 @@
 extends Sprite2D
 class_name Carta
 
-enum TipoCarta { NORMAL, FUEGO, PESTE }
+enum TipoCarta { CABALLERO, VIGIL, CIRUJANO, SACERDOTE }
 
 @export var titulo : String
 @export_multiline var descripcion : String
@@ -19,7 +19,7 @@ func iniciar_carta():
 	self.carta_usada = false
 
 func jugar():
-	# self.carta_usada = true # Descomentar esto cuando tengamos cartas de verdad para que no se repitan en el mazo
+	self.carta_usada = true
 	jugar_carta.emit(self)
 	
 func es_jugable(nivel_locura : int, b_ia : bool):
