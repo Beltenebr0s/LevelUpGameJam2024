@@ -1,48 +1,44 @@
 [gd_scene load_steps=3 format=3 uid="uid://bgmop8u4t4stj"]
 
 [ext_resource type="Script" path="res://scripts/card_ui.gd" id="1_qb28j"]
-[ext_resource type="PackedScene" uid="uid://c2vaypkno5i1" path="res://escenas/carta_en_mano.tscn" id="3_ukwri"]
+[ext_resource type="PackedScene" uid="uid://ox8ij1qdjkkh" path="res://escenas/carta_en_mano.tscn" id="3_ukwri"]
 
 [node name="cartasUI" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 24.0
-offset_top = -88.0
-offset_right = 24.0
-offset_bottom = -88.0
 script = ExtResource("1_qb28j")
 
 [node name="CartaEnMano" parent="." instance=ExtResource("3_ukwri")]
 layout_mode = 1
-offset_left = 168.0
-offset_top = 708.0
-offset_right = 168.0
-offset_bottom = 708.0
+offset_left = 192.0
+offset_top = 600.0
+offset_right = 192.0
+offset_bottom = 600.0
 
 [node name="CartaEnMano2" parent="." instance=ExtResource("3_ukwri")]
 layout_mode = 1
-offset_left = 363.0
-offset_top = 708.0
-offset_right = 363.0
-offset_bottom = 708.0
+offset_left = 387.0
+offset_top = 600.0
+offset_right = 387.0
+offset_bottom = 600.0
 
 [node name="CartaEnMano3" parent="." instance=ExtResource("3_ukwri")]
 layout_mode = 1
-offset_left = 552.0
-offset_top = 708.0
-offset_right = 552.0
-offset_bottom = 708.0
+offset_left = 576.0
+offset_top = 600.0
+offset_right = 576.0
+offset_bottom = 600.0
 
 [node name="CartaEnMano4" parent="." instance=ExtResource("3_ukwri")]
 layout_mode = 1
-offset_left = 744.0
-offset_top = 708.0
-offset_right = 744.0
-offset_bottom = 708.0
+offset_left = 768.0
+offset_top = 600.0
+offset_right = 768.0
+offset_bottom = 600.0
 
 [node name="CartaEnMano5" parent="." instance=ExtResource("3_ukwri")]
 layout_mode = 1
-offset_left = 936.0
-offset_top = 708.0
-offset_right = 936.0
-offset_bottom = 708.0
+offset_left = 960.0
+offset_top = 600.0
+offset_right = 960.0
+offset_bottom = 600.0

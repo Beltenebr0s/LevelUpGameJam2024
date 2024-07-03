@@ -1,10 +1,14 @@
 extends Control
 
+@export var cartas_ia = false
 @onready var cartas = []
 @onready var mano_lista = false
 
 func _ready():
 	cartas = get_children()
+	if cartas_ia:
+		for i in cartas:
+			i.mano_ia()
 
 func colocar_cartas_en_mano(mano):
 	ocultar_cartas(false)
@@ -17,7 +21,7 @@ func colocar_cartas_en_mano(mano):
 
 func mostrar_cartas():
 	for i in cartas:
-		i.bajar_carta()
+		i.mostrar_carta()
 
 func ocultar_cartas(no_jugadas : bool):
 	# false para ocultar todas las cartas

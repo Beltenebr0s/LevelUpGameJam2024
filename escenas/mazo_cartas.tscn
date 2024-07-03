@@ -10,7 +10,6 @@ script = ExtResource("1_pf761")
 titulo = "Tirar petardos"
 descripcion = "Un pequeño espectáculo de pirotecnia ayudará a tu causa, privando del sueño a los vecinos."
 tipo = 1
-reutilizable = true
 valor = 15
 
 [node name="Carta2" parent="." instance=ExtResource("2_y5ux8")]
@@ -43,7 +42,6 @@ valor = 60
 titulo = "Pudrir el pan"
 descripcion = "Un poco de agua en las hogazas de pan y mañana estarán cubiertas de una deliciosa capa de moho."
 tipo = 2
-reutilizable = true
 valor = 20
 
 [node name="Carta7" parent="." instance=ExtResource("2_y5ux8")]

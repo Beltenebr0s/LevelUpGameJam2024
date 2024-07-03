@@ -2,12 +2,14 @@ extends Node
 
 var selected_card = null
 var ai_selected_card = null
+var ai_selected_card_in_hand = null
 var n_max_jugadas = 6
 var n_jugada = 0
 var mulligan_usado = false
 @onready var mazo_jugador = $Board/MazoCartas
 @onready var mazo_ia = $Board/MazoCartasIA
 @onready var mano_ui = $cartasUI
+@onready var mano_iai = $cartasIAI
 @onready var medidor_locura = $medidor_locura
 @onready var pasivas_ui = $pasivasUI
 func _ready():
@@ -38,7 +40,6 @@ func jugar_turno():
 	mulligan_usado = false
 	crear_manos()
 	print("Mano del jugador:")
-	mazo_jugador.debug_print_valor_medio(mazo_jugador.mano)
 	mostrar_mano_jugador()
 	print("		- espero a la jugada")
 	await mazo_jugador.carta_seleccionada
@@ -47,22 +48,27 @@ func jugar_turno():
 	aplicar_efecto_carta(true)
 	await get_tree().create_timer(2.0).timeout
 	mano_ui.ocultar_cartas(false)
-	jugada_ia()
-	await get_tree().create_timer(2.0).timeout
-	aplicar_efecto_carta(false)
-	await get_tree().create_timer(1.0).timeout
+	await jugada_ia()
 	
 func crear_manos():
 	mazo_jugador.barajar_cartas(5, medidor_locura.value, false)
-	mazo_ia.barajar_cartas(3, medidor_locura.value, true)
+	mazo_ia.barajar_cartas(5, medidor_locura.value, true)
 
 func seleccionar_carta(carta):
 	selected_card = carta
 	print("		- Carta seleccionada por el jugador:", selected_card.titulo)
 
 func jugada_ia():
-	ai_selected_card = mazo_ia.mano.pick_random()
+	mano_iai.mostrar_cartas()
+	await get_tree().create_timer(1.0).timeout
+	ai_selected_card_in_hand = mano_iai.cartas.pick_random()
+	ai_selected_card = ai_selected_card_in_hand.carta
 	print("		* Carta seleccionada por la IA:", ai_selected_card.titulo)
+	ai_selected_card_in_hand.seleccionar_carta()
+	mano_iai.ocultar_cartas(true)
+	await get_tree().create_timer(2.0).timeout
+	aplicar_efecto_carta(false)
+	mano_iai.ocultar_cartas(false)
 
 func aplicar_efecto_carta(b_is_player : bool):
 	var resultado
