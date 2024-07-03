@@ -1,4 +1,4 @@
-extends ReferenceRect
+extends Button
 
 @onready var descripcion = $descripcion
 @onready var raton_dentro = false

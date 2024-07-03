@@ -17,7 +17,9 @@ func _process(delta):
 
 func suma_locos(locos_nuevos : int):
 	locos += locos_nuevos
-	if locos < 1:
+	if self.value > 100 and locos < 100:
+		locos = 101
+	elif locos < 1:
 		locos = 1
 	actualizar_medidor()
 

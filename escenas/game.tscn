@@ -21,9 +21,7 @@ position = Vector2(-123, 25)
 
 [node name="medidor_locura" parent="." instance=ExtResource("4_yyiwp")]
 offset_left = 32.0
-offset_top = 32.0
 offset_right = 33.0
-offset_bottom = 33.0
 
 [node name="pasivasUI" parent="." instance=ExtResource("5_88sux")]
 offset_left = 880.0

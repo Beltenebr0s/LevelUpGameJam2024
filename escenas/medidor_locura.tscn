@@ -8,12 +8,13 @@
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_wkr3f"]
 gradient = SubResource("Gradient_wfp4g")
-height = 319
+height = 400
 
 [node name="medidor_locura" type="TextureProgressBar"]
 offset_right = 1.0
 offset_bottom = 1.0
-value = 100.0
+max_value = 150.0
+value = 150.0
 allow_greater = true
 fill_mode = 3
 texture_under = SubResource("PlaceholderTexture2D_76du4")
@@ -25,7 +26,8 @@ script = ExtResource("1_0oanv")
 [node name="TextEdit" type="TextEdit" parent="."]
 layout_mode = 0
 offset_left = 80.0
+offset_top = 80.0
 offset_right = 128.0
-offset_bottom = 40.0
+offset_bottom = 120.0
 theme_override_font_sizes/font_size = 20
 placeholder_text = "100"

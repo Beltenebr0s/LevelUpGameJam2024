@@ -1,4 +1,4 @@
-extends VBoxContainer
+extends Control
 
 @onready var cartas_pasivas = []
 

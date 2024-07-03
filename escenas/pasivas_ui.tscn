@@ -3,7 +3,8 @@
 [ext_resource type="Script" path="res://scripts/pasivasUI.gd" id="1_hg818"]
 [ext_resource type="PackedScene" uid="uid://bhmjeb0ta4p58" path="res://escenas/carta_pasiva.tscn" id="2_q6wbb"]
 
-[node name="pasivasUI" type="VBoxContainer"]
+[node name="pasivasUI" type="Control"]
+layout_mode = 3
 anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
@@ -16,15 +17,25 @@ grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 8
 size_flags_vertical = 3
-theme_override_constants/separation = 20
-alignment = 1
 script = ExtResource("1_hg818")
 
 [node name="carta_pasiva" parent="." instance=ExtResource("2_q6wbb")]
 layout_mode = 2
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 96.0
+offset_bottom = 98.0
 
 [node name="carta_pasiva2" parent="." instance=ExtResource("2_q6wbb")]
 layout_mode = 2
+offset_left = 0.0
+offset_top = 118.0
+offset_right = 96.0
+offset_bottom = 217.0
 
 [node name="carta_pasiva3" parent="." instance=ExtResource("2_q6wbb")]
 layout_mode = 2
+offset_left = 0.0
+offset_top = 237.0
+offset_right = 96.0
+offset_bottom = 336.0

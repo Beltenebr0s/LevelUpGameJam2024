@@ -5,7 +5,7 @@
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_vsbf5"]
 
-[node name="carta_pasiva" type="ReferenceRect"]
+[node name="carta_pasiva" type="Button"]
 offset_left = -40.0
 offset_top = -40.0
 offset_right = 56.0
