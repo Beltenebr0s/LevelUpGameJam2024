@@ -37,8 +37,8 @@ func jugar_turno():
 	await get_tree().create_timer(1.0).timeout
 	
 func crear_manos():
-	mazo_jugador.barajar_cartas(5, medidor_locura.value)
-	mazo_ia.barajar_cartas(3, 200)
+	mazo_jugador.barajar_cartas(5, medidor_locura.value, false)
+	mazo_ia.barajar_cartas(3, 200, true)
 
 func seleccionar_carta(carta):
 	selected_card = carta
