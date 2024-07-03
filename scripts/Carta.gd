@@ -1,14 +1,17 @@
 extends Sprite2D
 class_name Carta
+
+enum TipoCarta { NORMAL, FUEGO, PESTE }
+
 @export var titulo : String
-@export var descripcion : String
-@export var tipo : int
+@export_multiline var descripcion : String
+@export var tipo : TipoCarta
 @export var reutilizable : bool = false
 @export var desbloquea_pasiva : bool
 @export var requisitos : int
-@export var coste : int
 @export var valor : int
 @onready var carta_usada : bool = false
+@export var valida_ia: bool = true
 
 signal jugar_carta(carta)
 
@@ -24,7 +27,7 @@ func es_jugable(nivel_locura : int):
 	b_carta_valida = b_carta_valida && !self.carta_usada
 	b_carta_valida = b_carta_valida && nivel_locura > self.requisitos
 	if (self.desbloquea_pasiva):
-		b_carta_valida = b_carta_valida && nivel_locura > self.coste
+		b_carta_valida = b_carta_valida && nivel_locura > self.valor
 	return b_carta_valida
 	
 func set_carta_usada(valor):

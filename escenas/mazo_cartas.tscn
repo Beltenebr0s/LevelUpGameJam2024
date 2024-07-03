@@ -7,33 +7,103 @@
 script = ExtResource("1_pf761")
 
 [node name="Carta" parent="." instance=ExtResource("2_y5ux8")]
-titulo = "carta 1"
-requisitos = 60
+titulo = "Tirar petardos"
 valor = 10
 
 [node name="Carta2" parent="." instance=ExtResource("2_y5ux8")]
-titulo = "otra carta"
-descripcion = "bea la mejor"
-requisitos = 25
-valor = 50
+titulo = "Explotar almacén"
+valor = 15
 
 [node name="Carta3" parent="." instance=ExtResource("2_y5ux8")]
-titulo = "bea mola"
-descripcion = "aaaaaaaaa"
-valor = 30
+titulo = "Quemar molino"
+requisitos = 20
+valor = 20
 
 [node name="Carta4" parent="." instance=ExtResource("2_y5ux8")]
-titulo = "en un lugar de la mancha"
-descripcion = "tipo 1"
-tipo = 1
-valor = 40
+titulo = "Toro de fuego"
+requisitos = 30
+valor = 50
 
 [node name="Carta5" parent="." instance=ExtResource("2_y5ux8")]
-titulo = "leed amadis de gaula"
-descripcion = "pasiva 1"
-tipo = 1
-desbloquea_pasiva = true
-coste = 30
-valor = 100
+titulo = "Lluvia de fuego"
+requisitos = 40
+valor = 60
 
-[connection signal="jugar_carta" from="Carta2" to="." method="_on_carta_2_jugar_carta"]
+[node name="Carta6" parent="." instance=ExtResource("2_y5ux8")]
+titulo = "Pudrir el pan"
+valor = 10
+
+[node name="Carta7" parent="." instance=ExtResource("2_y5ux8")]
+titulo = "Bombas fétidas"
+valor = 15
+
+[node name="Carta8" parent="." instance=ExtResource("2_y5ux8")]
+titulo = "Pozo envenenado"
+requisitos = 20
+valor = 30
+
+[node name="Carta9" parent="." instance=ExtResource("2_y5ux8")]
+titulo = "Niebla venenosa"
+requisitos = 40
+valor = 50
+
+[node name="Carta10" parent="." instance=ExtResource("2_y5ux8")]
+titulo = "Plaga de ratas"
+requisitos = 50
+valor = 70
+
+[node name="Carta11" parent="." instance=ExtResource("2_y5ux8")]
+titulo = "Cabeza de caballo"
+valor = 15
+
+[node name="Carta12" parent="." instance=ExtResource("2_y5ux8")]
+titulo = "Cegar el pozo"
+valor = 15
+
+[node name="Carta13" parent="." instance=ExtResource("2_y5ux8")]
+titulo = "¡Defenestren a la enana!"
+requisitos = 30
+valor = 40
+
+[node name="Carta14" parent="." instance=ExtResource("2_y5ux8")]
+titulo = "Perro de tres cabezas"
+requisitos = 40
+valor = 40
+
+[node name="Carta15" parent="." instance=ExtResource("2_y5ux8")]
+titulo = "El médico"
+desbloquea_pasiva = true
+requisitos = 30
+valor = -30
+valida_ia = false
+
+[node name="Carta16" parent="." instance=ExtResource("2_y5ux8")]
+titulo = "El vigil"
+desbloquea_pasiva = true
+requisitos = 50
+valor = -20
+valida_ia = false
+
+[node name="Carta17" parent="." instance=ExtResource("2_y5ux8")]
+titulo = "El sacerdote"
+desbloquea_pasiva = true
+requisitos = 20
+valor = -10
+valida_ia = false
+
+[node name="Carta18" parent="." instance=ExtResource("2_y5ux8")]
+titulo = "El caballero maldito"
+requisitos = 15
+valor = 10
+valida_ia = false
+
+[node name="Carta19" parent="." instance=ExtResource("2_y5ux8")]
+titulo = "Simios agresivos"
+requisitos = 20
+valor = 20
+
+[node name="Carta20" parent="." instance=ExtResource("2_y5ux8")]
+titulo = "Amanece, que no es poco"
+requisitos = 120
+valor = 150
+valida_ia = false

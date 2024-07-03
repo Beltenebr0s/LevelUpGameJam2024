@@ -25,6 +25,8 @@ func inicar_juego():
 func jugar_turno():
 	print("Nuevo turno: ", n_jugada)
 	crear_manos()
+	print("Mano del jugador:")
+	mazo_jugador.debug_print_valor_medio(mazo_jugador.mano)
 	mostrar_mano_jugador()
 	print("		- espero a la jugada")
 	await mazo_jugador.carta_seleccionada
