@@ -44,8 +44,12 @@ func jugar_turno():
 	await mazo_jugador.carta_seleccionada
 	mano_ui.ocultar_cartas(true)
 	print("		- jugada realizada")
+	aplicar_efecto_carta(true)
+	await get_tree().create_timer(2.0).timeout
+	mano_ui.ocultar_cartas(false)
 	jugada_ia()
-	aplicar_efecto_turno()
+	await get_tree().create_timer(2.0).timeout
+	aplicar_efecto_carta(false)
 	await get_tree().create_timer(1.0).timeout
 	
 func crear_manos():
@@ -60,26 +64,34 @@ func jugada_ia():
 	ai_selected_card = mazo_ia.mano.pick_random()
 	print("		* Carta seleccionada por la IA:", ai_selected_card.titulo)
 
-func aplicar_efecto_turno():
-	# 1. Mirar los efectos que aplican (modificadores de pasivas, etc)
-	# 2. Mirar si la carta elegida es una pasiva
-		# 2.1.(true) Actualizar UI de habilidades pasivas
-	# 3. Aplicar efectos normales
-	var valor_carta = selected_card.valor
-	print("		-- Comprobando si está activada la pasiva correspondiente: ", selected_card.tipo)
-	if pasivas_ui.pasiva_activada(0):
-		valor_carta += 15
-		print("		-- El Caballero está activado, la carta ahora vale ", valor_carta)
-	if (selected_card.tipo == 1 or selected_card.tipo == 2) and pasivas_ui.pasiva_activada(selected_card.tipo):
-		valor_carta = roundi(2 * valor_carta)
-		print("		-- La pasiva ", selected_card.tipo, " está activada. La carta ahora vale ", valor_carta)
-	print("		-- Aplicando efecto de las cartas:", selected_card.titulo, " y ", ai_selected_card.titulo)
-	var resultado = valor_carta - ai_selected_card.valor * 0.8
-	print("			-> Resultado del turno: ", resultado)
+func aplicar_efecto_carta(b_is_player : bool):
+	var resultado
+	print("		-- Aplicando efecto de la carta:" )	
+	if(b_is_player):
+		resultado = aplicar_pasivas_activas()
+		activar_pasiva()
+		
+	else:
+		resultado = nerf_card_to_ia()
 	medidor_locura.suma_locos(resultado)
+	print("			-> Resultado del turno: ", resultado)
+
+func nerf_card_to_ia():
+	return ai_selected_card.valor * 0.8 * -1
+
+func activar_pasiva():
 	if selected_card.desbloquea_pasiva:
 		print("		-- activando pasiva tipo:", selected_card.tipo)
 		pasivas_ui.activar(selected_card.tipo)
+
+func aplicar_pasivas_activas():
+	print("		-- Comprobando si está activada la pasiva correspondiente: ", selected_card.tipo)
+	var resultado = selected_card.valor
+	if pasivas_ui.pasiva_activada(0):
+		resultado += 15
+	if (selected_card.tipo == 1 or selected_card.tipo == 2) and pasivas_ui.pasiva_activada(selected_card.tipo):
+		resultado = roundi(2 * selected_card.valor)
+	return resultado
 
 func mulligan():
 	if mano_ui.mano_lista and !mulligan_usado:
