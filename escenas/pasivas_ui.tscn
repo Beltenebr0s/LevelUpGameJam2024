@@ -19,30 +19,47 @@ size_flags_horizontal = 8
 size_flags_vertical = 3
 script = ExtResource("1_hg818")
 
-[node name="carta_pasiva" parent="." instance=ExtResource("2_q6wbb")]
+[node name="Caballero" parent="." instance=ExtResource("2_q6wbb")]
 layout_mode = 2
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 96.0
 offset_bottom = 98.0
 
-[node name="carta_pasiva2" parent="." instance=ExtResource("2_q6wbb")]
+[node name="TextEdit" parent="Caballero/descripcion" index="0"]
+text = "Todo el pueblo teme al caballero, enloquecen mínimo 10 personas en cada turno."
+
+[node name="Vigil" parent="." instance=ExtResource("2_q6wbb")]
 layout_mode = 2
 offset_left = 0.0
 offset_top = 118.0
 offset_right = 96.0
 offset_bottom = 217.0
 
-[node name="carta_pasiva3" parent="." instance=ExtResource("2_q6wbb")]
+[node name="TextEdit" parent="Vigil/descripcion" index="0"]
+text = "El vigil esá fuera de sí, ansía vengar a su familia. Las cartas de fuego reciben una bonificación."
+
+[node name="Cirujano" parent="." instance=ExtResource("2_q6wbb")]
 layout_mode = 2
 offset_left = 0.0
 offset_top = 237.0
 offset_right = 96.0
 offset_bottom = 336.0
 
-[node name="carta_pasiva4" parent="." instance=ExtResource("2_q6wbb")]
+[node name="TextEdit" parent="Cirujano/descripcion" index="0"]
+text = "El cirujano ha decidido que su negocio es poco rentable, ayudará a propagar enfermedades. Las cartas de peste reciben una bonificación."
+
+[node name="Sacerdote" parent="." instance=ExtResource("2_q6wbb")]
 layout_mode = 2
 offset_left = 0.0
 offset_top = 360.0
 offset_right = 96.0
 offset_bottom = 459.0
+
+[node name="TextEdit" parent="Sacerdote/descripcion" index="0"]
+text = "El sacerdote ligó con el demonio que invocaste. Juntos, hacen un ritual que te permite robar otra mano de cartas sin perder el turno (click para activar)."
+
+[editable path="Caballero"]
+[editable path="Vigil"]
+[editable path="Cirujano"]
+[editable path="Sacerdote"]
