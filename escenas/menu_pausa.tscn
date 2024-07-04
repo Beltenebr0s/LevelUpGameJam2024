@@ -1,0 +1,227 @@
+[gd_scene load_steps=6 format=3 uid="uid://dgvk3kamy3owh"]
+
+[ext_resource type="Script" path="res://scripts/MenuPausa.gd" id="1_0xa3x"]
+[ext_resource type="PackedScene" uid="uid://blxd0lf0072de" path="res://escenas/panel_menu.tscn" id="2_o7frk"]
+[ext_resource type="Texture2D" uid="uid://cfdf68gf38qpm" path="res://icon.svg" id="3_18kwq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekryt"]
+bg_color = Color(0.908176, 0.766672, 0.0279374, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nye3j"]
+font_size = 25
+
+[node name="MenuPrincipal" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0xa3x")
+
+[node name="LibroAbierto" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -462.0
+offset_top = -283.0
+offset_right = 441.0
+offset_bottom = 283.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ekryt")
+
+[node name="PaginaIzquierda" type="Panel" parent="LibroAbierto"]
+layout_mode = 0
+offset_right = 452.0
+offset_bottom = 568.0
+
+[node name="Continue" type="Button" parent="LibroAbierto/PaginaIzquierda"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 81.0
+offset_right = 305.0
+offset_bottom = 146.0
+text = "CONTINUAR"
+
+[node name="Settings" type="Button" parent="LibroAbierto/PaginaIzquierda"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 187.0
+offset_right = 305.0
+offset_bottom = 252.0
+text = "SETTINGS"
+
+[node name="Exit" type="Button" parent="LibroAbierto/PaginaIzquierda"]
+layout_mode = 0
+offset_left = 141.0
+offset_top = 289.0
+offset_right = 306.0
+offset_bottom = 354.0
+text = "SALIR :("
+
+[node name="PaginaDerecha" type="Panel" parent="LibroAbierto"]
+layout_mode = 0
+offset_left = 452.0
+offset_right = 905.0
+offset_bottom = 566.0
+
+[node name="Settings" parent="LibroAbierto/PaginaDerecha" instance=ExtResource("2_o7frk")]
+visible = false
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 406.0
+offset_bottom = 526.0
+
+[node name="Titulo" parent="LibroAbierto/PaginaDerecha/Settings" index="0"]
+text = "AJUSTES"
+
+[node name="Final" parent="LibroAbierto/PaginaDerecha" instance=ExtResource("2_o7frk")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 406.0
+offset_bottom = 526.0
+
+[node name="Titulo" parent="LibroAbierto/PaginaDerecha/Final" index="0"]
+text = "ME CAGO EN EL MISTERIO"
+
+[node name="Score" type="Label" parent="LibroAbierto/PaginaDerecha/Final"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 459.0
+offset_right = 406.0
+offset_bottom = 527.0
+label_settings = SubResource("LabelSettings_nye3j")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Victoria" type="Label" parent="LibroAbierto/PaginaDerecha/Final"]
+visible = false
+layout_mode = 0
+offset_left = -1.0
+offset_top = 397.0
+offset_right = 403.0
+offset_bottom = 465.0
+text = "Victoria"
+label_settings = SubResource("LabelSettings_nye3j")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fondo" type="TextureRect" parent="LibroAbierto/PaginaDerecha/Final/Victoria"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -139.0
+offset_top = -365.0
+offset_right = 667.0
+offset_bottom = 555.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("3_18kwq")
+
+[node name="Derrota" type="Label" parent="LibroAbierto/PaginaDerecha/Final"]
+visible = false
+layout_mode = 0
+offset_left = 2.0
+offset_top = 398.0
+offset_right = 406.0
+offset_bottom = 466.0
+text = "Derrota"
+label_settings = SubResource("LabelSettings_nye3j")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fondo" type="TextureRect" parent="LibroAbierto/PaginaDerecha/Final/Derrota"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -139.0
+offset_top = -365.0
+offset_right = 667.0
+offset_bottom = 555.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("3_18kwq")
+
+[node name="Credits" parent="LibroAbierto/PaginaDerecha" instance=ExtResource("2_o7frk")]
+visible = false
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 406.0
+offset_bottom = 526.0
+
+[node name="Titulo" parent="LibroAbierto/PaginaDerecha/Credits" index="0"]
+text = "CRÉDITOS"
+
+[node name="SeccionArte" type="Label" parent="LibroAbierto/PaginaDerecha/Credits"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 72.0
+offset_right = 213.0
+offset_bottom = 100.0
+text = "ARTE"
+
+[node name="TextoArte" type="RichTextLabel" parent="LibroAbierto/PaginaDerecha/Credits/SeccionArte"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 28.0
+offset_right = 352.0
+offset_bottom = 118.0
+text = "Juan
+Nubi"
+
+[node name="SeccionProgramacion" type="Label" parent="LibroAbierto/PaginaDerecha/Credits"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 198.0
+offset_right = 212.0
+offset_bottom = 226.0
+text = "PROGRAMACIÓN"
+
+[node name="TextoProgramacion" type="RichTextLabel" parent="LibroAbierto/PaginaDerecha/Credits/SeccionProgramacion"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 36.0
+offset_right = 353.0
+offset_bottom = 145.0
+text = "Darío
+Alejandro
+Bea
+"
+
+[node name="SeccionSonido" type="Label" parent="LibroAbierto/PaginaDerecha/Credits"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 356.0
+offset_right = 215.0
+offset_bottom = 384.0
+text = "SONIDO
+"
+
+[node name="TextoSonido" type="RichTextLabel" parent="LibroAbierto/PaginaDerecha/Credits/SeccionSonido"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 31.0
+offset_right = 350.0
+offset_bottom = 121.0
+
+[connection signal="pressed" from="LibroAbierto/PaginaIzquierda/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="LibroAbierto/PaginaIzquierda/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="LibroAbierto/PaginaIzquierda/Exit" to="." method="_on_exit_pressed"]
+
+[editable path="LibroAbierto/PaginaDerecha/Settings"]
+[editable path="LibroAbierto/PaginaDerecha/Final"]
+[editable path="LibroAbierto/PaginaDerecha/Credits"]
