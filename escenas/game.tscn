@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://scripts/game_controller.gd" id="1_jtev3"]
 [ext_resource type="PackedScene" uid="uid://bgmop8u4t4stj" path="res://escenas/card_ui.tscn" id="3_nj2pg"]
 [ext_resource type="PackedScene" uid="uid://cu4ruf7b0vci4" path="res://escenas/medidor_locura.tscn" id="4_yyiwp"]
-[ext_resource type="Texture2D" uid="uid://bpfn15jhr0pjh" path="res://texturas/cartas/Dorso_Negro_Placeholder.png" id="5_8vcxp"]
 [ext_resource type="PackedScene" uid="uid://cy5urn5n1wibs" path="res://escenas/pasivas_ui.tscn" id="5_88sux"]
+[ext_resource type="Texture2D" uid="uid://bpfn15jhr0pjh" path="res://texturas/cartas/Dorso_Negro_Placeholder.png" id="5_jxpof"]
 [ext_resource type="PackedScene" uid="uid://dbb1boixbt5v5" path="res://escenas/medidor_dia.tscn" id="6_amot7"]
 [ext_resource type="AudioStream" uid="uid://bvoqu3tloc860" path="res://audio/musica/maqueta 2.wav" id="7_hca7m"]
 
@@ -15,10 +15,10 @@ script = ExtResource("1_jtev3")
 [node name="Board" parent="." instance=ExtResource("1_gf5lf")]
 
 [node name="MazoCartas" parent="Board" index="1"]
-position = Vector2(-123, 25)
+position = Vector2(-478, 27)
 
 [node name="MazoCartasIA" parent="Board" index="2"]
-position = Vector2(-123, 25)
+position = Vector2(-484, 25)
 
 [node name="pasivasUI" parent="." instance=ExtResource("5_88sux")]
 offset_left = 1048.0
@@ -36,19 +36,19 @@ rotation = 3.14159
 cartas_ia = true
 
 [node name="TexturaCarta" parent="cartasIAI/CartaEnMano/Carta" index="0"]
-texture = ExtResource("5_8vcxp")
+texture = ExtResource("5_jxpof")
 
 [node name="TexturaCarta" parent="cartasIAI/CartaEnMano2/Carta" index="0"]
-texture = ExtResource("5_8vcxp")
+texture = ExtResource("5_jxpof")
 
 [node name="TexturaCarta" parent="cartasIAI/CartaEnMano3/Carta" index="0"]
-texture = ExtResource("5_8vcxp")
+texture = ExtResource("5_jxpof")
 
 [node name="TexturaCarta" parent="cartasIAI/CartaEnMano4/Carta" index="0"]
-texture = ExtResource("5_8vcxp")
+texture = ExtResource("5_jxpof")
 
 [node name="TexturaCarta" parent="cartasIAI/CartaEnMano5/Carta" index="0"]
-texture = ExtResource("5_8vcxp")
+texture = ExtResource("5_jxpof")
 
 [node name="medidor_locura" parent="." instance=ExtResource("4_yyiwp")]
 offset_left = 32.0
