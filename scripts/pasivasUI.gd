@@ -3,10 +3,13 @@ extends Control
 @onready var cartas_pasivas = []
 
 signal mulligan()
+signal play_sonido_carta
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	cartas_pasivas = get_children()
+	for carta in cartas_pasivas:
+		carta.carta_seleccionada.connect(_on_carta_seleccionada)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -36,3 +39,6 @@ func pasiva_activada(n : int):
 
 func _on_sacerdote_accion():
 	mulligan.emit()
+	
+func _on_carta_seleccionada():
+	play_sonido_carta.emit()

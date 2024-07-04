@@ -4,10 +4,13 @@ extends Control
 @onready var cartas = []
 @onready var mano_lista = false
 
+signal play_sonido_carta
+
 func _ready():
 	cartas = get_children()
-	if cartas_ia:
-		for i in cartas:
+	for i in cartas:
+		i.play_sonido.connect(_on_play_sonido_play_sonido_carta)
+		if cartas_ia:
 			i.mano_ia()
 
 func colocar_cartas_en_mano(mano , b_ia:bool):
@@ -28,3 +31,6 @@ func ocultar_cartas(no_jugadas : bool):
 	mano_lista = false
 	for carta in cartas:
 		carta.ocultar_carta(no_jugadas)
+
+func _on_play_sonido_play_sonido_carta():
+	play_sonido_carta.emit()

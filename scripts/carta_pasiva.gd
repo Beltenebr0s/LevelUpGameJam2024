@@ -4,6 +4,8 @@ extends Control
 
 var raton_dentro = false
 
+signal carta_seleccionada
+
 @onready var descripcion = $Carta/descripcion
 @onready var animador = $AnimationPlayer
 
@@ -29,6 +31,7 @@ func ocultar_icono():
 
 
 func _on_boton_mouse_entered():
+	carta_seleccionada.emit()
 	raton_dentro = true
 	animador.play("zoom")
 	await animador.animation_finished

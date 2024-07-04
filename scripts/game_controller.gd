@@ -16,8 +16,15 @@ var scena_menu_pausa
 @onready var pasivas_ui = $pasivasUI
 @onready var reloj = $medidor_dia
 
+@onready var sfx_audio_player = $SFX
+@export var lista_sfx_jugar_cartas : Array[AudioStreamWAV]
+@export var lista_sfx_repartir_cartas : Array[AudioStreamWAV]
+@export var sfx_cambio_turno : AudioStreamWAV
 
 func _ready():
+	mano_ui.play_sonido_carta.connect(_on_play_sonido_carta_audio_jugar_carta)
+	mano_iai.play_sonido_carta.connect(_on_play_sonido_carta_audio_jugar_carta)
+	pasivas_ui.play_sonido_carta.connect(_on_play_sonido_carta_audio_jugar_carta)
 	pasivas_ui.mulligan.connect(mulligan)
 	mazo_jugador.carta_seleccionada.connect(seleccionar_carta)
 	set_process_input(true)
@@ -133,12 +140,15 @@ func decidir_final():
 	get_tree().change_scene_to_file("res://escenas/menu_principal.tscn")
 	
 func mostrar_mano_jugador():
+	audio_repartir_mano()
 	mano_ui.colocar_cartas_en_mano(mazo_jugador.mano , false)
 
 func mostrar_mano_ia():
+	audio_repartir_mano()
 	mano_iai.colocar_cartas_en_mano(mazo_ia.mano , true)
 
 func actualizar_reloj(turno_jugador : bool):
+	audio_pasar_turno()
 	reloj.actualizar_turno(n_jugada + 1)
 	if turno_jugador:
 		reloj.hacer_de_noche()
@@ -150,3 +160,16 @@ func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().paused = true
 		scena_menu_pausa.visible = true
+
+func audio_repartir_mano():
+	sfx_audio_player.stream = lista_sfx_repartir_cartas.pick_random()
+	sfx_audio_player.play()
+func audio_jugar_carta():
+	sfx_audio_player.stream = lista_sfx_jugar_cartas.pick_random()
+	sfx_audio_player.play()
+func audio_pasar_turno():
+	sfx_audio_player.stream = sfx_cambio_turno
+	sfx_audio_player.play()
+
+func _on_play_sonido_carta_audio_jugar_carta():
+	audio_jugar_carta()

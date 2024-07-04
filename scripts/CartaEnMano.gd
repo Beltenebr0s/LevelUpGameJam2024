@@ -8,6 +8,8 @@ var carta = null
 @onready var descripcion = $Carta/descripcion/descripcion
 @onready var textura = $Carta/TexturaCarta
 
+signal play_sonido
+
 func _ready():
 	carta_oculta = true
 	$Carta.position = Vector2(0, 200)
@@ -70,6 +72,7 @@ func visibilidad_descripcion():
 
 func _on_boton_carta_mouse_entered():
 	if !carta_jugada && !carta_oculta:
+		play_sonido.emit()
 		subir_carta()
 
 func _on_boton_carta_mouse_exited():
@@ -92,6 +95,7 @@ func set_carta(_carta, b_ia:bool):
 
 func _on_boton_carta_pressed():
 	if !carta_jugada:
+		play_sonido.emit()
 		carta_jugada = true
 		mostrar_descripcion()
 		subir_carta_mas()
