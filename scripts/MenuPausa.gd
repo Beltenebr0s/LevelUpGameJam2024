@@ -2,8 +2,6 @@ extends Panel
 
 @onready var libro_abierto = $LibroAbierto
 
-@onready var escena_juego = preload("res://escenas/game.tscn")
-
 func _ready():
 	libro_abierto.visible = true
 	

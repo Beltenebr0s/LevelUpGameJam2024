@@ -8,7 +8,6 @@ var n_jugada = 0
 var mulligan_usado = false
 var menu_pause_instance: Node = null
 var scena_menu_pausa
-var escena_menu_pausa = preload("res://escenas/menu_pausa.tscn")
 @onready var mazo_jugador = $Board/MazoCartas
 @onready var mazo_ia = $Board/MazoCartasIA
 @onready var mano_ui = $cartasUI
@@ -23,6 +22,8 @@ func _ready():
 	mazo_jugador.carta_seleccionada.connect(seleccionar_carta)
 	set_process_input(true)
 	var root = get_tree().get_root()
+	ResourceLoader.load_threaded_request("res://escenas/menu_pausa.tscn")
+	var escena_menu_pausa = ResourceLoader.load_threaded_get("res://escenas/menu_pausa.tscn")
 	scena_menu_pausa = escena_menu_pausa.instantiate()
 	scena_menu_pausa.process_mode = Node.PROCESS_MODE_ALWAYS
 	root.add_child(scena_menu_pausa)
