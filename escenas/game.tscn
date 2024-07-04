@@ -42,6 +42,7 @@ offset_right = 33.0
 position = Vector2(136, 536)
 
 [node name="Musica" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
 stream = ExtResource("7_hca7m")
 autoplay = true
 
