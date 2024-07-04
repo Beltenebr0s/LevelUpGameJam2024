@@ -43,13 +43,27 @@ _data = {
 "hacer_de_noche": SubResource("Animation_c5qrq")
 }
 
-[sub_resource type="LabelSettings" id="LabelSettings_xtw8o"]
+[sub_resource type="LabelSettings" id="LabelSettings_52nu4"]
+line_spacing = 1.0
 font = ExtResource("4_dfh0x")
-font_size = 71
+font_size = 74
+font_color = Color(0.892878, 0.739471, 0.524513, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_2gfep"]
+[sub_resource type="LabelSettings" id="LabelSettings_vi3qe"]
+line_spacing = 1.0
 font = ExtResource("4_dfh0x")
-font_size = 59
+font_size = 58
+font_color = Color(0.892878, 0.739471, 0.524513, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
 
 [node name="medidor_dia" type="Node2D"]
 scale = Vector2(0.25498, 0.25498)
@@ -69,11 +83,11 @@ texture = ExtResource("3_o3xpw")
 
 [node name="Numero_turno" type="Label" parent="."]
 offset_left = 62.75
-offset_top = 54.9063
+offset_top = 50.9844
 offset_right = 117.75
-offset_bottom = 162.906
+offset_bottom = 158.984
 text = "1"
-label_settings = SubResource("LabelSettings_xtw8o")
+label_settings = SubResource("LabelSettings_52nu4")
 
 [node name="Text_turno" type="Label" parent="."]
 offset_left = -105.891
@@ -81,6 +95,6 @@ offset_top = 62.75
 offset_right = 67.1094
 offset_bottom = 166.75
 text = "Turno"
-label_settings = SubResource("LabelSettings_2gfep")
+label_settings = SubResource("LabelSettings_vi3qe")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
