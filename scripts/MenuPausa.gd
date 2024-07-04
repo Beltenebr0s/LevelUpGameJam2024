@@ -1,7 +1,6 @@
 extends Panel
 
 @onready var libro_abierto = $LibroAbierto
-@onready var tutorial = $tutorial
 
 @onready var escena_juego = preload("res://escenas/game.tscn")
 
