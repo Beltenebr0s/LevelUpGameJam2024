@@ -2,7 +2,11 @@ extends Node2D
 
 var baraja_cartas = []
 var mano = []
-signal carta_seleccionada(carta)
+var cartas_a_jugar = []
+
+@export var n_cartas_turno = 2
+
+signal cartas_seleccionadas(cartas_a_jugar)
 
 func _ready():
 	baraja_cartas = get_children()
@@ -29,8 +33,9 @@ func debug_print_valor_medio(array):
 func debug_print_array_cartas(array):
 	for carta in array:
 		print(carta.titulo)
-		
+
 func carta_jugada(carta):
-	carta_seleccionada.emit(carta)
-
-
+	cartas_a_jugar.append(carta)
+	if cartas_a_jugar.size() == n_cartas_turno:
+		cartas_seleccionadas.emit(cartas_a_jugar)
+		cartas_a_jugar = []

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b80mbbnuqe78v"]
+[gd_scene load_steps=5 format=3 uid="uid://b80mbbnuqe78v"]
 
 [ext_resource type="Script" path="res://scripts/MazoCartas.gd" id="1_pf761"]
 [ext_resource type="PackedScene" uid="uid://b47xbta5payek" path="res://escenas/carta.tscn" id="2_y5ux8"]
 [ext_resource type="Texture2D" uid="uid://bsoujiee88glm" path="res://texturas/cartas/Incenciar_Molino.jpg" id="3_4i2cr"]
+[ext_resource type="Texture2D" uid="uid://dtkhu4jup0q2u" path="res://texturas/Dorso_Azul.png" id="3_epo8x"]
 
 [node name="MazoCartas" type="Node2D"]
 script = ExtResource("1_pf761")
@@ -11,6 +12,7 @@ script = ExtResource("1_pf761")
 titulo = "Tirar petardos"
 descripcion = "Un pequeño espectáculo de pirotecnia ayudará a tu causa, privando del sueño a los vecinos."
 tipo = 1
+reutilizable = true
 valor = 15
 
 [node name="Carta2" parent="." instance=ExtResource("2_y5ux8")]
@@ -44,6 +46,7 @@ valor = 60
 titulo = "Pudrir el pan"
 descripcion = "Un poco de agua en las hogazas de pan y mañana estarán cubiertas de una deliciosa capa de moho."
 tipo = 2
+reutilizable = true
 valor = 20
 
 [node name="Carta7" parent="." instance=ExtResource("2_y5ux8")]
@@ -88,6 +91,7 @@ valor = 15
 [node name="Carta13" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "¡Defenestren a la enana!"
 descripcion = "La enana Ximiaca es muy manejable, será fácil tirarla de la torre más alta del pueblo."
+reutilizable = true
 requisitos = 20
 valor = 50
 
@@ -98,6 +102,7 @@ requisitos = 30
 valor = 60
 
 [node name="Carta15" parent="." instance=ExtResource("2_y5ux8")]
+texture = ExtResource("3_epo8x")
 titulo = "El cirujano"
 descripcion = "Los pacientes del cirujano están paranoicos, acuden a él por nimiedades. Ha deicidido que les dará motivos para contratar sus servicios."
 tipo = 2
@@ -108,6 +113,7 @@ valor = -30
 valida_ia = false
 
 [node name="Carta16" parent="." instance=ExtResource("2_y5ux8")]
+texture = ExtResource("3_epo8x")
 titulo = "El vigil"
 descripcion = "La casa del vigil ha ardido, calcinando a toda su familia. No sabe quién ha sido, pero piensa vengarse y prender fuego a todo lo que pueda.
 
@@ -120,6 +126,7 @@ valor = -20
 valida_ia = false
 
 [node name="Carta17" parent="." instance=ExtResource("2_y5ux8")]
+texture = ExtResource("3_epo8x")
 titulo = "El sacerdote"
 descripcion = "Puede que aún no tengas poder para invocar a tu dios, pero algún demonio menor puede atraer al sacerdote a tu causa."
 tipo = 3
@@ -130,6 +137,7 @@ valor = -10
 valida_ia = false
 
 [node name="Carta18" parent="." instance=ExtResource("2_y5ux8")]
+texture = ExtResource("3_epo8x")
 titulo = "El caballero maldito"
 descripcion = "El norte y lucero de la caballería oculta una maldición. Aquel que no puede perder la vida, acaba perdiendo el alma. Si los vecinos se enteran de su condición, no vivirán tranquilos a su lado."
 funcion = 1
@@ -146,6 +154,7 @@ valor = 25
 [node name="Carta20" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "Amanece, que no es poco"
 descripcion = "El pueblo tiene un amanecer precioso. Sería una lástima que, tras tan catastróficas desdichas, el sol saliese por el oeste."
+reutilizable = true
 requisitos = 120
 valor = 150
 valida_ia = false
