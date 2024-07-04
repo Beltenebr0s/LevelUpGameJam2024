@@ -20,8 +20,8 @@ position = Vector2(-123, 25)
 position = Vector2(-123, 25)
 
 [node name="pasivasUI" parent="." instance=ExtResource("5_88sux")]
-offset_left = 880.0
-offset_right = 880.0
+offset_left = 1048.0
+offset_right = 1048.0
 offset_bottom = 48.0
 
 [node name="cartasUI" parent="." instance=ExtResource("3_nj2pg")]

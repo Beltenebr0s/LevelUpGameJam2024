@@ -4,14 +4,14 @@ extends Control
 
 var raton_dentro = false
 
-@onready var descripcion = $descripcion
+@onready var descripcion = $Carta/descripcion
 @onready var animador = $AnimationPlayer
 
 signal accion()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$descripcion/TextEdit.text = texto_descripcion
+	$Carta/descripcion/TextEdit.text = texto_descripcion
 	visible = false
 	descripcion.visible = false
 	pass
