@@ -83,10 +83,11 @@ func actualizar_descripcion():
 	self.titulo.text = self.carta.titulo
 	self.descripcion.text = self.carta.descripcion
 
-func set_carta(_carta):
+func set_carta(_carta, b_ia:bool):
 	carta_jugada = false
 	self.carta = _carta
-	actualizar_sprite()
+	if(!b_ia):
+		actualizar_sprite()
 	actualizar_descripcion()
 
 func _on_boton_carta_pressed():

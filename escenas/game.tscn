@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://ddmxbpwae2x3s"]
+[gd_scene load_steps=9 format=3 uid="uid://ddmxbpwae2x3s"]
 
 [ext_resource type="PackedScene" uid="uid://0k1iv56f0qty" path="res://escenas/board.tscn" id="1_gf5lf"]
 [ext_resource type="Script" path="res://scripts/game_controller.gd" id="1_jtev3"]
 [ext_resource type="PackedScene" uid="uid://bgmop8u4t4stj" path="res://escenas/card_ui.tscn" id="3_nj2pg"]
 [ext_resource type="PackedScene" uid="uid://cu4ruf7b0vci4" path="res://escenas/medidor_locura.tscn" id="4_yyiwp"]
+[ext_resource type="Texture2D" uid="uid://bpfn15jhr0pjh" path="res://texturas/cartas/Dorso_Negro_Placeholder.png" id="5_8vcxp"]
 [ext_resource type="PackedScene" uid="uid://cy5urn5n1wibs" path="res://escenas/pasivas_ui.tscn" id="5_88sux"]
 [ext_resource type="PackedScene" uid="uid://dbb1boixbt5v5" path="res://escenas/medidor_dia.tscn" id="6_amot7"]
 [ext_resource type="AudioStream" uid="uid://bvoqu3tloc860" path="res://audio/musica/maqueta 2.wav" id="7_hca7m"]
@@ -34,6 +35,21 @@ offset_bottom = 648.0
 rotation = 3.14159
 cartas_ia = true
 
+[node name="TexturaCarta" parent="cartasIAI/CartaEnMano/Carta" index="0"]
+texture = ExtResource("5_8vcxp")
+
+[node name="TexturaCarta" parent="cartasIAI/CartaEnMano2/Carta" index="0"]
+texture = ExtResource("5_8vcxp")
+
+[node name="TexturaCarta" parent="cartasIAI/CartaEnMano3/Carta" index="0"]
+texture = ExtResource("5_8vcxp")
+
+[node name="TexturaCarta" parent="cartasIAI/CartaEnMano4/Carta" index="0"]
+texture = ExtResource("5_8vcxp")
+
+[node name="TexturaCarta" parent="cartasIAI/CartaEnMano5/Carta" index="0"]
+texture = ExtResource("5_8vcxp")
+
 [node name="medidor_locura" parent="." instance=ExtResource("4_yyiwp")]
 offset_left = 32.0
 offset_right = 33.0
@@ -47,3 +63,9 @@ stream = ExtResource("7_hca7m")
 autoplay = true
 
 [editable path="Board"]
+[editable path="cartasIAI"]
+[editable path="cartasIAI/CartaEnMano"]
+[editable path="cartasIAI/CartaEnMano2"]
+[editable path="cartasIAI/CartaEnMano3"]
+[editable path="cartasIAI/CartaEnMano4"]
+[editable path="cartasIAI/CartaEnMano5"]

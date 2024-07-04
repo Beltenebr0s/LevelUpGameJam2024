@@ -10,11 +10,11 @@ func _ready():
 		for i in cartas:
 			i.mano_ia()
 
-func colocar_cartas_en_mano(mano):
+func colocar_cartas_en_mano(mano , b_ia:bool):
 	ocultar_cartas(false)
 	var n = mano.size()
 	for i in range(n):
-		cartas[i].set_carta(mano[i])
+		cartas[i].set_carta(mano[i] , b_ia)
 	mostrar_cartas()
 	mano_lista = true
 

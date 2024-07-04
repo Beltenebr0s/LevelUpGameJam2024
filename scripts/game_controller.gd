@@ -132,10 +132,10 @@ func decidir_final():
 	get_tree().change_scene_to_file("res://escenas/menu_principal.tscn")
 	
 func mostrar_mano_jugador():
-	mano_ui.colocar_cartas_en_mano(mazo_jugador.mano)
+	mano_ui.colocar_cartas_en_mano(mazo_jugador.mano , false)
 
 func mostrar_mano_ia():
-	mano_iai.colocar_cartas_en_mano(mazo_ia.mano)
+	mano_iai.colocar_cartas_en_mano(mazo_ia.mano , true)
 
 func actualizar_reloj(turno_jugador : bool):
 	reloj.actualizar_turno(n_jugada + 1)
