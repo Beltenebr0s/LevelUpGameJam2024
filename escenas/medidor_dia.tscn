@@ -1,0 +1,83 @@
+[gd_scene load_steps=9 format=3 uid="uid://dbb1boixbt5v5"]
+
+[ext_resource type="Script" path="res://scripts/medidor_dia.gd" id="1_fwu2d"]
+[ext_resource type="Texture2D" uid="uid://cl13gp3kxrvkv" path="res://texturas/Dia_Noche.png" id="2_wgrq2"]
+[ext_resource type="Texture2D" uid="uid://cr7whcox2ailx" path="res://texturas/Indicador_Turnos.png" id="3_o3xpw"]
+
+[sub_resource type="Animation" id="Animation_c5qrq"]
+resource_name = "hacer_de_noche"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dial:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [-3.14159, -6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_xsmty"]
+resource_name = "hacer_de_dia"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dial:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [0.0, -3.14159]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5qbub"]
+_data = {
+"hacer_de_dia": SubResource("Animation_xsmty"),
+"hacer_de_noche": SubResource("Animation_c5qrq")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_xtw8o"]
+font_size = 63
+
+[sub_resource type="LabelSettings" id="LabelSettings_2gfep"]
+font_size = 52
+
+[node name="medidor_dia" type="Node2D"]
+scale = Vector2(0.25498, 0.25498)
+script = ExtResource("1_fwu2d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5qbub")
+}
+
+[node name="Dial" type="Sprite2D" parent="."]
+rotation = -3.14159
+texture = ExtResource("2_wgrq2")
+
+[node name="Marco" type="Sprite2D" parent="."]
+texture = ExtResource("3_o3xpw")
+
+[node name="Numero_turno" type="Label" parent="."]
+offset_left = 66.6719
+offset_top = 66.6719
+offset_right = 121.672
+offset_bottom = 160.672
+text = "5"
+label_settings = SubResource("LabelSettings_xtw8o")
+
+[node name="Text_turno" type="Label" parent="."]
+offset_left = -113.734
+offset_top = 70.5938
+offset_right = 51.2656
+offset_bottom = 152.594
+text = "Turno"
+label_settings = SubResource("LabelSettings_2gfep")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

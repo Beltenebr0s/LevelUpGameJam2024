@@ -68,11 +68,11 @@ func visibilidad_descripcion():
 		ocultar_descripción()
 
 func _on_boton_carta_mouse_entered():
-	if !carta_jugada:
+	if !carta_jugada && !carta_oculta:
 		subir_carta()
 
 func _on_boton_carta_mouse_exited():
-	if !carta_jugada:
+	if !carta_jugada && !carta_oculta:
 		bajar_carta()
 	
 func actualizar_descripcion():

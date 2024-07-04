@@ -132,7 +132,7 @@ libraries = {
 
 [node name="Carta" parent="." instance=ExtResource("2_e66ig")]
 position = Vector2(0, -86)
-scale = Vector2(0.138138, 0.138138)
+scale = Vector2(0.162162, 0.162162)
 titulo = "Bea mola"
 descripcion = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
 

@@ -12,6 +12,9 @@ var mulligan_usado = false
 @onready var mano_iai = $cartasIAI
 @onready var medidor_locura = $medidor_locura
 @onready var pasivas_ui = $pasivasUI
+@onready var reloj = $medidor_dia
+
+
 func _ready():
 	pasivas_ui.mulligan.connect(mulligan)
 	mazo_jugador.carta_seleccionada.connect(seleccionar_carta)
@@ -30,25 +33,28 @@ func _process(delta):
 func inicar_juego():
 	pasivas_ui.desactivar(-1)
 	while (n_jugada < n_max_jugadas):
+		await iniciar_turno()
 		await jugar_turno()
+		await actualizar_reloj(false)
+		await jugada_ia()
 		n_jugada = n_jugada+1    
 	decidir_final()
-		
-	
-func jugar_turno():
-	print("Nuevo turno: ", n_jugada)
+
+func iniciar_turno():
 	mulligan_usado = false
+	await actualizar_reloj(true)
+	print("Nuevo turno: ", n_jugada)
 	crear_manos()
+
+func jugar_turno():
 	print("Mano del jugador:")
 	mostrar_mano_jugador()
 	print("		- espero a la jugada")
 	await mazo_jugador.carta_seleccionada
-	mano_ui.ocultar_cartas(true)
 	print("		- jugada realizada")
 	aplicar_efecto_carta(true)
 	await get_tree().create_timer(2.0).timeout
 	mano_ui.ocultar_cartas(false)
-	await jugada_ia()
 	
 func crear_manos():
 	mazo_jugador.barajar_cartas(5, medidor_locura.value, false)
@@ -57,6 +63,7 @@ func crear_manos():
 func seleccionar_carta(carta):
 	selected_card = carta
 	print("		- Carta seleccionada por el jugador:", selected_card.titulo)
+	mano_ui.ocultar_cartas(true)
 
 func jugada_ia():
 	mostrar_mano_ia()
@@ -120,3 +127,11 @@ func mostrar_mano_jugador():
 
 func mostrar_mano_ia():
 	mano_iai.colocar_cartas_en_mano(mazo_ia.mano)
+
+func actualizar_reloj(turno_jugador : bool):
+	reloj.actualizar_turno(n_jugada)
+	if turno_jugador:
+		reloj.hacer_de_noche()
+	else:
+		reloj.hacer_de_dia()
+	await reloj.animation_finished
