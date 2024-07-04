@@ -1,8 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhmjeb0ta4p58"]
+[gd_scene load_steps=7 format=3 uid="uid://bhmjeb0ta4p58"]
 
 [ext_resource type="Script" path="res://scripts/carta_pasiva.gd" id="2_kbbva"]
 [ext_resource type="PackedScene" uid="uid://b47xbta5payek" path="res://escenas/carta.tscn" id="2_m2n4f"]
 [ext_resource type="Texture2D" uid="uid://dtkhu4jup0q2u" path="res://texturas/Dorso_Azul.png" id="3_xfggq"]
+
+[sub_resource type="Animation" id="Animation_gs28s"]
+resource_name = "zoom"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Carta:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector2(0.144144, 0.142179), Vector2(0.159159, 0.156989)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7i82w"]
+_data = {
+"zoom": SubResource("Animation_gs28s")
+}
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_vsbf5"]
 
@@ -15,10 +36,24 @@ offset_right = 48.0
 offset_bottom = 66.0
 script = ExtResource("2_kbbva")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7i82w")
+}
+
 [node name="Boton" type="Button" parent="."]
-layout_mode = 0
-offset_right = 96.0
-offset_bottom = 133.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -66.5
+offset_right = 48.0
+offset_bottom = 66.5
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Carta" parent="." instance=ExtResource("2_m2n4f")]
 position = Vector2(48, 67)

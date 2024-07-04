@@ -129,7 +129,7 @@ func mostrar_mano_ia():
 	mano_iai.colocar_cartas_en_mano(mazo_ia.mano)
 
 func actualizar_reloj(turno_jugador : bool):
-	reloj.actualizar_turno(n_jugada)
+	reloj.actualizar_turno(n_jugada + 1)
 	if turno_jugador:
 		reloj.hacer_de_noche()
 	else:
