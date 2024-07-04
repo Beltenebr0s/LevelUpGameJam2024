@@ -6,6 +6,9 @@ var ai_selected_card_in_hand = null
 var n_max_jugadas = 6
 var n_jugada = 0
 var mulligan_usado = false
+var menu_pause_instance: Node = null
+var scena_menu_pausa
+var escena_menu_pausa = preload("res://escenas/menu_pausa.tscn")
 @onready var mazo_jugador = $Board/MazoCartas
 @onready var mazo_ia = $Board/MazoCartasIA
 @onready var mano_ui = $cartasUI
@@ -18,6 +21,12 @@ var mulligan_usado = false
 func _ready():
 	pasivas_ui.mulligan.connect(mulligan)
 	mazo_jugador.carta_seleccionada.connect(seleccionar_carta)
+	set_process_input(true)
+	var root = get_tree().get_root()
+	scena_menu_pausa = escena_menu_pausa.instantiate()
+	scena_menu_pausa.process_mode = Node.PROCESS_MODE_ALWAYS
+	root.add_child(scena_menu_pausa)
+	scena_menu_pausa.visible = false
 	inicar_juego()
 
 func _process(delta):
@@ -135,3 +144,8 @@ func actualizar_reloj(turno_jugador : bool):
 	else:
 		reloj.hacer_de_dia()
 	await reloj.animation_finished
+
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().paused = true
+		scena_menu_pausa.visible = true
