@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://ox8ij1qdjkkh"]
 
 [ext_resource type="Script" path="res://CartaEnMano.gd" id="1_0wtpl"]
-[ext_resource type="PackedScene" uid="uid://b47xbta5payek" path="res://escenas/carta.tscn" id="2_e66ig"]
+[ext_resource type="Texture2D" uid="uid://cn3c3uw325306" path="res://texturas/Dorso_Rojo.png" id="2_vg7fl"]
 [ext_resource type="LabelSettings" uid="uid://begwl5binonky" path="res://Fuentes/titulo_cartas.tres" id="3_fhwxm"]
 [ext_resource type="LabelSettings" uid="uid://dt1tfgdc64y" path="res://Fuentes/texto_cartas.tres" id="4_wfu54"]
 
@@ -128,8 +128,9 @@ libraries = {
 
 [node name="Carta" type="Sprite2D" parent="."]
 
-[node name="Carta" parent="Carta" instance=ExtResource("2_e66ig")]
+[node name="TexturaCarta" type="Sprite2D" parent="Carta"]
 scale = Vector2(0.162162, 0.162162)
+texture = ExtResource("2_vg7fl")
 
 [node name="BotonCarta" type="TextureButton" parent="Carta"]
 offset_left = -54.0

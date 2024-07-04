@@ -4,6 +4,5 @@
 [ext_resource type="Script" path="res://scripts/Carta.gd" id="2_dshxt"]
 
 [node name="Carta" type="Sprite2D"]
-scale = Vector2(0.216216, 0.216216)
 texture = ExtResource("1_bjw4y")
 script = ExtResource("2_dshxt")

@@ -10,8 +10,9 @@ enum TipoCarta { CABALLERO, VIGIL, CIRUJANO, SACERDOTE }
 @export var desbloquea_pasiva : bool
 @export var requisitos : int
 @export var valor : int
-@onready var carta_usada : bool = false
 @export var valida_ia: bool = true
+
+@onready var carta_usada : bool = false
 
 signal jugar_carta(carta)
 
@@ -19,7 +20,8 @@ func iniciar_carta():
 	self.carta_usada = false
 
 func jugar():
-	self.carta_usada = true
+	if !reutilizable:
+		self.carta_usada = true
 	jugar_carta.emit(self)
 	
 func es_jugable(nivel_locura : int, b_ia : bool):

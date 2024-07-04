@@ -2,14 +2,15 @@ extends Control
 
 var carta_jugada = false
 var carta_oculta = false
-@onready var animation_player = $AnimationPlayer
-@onready var carta = $Carta
+var carta = null
+@onready var animation_player = $AnimationPlayer 
 @onready var titulo = $Carta/descripcion/titulo
 @onready var descripcion = $Carta/descripcion/descripcion
+@onready var textura = $Carta/TexturaCarta
 
 func _ready():
 	carta_oculta = true
-	carta.position = Vector2(0, 200)
+	$Carta.position = Vector2(0, 200)
 	ocultar_descripción()
 
 func mano_ia():
@@ -74,7 +75,10 @@ func _on_boton_carta_mouse_entered():
 func _on_boton_carta_mouse_exited():
 	if !carta_jugada && !carta_oculta:
 		bajar_carta()
-	
+
+func actualizar_sprite():
+	textura.texture = carta.texture
+
 func actualizar_descripcion():
 	self.titulo.text = self.carta.titulo
 	self.descripcion.text = self.carta.descripcion
@@ -82,6 +86,7 @@ func actualizar_descripcion():
 func set_carta(_carta):
 	carta_jugada = false
 	self.carta = _carta
+	actualizar_sprite()
 	actualizar_descripcion()
 
 func _on_boton_carta_pressed():
