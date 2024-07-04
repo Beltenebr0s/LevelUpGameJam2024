@@ -1,15 +1,51 @@
-[gd_scene load_steps=8 format=3 uid="uid://byeqj6jd7r2vl"]
+[gd_scene load_steps=28 format=3 uid="uid://byeqj6jd7r2vl"]
 
 [ext_resource type="Script" path="res://scripts/MenuPrincipal.gd" id="1_xdxr6"]
-[ext_resource type="Texture2D" uid="uid://0bettd6a02js" path="res://texturas/placeholder/libro_cerrado.png" id="2_ege76"]
+[ext_resource type="Texture2D" uid="uid://qs6p1bua650d" path="res://texturas/menus/libro_abierto_info.png" id="2_56m1p"]
 [ext_resource type="PackedScene" uid="uid://blxd0lf0072de" path="res://escenas/panel_menu.tscn" id="2_rx15a"]
+[ext_resource type="Texture2D" uid="uid://e3j3u4mjg7ij" path="res://texturas/menus/conf_abierto.png" id="3_8ghbx"]
+[ext_resource type="Texture2D" uid="uid://dpapmirwd714k" path="res://texturas/menus/boton_creditos.png" id="3_530hg"]
 [ext_resource type="Texture2D" uid="uid://cfdf68gf38qpm" path="res://icon.svg" id="3_gtpdf"]
+[ext_resource type="Texture2D" uid="uid://b332yv2t8kynt" path="res://texturas/menus/libro_cerrado.png" id="5_ic5la"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekryt"]
-bg_color = Color(0.908176, 0.766672, 0.0279374, 1)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gt4ad"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oms4q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qebxr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ewe8s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8123l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c4df0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8rvck"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5igvk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jcm7g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ux34v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3q2n1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2t631"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rmpmb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jxng8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vhfoi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mqjlx"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nye3j"]
 font_size = 25
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i5bd0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a5c2x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i5yx5"]
 bg_color = Color(0.974582, 0.327121, 0.557629, 1)
@@ -18,11 +54,17 @@ bg_color = Color(0.974582, 0.327121, 0.557629, 1)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 37.0
+offset_top = 47.0
+offset_right = -27.0
+offset_bottom = -71.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_gt4ad")
 script = ExtResource("1_xdxr6")
 
 [node name="LibroAbierto" type="Panel" parent="."]
+z_index = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -35,70 +77,115 @@ offset_right = 441.0
 offset_bottom = 283.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ekryt")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_oms4q")
+
+[node name="TextureRect" type="TextureRect" parent="LibroAbierto"]
+z_index = -1
+layout_mode = 0
+offset_left = -62.0
+offset_top = 3.0
+offset_right = 983.0
+offset_bottom = 595.0
+texture = ExtResource("2_56m1p")
+expand_mode = 3
 
 [node name="PaginaIzquierda" type="Panel" parent="LibroAbierto"]
+z_index = 2
 layout_mode = 0
-offset_right = 452.0
-offset_bottom = 568.0
+offset_left = -64.0
+offset_top = 17.0
+offset_right = 468.0
+offset_bottom = 580.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_qebxr")
 
 [node name="Play" type="Button" parent="LibroAbierto/PaginaIzquierda"]
+z_index = 3
 layout_mode = 0
-offset_left = 140.0
-offset_top = 81.0
-offset_right = 305.0
-offset_bottom = 146.0
+offset_left = 185.0
+offset_top = 171.0
+offset_right = 350.0
+offset_bottom = 236.0
 text = "JUGAR"
 
 [node name="Settings" type="Button" parent="LibroAbierto/PaginaIzquierda"]
+z_index = -10
 layout_mode = 0
-offset_left = 140.0
-offset_top = 187.0
-offset_right = 305.0
-offset_bottom = 252.0
-text = "SETTINGS"
+offset_left = 799.0
+offset_top = 20.0
+offset_right = 1096.0
+offset_bottom = 224.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ewe8s")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8123l")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_c4df0")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_8rvck")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5igvk")
+icon = ExtResource("3_8ghbx")
+expand_icon = true
 
 [node name="Credits" type="Button" parent="LibroAbierto/PaginaIzquierda"]
+z_index = 3
 layout_mode = 0
-offset_left = 140.0
-offset_top = 289.0
-offset_right = 305.0
-offset_bottom = 354.0
-text = "CREDITS"
+offset_left = 309.0
+offset_top = 528.0
+offset_right = 479.0
+offset_bottom = 604.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jcm7g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ux34v")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3q2n1")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_2t631")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rmpmb")
+text = "
+"
+icon = ExtResource("3_530hg")
+expand_icon = true
 
 [node name="Exit" type="Button" parent="LibroAbierto/PaginaIzquierda"]
+z_index = 3
 layout_mode = 0
-offset_left = 140.0
-offset_top = 401.0
-offset_right = 305.0
-offset_bottom = 466.0
+offset_left = 186.0
+offset_top = 269.0
+offset_right = 351.0
+offset_bottom = 334.0
 text = "SALIR :("
 
 [node name="PaginaDerecha" type="Panel" parent="LibroAbierto"]
+z_index = 1
 layout_mode = 0
-offset_left = 452.0
-offset_right = 905.0
-offset_bottom = 566.0
+offset_left = 460.0
+offset_top = 55.0
+offset_right = 915.0
+offset_bottom = 545.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_jxng8")
 
 [node name="Settings" parent="LibroAbierto/PaginaDerecha" instance=ExtResource("2_rx15a")]
-visible = false
 layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
-offset_right = 406.0
-offset_bottom = 526.0
+offset_right = 464.0
+offset_bottom = 505.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vhfoi")
 
 [node name="Titulo" parent="LibroAbierto/PaginaDerecha/Settings" index="0"]
+offset_left = 25.0
+offset_top = 15.0
+offset_right = 429.0
+offset_bottom = 83.0
 text = "AJUSTES"
 
 [node name="Final" parent="LibroAbierto/PaginaDerecha" instance=ExtResource("2_rx15a")]
+visible = false
 layout_mode = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 406.0
-offset_bottom = 526.0
+offset_left = -1.0
+offset_top = -5.0
+offset_right = 458.0
+offset_bottom = 514.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_mqjlx")
 
 [node name="Titulo" parent="LibroAbierto/PaginaDerecha/Final" index="0"]
+offset_left = 25.0
+offset_top = 41.0
+offset_right = 429.0
+offset_bottom = 109.0
 text = "ME CAGO EN EL MISTERIO"
 
 [node name="Score" type="Label" parent="LibroAbierto/PaginaDerecha/Final"]
@@ -170,20 +257,25 @@ texture = ExtResource("3_gtpdf")
 [node name="Credits" parent="LibroAbierto/PaginaDerecha" instance=ExtResource("2_rx15a")]
 visible = false
 layout_mode = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 406.0
-offset_bottom = 526.0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 451.0
+offset_bottom = 495.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_i5bd0")
 
 [node name="Titulo" parent="LibroAbierto/PaginaDerecha/Credits" index="0"]
+offset_left = 31.0
+offset_top = 20.0
+offset_right = 435.0
+offset_bottom = 88.0
 text = "CRÉDITOS"
 
 [node name="SeccionArte" type="Label" parent="LibroAbierto/PaginaDerecha/Credits"]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 72.0
-offset_right = 213.0
-offset_bottom = 100.0
+offset_left = 51.0
+offset_top = 85.0
+offset_right = 240.0
+offset_bottom = 113.0
 text = "ARTE"
 
 [node name="TextoArte" type="RichTextLabel" parent="LibroAbierto/PaginaDerecha/Credits/SeccionArte"]
@@ -197,10 +289,10 @@ Nubi"
 
 [node name="SeccionProgramacion" type="Label" parent="LibroAbierto/PaginaDerecha/Credits"]
 layout_mode = 0
-offset_left = 23.0
-offset_top = 198.0
-offset_right = 212.0
-offset_bottom = 226.0
+offset_left = 50.0
+offset_top = 211.0
+offset_right = 239.0
+offset_bottom = 239.0
 text = "PROGRAMACIÓN"
 
 [node name="TextoProgramacion" type="RichTextLabel" parent="LibroAbierto/PaginaDerecha/Credits/SeccionProgramacion"]
@@ -216,10 +308,10 @@ Bea
 
 [node name="SeccionSonido" type="Label" parent="LibroAbierto/PaginaDerecha/Credits"]
 layout_mode = 0
-offset_left = 26.0
-offset_top = 356.0
-offset_right = 215.0
-offset_bottom = 384.0
+offset_left = 53.0
+offset_top = 369.0
+offset_right = 242.0
+offset_bottom = 397.0
 text = "SONIDO
 "
 
@@ -244,7 +336,7 @@ offset_right = 219.0
 offset_bottom = 283.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_i5yx5")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_a5c2x")
 
 [node name="Fondo" type="TextureRect" parent="LibroCerrado"]
 layout_mode = 1
@@ -253,22 +345,22 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -291.0
-offset_top = -470.0
-offset_right = 1463.0
-offset_bottom = 2010.0
+offset_left = -240.0
+offset_top = -305.0
+offset_right = 1137.0
+offset_bottom = 1495.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.35, 0.35)
-texture = ExtResource("2_ege76")
+texture = ExtResource("5_ic5la")
 
-[node name="TituloJuego" type="Button" parent="LibroCerrado"]
+[node name="TituloJuego" type="TextureButton" parent="LibroCerrado"]
+z_index = 1
 layout_mode = 0
-offset_left = 52.0
-offset_top = -4.0
-offset_right = 450.0
-offset_bottom = 512.0
-text = "Título del juego"
+offset_left = 37.0
+offset_top = 9.0
+offset_right = 408.0
+offset_bottom = 548.0
 
 [node name="tutorial" type="Panel" parent="."]
 visible = false
