@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" path="res://CartaEnMano.gd" id="1_0wtpl"]
 [ext_resource type="PackedScene" uid="uid://b47xbta5payek" path="res://escenas/carta.tscn" id="2_e66ig"]
+[ext_resource type="LabelSettings" uid="uid://begwl5binonky" path="res://Fuentes/titulo_cartas.tres" id="3_fhwxm"]
+[ext_resource type="LabelSettings" uid="uid://dt1tfgdc64y" path="res://Fuentes/texto_cartas.tres" id="4_wfu54"]
 
 [sub_resource type="Animation" id="Animation_dea5w"]
 length = 0.001
@@ -110,12 +112,6 @@ _data = {
 "subir_carta_mas": SubResource("Animation_j8v1y")
 }
 
-[sub_resource type="LabelSettings" id="LabelSettings_wv4o7"]
-font_size = 250
-
-[sub_resource type="LabelSettings" id="LabelSettings_kbo2h"]
-font_size = 180
-
 [node name="CartaEnMano" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -130,23 +126,22 @@ libraries = {
 "": SubResource("AnimationLibrary_dhyg4")
 }
 
-[node name="Carta" parent="." instance=ExtResource("2_e66ig")]
+[node name="Carta" type="Sprite2D" parent="."]
+
+[node name="Carta" parent="Carta" instance=ExtResource("2_e66ig")]
 scale = Vector2(0.162162, 0.162162)
-titulo = "Bea mola"
-descripcion = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
 
 [node name="BotonCarta" type="TextureButton" parent="Carta"]
-offset_left = -334.0
-offset_top = -453.0
-offset_right = 333.0
-offset_bottom = 953.0
+offset_left = -54.0
+offset_top = -75.0
+offset_right = 54.0
+offset_bottom = 204.0
 
 [node name="descripcion" type="Control" parent="Carta"]
 layout_mode = 3
 anchors_preset = 0
-offset_top = -564.25
-offset_bottom = -564.25
-scale = Vector2(0.5, 0.390244)
+offset_top = -75.0
+offset_bottom = -75.0
 
 [node name="titulo" type="Label" parent="Carta/descripcion"]
 layout_mode = 1
@@ -155,15 +150,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -1480.0
-offset_top = -1325.0
-offset_right = 1500.0
-offset_bottom = -983.0
+offset_left = -110.0
+offset_top = -170.0
+offset_right = 110.0
+offset_bottom = -128.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-text = "Titulo guachi "
-label_settings = SubResource("LabelSettings_wv4o7")
+text = "Titulo guachi"
+label_settings = ExtResource("3_fhwxm")
 horizontal_alignment = 1
 
 [node name="descripcion" type="Label" parent="Carta/descripcion"]
@@ -173,14 +168,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -1517.0
-offset_top = -913.0
-offset_right = 1549.0
-offset_bottom = 225.0
+offset_left = -110.0
+offset_top = -130.0
+offset_right = 110.0
+offset_bottom = 6.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor. Una olla de algo más vaca que carnero, salpicón las más noches, duelos y quebrantos los sábados, lentejas los viernes, algún palomino de añadidura los domingos, consumían las tres partes de su hacienda. "
-label_settings = SubResource("LabelSettings_kbo2h")
+label_settings = ExtResource("4_wfu54")
+horizontal_alignment = 1
 autowrap_mode = 2
 clip_text = true
 

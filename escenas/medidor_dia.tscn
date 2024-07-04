@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dbb1boixbt5v5"]
+[gd_scene load_steps=10 format=3 uid="uid://dbb1boixbt5v5"]
 
 [ext_resource type="Script" path="res://scripts/medidor_dia.gd" id="1_fwu2d"]
 [ext_resource type="Texture2D" uid="uid://cl13gp3kxrvkv" path="res://texturas/Dia_Noche.png" id="2_wgrq2"]
 [ext_resource type="Texture2D" uid="uid://cr7whcox2ailx" path="res://texturas/Indicador_Turnos.png" id="3_o3xpw"]
+[ext_resource type="FontFile" uid="uid://b0jqr7aj1vrop" path="res://DarumadropOne-Regular.ttf" id="4_dfh0x"]
 
 [sub_resource type="Animation" id="Animation_c5qrq"]
 resource_name = "hacer_de_noche"
@@ -43,10 +44,12 @@ _data = {
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_xtw8o"]
-font_size = 63
+font = ExtResource("4_dfh0x")
+font_size = 71
 
 [sub_resource type="LabelSettings" id="LabelSettings_2gfep"]
-font_size = 52
+font = ExtResource("4_dfh0x")
+font_size = 59
 
 [node name="medidor_dia" type="Node2D"]
 scale = Vector2(0.25498, 0.25498)
@@ -65,18 +68,18 @@ texture = ExtResource("2_wgrq2")
 texture = ExtResource("3_o3xpw")
 
 [node name="Numero_turno" type="Label" parent="."]
-offset_left = 66.6719
-offset_top = 66.6719
-offset_right = 121.672
-offset_bottom = 160.672
-text = "5"
+offset_left = 62.75
+offset_top = 54.9063
+offset_right = 117.75
+offset_bottom = 162.906
+text = "1"
 label_settings = SubResource("LabelSettings_xtw8o")
 
 [node name="Text_turno" type="Label" parent="."]
-offset_left = -113.734
-offset_top = 70.5938
-offset_right = 51.2656
-offset_bottom = 152.594
+offset_left = -105.891
+offset_top = 62.75
+offset_right = 67.1094
+offset_bottom = 166.75
 text = "Turno"
 label_settings = SubResource("LabelSettings_2gfep")
 
