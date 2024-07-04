@@ -60,11 +60,13 @@ texture = ExtResource("5_jxpof")
 texture = ExtResource("5_jxpof")
 
 [node name="medidor_locura" parent="." instance=ExtResource("4_yyiwp")]
-offset_left = 32.0
-offset_right = 33.0
+offset_left = 16.0
+offset_right = 208.0
+offset_bottom = 1064.0
+scale = Vector2(0.458087, 0.458087)
 
 [node name="medidor_dia" parent="." instance=ExtResource("6_amot7")]
-position = Vector2(136, 536)
+position = Vector2(96, 560)
 
 [node name="Musica" type="AudioStreamPlayer2D" parent="."]
 process_mode = 3

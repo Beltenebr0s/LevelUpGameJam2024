@@ -74,8 +74,8 @@ func jugar_turno():
 	mano_ui.ocultar_cartas(false)
 	
 func crear_manos():
-	mazo_jugador.barajar_cartas(5, medidor_locura.value, false)
-	mazo_ia.barajar_cartas(5, medidor_locura.value, true)
+	mazo_jugador.barajar_cartas(5, medidor_locura.locos, false)
+	mazo_ia.barajar_cartas(5, medidor_locura.locos, true)
 
 func seleccionar_carta(carta):
 	selected_card = carta
@@ -135,7 +135,7 @@ func mulligan():
 func decidir_final():
 	print("Fin del juego")
 	n_jugada = 0
-	Global.puntos_locura = medidor_locura.value
+	Global.puntos_locura = medidor_locura.locos
 	Global.b_first_game = false
 	get_tree().change_scene_to_file("res://escenas/menu_principal.tscn")
 	
