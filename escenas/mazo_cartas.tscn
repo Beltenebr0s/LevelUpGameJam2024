@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b80mbbnuqe78v"]
+[gd_scene load_steps=4 format=3 uid="uid://b80mbbnuqe78v"]
 
 [ext_resource type="Script" path="res://scripts/MazoCartas.gd" id="1_pf761"]
 [ext_resource type="PackedScene" uid="uid://b47xbta5payek" path="res://escenas/carta.tscn" id="2_y5ux8"]
+[ext_resource type="Texture2D" uid="uid://bsoujiee88glm" path="res://texturas/cartas/Incenciar_Molino.jpg" id="3_4i2cr"]
 
 [node name="MazoCartas" type="Node2D"]
 script = ExtResource("1_pf761")
@@ -19,6 +20,7 @@ tipo = 1
 valor = 25
 
 [node name="Carta3" parent="." instance=ExtResource("2_y5ux8")]
+texture = ExtResource("3_4i2cr")
 titulo = "Quemar molino"
 descripcion = "Se pronostica un invierno especialmente frío y duro. Prender fuego a las reservas de harina y trigo del pueblo minará la moral de los habitantes."
 tipo = 1
