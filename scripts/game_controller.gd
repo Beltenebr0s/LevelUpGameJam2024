@@ -48,6 +48,7 @@ func _process(delta):
 		pasivas_ui.activar(3)
 
 func inicar_juego():
+	Global.cartas_jugadas = []
 	pasivas_ui.desactivar(-1)
 	while (n_jugada < n_max_jugadas):
 		await iniciar_turno()
@@ -80,6 +81,7 @@ func crear_manos():
 func seleccionar_carta(carta):
 	selected_card = carta
 	print("		- Carta seleccionada por el jugador:", selected_card.titulo)
+	Global.cartas_jugadas.append(selected_card.titulo)
 	mano_ui.ocultar_cartas(true)
 
 func jugada_ia():

@@ -158,6 +158,7 @@ offset_bottom = 545.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_jxng8")
 
 [node name="Settings" parent="LibroAbierto/PaginaDerecha" instance=ExtResource("2_rx15a")]
+visible = false
 layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
@@ -173,7 +174,6 @@ offset_bottom = 83.0
 text = "AJUSTES"
 
 [node name="Final" parent="LibroAbierto/PaginaDerecha" instance=ExtResource("2_rx15a")]
-visible = false
 layout_mode = 0
 offset_left = -1.0
 offset_top = -5.0
@@ -252,7 +252,21 @@ offset_bottom = 555.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.35, 0.35)
-texture = ExtResource("3_gtpdf")
+
+[node name="Historia" type="Label" parent="LibroAbierto/PaginaDerecha/Final"]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 109.0
+offset_right = 257.0
+offset_bottom = 132.0
+text = "Historia"
+
+[node name="TextoHistoria" type="RichTextLabel" parent="LibroAbierto/PaginaDerecha/Final/Historia"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 30.0
+offset_right = 309.0
+offset_bottom = 307.0
 
 [node name="Credits" parent="LibroAbierto/PaginaDerecha" instance=ExtResource("2_rx15a")]
 visible = false
