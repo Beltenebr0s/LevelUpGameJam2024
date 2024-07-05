@@ -2,10 +2,10 @@ extends Panel
 
 @onready var libro_abierto = $LibroAbierto
 
-@onready var slider_musica = $LibroAbierto/PaginaDerecha/Settings/VolumenMusica
-@onready var slider_SFX = $LibroAbierto/PaginaDerecha/Settings/VolumenSFX
-@onready var mute_musica = $LibroAbierto/PaginaDerecha/Settings/VolumenMusica/MuteMusica
-@onready var mute_SFX = $LibroAbierto/PaginaDerecha/Settings/VolumenSFX/MuteSFX
+@onready var slider_musica = $LibroAbierto/PaginaSettings/Settings/VolumenMusica
+@onready var slider_SFX = $LibroAbierto/PaginaSettings/Settings/VolumenSFX
+@onready var mute_musica = $LibroAbierto/PaginaSettings/Settings/VolumenMusica/MuteMusica
+@onready var mute_SFX = $LibroAbierto/PaginaSettings/Settings/VolumenSFX/MuteSFX
 
 func _ready():
 	slider_musica.value = Global.volumen_musica
@@ -13,12 +13,10 @@ func _ready():
 	mute_musica.button_pressed = Global.musica_muted
 	mute_SFX.button_pressed = Global.SFX_muted
 	libro_abierto.visible = true
+	$LibroAbierto/PaginaInicio.visible = true
+	$LibroAbierto/PaginaSettings.visible = false
 	
 	# pause_mode = 
-
-func _on_titulo_juego_pressed():
-	libro_abierto.visible = true
-	$LibroAbierto/PaginaDerecha.visible = false
 
 func _on_continue_pressed():
 	hide()
@@ -26,10 +24,8 @@ func _on_continue_pressed():
 
 func _on_settings_pressed():
 	print("Ajustes")
-	$LibroAbierto/PaginaDerecha.visible = true
-	$LibroAbierto/PaginaDerecha/Settings.visible = true
-	$LibroAbierto/PaginaDerecha/Credits.visible = false
-	$LibroAbierto/PaginaDerecha/Final.visible = false
+	$LibroAbierto/PaginaSettings.visible = true
+	$LibroAbierto/PaginaInicio.visible = false
 
 func _on_exit_pressed():
 	get_tree().quit()

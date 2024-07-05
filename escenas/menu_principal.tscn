@@ -197,7 +197,6 @@ texture = ExtResource("6_xlrri")
 expand_mode = 1
 
 [node name="Settings" parent="LibroAbierto" instance=ExtResource("2_rx15a")]
-visible = false
 layout_mode = 0
 offset_left = 460.0
 offset_top = 55.0
@@ -279,7 +278,6 @@ offset_bottom = 47.0
 text = "Mute"
 
 [node name="Final" parent="LibroAbierto" instance=ExtResource("2_rx15a")]
-visible = false
 layout_mode = 0
 offset_left = 459.0
 offset_top = 50.0
@@ -383,7 +381,6 @@ offset_right = 309.0
 offset_bottom = 307.0
 
 [node name="Credits" parent="LibroAbierto" instance=ExtResource("2_rx15a")]
-visible = false
 layout_mode = 0
 offset_left = 452.0
 offset_top = 47.0
