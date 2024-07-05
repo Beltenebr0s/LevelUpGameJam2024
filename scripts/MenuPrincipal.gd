@@ -31,9 +31,9 @@ func _ready():
 		
 		
 		var node : RichTextLabel = get_node("LibroAbierto/PaginaDerecha/Final/Historia/TextoHistoria")
-		for aux in Global.cartas_jugadas:
-			node.text += aux
-			node.text += '\n'
+		#for aux in Global.cartas_jugadas:
+		#	node.text += aux
+		#	node.text += '\n'
 
 func _on_titulo_juego_pressed():
 	libro_abierto.visible = true
