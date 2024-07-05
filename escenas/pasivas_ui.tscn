@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cy5urn5n1wibs"]
+[gd_scene load_steps=5 format=3 uid="uid://cy5urn5n1wibs"]
 
 [ext_resource type="Script" path="res://scripts/pasivasUI.gd" id="1_hg818"]
 [ext_resource type="PackedScene" uid="uid://bhmjeb0ta4p58" path="res://escenas/carta_pasiva.tscn" id="2_q6wbb"]
+[ext_resource type="Texture2D" uid="uid://dxysl04btnj38" path="res://texturas/Caballero_Maldito.jpg" id="3_b4ycr"]
+[ext_resource type="Texture2D" uid="uid://0u1l81ja0ixj" path="res://texturas/cartas/Borde_Azul.png" id="4_6d5ah"]
 
 [node name="pasivasUI" type="Control"]
 layout_mode = 3
@@ -26,6 +28,14 @@ offset_top = 0.0
 offset_right = 97.0
 offset_bottom = 132.0
 texto_descripcion = "Todo el pueblo teme al caballero, enloquecen mínimo 10 personas en cada turno."
+
+[node name="Carta" parent="Caballero" index="2"]
+texture = ExtResource("3_b4ycr")
+
+[node name="Borde" type="Sprite2D" parent="Caballero/Carta" index="1"]
+position = Vector2(-6.22272e-05, -12.7398)
+scale = Vector2(0.995284, 0.981545)
+texture = ExtResource("4_6d5ah")
 
 [node name="Vigil" parent="." instance=ExtResource("2_q6wbb")]
 layout_mode = 0
@@ -52,3 +62,5 @@ offset_bottom = 540.0
 texto_descripcion = "El sacerdote ligó con el demonio que invocaste. Juntos, hacen un ritual que te permite robar otra mano de cartas sin perder el turno (click para activar)."
 
 [connection signal="accion" from="Sacerdote" to="." method="_on_sacerdote_accion"]
+
+[editable path="Caballero"]

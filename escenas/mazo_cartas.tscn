@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b80mbbnuqe78v"]
+[gd_scene load_steps=7 format=3 uid="uid://b80mbbnuqe78v"]
 
 [ext_resource type="Script" path="res://scripts/MazoCartas.gd" id="1_pf761"]
 [ext_resource type="PackedScene" uid="uid://b47xbta5payek" path="res://escenas/carta.tscn" id="2_y5ux8"]
 [ext_resource type="Texture2D" uid="uid://bsoujiee88glm" path="res://texturas/cartas/Incenciar_Molino.jpg" id="3_4i2cr"]
 [ext_resource type="Texture2D" uid="uid://dtkhu4jup0q2u" path="res://texturas/Dorso_Azul.png" id="3_epo8x"]
 [ext_resource type="Texture2D" uid="uid://bk1b5bs1xirll" path="res://texturas/cartas/Dia_Noche.png" id="4_6xgvx"]
+[ext_resource type="Texture2D" uid="uid://dxysl04btnj38" path="res://texturas/Caballero_Maldito.jpg" id="6_rxskx"]
 
 [node name="MazoCartas" type="Node2D"]
 script = ExtResource("1_pf761")
@@ -142,7 +143,7 @@ valor = -10
 valida_ia = false
 
 [node name="Carta18" parent="." instance=ExtResource("2_y5ux8")]
-texture = ExtResource("3_epo8x")
+texture = ExtResource("6_rxskx")
 titulo = "El caballero maldito"
 descripcion = "El norte y lucero de la caballería oculta una maldición. Aquel que no puede perder la vida, acaba perdiendo el alma. Si los vecinos se enteran de su condición, no vivirán tranquilos a su lado."
 funcion = 1

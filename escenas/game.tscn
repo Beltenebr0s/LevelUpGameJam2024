@@ -61,3 +61,5 @@ autoplay = true
 position = Vector2(0, -1)
 
 [editable path="Board"]
+[editable path="pasivasUI"]
+[editable path="pasivasUI/Caballero"]

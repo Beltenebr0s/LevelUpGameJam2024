@@ -418,6 +418,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_347wb")
 
 [node name="IntroducciónDelJuego" type="Label" parent="LibroAbierto/tutorial"]
+layout_mode = 0
 offset_left = -152.0
 offset_top = 97.0
 offset_right = 37.0
@@ -433,6 +434,7 @@ offset_bottom = 155.0
 text = "Bienvenido a la población XXXX gobernada por el principe Adetokumbo, tu objetivo es derrocarle sembrando la locura entre sus habitantes"
 
 [node name="ComoJugar" type="Label" parent="LibroAbierto/tutorial"]
+layout_mode = 0
 offset_left = -152.0
 offset_top = 262.0
 offset_right = 37.0
@@ -448,6 +450,7 @@ text = "Tienes 6 turnos para conseguir adeptos a tu revolución, en cada turno r
 "
 
 [node name="IlustracionInicio2" type="TextureRect" parent="LibroAbierto/tutorial/ComoJugar"]
+layout_mode = 0
 offset_left = 224.0
 offset_top = 114.0
 offset_right = 320.0
@@ -456,6 +459,7 @@ texture = ExtResource("10_8eiqc")
 expand_mode = 1
 
 [node name="IlustracionInicio" type="TextureRect" parent="LibroAbierto/tutorial/ComoJugar"]
+layout_mode = 0
 offset_left = 222.0
 offset_top = -13.0
 offset_right = 318.0
@@ -464,6 +468,7 @@ texture = ExtResource("11_n3wqh")
 expand_mode = 1
 
 [node name="ObjetivoJuego" type="Label" parent="LibroAbierto/tutorial"]
+layout_mode = 0
 offset_left = 244.0
 offset_top = 90.0
 offset_right = 433.0
