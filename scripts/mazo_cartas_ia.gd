@@ -2,22 +2,15 @@ extends Node2D
 
 var baraja_cartas = []
 var mano = []
-var cartas_a_jugar = []
-
-@export var n_cartas_turno = 2
-
-signal cartas_seleccionadas(cartas_a_jugar)
 
 func _ready():
 	baraja_cartas = get_children()
-	for carta in baraja_cartas:
-		carta.jugar_carta.connect(carta_jugada)
 
-func barajar_cartas(num_cartas : int , nivel_locura : int, b_ia : bool):
+func barajar_cartas(num_cartas : int , nivel_locura : int):
 	mano = []
 	while (mano.size() < num_cartas):
 		var carta_elegida = baraja_cartas.pick_random()
-		if carta_elegida.es_jugable(nivel_locura, b_ia):
+		if carta_elegida.es_jugable(nivel_locura):
 			mano.append(carta_elegida)
 			carta_elegida.set_carta_usada(true) # para que no salgan cartas repetidas en una mano
 	for carta in mano:
@@ -34,8 +27,3 @@ func debug_print_array_cartas(array):
 	for carta in array:
 		print(carta.titulo)
 
-func carta_jugada(carta):
-	cartas_a_jugar.append(carta)
-	if cartas_a_jugar.size() == n_cartas_turno:
-		cartas_seleccionadas.emit(cartas_a_jugar)
-		cartas_a_jugar = []

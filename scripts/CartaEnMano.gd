@@ -17,7 +17,7 @@ signal play_sonido
 func _ready():
 	carta_oculta = true
 	$Carta.position = Vector2(0, 200)
-	ocultar_descripción()
+	ocultar_descripcion()
 
 func mano_ia():
 	$Carta/BotonCarta.visible = false
@@ -44,7 +44,7 @@ func ocultar_carta(no_jugada : bool):
 			pass
 		else:
 			carta_oculta = true
-			ocultar_descripción()
+			ocultar_descripcion()
 			animation_player.play("ocultar_carta_jugada")
 	else:
 		animation_player.play("ocultar_carta")
@@ -62,7 +62,7 @@ func mostrar_descripcion():
 	self.titulo.visible = true
 	self.descripcion.visible = true
 	
-func ocultar_descripción():
+func ocultar_descripcion():
 	self.titulo.visible = false
 	self.descripcion.visible = false
 
@@ -71,12 +71,12 @@ func visibilidad_descripcion():
 	if es_visible:
 		actualizar_descripcion()
 		mostrar_descripcion()
+		play_sonido.emit()
 	else:
-		ocultar_descripción()
+		ocultar_descripcion()
 
 func _on_boton_carta_mouse_entered():
 	if !carta_jugada && !carta_oculta:
-		play_sonido.emit()
 		subir_carta()
 
 func _on_boton_carta_mouse_exited():
@@ -93,18 +93,17 @@ func actualizar_descripcion():
 func actualizar_borde():
 	self.borde.texture = load(borde_funciones[carta.funcion])
 
-func set_carta(_carta, b_ia:bool):
+func set_carta(_carta):
 	carta_jugada = false
 	self.carta = _carta
-	if(!b_ia):
-		actualizar_sprite()
-		actualizar_borde()
+	actualizar_sprite()
+	actualizar_borde()
 	actualizar_descripcion()
 
 func _on_boton_carta_pressed():
 	if !carta_jugada && !carta_oculta:
 		play_sonido.emit()
 		carta_jugada = true
-		mostrar_descripcion()
+		ocultar_descripcion()
 		subir_carta_mas()
 		self.carta.jugar()

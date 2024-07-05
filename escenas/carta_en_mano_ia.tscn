@@ -1,0 +1,184 @@
+[gd_scene load_steps=13 format=3 uid="uid://dfwncdbnb8hmh"]
+
+[ext_resource type="Script" path="res://scripts/carta_en_mano_ia.gd" id="1_mbqnl"]
+[ext_resource type="Texture2D" uid="uid://bpfn15jhr0pjh" path="res://texturas/cartas/Dorso_Negro_Placeholder.png" id="2_pqlfa"]
+[ext_resource type="FontFile" uid="uid://b0jqr7aj1vrop" path="res://DarumadropOne-Regular.ttf" id="3_s43x6"]
+[ext_resource type="LabelSettings" uid="uid://dt1tfgdc64y" path="res://Fuentes/texto_cartas.tres" id="4_ppdfi"]
+
+[sub_resource type="Animation" id="Animation_dea5w"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_nxaop"]
+resource_name = "ocultar_carta"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Carta:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(4, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 200)]
+}
+
+[sub_resource type="Animation" id="Animation_y4fmm"]
+resource_name = "ocultar_carta_jugada"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Carta:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(4, 1),
+"update": 0,
+"values": [Vector2(0, -200), Vector2(0, 200)]
+}
+
+[sub_resource type="Animation" id="Animation_oyi3q"]
+resource_name = "seleccionar_carta"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Carta:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(2.82843, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -200)]
+}
+
+[sub_resource type="Animation" id="Animation_tcygl"]
+resource_name = "subir_carta"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Carta:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -86)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"visibilidad_descripcion"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_j8v1y"]
+resource_name = "subir_carta_mas"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Carta:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector2(0, -86), Vector2(0, -200)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dhyg4"]
+_data = {
+"RESET": SubResource("Animation_dea5w"),
+"ocultar_carta": SubResource("Animation_nxaop"),
+"ocultar_carta_jugada": SubResource("Animation_y4fmm"),
+"seleccionar_carta": SubResource("Animation_oyi3q"),
+"subir_carta": SubResource("Animation_tcygl"),
+"subir_carta_mas": SubResource("Animation_j8v1y")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_14y1e"]
+line_spacing = 1.0
+font = ExtResource("3_s43x6")
+font_size = 19
+font_color = Color(0.835537, 0.711223, 0.916408, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[node name="carta_en_mano_ia" type="Node2D"]
+rotation = 3.14159
+script = ExtResource("1_mbqnl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dhyg4")
+}
+
+[node name="Carta" type="Sprite2D" parent="."]
+
+[node name="TexturaCarta" type="Sprite2D" parent="Carta"]
+scale = Vector2(0.162162, 0.162162)
+texture = ExtResource("2_pqlfa")
+
+[node name="descripcion" type="Control" parent="Carta"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 45.0
+offset_bottom = 45.0
+rotation = 3.14159
+
+[node name="titulo" type="Label" parent="Carta/descripcion"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.9997
+offset_top = -29.0003
+offset_right = 51.0003
+offset_bottom = 118.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+label_settings = SubResource("LabelSettings_14y1e")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="descripcion" type="Label" parent="Carta/descripcion"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_right = 54.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "En un lugar de la mancha de cuyo nombre no quiero acordarme"
+label_settings = ExtResource("4_ppdfi")
+horizontal_alignment = 1
+autowrap_mode = 2
+clip_text = true

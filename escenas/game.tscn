@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ddmxbpwae2x3s"]
+[gd_scene load_steps=16 format=3 uid="uid://ddmxbpwae2x3s"]
 
 [ext_resource type="PackedScene" uid="uid://0k1iv56f0qty" path="res://escenas/board.tscn" id="1_gf5lf"]
 [ext_resource type="Script" path="res://scripts/game_controller.gd" id="1_jtev3"]
@@ -8,12 +8,13 @@
 [ext_resource type="AudioStream" uid="uid://dnils5hbsv5iq" path="res://audio/SFX/SFX_Card_Play3.wav" id="4_b0c5i"]
 [ext_resource type="PackedScene" uid="uid://cu4ruf7b0vci4" path="res://escenas/medidor_locura.tscn" id="4_yyiwp"]
 [ext_resource type="PackedScene" uid="uid://cy5urn5n1wibs" path="res://escenas/pasivas_ui.tscn" id="5_88sux"]
-[ext_resource type="Texture2D" uid="uid://bpfn15jhr0pjh" path="res://texturas/cartas/Dorso_Negro_Placeholder.png" id="5_jxpof"]
 [ext_resource type="AudioStream" uid="uid://d24vottd2k0fk" path="res://audio/SFX/SFX_Card_Reload1.wav" id="5_mvljd"]
 [ext_resource type="PackedScene" uid="uid://dbb1boixbt5v5" path="res://escenas/medidor_dia.tscn" id="6_amot7"]
 [ext_resource type="AudioStream" uid="uid://uw8np45fsrjb" path="res://audio/SFX/SFX_Card_Reload2.wav" id="6_sjuiu"]
 [ext_resource type="AudioStream" uid="uid://ca1ing13r184l" path="res://audio/SFX/SFX_TurnIndicator.wav" id="7_8h3i6"]
 [ext_resource type="AudioStream" uid="uid://bvoqu3tloc860" path="res://audio/musica/maqueta 2.wav" id="7_hca7m"]
+[ext_resource type="PackedScene" uid="uid://0m1dvsg648qd" path="res://escenas/mano_ia.tscn" id="11_4yrn7"]
+[ext_resource type="PackedScene" uid="uid://d2ed2213ydb0g" path="res://escenas/alerta_combo.tscn" id="14_3bj1k"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_jtev3")
@@ -36,38 +37,20 @@ offset_bottom = 48.0
 
 [node name="cartasUI" parent="." instance=ExtResource("3_nj2pg")]
 
-[node name="cartasIAI" parent="." instance=ExtResource("3_nj2pg")]
-offset_left = 1152.0
-offset_top = 648.0
-offset_right = 1152.0
-offset_bottom = 648.0
-rotation = 3.14159
-cartas_ia = true
-
-[node name="TexturaCarta" parent="cartasIAI/CartaEnMano/Carta" index="0"]
-texture = ExtResource("5_jxpof")
-
-[node name="TexturaCarta" parent="cartasIAI/CartaEnMano2/Carta" index="0"]
-texture = ExtResource("5_jxpof")
-
-[node name="TexturaCarta" parent="cartasIAI/CartaEnMano3/Carta" index="0"]
-texture = ExtResource("5_jxpof")
-
-[node name="TexturaCarta" parent="cartasIAI/CartaEnMano4/Carta" index="0"]
-texture = ExtResource("5_jxpof")
-
-[node name="TexturaCarta" parent="cartasIAI/CartaEnMano5/Carta" index="0"]
-texture = ExtResource("5_jxpof")
+[node name="mano_ia" parent="." instance=ExtResource("11_4yrn7")]
 
 [node name="medidor_locura" parent="." instance=ExtResource("4_yyiwp")]
 offset_left = 16.0
-offset_top = -104.0
 offset_right = 208.0
-offset_bottom = 960.0
+offset_bottom = 1064.0
 scale = Vector2(0.458087, 0.458087)
 
 [node name="medidor_dia" parent="." instance=ExtResource("6_amot7")]
 position = Vector2(96, 560)
+
+[node name="alerta_combo" parent="." instance=ExtResource("14_3bj1k")]
+position = Vector2(544, 320)
+scale = Vector2(0.474195, 0.474195)
 
 [node name="Musica" type="AudioStreamPlayer2D" parent="."]
 process_mode = 3
@@ -78,9 +61,3 @@ autoplay = true
 position = Vector2(0, -1)
 
 [editable path="Board"]
-[editable path="cartasIAI"]
-[editable path="cartasIAI/CartaEnMano"]
-[editable path="cartasIAI/CartaEnMano2"]
-[editable path="cartasIAI/CartaEnMano3"]
-[editable path="cartasIAI/CartaEnMano4"]
-[editable path="cartasIAI/CartaEnMano5"]

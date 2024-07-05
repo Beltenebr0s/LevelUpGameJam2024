@@ -3,10 +3,18 @@ extends Panel
 @onready var libro_cerrado = $LibroCerrado
 @onready var libro_abierto = $LibroAbierto
 @onready var tutorial = $tutorial
+@onready var slider_musica = $LibroAbierto/PaginaDerecha/Settings/VolumenMusica
+@onready var slider_SFX = $LibroAbierto/PaginaDerecha/Settings/VolumenSFX
+@onready var mute_musica = $LibroAbierto/PaginaDerecha/Settings/VolumenMusica/MuteMusica
+@onready var mute_SFX = $LibroAbierto/PaginaDerecha/Settings/VolumenSFX/MuteSFX
 
 @onready var escena_juego = preload("res://escenas/game.tscn")
 
 func _ready():
+	slider_musica.value = Global.volumen_musica
+	slider_SFX.value = Global.volumen_SFX
+	mute_musica.button_pressed = Global.musica_muted
+	mute_SFX.button_pressed = Global.SFX_muted
 	libro_abierto.visible = !Global.b_first_game
 	libro_cerrado.visible = Global.b_first_game
 	tutorial.visible = false
@@ -62,3 +70,17 @@ func _on_credits_pressed():
 
 func _on_exit_pressed():
 	get_tree().quit()
+
+func _on_volumen_musica_value_changed(value):
+	Global.cambiar_vol_musica(value)
+
+func _on_volumen_sfx_value_changed(value):
+	Global.cambiar_vol_SFX(value)
+
+func _on_mute_musica_pressed():
+	Global.musica_muted = mute_musica.button_pressed
+	Global.cambiar_vol_musica(slider_musica.value)
+
+func _on_mute_sfx_pressed():
+	Global.SFX_muted = mute_SFX.button_pressed
+	Global.cambiar_vol_SFX(slider_SFX.value)
