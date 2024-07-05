@@ -19,6 +19,7 @@ var scena_menu_pausa
 @onready var reloj = $medidor_dia
 @onready var alerta_combo = $alerta_combo
 
+@onready var music_audio_player = $Musica
 @onready var sfx_audio_player = $SFX
 @export var lista_sfx_jugar_cartas : Array[AudioStreamWAV]
 @export var lista_sfx_repartir_cartas : Array[AudioStreamWAV]
@@ -28,7 +29,12 @@ func _ready():
 	mano_ui.play_sonido_carta.connect(_on_play_sonido_carta_audio_jugar_carta)
 	mano_ia.play_sonido_carta.connect(_on_play_sonido_carta_audio_jugar_carta)
 	pasivas_ui.play_sonido_carta.connect(_on_play_sonido_carta_audio_jugar_carta)
+	Global.cambio_volumen_musica.connect(cambiar_vol_musica)
+	Global.cambio_volumen_SFX.connect(cambiar_vol_SFX)
+	
 	pasivas_ui.mulligan.connect(mulligan)
+	mazo_jugador.cartas_seleccionadas.connect(seleccionar_cartas)
+	
 	set_process_input(true)
 	var root = get_tree().get_root()
 	ResourceLoader.load_threaded_request("res://escenas/menu_pausa.tscn")
@@ -37,8 +43,9 @@ func _ready():
 	scena_menu_pausa.process_mode = Node.PROCESS_MODE_ALWAYS
 	root.add_child.call_deferred(scena_menu_pausa)
 	scena_menu_pausa.visible = false
-	mazo_jugador.cartas_seleccionadas.connect(seleccionar_cartas)
+	
 	mazo_jugador.n_cartas_turno = n_cartas_turno_jugador
+	
 	inicar_juego()
 
 func _process(delta):
@@ -200,3 +207,9 @@ func audio_pasar_turno():
 
 func _on_play_sonido_carta_audio_jugar_carta():
 	audio_jugar_carta()
+
+func cambiar_vol_musica():
+	music_audio_player.volume_db = (Global.volumen_musica - 80)
+
+func cambiar_vol_SFX():
+	sfx_audio_player.volume_db = (Global.volumen_SFX - 80)

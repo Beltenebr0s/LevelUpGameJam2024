@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dgvk3kamy3owh"]
 
 [ext_resource type="Script" path="res://scripts/MenuPausa.gd" id="1_0xa3x"]
-[ext_resource type="PackedScene" uid="uid://blxd0lf0072de" path="res://escenas/panel_menu.tscn" id="2_o7frk"]
+[ext_resource type="PackedScene" uid="uid://c3dvk21fhqeoi" path="res://escenas/panel_menu.tscn" id="2_o7frk"]
 [ext_resource type="Texture2D" uid="uid://cfdf68gf38qpm" path="res://icon.svg" id="3_18kwq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekryt"]
@@ -69,7 +69,6 @@ offset_right = 905.0
 offset_bottom = 566.0
 
 [node name="Settings" parent="LibroAbierto/PaginaDerecha" instance=ExtResource("2_o7frk")]
-visible = false
 layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
@@ -79,7 +78,49 @@ offset_bottom = 526.0
 [node name="Titulo" parent="LibroAbierto/PaginaDerecha/Settings" index="0"]
 text = "AJUSTES"
 
+[node name="VolumenMusica" type="HSlider" parent="LibroAbierto/PaginaDerecha/Settings"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 135.0
+offset_right = 330.0
+offset_bottom = 151.0
+
+[node name="Label" type="Label" parent="LibroAbierto/PaginaDerecha/Settings/VolumenMusica"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_top = -32.0
+offset_right = 64.0
+offset_bottom = -9.0
+grow_horizontal = 2
+text = "Volumen Música"
+horizontal_alignment = 1
+
+[node name="VolumenSFX" type="HSlider" parent="LibroAbierto/PaginaDerecha/Settings"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 215.0
+offset_right = 330.0
+offset_bottom = 231.0
+
+[node name="Label" type="Label" parent="LibroAbierto/PaginaDerecha/Settings/VolumenSFX"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_top = -32.0
+offset_right = 64.0
+offset_bottom = -9.0
+grow_horizontal = 2
+text = "Volumen SFX
+"
+horizontal_alignment = 1
+
 [node name="Final" parent="LibroAbierto/PaginaDerecha" instance=ExtResource("2_o7frk")]
+visible = false
 layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
@@ -221,6 +262,8 @@ offset_bottom = 121.0
 [connection signal="pressed" from="LibroAbierto/PaginaIzquierda/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="LibroAbierto/PaginaIzquierda/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="LibroAbierto/PaginaIzquierda/Exit" to="." method="_on_exit_pressed"]
+[connection signal="value_changed" from="LibroAbierto/PaginaDerecha/Settings/VolumenMusica" to="." method="_on_volumen_musica_value_changed"]
+[connection signal="value_changed" from="LibroAbierto/PaginaDerecha/Settings/VolumenSFX" to="." method="_on_volumen_sfx_value_changed"]
 
 [editable path="LibroAbierto/PaginaDerecha/Settings"]
 [editable path="LibroAbierto/PaginaDerecha/Final"]

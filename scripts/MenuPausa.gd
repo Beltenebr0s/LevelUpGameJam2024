@@ -2,7 +2,12 @@ extends Panel
 
 @onready var libro_abierto = $LibroAbierto
 
+@onready var slider_musica = $LibroAbierto/PaginaDerecha/Settings/VolumenMusica
+@onready var slider_SFX = $LibroAbierto/PaginaDerecha/Settings/VolumenSFX
+
 func _ready():
+	slider_musica.value = Global.volumen_musica
+	slider_SFX.value = Global.volumen_SFX
 	libro_abierto.visible = true
 	
 	# pause_mode = 
@@ -26,3 +31,14 @@ func _on_settings_pressed():
 func _on_exit_pressed():
 	get_tree().quit()
 	
+
+
+func _on_volumen_musica_value_changed(value):
+	# await get_tree().create_timer(0.3).timeout
+	Global.cambiar_vol_musica(value)
+	pass # Replace with function body.
+
+
+func _on_volumen_sfx_value_changed(value):
+	Global.cambiar_vol_SFX(value)
+	pass # Replace with function body.
