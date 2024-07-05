@@ -1,7 +1,7 @@
 extends Panel
 
 var SAVE_FILE_DIRECTION = 'user://gamescores.save'
-@onready var ranking_text = $LibroAbierto/Final/RankingTextLabel
+@onready var ranking_text = $LibroAbierto/Final/Ranking/RankingTextLabel
 @onready var libro_cerrado = $LibroCerrado
 @onready var libro_abierto = $LibroAbierto
 @onready var tutorial = $LibroAbierto/tutorial

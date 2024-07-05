@@ -327,6 +327,13 @@ label_settings = SubResource("LabelSettings_nye3j")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="RankingTextLabel" type="RichTextLabel" parent="LibroAbierto/Final/Ranking"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 60.0
+offset_right = 371.0
+offset_bottom = 290.0
+
 [node name="Victoria" type="Label" parent="LibroAbierto/Final"]
 visible = false
 layout_mode = 0
@@ -415,6 +422,7 @@ text = "/--\\
 |__|"
 
 [node name="tutorial" type="Panel" parent="LibroAbierto"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
