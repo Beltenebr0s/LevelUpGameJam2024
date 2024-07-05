@@ -20,6 +20,7 @@ func _ready():
 	tutorial.visible = false
 	if (!Global.b_first_game):
 		$LibroAbierto.visible = !Global.b_first_game
+		$LibroAbierto/PaginaInicio.visible = false
 		$LibroAbierto/Settings.visible = false
 		$LibroAbierto/Credits.visible = false
 		$LibroAbierto/Final.visible = !Global.b_first_game
@@ -55,6 +56,7 @@ func _on_start_game_pressed():
 func _on_settings_pressed():
 	print("Ajustes")
 	$LibroAbierto.visible = true
+	$LibroAbierto/PaginaInicio.visible = false
 	$LibroAbierto/Settings.visible = true
 	$LibroAbierto/Credits.visible = false
 	$LibroAbierto/Final.visible = false
@@ -62,10 +64,18 @@ func _on_settings_pressed():
 func _on_credits_pressed():
 	print("Créditos")
 	$LibroAbierto.visible = true
+	$LibroAbierto/PaginaInicio.visible = false
 	$LibroAbierto/Settings.visible = false
 	$LibroAbierto/Credits.visible = true
 	$LibroAbierto/Final.visible = false
 
+func _on_home_pressed():
+	print("Inicio")
+	$LibroAbierto.visible = true
+	$LibroAbierto/PaginaInicio.visible = true
+	$LibroAbierto/Settings.visible = false
+	$LibroAbierto/Credits.visible = false
+	$LibroAbierto/Final.visible = false
 
 func _on_exit_pressed():
 	get_tree().quit()
@@ -83,3 +93,4 @@ func _on_mute_musica_pressed():
 func _on_mute_sfx_pressed():
 	Global.SFX_muted = mute_SFX.button_pressed
 	Global.cambiar_vol_SFX(slider_SFX.value)
+	
