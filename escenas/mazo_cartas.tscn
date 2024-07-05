@@ -85,6 +85,8 @@ valor = 35
 [node name="Carta12" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "Cegar el pozo"
 descripcion = "Mañana hará un calor infernal y nadie podrá beber agua."
+tipo = 1
+funcion = 2
 reutilizable = true
 valor = 15
 

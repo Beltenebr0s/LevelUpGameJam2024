@@ -107,6 +107,7 @@ func aplicar_efecto_cartas(b_is_player : bool):
 			resultado += aplicar_pasivas_activas(carta)
 		for carta in selected_cards:
 			activar_pasiva(carta)
+		resultado = comprobar_combo(resultado)
 	else:
 		for carta in mazo_ia.mano:
 			resultado += nerf_card_to_ia(carta)
@@ -129,6 +130,22 @@ func aplicar_pasivas_activas(carta):
 	if (carta.tipo == 1 or carta.tipo == 2) and pasivas_ui.pasiva_activada(carta.tipo):
 		resultado = roundi(2 * carta.valor)
 	return resultado
+
+func comprobar_combo(resultado):
+	var hay_multiplicador = false
+	for carta in selected_cards:
+		hay_multiplicador = hay_multiplicador || (carta.funcion == 2)
+	var hay_pasiva = false
+	for carta in selected_cards:
+		hay_pasiva = hay_pasiva || (carta.funcion == 1)
+	var mismo_tipo = true
+	for i in range(selected_cards.size() - 1):
+		mismo_tipo = mismo_tipo && (selected_cards[i].tipo == selected_cards[i + 1].tipo)
+	print(hay_multiplicador, !hay_pasiva, mismo_tipo, resultado)
+	if hay_multiplicador && !hay_pasiva && mismo_tipo:
+		return resultado * 2
+	else:
+		return resultado
 
 func mulligan():
 	if mano_ui.mano_lista and !mulligan_usado:
