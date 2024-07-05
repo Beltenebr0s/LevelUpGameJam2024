@@ -5,6 +5,8 @@ var cartas_jugadas: Array[String] = []
 
 var volumen_musica : float = 50
 var volumen_SFX : float = 50
+var musica_muted : bool = false
+var SFX_muted : bool = false
 
 signal cambio_volumen_musica
 signal cambio_volumen_SFX
@@ -16,3 +18,4 @@ func cambiar_vol_musica(_volumen : float):
 func cambiar_vol_SFX(_volumen : float):
 	volumen_SFX = _volumen
 	cambio_volumen_SFX.emit()
+

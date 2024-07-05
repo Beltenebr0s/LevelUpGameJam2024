@@ -1,8 +1,7 @@
 extends Control
 
-@export var cartas_ia = false
-@onready var cartas = []
-@onready var mano_lista = false
+var cartas = []
+var mano_lista = false
 
 signal play_sonido_carta
 
@@ -10,8 +9,6 @@ func _ready():
 	cartas = get_children()
 	for i in cartas:
 		i.play_sonido.connect(_on_play_sonido_play_sonido_carta)
-		if cartas_ia:
-			i.mano_ia()
 
 func colocar_cartas_en_mano(mano):
 	ocultar_cartas(false)

@@ -10,7 +10,7 @@ bg_color = Color(0.908176, 0.766672, 0.0279374, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_nye3j"]
 font_size = 25
 
-[node name="MenuPrincipal" type="Panel"]
+[node name="MenuPausa" type="Panel"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -98,12 +98,27 @@ grow_horizontal = 2
 text = "Volumen Música"
 horizontal_alignment = 1
 
+[node name="MuteMusica" type="CheckButton" parent="LibroAbierto/PaginaDerecha/Settings/VolumenMusica"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 24.0
+offset_right = 260.0
+offset_bottom = 48.0
+
+[node name="Label2" type="Label" parent="LibroAbierto/PaginaDerecha/Settings/VolumenMusica"]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 24.0
+offset_right = 209.0
+offset_bottom = 47.0
+text = "Mute"
+
 [node name="VolumenSFX" type="HSlider" parent="LibroAbierto/PaginaDerecha/Settings"]
 layout_mode = 0
 offset_left = 74.0
-offset_top = 215.0
+offset_top = 247.0
 offset_right = 330.0
-offset_bottom = 231.0
+offset_bottom = 263.0
 
 [node name="Label" type="Label" parent="LibroAbierto/PaginaDerecha/Settings/VolumenSFX"]
 layout_mode = 1
@@ -118,6 +133,21 @@ grow_horizontal = 2
 text = "Volumen SFX
 "
 horizontal_alignment = 1
+
+[node name="MuteSFX" type="CheckButton" parent="LibroAbierto/PaginaDerecha/Settings/VolumenSFX"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 24.0
+offset_right = 260.0
+offset_bottom = 48.0
+
+[node name="Label2" type="Label" parent="LibroAbierto/PaginaDerecha/Settings/VolumenSFX"]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 24.0
+offset_right = 209.0
+offset_bottom = 47.0
+text = "Mute"
 
 [node name="Final" parent="LibroAbierto/PaginaDerecha" instance=ExtResource("2_o7frk")]
 visible = false
@@ -263,7 +293,9 @@ offset_bottom = 121.0
 [connection signal="pressed" from="LibroAbierto/PaginaIzquierda/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="LibroAbierto/PaginaIzquierda/Exit" to="." method="_on_exit_pressed"]
 [connection signal="value_changed" from="LibroAbierto/PaginaDerecha/Settings/VolumenMusica" to="." method="_on_volumen_musica_value_changed"]
+[connection signal="pressed" from="LibroAbierto/PaginaDerecha/Settings/VolumenMusica/MuteMusica" to="." method="_on_mute_musica_pressed"]
 [connection signal="value_changed" from="LibroAbierto/PaginaDerecha/Settings/VolumenSFX" to="." method="_on_volumen_sfx_value_changed"]
+[connection signal="pressed" from="LibroAbierto/PaginaDerecha/Settings/VolumenSFX/MuteSFX" to="." method="_on_mute_sfx_pressed"]
 
 [editable path="LibroAbierto/PaginaDerecha/Settings"]
 [editable path="LibroAbierto/PaginaDerecha/Final"]

@@ -31,6 +31,8 @@ func _ready():
 	pasivas_ui.play_sonido_carta.connect(_on_play_sonido_carta_audio_jugar_carta)
 	Global.cambio_volumen_musica.connect(cambiar_vol_musica)
 	Global.cambio_volumen_SFX.connect(cambiar_vol_SFX)
+	cambiar_vol_musica()
+	cambiar_vol_SFX()
 	
 	pasivas_ui.mulligan.connect(mulligan)
 	mazo_jugador.cartas_seleccionadas.connect(seleccionar_cartas)
@@ -209,7 +211,13 @@ func _on_play_sonido_carta_audio_jugar_carta():
 	audio_jugar_carta()
 
 func cambiar_vol_musica():
-	music_audio_player.volume_db = (Global.volumen_musica - 80)
+	if !Global.musica_muted:
+		music_audio_player.volume_db = (Global.volumen_musica - 80)
+	else:
+		music_audio_player.volume_db = -80
 
 func cambiar_vol_SFX():
-	sfx_audio_player.volume_db = (Global.volumen_SFX - 80)
+	if !Global.SFX_muted:
+		sfx_audio_player.volume_db = (Global.volumen_SFX - 80)
+	else:
+		sfx_audio_player.volume_db = -80

@@ -4,10 +4,14 @@ extends Panel
 
 @onready var slider_musica = $LibroAbierto/PaginaDerecha/Settings/VolumenMusica
 @onready var slider_SFX = $LibroAbierto/PaginaDerecha/Settings/VolumenSFX
+@onready var mute_musica = $LibroAbierto/PaginaDerecha/Settings/VolumenMusica/MuteMusica
+@onready var mute_SFX = $LibroAbierto/PaginaDerecha/Settings/VolumenSFX/MuteSFX
 
 func _ready():
 	slider_musica.value = Global.volumen_musica
 	slider_SFX.value = Global.volumen_SFX
+	mute_musica.button_pressed = Global.musica_muted
+	mute_SFX.button_pressed = Global.SFX_muted
 	libro_abierto.visible = true
 	
 	# pause_mode = 
@@ -15,7 +19,6 @@ func _ready():
 func _on_titulo_juego_pressed():
 	libro_abierto.visible = true
 	$LibroAbierto/PaginaDerecha.visible = false
-
 
 func _on_continue_pressed():
 	hide()
@@ -30,15 +33,17 @@ func _on_settings_pressed():
 
 func _on_exit_pressed():
 	get_tree().quit()
-	
-
 
 func _on_volumen_musica_value_changed(value):
-	# await get_tree().create_timer(0.3).timeout
 	Global.cambiar_vol_musica(value)
-	pass # Replace with function body.
-
 
 func _on_volumen_sfx_value_changed(value):
 	Global.cambiar_vol_SFX(value)
-	pass # Replace with function body.
+
+func _on_mute_musica_pressed():
+	Global.musica_muted = mute_musica.button_pressed
+	Global.cambiar_vol_musica(slider_musica.value)
+
+func _on_mute_sfx_pressed():
+	Global.SFX_muted = mute_SFX.button_pressed
+	Global.cambiar_vol_SFX(slider_SFX.value)
