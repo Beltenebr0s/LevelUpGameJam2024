@@ -153,7 +153,8 @@ func mulligan():
 		mano_ui.ocultar_cartas(-1)
 		crear_manos()
 		await get_tree().create_timer(2.0).timeout
-		mostrar_mano_jugador()
+		audio_repartir_mano()
+		mano_ui.colocar_cartas_en_mano_mulligan(mazo_jugador.mano)
 	pass
 
 func decidir_final():
