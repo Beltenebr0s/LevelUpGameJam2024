@@ -29,4 +29,5 @@ func actualizar_turno(turno : int):
 	etiqueta_turno.text = str(turno)
 
 func _on_animation_player_animation_finished(anim_name):
+	await get_tree().create_timer(0.5).timeout
 	animation_finished.emit()

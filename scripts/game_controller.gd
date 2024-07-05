@@ -17,6 +17,7 @@ var scena_menu_pausa
 @onready var medidor_locura = $medidor_locura
 @onready var pasivas_ui = $pasivasUI
 @onready var reloj = $medidor_dia
+@onready var timer_reloj = $medidor_dia/Timer
 @onready var alerta_combo = $alerta_combo
 
 @onready var music_audio_player = $Musica
@@ -204,6 +205,7 @@ func audio_jugar_carta():
 	sfx_audio_player.stream = lista_sfx_jugar_cartas.pick_random()
 	sfx_audio_player.play()
 func audio_pasar_turno():
+	await get_tree().create_timer(0.1).timeout
 	sfx_audio_player.stream = sfx_cambio_turno
 	sfx_audio_player.play()
 

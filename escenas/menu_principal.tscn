@@ -1,9 +1,9 @@
 [gd_scene load_steps=29 format=3 uid="uid://byeqj6jd7r2vl"]
 
 [ext_resource type="Script" path="res://scripts/MenuPrincipal.gd" id="1_xdxr6"]
+[ext_resource type="Texture2D" uid="uid://uo6y72gka3i6" path="res://texturas/menus/Mesa_Oscura.png" id="2_2wova"]
 [ext_resource type="Texture2D" uid="uid://du0j2ib4uoe6b" path="res://texturas/menus/Libro_para_Victoria_y_derrota.png" id="2_7wfuc"]
 [ext_resource type="PackedScene" uid="uid://c3dvk21fhqeoi" path="res://escenas/panel_menu.tscn" id="2_rx15a"]
-[ext_resource type="Texture2D" uid="uid://e3j3u4mjg7ij" path="res://texturas/menus/conf_abierto.png" id="3_8ghbx"]
 [ext_resource type="Texture2D" uid="uid://dpapmirwd714k" path="res://texturas/menus/boton_creditos.png" id="3_530hg"]
 [ext_resource type="Texture2D" uid="uid://b332yv2t8kynt" path="res://texturas/menus/libro_cerrado.png" id="5_ic5la"]
 [ext_resource type="Texture2D" uid="uid://ds8j1l4sv3678" path="res://texturas/menus/Borde_Ilustraciones_Libro.png" id="5_ma7rj"]
@@ -62,6 +62,23 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_gt4ad")
 script = ExtResource("1_xdxr6")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -595.0
+offset_top = -320.0
+offset_right = 584.0
+offset_bottom = 343.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_2wova")
+expand_mode = 1
+
 [node name="LibroAbierto" type="Panel" parent="."]
 z_index = 1
 layout_mode = 1
@@ -114,34 +131,33 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_qebxr")
 [node name="Play" type="Button" parent="LibroAbierto/PaginaInicio"]
 z_index = 3
 layout_mode = 0
-offset_left = 185.0
-offset_top = 171.0
-offset_right = 350.0
-offset_bottom = 236.0
+offset_left = 202.5
+offset_top = 167.5
+offset_right = 367.5
+offset_bottom = 232.5
 text = "JUGAR"
 
 [node name="Settings" type="Button" parent="LibroAbierto/PaginaInicio"]
-z_index = -10
 layout_mode = 0
-offset_left = 799.0
-offset_top = 20.0
-offset_right = 1096.0
-offset_bottom = 224.0
+offset_left = 204.5
+offset_top = 234.5
+offset_right = 369.5
+offset_bottom = 298.5
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ewe8s")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_8123l")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_c4df0")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_8rvck")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_5igvk")
-icon = ExtResource("3_8ghbx")
+text = "SETTINGS"
 expand_icon = true
 
 [node name="Credits" type="Button" parent="LibroAbierto/PaginaInicio"]
 z_index = 3
 layout_mode = 0
-offset_left = 688.0
-offset_top = 525.0
-offset_right = 858.0
-offset_bottom = 601.0
+offset_left = 202.5
+offset_top = 282.5
+offset_right = 372.5
+offset_bottom = 358.5
 theme_override_styles/normal = SubResource("StyleBoxEmpty_jcm7g")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_ux34v")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_3q2n1")
@@ -155,10 +171,10 @@ expand_icon = true
 [node name="Exit" type="Button" parent="LibroAbierto/PaginaInicio"]
 z_index = 3
 layout_mode = 0
-offset_left = 186.0
-offset_top = 269.0
-offset_right = 351.0
-offset_bottom = 334.0
+offset_left = 202.5
+offset_top = 370.5
+offset_right = 367.5
+offset_bottom = 435.5
 text = "SALIR :("
 
 [node name="BordeIlustracion3" type="TextureRect" parent="LibroAbierto/PaginaInicio"]

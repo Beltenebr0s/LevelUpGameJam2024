@@ -75,7 +75,6 @@ libraries = {
 }
 
 [node name="Dial" type="Sprite2D" parent="."]
-rotation = -3.14159
 texture = ExtResource("2_wgrq2")
 
 [node name="Marco" type="Sprite2D" parent="."]

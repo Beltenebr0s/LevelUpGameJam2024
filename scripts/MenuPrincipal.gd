@@ -3,10 +3,10 @@ extends Panel
 @onready var libro_cerrado = $LibroCerrado
 @onready var libro_abierto = $LibroAbierto
 @onready var tutorial = $tutorial
-@onready var slider_musica = $LibroAbierto/PaginaDerecha/Settings/VolumenMusica
-@onready var slider_SFX = $LibroAbierto/PaginaDerecha/Settings/VolumenSFX
-@onready var mute_musica = $LibroAbierto/PaginaDerecha/Settings/VolumenMusica/MuteMusica
-@onready var mute_SFX = $LibroAbierto/PaginaDerecha/Settings/VolumenSFX/MuteSFX
+@onready var slider_musica = $LibroAbierto/Settings/VolumenMusica
+@onready var slider_SFX = $LibroAbierto/Settings/VolumenSFX
+@onready var mute_musica = $LibroAbierto/Settings/VolumenMusica/MuteMusica
+@onready var mute_SFX = $LibroAbierto/Settings/VolumenSFX/MuteSFX
 
 @onready var escena_juego = preload("res://escenas/game.tscn")
 
@@ -19,15 +19,15 @@ func _ready():
 	libro_cerrado.visible = Global.b_first_game
 	tutorial.visible = false
 	if (!Global.b_first_game):
-		$LibroAbierto/PaginaDerecha.visible = !Global.b_first_game
-		$LibroAbierto/PaginaDerecha/Settings.visible = false
-		$LibroAbierto/PaginaDerecha/Credits.visible = false
-		$LibroAbierto/PaginaDerecha/Final.visible = !Global.b_first_game
-		$LibroAbierto/PaginaDerecha/Final/Score.text = str(Global.puntos_locura)
+		$LibroAbierto.visible = !Global.b_first_game
+		$LibroAbierto/Settings.visible = false
+		$LibroAbierto/Credits.visible = false
+		$LibroAbierto/Final.visible = !Global.b_first_game
+		$LibroAbierto/Final/Score.text = str(Global.puntos_locura)
 		if (Global.puntos_locura > 100):
-			$LibroAbierto/PaginaDerecha/Final/Victoria.visible = true
+			$LibroAbierto/Final/Victoria.visible = true
 		else:
-			$LibroAbierto/PaginaDerecha/Final/Derrota.visible = true
+			$LibroAbierto/Final/Derrota.visible = true
 		
 		
 		var node : RichTextLabel = get_node("LibroAbierto/PaginaDerecha/Final/Historia/TextoHistoria")
@@ -37,7 +37,6 @@ func _ready():
 
 func _on_titulo_juego_pressed():
 	libro_abierto.visible = true
-	$LibroAbierto/PaginaDerecha.visible = false
 	libro_cerrado.visible = false
 
 
@@ -55,17 +54,17 @@ func _on_start_game_pressed():
 
 func _on_settings_pressed():
 	print("Ajustes")
-	$LibroAbierto/PaginaDerecha.visible = true
-	$LibroAbierto/PaginaDerecha/Settings.visible = true
-	$LibroAbierto/PaginaDerecha/Credits.visible = false
-	$LibroAbierto/PaginaDerecha/Final.visible = false
+	$LibroAbierto.visible = true
+	$LibroAbierto/Settings.visible = true
+	$LibroAbierto/Credits.visible = false
+	$LibroAbierto/Final.visible = false
 
 func _on_credits_pressed():
 	print("Créditos")
-	$LibroAbierto/PaginaDerecha.visible = true
-	$LibroAbierto/PaginaDerecha/Settings.visible = false
-	$LibroAbierto/PaginaDerecha/Credits.visible = true
-	$LibroAbierto/PaginaDerecha/Final.visible = false
+	$LibroAbierto.visible = true
+	$LibroAbierto/Settings.visible = false
+	$LibroAbierto/Credits.visible = true
+	$LibroAbierto/Final.visible = false
 
 
 func _on_exit_pressed():
