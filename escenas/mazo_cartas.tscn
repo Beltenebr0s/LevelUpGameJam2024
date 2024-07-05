@@ -101,6 +101,7 @@ valor = 60
 titulo = "El cirujano"
 descripcion = "Los pacientes del cirujano están paranoicos, acuden a él por nimiedades. Ha deicidido que les dará motivos para contratar sus servicios."
 tipo = 2
+funcion = 1
 desbloquea_pasiva = true
 requisitos = 30
 valor = -30
@@ -112,6 +113,7 @@ descripcion = "La casa del vigil ha ardido, calcinando a toda su familia. No sab
 
 "
 tipo = 1
+funcion = 1
 desbloquea_pasiva = true
 requisitos = 50
 valor = -20
@@ -121,6 +123,7 @@ valida_ia = false
 titulo = "El sacerdote"
 descripcion = "Puede que aún no tengas poder para invocar a tu dios, pero algún demonio menor puede atraer al sacerdote a tu causa."
 tipo = 3
+funcion = 1
 desbloquea_pasiva = true
 requisitos = 20
 valor = -10
@@ -129,6 +132,7 @@ valida_ia = false
 [node name="Carta18" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "El caballero maldito"
 descripcion = "El norte y lucero de la caballería oculta una maldición. Aquel que no puede perder la vida, acaba perdiendo el alma. Si los vecinos se enteran de su condición, no vivirán tranquilos a su lado."
+funcion = 1
 desbloquea_pasiva = true
 requisitos = 15
 valor = 10

@@ -2,10 +2,12 @@ extends Sprite2D
 class_name Carta
 
 enum TipoCarta { CABALLERO, VIGIL, CIRUJANO, SACERDOTE }
+enum FuncionCarta { NORMAL, PASIVA, MULTIPLICADOR } 
 
 @export var titulo : String
 @export_multiline var descripcion : String
 @export var tipo : TipoCarta
+@export var funcion : FuncionCarta 
 @export var reutilizable : bool = false
 @export var desbloquea_pasiva : bool
 @export var requisitos : int

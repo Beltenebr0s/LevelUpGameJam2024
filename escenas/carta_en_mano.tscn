@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://ox8ij1qdjkkh"]
+[gd_scene load_steps=13 format=3 uid="uid://ox8ij1qdjkkh"]
 
 [ext_resource type="Script" path="res://scripts/CartaEnMano.gd" id="1_qjok4"]
 [ext_resource type="Texture2D" uid="uid://cn3c3uw325306" path="res://texturas/Dorso_Rojo.png" id="2_vg7fl"]
 [ext_resource type="LabelSettings" uid="uid://begwl5binonky" path="res://Fuentes/titulo_cartas.tres" id="3_fhwxm"]
+[ext_resource type="Texture2D" uid="uid://0u1l81ja0ixj" path="res://texturas/cartas/Borde_Azul.png" id="3_snlwa"]
 [ext_resource type="LabelSettings" uid="uid://dt1tfgdc64y" path="res://Fuentes/texto_cartas.tres" id="4_wfu54"]
 
 [sub_resource type="Animation" id="Animation_dea5w"]
@@ -131,6 +132,10 @@ libraries = {
 [node name="TexturaCarta" type="Sprite2D" parent="Carta"]
 scale = Vector2(0.162162, 0.162162)
 texture = ExtResource("2_vg7fl")
+
+[node name="Borde" type="Sprite2D" parent="Carta"]
+scale = Vector2(0.162162, 0.162162)
+texture = ExtResource("3_snlwa")
 
 [node name="BotonCarta" type="TextureButton" parent="Carta"]
 offset_left = -54.0

@@ -33,7 +33,7 @@ func _ready():
 	var escena_menu_pausa = ResourceLoader.load_threaded_get("res://escenas/menu_pausa.tscn")
 	scena_menu_pausa = escena_menu_pausa.instantiate()
 	scena_menu_pausa.process_mode = Node.PROCESS_MODE_ALWAYS
-	root.add_child(scena_menu_pausa)
+	root.add_child.call_deferred(scena_menu_pausa)
 	scena_menu_pausa.visible = false
 	inicar_juego()
 

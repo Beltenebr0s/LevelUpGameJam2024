@@ -3,10 +3,14 @@ extends Control
 var carta_jugada = false
 var carta_oculta = false
 var carta = null
+
+var borde_funciones = ["res://texturas/cartas/Borde_Rojo.png", "res://texturas/cartas/Borde_Azul.png", "res://texturas/cartas/Borde_Verde.png"]
+
 @onready var animation_player = $AnimationPlayer 
 @onready var titulo = $Carta/descripcion/titulo
 @onready var descripcion = $Carta/descripcion/descripcion
 @onready var textura = $Carta/TexturaCarta
+@onready var borde = $Carta/Borde
 
 signal play_sonido
 
@@ -86,11 +90,15 @@ func actualizar_descripcion():
 	self.titulo.text = self.carta.titulo
 	self.descripcion.text = self.carta.descripcion
 
+func actualizar_borde():
+	self.borde.texture = load(borde_funciones[carta.funcion])
+
 func set_carta(_carta, b_ia:bool):
 	carta_jugada = false
 	self.carta = _carta
 	if(!b_ia):
 		actualizar_sprite()
+		actualizar_borde()
 	actualizar_descripcion()
 
 func _on_boton_carta_pressed():
