@@ -2,7 +2,7 @@ extends Panel
 
 @onready var libro_cerrado = $LibroCerrado
 @onready var libro_abierto = $LibroAbierto
-@onready var tutorial = $tutorial
+@onready var tutorial = $LibroAbierto/tutorial
 @onready var slider_musica = $LibroAbierto/Settings/VolumenMusica
 @onready var slider_SFX = $LibroAbierto/Settings/VolumenSFX
 @onready var mute_musica = $LibroAbierto/Settings/VolumenMusica/MuteMusica
@@ -43,9 +43,12 @@ func _on_titulo_juego_pressed():
 
 func _on_play_pressed():
 	if (Global.b_first_game):
-		libro_abierto.visible = false
+		libro_abierto.visible = true
 		libro_cerrado.visible = false
 		tutorial.visible = true
+		$LibroAbierto/PaginaInicio.visible = false
+		$LibroAbierto/Settings.visible = false
+		$LibroAbierto/Credits.visible = false
 	else:
 		_on_start_game_pressed()
 
