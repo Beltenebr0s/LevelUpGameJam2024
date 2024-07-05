@@ -102,7 +102,7 @@ func set_carta(_carta, b_ia:bool):
 	actualizar_descripcion()
 
 func _on_boton_carta_pressed():
-	if !carta_jugada:
+	if !carta_jugada && !carta_oculta:
 		play_sonido.emit()
 		carta_jugada = true
 		mostrar_descripcion()
