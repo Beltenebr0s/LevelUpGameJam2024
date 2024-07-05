@@ -1,12 +1,15 @@
-[gd_scene load_steps=27 format=3 uid="uid://byeqj6jd7r2vl"]
+[gd_scene load_steps=29 format=3 uid="uid://byeqj6jd7r2vl"]
 
 [ext_resource type="Script" path="res://scripts/MenuPrincipal.gd" id="1_xdxr6"]
-[ext_resource type="Texture2D" uid="uid://qs6p1bua650d" path="res://texturas/menus/libro_abierto_info.png" id="2_56m1p"]
+[ext_resource type="Texture2D" uid="uid://du0j2ib4uoe6b" path="res://texturas/menus/Libro_para_Victoria_y_derrota.png" id="2_7wfuc"]
 [ext_resource type="PackedScene" uid="uid://c3dvk21fhqeoi" path="res://escenas/panel_menu.tscn" id="2_rx15a"]
 [ext_resource type="Texture2D" uid="uid://e3j3u4mjg7ij" path="res://texturas/menus/conf_abierto.png" id="3_8ghbx"]
 [ext_resource type="Texture2D" uid="uid://dpapmirwd714k" path="res://texturas/menus/boton_creditos.png" id="3_530hg"]
-[ext_resource type="Texture2D" uid="uid://cfdf68gf38qpm" path="res://icon.svg" id="3_gtpdf"]
 [ext_resource type="Texture2D" uid="uid://b332yv2t8kynt" path="res://texturas/menus/libro_cerrado.png" id="5_ic5la"]
+[ext_resource type="Texture2D" uid="uid://ds8j1l4sv3678" path="res://texturas/menus/Borde_Ilustraciones_Libro.png" id="5_ma7rj"]
+[ext_resource type="Texture2D" uid="uid://cgrucv55xpoo3" path="res://texturas/menus/Menu_Inicio_Ilustracion.png" id="6_xlrri"]
+[ext_resource type="Texture2D" uid="uid://d5m6ymst3es7" path="res://texturas/menus/Victoria_Libro.png" id="8_05w7k"]
+[ext_resource type="Texture2D" uid="uid://cr5qcqw6tj6aw" path="res://texturas/menus/Derrota_Libro.png" id="9_86xqj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gt4ad"]
 
@@ -33,8 +36,6 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2t631"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rmpmb"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jxng8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mqjlx"]
 
@@ -77,26 +78,40 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_oms4q")
 
-[node name="TextureRect" type="TextureRect" parent="LibroAbierto"]
+[node name="TextureLibro" type="TextureRect" parent="LibroAbierto"]
 z_index = -1
-layout_mode = 0
-offset_left = -62.0
-offset_top = 3.0
-offset_right = 983.0
-offset_bottom = 595.0
-texture = ExtResource("2_56m1p")
-expand_mode = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -415.5
+offset_top = -299.0
+offset_right = 415.5
+offset_bottom = 299.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_7wfuc")
+expand_mode = 1
 
-[node name="PaginaIzquierda" type="Panel" parent="LibroAbierto"]
+[node name="PaginaInicio" type="Panel" parent="LibroAbierto"]
 z_index = 2
-layout_mode = 0
-offset_left = -64.0
-offset_top = 17.0
-offset_right = 468.0
-offset_bottom = 580.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -513.0
+offset_top = -287.5
+offset_right = 513.0
+offset_bottom = 287.5
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_qebxr")
 
-[node name="Play" type="Button" parent="LibroAbierto/PaginaIzquierda"]
+[node name="Play" type="Button" parent="LibroAbierto/PaginaInicio"]
 z_index = 3
 layout_mode = 0
 offset_left = 185.0
@@ -105,7 +120,7 @@ offset_right = 350.0
 offset_bottom = 236.0
 text = "JUGAR"
 
-[node name="Settings" type="Button" parent="LibroAbierto/PaginaIzquierda"]
+[node name="Settings" type="Button" parent="LibroAbierto/PaginaInicio"]
 z_index = -10
 layout_mode = 0
 offset_left = 799.0
@@ -120,7 +135,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_5igvk")
 icon = ExtResource("3_8ghbx")
 expand_icon = true
 
-[node name="Credits" type="Button" parent="LibroAbierto/PaginaIzquierda"]
+[node name="Credits" type="Button" parent="LibroAbierto/PaginaInicio"]
 z_index = 3
 layout_mode = 0
 offset_left = 688.0
@@ -137,7 +152,7 @@ text = "
 icon = ExtResource("3_530hg")
 expand_icon = true
 
-[node name="Exit" type="Button" parent="LibroAbierto/PaginaIzquierda"]
+[node name="Exit" type="Button" parent="LibroAbierto/PaginaInicio"]
 z_index = 3
 layout_mode = 0
 offset_left = 186.0
@@ -146,34 +161,44 @@ offset_right = 351.0
 offset_bottom = 334.0
 text = "SALIR :("
 
-[node name="PaginaDerecha" type="Panel" parent="LibroAbierto"]
-z_index = 1
+[node name="BordeIlustracion3" type="TextureRect" parent="LibroAbierto/PaginaInicio"]
+z_index = -1
+layout_mode = 0
+offset_left = 528.5
+offset_top = 47.5
+offset_right = 873.5
+offset_bottom = 535.5
+texture = ExtResource("5_ma7rj")
+expand_mode = 1
+
+[node name="IlustracionInicio" type="TextureRect" parent="LibroAbierto/PaginaInicio/BordeIlustracion3"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 24.0
+offset_right = 318.0
+offset_bottom = 461.0
+texture = ExtResource("6_xlrri")
+expand_mode = 1
+
+[node name="Settings" parent="LibroAbierto" instance=ExtResource("2_rx15a")]
+visible = false
 layout_mode = 0
 offset_left = 460.0
 offset_top = 55.0
-offset_right = 915.0
-offset_bottom = 545.0
-theme_override_styles/panel = SubResource("StyleBoxEmpty_jxng8")
+offset_right = 866.0
+offset_bottom = 581.0
 
-[node name="Settings" parent="LibroAbierto/PaginaDerecha" instance=ExtResource("2_rx15a")]
-visible = false
-layout_mode = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 406.0
-offset_bottom = 526.0
-
-[node name="Titulo" parent="LibroAbierto/PaginaDerecha/Settings" index="0"]
+[node name="Titulo" parent="LibroAbierto/Settings" index="0"]
 text = "AJUSTES"
 
-[node name="VolumenMusica" type="HSlider" parent="LibroAbierto/PaginaDerecha/Settings"]
+[node name="VolumenMusica" type="HSlider" parent="LibroAbierto/Settings"]
 layout_mode = 0
 offset_left = 74.0
 offset_top = 135.0
 offset_right = 330.0
 offset_bottom = 151.0
 
-[node name="Label" type="Label" parent="LibroAbierto/PaginaDerecha/Settings/VolumenMusica"]
+[node name="Label" type="Label" parent="LibroAbierto/Settings/VolumenMusica"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -186,14 +211,14 @@ grow_horizontal = 2
 text = "Volumen Música"
 horizontal_alignment = 1
 
-[node name="MuteMusica" type="CheckButton" parent="LibroAbierto/PaginaDerecha/Settings/VolumenMusica"]
+[node name="MuteMusica" type="CheckButton" parent="LibroAbierto/Settings/VolumenMusica"]
 layout_mode = 0
 offset_left = 216.0
 offset_top = 24.0
 offset_right = 260.0
 offset_bottom = 48.0
 
-[node name="Label2" type="Label" parent="LibroAbierto/PaginaDerecha/Settings/VolumenMusica"]
+[node name="Label2" type="Label" parent="LibroAbierto/Settings/VolumenMusica"]
 layout_mode = 0
 offset_left = 168.0
 offset_top = 24.0
@@ -201,14 +226,14 @@ offset_right = 209.0
 offset_bottom = 47.0
 text = "Mute"
 
-[node name="VolumenSFX" type="HSlider" parent="LibroAbierto/PaginaDerecha/Settings"]
+[node name="VolumenSFX" type="HSlider" parent="LibroAbierto/Settings"]
 layout_mode = 0
 offset_left = 74.0
 offset_top = 247.0
 offset_right = 330.0
 offset_bottom = 263.0
 
-[node name="Label" type="Label" parent="LibroAbierto/PaginaDerecha/Settings/VolumenSFX"]
+[node name="Label" type="Label" parent="LibroAbierto/Settings/VolumenSFX"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -222,14 +247,14 @@ text = "Volumen SFX
 "
 horizontal_alignment = 1
 
-[node name="MuteSFX" type="CheckButton" parent="LibroAbierto/PaginaDerecha/Settings/VolumenSFX"]
+[node name="MuteSFX" type="CheckButton" parent="LibroAbierto/Settings/VolumenSFX"]
 layout_mode = 0
 offset_left = 216.0
 offset_top = 24.0
 offset_right = 260.0
 offset_bottom = 48.0
 
-[node name="Label2" type="Label" parent="LibroAbierto/PaginaDerecha/Settings/VolumenSFX"]
+[node name="Label2" type="Label" parent="LibroAbierto/Settings/VolumenSFX"]
 layout_mode = 0
 offset_left = 168.0
 offset_top = 24.0
@@ -237,87 +262,95 @@ offset_right = 209.0
 offset_bottom = 47.0
 text = "Mute"
 
-[node name="Final" parent="LibroAbierto/PaginaDerecha" instance=ExtResource("2_rx15a")]
+[node name="Final" parent="LibroAbierto" instance=ExtResource("2_rx15a")]
+visible = false
 layout_mode = 0
-offset_left = -1.0
-offset_top = -5.0
-offset_right = 458.0
-offset_bottom = 514.0
+offset_left = 459.0
+offset_top = 50.0
+offset_right = 918.0
+offset_bottom = 569.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_mqjlx")
 
-[node name="Titulo" parent="LibroAbierto/PaginaDerecha/Final" index="0"]
-offset_left = 25.0
-offset_top = 41.0
-offset_right = 429.0
-offset_bottom = 109.0
+[node name="Titulo" parent="LibroAbierto/Final" index="0"]
+offset_left = -405.0
+offset_top = 26.0
+offset_right = -1.0
+offset_bottom = 94.0
 text = "ME CAGO EN EL MISTERIO"
 
-[node name="Score" type="Label" parent="LibroAbierto/PaginaDerecha/Final"]
+[node name="Score" type="Label" parent="LibroAbierto/Final"]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 459.0
-offset_right = 406.0
-offset_bottom = 527.0
+offset_left = -420.0
+offset_top = 366.0
+offset_right = -16.0
+offset_bottom = 434.0
 label_settings = SubResource("LabelSettings_nye3j")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Victoria" type="Label" parent="LibroAbierto/PaginaDerecha/Final"]
+[node name="Victoria" type="Label" parent="LibroAbierto/Final"]
 visible = false
 layout_mode = 0
-offset_left = -1.0
-offset_top = 397.0
-offset_right = 403.0
-offset_bottom = 465.0
+offset_left = -415.0
+offset_top = 393.0
+offset_right = -11.0
+offset_bottom = 461.0
 text = "Victoria"
 label_settings = SubResource("LabelSettings_nye3j")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Fondo" type="TextureRect" parent="LibroAbierto/PaginaDerecha/Final/Victoria"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -139.0
-offset_top = -365.0
-offset_right = 667.0
-offset_bottom = 555.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.35, 0.35)
-texture = ExtResource("3_gtpdf")
+[node name="BordeIlustracion2" type="TextureRect" parent="LibroAbierto/Final/Victoria"]
+z_index = -1
+layout_mode = 0
+offset_left = 423.0
+offset_top = -400.0
+offset_right = 768.0
+offset_bottom = 88.0
+texture = ExtResource("5_ma7rj")
+expand_mode = 1
 
-[node name="Derrota" type="Label" parent="LibroAbierto/PaginaDerecha/Final"]
+[node name="IlustracionInicio" type="TextureRect" parent="LibroAbierto/Final/Victoria/BordeIlustracion2"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 24.0
+offset_right = 318.0
+offset_bottom = 461.0
+texture = ExtResource("8_05w7k")
+expand_mode = 1
+
+[node name="Derrota" type="Label" parent="LibroAbierto/Final"]
 visible = false
 layout_mode = 0
-offset_left = 2.0
-offset_top = 398.0
-offset_right = 406.0
-offset_bottom = 466.0
+offset_left = -415.0
+offset_top = 390.0
+offset_right = -11.0
+offset_bottom = 458.0
 text = "Derrota"
 label_settings = SubResource("LabelSettings_nye3j")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Fondo" type="TextureRect" parent="LibroAbierto/PaginaDerecha/Final/Derrota"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -139.0
-offset_top = -365.0
-offset_right = 667.0
-offset_bottom = 555.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.35, 0.35)
+[node name="BordeIlustracion3" type="TextureRect" parent="LibroAbierto/Final/Derrota"]
+z_index = -1
+layout_mode = 0
+offset_left = 423.0
+offset_top = -397.0
+offset_right = 768.0
+offset_bottom = 91.0
+texture = ExtResource("5_ma7rj")
+expand_mode = 1
 
-[node name="Historia" type="Label" parent="LibroAbierto/PaginaDerecha/Final"]
+[node name="IlustracionInicio" type="TextureRect" parent="LibroAbierto/Final/Derrota/BordeIlustracion3"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 24.0
+offset_right = 318.0
+offset_bottom = 461.0
+texture = ExtResource("9_86xqj")
+expand_mode = 1
+
+[node name="Historia" type="Label" parent="LibroAbierto/Final"]
 visible = false
 layout_mode = 0
 offset_left = 75.0
@@ -326,30 +359,30 @@ offset_right = 257.0
 offset_bottom = 132.0
 text = "Historia"
 
-[node name="TextoHistoria" type="RichTextLabel" parent="LibroAbierto/PaginaDerecha/Final/Historia"]
+[node name="TextoHistoria" type="RichTextLabel" parent="LibroAbierto/Final/Historia"]
 layout_mode = 0
 offset_left = 1.0
 offset_top = 30.0
 offset_right = 309.0
 offset_bottom = 307.0
 
-[node name="Credits" parent="LibroAbierto/PaginaDerecha" instance=ExtResource("2_rx15a")]
+[node name="Credits" parent="LibroAbierto" instance=ExtResource("2_rx15a")]
 visible = false
 layout_mode = 0
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 451.0
-offset_bottom = 495.0
+offset_left = 452.0
+offset_top = 47.0
+offset_right = 911.0
+offset_bottom = 550.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_i5bd0")
 
-[node name="Titulo" parent="LibroAbierto/PaginaDerecha/Credits" index="0"]
+[node name="Titulo" parent="LibroAbierto/Credits" index="0"]
 offset_left = 31.0
 offset_top = 20.0
 offset_right = 435.0
 offset_bottom = 88.0
 text = "CRÉDITOS"
 
-[node name="SeccionArte" type="Label" parent="LibroAbierto/PaginaDerecha/Credits"]
+[node name="SeccionArte" type="Label" parent="LibroAbierto/Credits"]
 layout_mode = 0
 offset_left = 51.0
 offset_top = 85.0
@@ -357,7 +390,7 @@ offset_right = 240.0
 offset_bottom = 113.0
 text = "ARTE"
 
-[node name="TextoArte" type="RichTextLabel" parent="LibroAbierto/PaginaDerecha/Credits/SeccionArte"]
+[node name="TextoArte" type="RichTextLabel" parent="LibroAbierto/Credits/SeccionArte"]
 layout_mode = 0
 offset_left = 1.0
 offset_top = 28.0
@@ -366,7 +399,7 @@ offset_bottom = 118.0
 text = "Juan
 Nubi"
 
-[node name="SeccionProgramacion" type="Label" parent="LibroAbierto/PaginaDerecha/Credits"]
+[node name="SeccionProgramacion" type="Label" parent="LibroAbierto/Credits"]
 layout_mode = 0
 offset_left = 50.0
 offset_top = 211.0
@@ -374,7 +407,7 @@ offset_right = 239.0
 offset_bottom = 239.0
 text = "PROGRAMACIÓN"
 
-[node name="TextoProgramacion" type="RichTextLabel" parent="LibroAbierto/PaginaDerecha/Credits/SeccionProgramacion"]
+[node name="TextoProgramacion" type="RichTextLabel" parent="LibroAbierto/Credits/SeccionProgramacion"]
 layout_mode = 0
 offset_left = 2.0
 offset_top = 36.0
@@ -385,7 +418,7 @@ Alejandro
 Bea
 "
 
-[node name="SeccionSonido" type="Label" parent="LibroAbierto/PaginaDerecha/Credits"]
+[node name="SeccionSonido" type="Label" parent="LibroAbierto/Credits"]
 layout_mode = 0
 offset_left = 53.0
 offset_top = 369.0
@@ -394,7 +427,7 @@ offset_bottom = 397.0
 text = "SONIDO
 "
 
-[node name="TextoSonido" type="RichTextLabel" parent="LibroAbierto/PaginaDerecha/Credits/SeccionSonido"]
+[node name="TextoSonido" type="RichTextLabel" parent="LibroAbierto/Credits/SeccionSonido"]
 layout_mode = 0
 offset_left = -1.0
 offset_top = 31.0
@@ -480,17 +513,17 @@ offset_right = 450.0
 offset_bottom = 512.0
 text = "start game"
 
-[connection signal="pressed" from="LibroAbierto/PaginaIzquierda/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="LibroAbierto/PaginaIzquierda/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="LibroAbierto/PaginaIzquierda/Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="LibroAbierto/PaginaIzquierda/Exit" to="." method="_on_exit_pressed"]
-[connection signal="value_changed" from="LibroAbierto/PaginaDerecha/Settings/VolumenMusica" to="." method="_on_volumen_musica_value_changed"]
-[connection signal="pressed" from="LibroAbierto/PaginaDerecha/Settings/VolumenMusica/MuteMusica" to="." method="_on_mute_musica_pressed"]
-[connection signal="value_changed" from="LibroAbierto/PaginaDerecha/Settings/VolumenSFX" to="." method="_on_volumen_sfx_value_changed"]
-[connection signal="pressed" from="LibroAbierto/PaginaDerecha/Settings/VolumenSFX/MuteSFX" to="." method="_on_mute_sfx_pressed"]
+[connection signal="pressed" from="LibroAbierto/PaginaInicio/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="LibroAbierto/PaginaInicio/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="LibroAbierto/PaginaInicio/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="LibroAbierto/PaginaInicio/Exit" to="." method="_on_exit_pressed"]
+[connection signal="value_changed" from="LibroAbierto/Settings/VolumenMusica" to="." method="_on_volumen_musica_value_changed"]
+[connection signal="pressed" from="LibroAbierto/Settings/VolumenMusica/MuteMusica" to="." method="_on_mute_musica_pressed"]
+[connection signal="value_changed" from="LibroAbierto/Settings/VolumenSFX" to="." method="_on_volumen_sfx_value_changed"]
+[connection signal="pressed" from="LibroAbierto/Settings/VolumenSFX/MuteSFX" to="." method="_on_mute_sfx_pressed"]
 [connection signal="pressed" from="LibroCerrado/TituloJuego" to="." method="_on_titulo_juego_pressed"]
 [connection signal="pressed" from="tutorial/start_game" to="." method="_on_start_game_pressed"]
 
-[editable path="LibroAbierto/PaginaDerecha/Settings"]
-[editable path="LibroAbierto/PaginaDerecha/Final"]
-[editable path="LibroAbierto/PaginaDerecha/Credits"]
+[editable path="LibroAbierto/Settings"]
+[editable path="LibroAbierto/Final"]
+[editable path="LibroAbierto/Credits"]
