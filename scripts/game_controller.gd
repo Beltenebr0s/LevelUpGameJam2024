@@ -17,7 +17,6 @@ var scena_menu_pausa
 @onready var medidor_locura = $medidor_locura
 @onready var pasivas_ui = $pasivasUI
 @onready var reloj = $medidor_dia
-@onready var timer_reloj = $medidor_dia/Timer
 @onready var alerta_combo = $alerta_combo
 
 @onready var music_audio_player = $Musica
