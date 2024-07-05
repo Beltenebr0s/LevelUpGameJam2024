@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2ed2213ydb0g"]
+
+[ext_resource type="Script" path="res://scripts/alerta_combo.gd" id="1_0j7b3"]
+[ext_resource type="Texture2D" uid="uid://cfdf68gf38qpm" path="res://icon.svg" id="1_ct4m1"]
+
+[sub_resource type="Animation" id="Animation_vfpme"]
+resource_name = "zoom"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.1, 1.3),
+"transitions": PackedFloat32Array(2.2974, 3.13834, 0.517633, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(2.5, 2.5), Vector2(1, 1), Vector2(1.5, 1.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ijbjc"]
+_data = {
+"zoom": SubResource("Animation_vfpme")
+}
+
+[node name="alerta_combo" type="Node2D"]
+script = ExtResource("1_0j7b3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2.45228, 2.45228)
+texture = ExtResource("1_ct4m1")
+
+[node name="AnimationTree" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ijbjc")
+}
+
+[connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]

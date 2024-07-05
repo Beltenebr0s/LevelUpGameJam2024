@@ -1,8 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://dfwncdbnb8hmh"]
+[gd_scene load_steps=13 format=3 uid="uid://dfwncdbnb8hmh"]
 
 [ext_resource type="Script" path="res://scripts/carta_en_mano_ia.gd" id="1_mbqnl"]
 [ext_resource type="Texture2D" uid="uid://bpfn15jhr0pjh" path="res://texturas/cartas/Dorso_Negro_Placeholder.png" id="2_pqlfa"]
-[ext_resource type="LabelSettings" uid="uid://begwl5binonky" path="res://Fuentes/titulo_cartas.tres" id="3_ifop7"]
+[ext_resource type="FontFile" uid="uid://b0jqr7aj1vrop" path="res://DarumadropOne-Regular.ttf" id="3_s43x6"]
 [ext_resource type="LabelSettings" uid="uid://dt1tfgdc64y" path="res://Fuentes/texto_cartas.tres" id="4_ppdfi"]
 
 [sub_resource type="Animation" id="Animation_dea5w"]
@@ -112,6 +112,17 @@ _data = {
 "subir_carta_mas": SubResource("Animation_j8v1y")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_14y1e"]
+line_spacing = 1.0
+font = ExtResource("3_s43x6")
+font_size = 19
+font_color = Color(0.835537, 0.711223, 0.916408, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
 [node name="carta_en_mano_ia" type="Node2D"]
 rotation = 3.14159
 script = ExtResource("1_mbqnl")
@@ -135,23 +146,23 @@ offset_bottom = 45.0
 rotation = 3.14159
 
 [node name="titulo" type="Label" parent="Carta/descripcion"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -107.0
-offset_top = -43.0
-offset_right = 113.0
-offset_bottom = -1.0
+offset_left = -50.9997
+offset_top = -29.0003
+offset_right = 51.0003
+offset_bottom = 118.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-text = "Titulo guachi"
-label_settings = ExtResource("3_ifop7")
+label_settings = SubResource("LabelSettings_14y1e")
 horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="descripcion" type="Label" parent="Carta/descripcion"]
 visible = false

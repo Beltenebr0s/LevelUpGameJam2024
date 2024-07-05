@@ -40,9 +40,9 @@ func mostrar_descripcion(_titulo : String, _descripcion : String):
 	self.descripcion.text = _descripcion
 	
 	self.titulo.visible = true
-	self.descripcion.visible = true
+	#self.descripcion.visible = true
 	
 func ocultar_descripción():
 	self.titulo.visible = false
-	self.descripcion.visible = false
+	#self.descripcion.visible = false
 

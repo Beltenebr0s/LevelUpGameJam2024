@@ -17,6 +17,7 @@ var scena_menu_pausa
 @onready var medidor_locura = $medidor_locura
 @onready var pasivas_ui = $pasivasUI
 @onready var reloj = $medidor_dia
+@onready var alerta_combo = $alerta_combo
 
 @onready var sfx_audio_player = $SFX
 @export var lista_sfx_jugar_cartas : Array[AudioStreamWAV]
@@ -143,6 +144,7 @@ func comprobar_combo(resultado):
 		mismo_tipo = mismo_tipo && (selected_cards[i].tipo == selected_cards[i + 1].tipo)
 	print(hay_multiplicador, !hay_pasiva, mismo_tipo, resultado)
 	if hay_multiplicador && !hay_pasiva && mismo_tipo:
+		alerta_combo.mostrar_alerta_combo()
 		return resultado * 2
 	else:
 		return resultado
