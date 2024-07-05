@@ -11,16 +11,12 @@ func _ready():
 	for carta in cartas_pasivas:
 		carta.carta_seleccionada.connect(_on_carta_seleccionada)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func desactivar(n : int):
 	# -1 para ocultar todas
 	# i para ocultar la i-esima
 	if n == -1:
-		for i in cartas_pasivas:
-			i.ocultar_icono()
+		for carta in cartas_pasivas:
+			carta.ocultar_icono()
 	else:
 		cartas_pasivas[n].ocultar_icono()
 
@@ -28,8 +24,8 @@ func activar(n : int):
 	# -1 para mostrar todas
 	# i para mostrar la i-esima
 	if n == -1:
-		for i in cartas_pasivas:
-			i.mostrar_icono()
+		for carta in cartas_pasivas:
+			carta.mostrar_icono()
 	else:
 		cartas_pasivas[n].mostrar_icono()
 

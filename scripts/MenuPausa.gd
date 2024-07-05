@@ -18,6 +18,10 @@ func _ready():
 	
 	# pause_mode = 
 
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		_on_continue_pressed()
+
 func _on_continue_pressed():
 	hide()
 	get_tree().paused = false

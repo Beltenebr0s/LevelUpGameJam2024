@@ -1,25 +1,23 @@
 extends Control
 
 @export_multiline var texto_descripcion : String
+@export var sprite : Texture
 
 var raton_dentro = false
-
-signal carta_seleccionada
 
 @onready var descripcion = $Carta/descripcion
 @onready var animador = $AnimationPlayer
 
 signal accion()
+signal carta_seleccionada
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Carta/descripcion/TextEdit.text = texto_descripcion
+	$Carta.texture = sprite
+	animador.play("zoom")
 	visible = false
 	descripcion.visible = false
-	pass
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
 	pass
 
 func mostrar_icono():
@@ -29,7 +27,6 @@ func mostrar_icono():
 func ocultar_icono():
 	visible = false
 
-
 func _on_boton_mouse_entered():
 	carta_seleccionada.emit()
 	raton_dentro = true
@@ -37,7 +34,6 @@ func _on_boton_mouse_entered():
 	await animador.animation_finished
 	if raton_dentro:
 		descripcion.visible = true
-
 
 func _on_boton_mouse_exited():
 	animador.play_backwards("zoom")
