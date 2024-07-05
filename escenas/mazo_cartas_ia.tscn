@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c423gt07q3j6h"]
+
+[ext_resource type="Script" path="res://scripts/mazo_cartas_ia.gd" id="1_3prkw"]
+
+[node name="mazo_cartas_ia" type="Node2D"]
+script = ExtResource("1_3prkw")

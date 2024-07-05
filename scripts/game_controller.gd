@@ -1,8 +1,6 @@
 extends Node
 
 var selected_cards = null
-var ai_selected_cards = null
-var ai_selected_card_in_hand = null
 var n_jugada = 0
 var mulligan_usado = false
 var menu_pause_instance: Node = null
@@ -15,7 +13,7 @@ var scena_menu_pausa
 @onready var mazo_jugador = $Board/MazoCartas
 @onready var mazo_ia = $Board/MazoCartasIA
 @onready var mano_ui = $cartasUI
-@onready var mano_iai = $cartasIAI
+@onready var mano_ia = $mano_ia
 @onready var medidor_locura = $medidor_locura
 @onready var pasivas_ui = $pasivasUI
 @onready var reloj = $medidor_dia
@@ -27,10 +25,9 @@ var scena_menu_pausa
 
 func _ready():
 	mano_ui.play_sonido_carta.connect(_on_play_sonido_carta_audio_jugar_carta)
-	mano_iai.play_sonido_carta.connect(_on_play_sonido_carta_audio_jugar_carta)
+	mano_ia.play_sonido_carta.connect(_on_play_sonido_carta_audio_jugar_carta)
 	pasivas_ui.play_sonido_carta.connect(_on_play_sonido_carta_audio_jugar_carta)
 	pasivas_ui.mulligan.connect(mulligan)
-	mazo_jugador.cartas_seleccionadas.connect(seleccionar_cartas)
 	set_process_input(true)
 	var root = get_tree().get_root()
 	ResourceLoader.load_threaded_request("res://escenas/menu_pausa.tscn")
@@ -41,7 +38,6 @@ func _ready():
 	scena_menu_pausa.visible = false
 	mazo_jugador.cartas_seleccionadas.connect(seleccionar_cartas)
 	mazo_jugador.n_cartas_turno = n_cartas_turno_jugador
-	#mano_iai.n_cartas_turno = n_cartas_turno_ia
 	inicar_juego()
 
 func _process(delta):
@@ -83,7 +79,7 @@ func jugar_turno():
 	
 func crear_manos():
 	mazo_jugador.barajar_cartas(5, medidor_locura.locos, false)
-	mazo_ia.barajar_cartas(5, medidor_locura.locos, true)
+	mazo_ia.barajar_cartas(n_cartas_turno_ia, medidor_locura.locos, true)
 
 func seleccionar_cartas(cartas_a_jugar):
 	selected_cards = cartas_a_jugar
@@ -96,20 +92,12 @@ func seleccionar_cartas(cartas_a_jugar):
 func jugada_ia():
 	mostrar_mano_ia()
 	await get_tree().create_timer(1.0).timeout
-	ai_selected_cards = []
-	while ai_selected_cards.size() < n_cartas_turno_ia:
-		var carta_en_mano = mano_iai.cartas.pick_random()
-		if carta_en_mano.carta_jugada:
-			pass
-		else:
-			carta_en_mano.seleccionar_carta()
-			ai_selected_cards.append(carta_en_mano.carta)
-	for carta in ai_selected_cards:
+	for carta in mano_ia.mano:
 		print("		* Carta seleccionada por la IA:", carta.titulo)
-	mano_iai.ocultar_cartas(true)
+	mano_ia.animar_mano()
 	aplicar_efecto_cartas(false)
 	await get_tree().create_timer(2.0).timeout
-	mano_iai.ocultar_cartas(false)
+	mano_ia.ocultar_cartas(false)
 
 func aplicar_efecto_cartas(b_is_player : bool):
 	var resultado : int
@@ -120,7 +108,7 @@ func aplicar_efecto_cartas(b_is_player : bool):
 		for carta in selected_cards:
 			activar_pasiva(carta)
 	else:
-		for carta in ai_selected_cards:
+		for carta in mazo_ia.mano:
 			resultado += nerf_card_to_ia(carta)
 	medidor_locura.suma_locos(resultado)
 	print("			-> Resultado del turno: ", resultado)
@@ -160,11 +148,11 @@ func decidir_final():
 	
 func mostrar_mano_jugador():
 	audio_repartir_mano()
-	mano_ui.colocar_cartas_en_mano(mazo_jugador.mano , false)
+	mano_ui.colocar_cartas_en_mano(mazo_jugador.mano)
 
 func mostrar_mano_ia():
 	audio_repartir_mano()
-	mano_iai.colocar_cartas_en_mano(mazo_ia.mano , true)
+	mano_ia.colocar_cartas_en_mano(mazo_ia.mano)
 
 func actualizar_reloj(turno_jugador : bool):
 	audio_pasar_turno()

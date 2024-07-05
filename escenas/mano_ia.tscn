@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://0m1dvsg648qd"]
+
+[ext_resource type="Script" path="res://scripts/mano_ia.gd" id="1_dx7cd"]
+[ext_resource type="PackedScene" uid="uid://dfwncdbnb8hmh" path="res://escenas/carta_en_mano_ia.tscn" id="2_4c2nh"]
+
+[node name="mano_ia" type="Node2D"]
+script = ExtResource("1_dx7cd")
+
+[node name="carta_en_mano_ia" parent="." instance=ExtResource("2_4c2nh")]
+position = Vector2(320, 48)
+
+[node name="carta_en_mano_ia2" parent="." instance=ExtResource("2_4c2nh")]
+position = Vector2(448, 48)
+
+[node name="carta_en_mano_ia3" parent="." instance=ExtResource("2_4c2nh")]
+position = Vector2(576, 48)
+
+[node name="carta_en_mano_ia4" parent="." instance=ExtResource("2_4c2nh")]
+position = Vector2(704, 48)
+
+[node name="carta_en_mano_ia5" parent="." instance=ExtResource("2_4c2nh")]
+position = Vector2(832, 48)
