@@ -9,16 +9,22 @@ var SAVE_FILE_DIRECTION = 'user://gamescores.save'
 @onready var slider_SFX = $LibroAbierto/PaginaSettings/Settings/VolumenSFX
 @onready var mute_musica = $LibroAbierto/PaginaSettings/Settings/VolumenMusica/MuteMusica
 @onready var mute_SFX = $LibroAbierto/PaginaSettings/Settings/VolumenSFX/MuteSFX
+@onready var galeria = $LibroAbierto/PaginaGaleria
 
 @onready var escena_juego = preload("res://escenas/game.tscn")
 
+var lista_cartas
+@onready var indice_carta = 0
+
 func _ready():
+	lista_cartas = $MazoCartas.get_children()
 	slider_musica.value = Global.volumen_musica
 	slider_SFX.value = Global.volumen_SFX
 	mute_musica.button_pressed = Global.musica_muted
 	mute_SFX.button_pressed = Global.SFX_muted
 	libro_abierto.visible = !Global.b_first_game
 	libro_cerrado.visible = Global.b_first_game
+	galeria.visible = false
 	tutorial.visible = false
 	if (!Global.b_first_game):
 		$LibroAbierto.visible = !Global.b_first_game
@@ -96,6 +102,7 @@ func _on_home_pressed():
 	$LibroAbierto/PaginaSettings.visible = false
 	$LibroAbierto/PaginaCredits.visible = false
 	$LibroAbierto/PaginaFinal.visible = false
+	galeria.visible = false
 
 func _on_exit_pressed():
 	get_tree().quit()
@@ -154,3 +161,32 @@ func _get_ranking():
 		ranking_scores.append(user_score)
 	save_game.close()
 	return ranking_scores 
+
+
+func _on_galeria_pressed():
+	galeria.visible = true
+	$LibroAbierto/PaginaInicio.visible = false
+	indice_carta = 0
+	mostrar_carta()
+	
+func mostrar_carta():
+	var carta = lista_cartas[indice_carta]
+	var titulo_carta = $LibroAbierto/PaginaGaleria/Panel/Titulo
+	var desc_carta = $LibroAbierto/PaginaGaleria/Descripcion
+	var imagen = $LibroAbierto/PaginaGaleria/Panel/Titulo/ImagenCarta
+	titulo_carta.text = carta.titulo
+	desc_carta.text = carta.descripcion
+	imagen.texture = carta.texture
+
+
+func _on_anterior_pressed():
+	if indice_carta > 0:
+		indice_carta -= 1
+	elif indice_carta == 0:
+		indice_carta = lista_cartas.size()
+	mostrar_carta()
+
+
+func _on_btn_siguiente_pressed():
+	indice_carta = (indice_carta + 1) % lista_cartas.size()
+	mostrar_carta()

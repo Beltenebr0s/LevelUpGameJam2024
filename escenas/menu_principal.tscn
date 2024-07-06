@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://byeqj6jd7r2vl"]
+[gd_scene load_steps=24 format=3 uid="uid://byeqj6jd7r2vl"]
 
 [ext_resource type="Theme" uid="uid://cmcb4mmclu5ex" path="res://Fuentes/tema_libro.tres" id="1_rgpyg"]
 [ext_resource type="Script" path="res://scripts/MenuPrincipal.gd" id="1_xdxr6"]
@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://dtkhu4jup0q2u" path="res://texturas/Dorso_Azul.png" id="10_8eiqc"]
 [ext_resource type="Texture2D" uid="uid://cn3c3uw325306" path="res://texturas/Dorso_Rojo.png" id="11_n3wqh"]
 [ext_resource type="PackedScene" uid="uid://cu4ruf7b0vci4" path="res://escenas/medidor_locura.tscn" id="12_nd3xq"]
+[ext_resource type="Texture2D" uid="uid://dxysl04btnj38" path="res://texturas/Caballero_Maldito.jpg" id="13_ssq6f"]
+[ext_resource type="AudioStream" uid="uid://dm1qm3nbvhosa" path="res://audio/musica/menu_1.wav" id="14_y6b0s"]
+[ext_resource type="PackedScene" uid="uid://b80mbbnuqe78v" path="res://escenas/mazo_cartas.tscn" id="16_twf7g"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gt4ad"]
 
@@ -129,12 +132,20 @@ offset_bottom = 338.5
 text = "CRÉDITOS
 "
 
-[node name="Exit" type="Button" parent="LibroAbierto/PaginaInicio"]
+[node name="Galeria" type="Button" parent="LibroAbierto/PaginaInicio"]
 layout_mode = 0
 offset_left = 225.5
 offset_top = 338.5
 offset_right = 390.5
 offset_bottom = 403.5
+text = "GALERÍA"
+
+[node name="Exit" type="Button" parent="LibroAbierto/PaginaInicio"]
+layout_mode = 0
+offset_left = 225.5
+offset_top = 392.5
+offset_right = 390.5
+offset_bottom = 457.5
 text = "SALIR"
 
 [node name="BordeIlustracion3" type="TextureRect" parent="LibroAbierto/PaginaInicio"]
@@ -436,12 +447,12 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_qebxr")
 
 [node name="IntroducciónDelJuego" type="Label" parent="LibroAbierto/PaginaTutorial"]
 layout_mode = 0
-offset_left = 145.0
-offset_top = 80.5
-offset_right = 334.0
-offset_bottom = 117.5
+offset_left = 142.5
+offset_top = 71.5
+offset_right = 331.5
+offset_bottom = 108.5
 theme_type_variation = &"HeaderMedium"
-text = "Intro del juego:"
+text = "Introducción:"
 
 [node name="parrafo" type="RichTextLabel" parent="LibroAbierto/PaginaTutorial/IntroducciónDelJuego"]
 clip_contents = false
@@ -450,7 +461,7 @@ offset_left = 7.0
 offset_top = 31.0
 offset_right = 359.0
 offset_bottom = 177.0
-text = "Bienvenido a la población XXXX gobernada por el principe Adetokumbo, tu objetivo es derrocarle sembrando la locura entre sus habitantes"
+text = "Bienvenido a la población de Airegin gobernada por el principe Adetokumbo, tu objetivo es sembrar la locura entre sus habitantes para liberar al dios Pepapofo."
 
 [node name="ComoJugar" type="Label" parent="LibroAbierto/PaginaTutorial"]
 layout_mode = 0
@@ -468,7 +479,7 @@ offset_left = 7.0
 offset_top = 35.0
 offset_right = 259.0
 offset_bottom = 295.0
-text = "Tienes 6 turnos para conseguir adeptos a tu revolución, en cada turno realizarás 2 acciones para sembrar la locura y el pánico.El príncipe y su consejo tomarán 2 acciones para calmar a la turba
+text = "Tienes 6 turnos para conseguir adeptos a tu secta, en cada turno realizarás 2 acciones para sembrar la locura y el pánico. El príncipe y su consejo tomarán 2 acciones para calmar a la turba.
 "
 
 [node name="IlustracionInicio2" type="TextureRect" parent="LibroAbierto/PaginaTutorial/ComoJugar"]
@@ -506,7 +517,7 @@ offset_left = 7.0
 offset_top = 32.0
 offset_right = 223.0
 offset_bottom = 434.0
-text = "Juega bien tus cartas para conseguir 100 adeptos a la revolución para ganar la partida, iras viendo los adeptos en el medidor lateral."
+text = "Juega bien tus cartas para conseguir 100 adeptos a la secta de Pepapofo para ganar la partida. Tu esbirro te mostrará tu avance en la barra lateral. ¡Cuantos más, mejor!"
 
 [node name="medidor_locura" parent="LibroAbierto/PaginaTutorial/ObjetivoJuego" instance=ExtResource("12_nd3xq")]
 offset_left = 233.0
@@ -628,6 +639,82 @@ offset_bottom = 172.5
 text = "/--\\
 |__|"
 
+[node name="PaginaGaleria" type="Panel" parent="LibroAbierto"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -513.0
+offset_top = -287.5
+offset_right = 513.0
+offset_bottom = 287.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_qebxr")
+
+[node name="Panel" parent="LibroAbierto/PaginaGaleria" instance=ExtResource("2_rx15a")]
+layout_mode = 0
+offset_left = 454.0
+offset_top = 14.0
+offset_right = 917.0
+offset_bottom = 517.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_i5bd0")
+
+[node name="Titulo" parent="LibroAbierto/PaginaGaleria/Panel" index="0"]
+offset_left = 62.0
+offset_top = 18.0
+offset_right = 428.0
+offset_bottom = 86.0
+theme_override_font_sizes/font_size = 30
+text = "Titulo de la carta"
+
+[node name="ImagenCarta" type="TextureRect" parent="LibroAbierto/PaginaGaleria/Panel/Titulo" index="0"]
+layout_mode = 0
+offset_left = 61.5
+offset_top = 76.5
+offset_right = 306.5
+offset_bottom = 447.5
+texture = ExtResource("13_ssq6f")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Home3" type="Button" parent="LibroAbierto/PaginaGaleria"]
+layout_mode = 0
+offset_left = 29.5
+offset_top = 84.5
+offset_right = 117.5
+offset_bottom = 172.5
+text = "/--\\
+|__|"
+
+[node name="BtnSiguiente" type="Button" parent="LibroAbierto/PaginaGaleria"]
+layout_mode = 0
+offset_left = 337.5
+offset_top = 451.5
+offset_right = 481.5
+offset_bottom = 495.5
+text = "SIGUIENTE"
+
+[node name="Anterior" type="Button" parent="LibroAbierto/PaginaGaleria"]
+layout_mode = 0
+offset_left = 141.5
+offset_top = 451.5
+offset_right = 285.5
+offset_bottom = 495.5
+text = "ANTERIOR"
+
+[node name="Descripcion" type="RichTextLabel" parent="LibroAbierto/PaginaGaleria"]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 93.0
+offset_right = 461.0
+offset_bottom = 451.0
+theme_override_font_sizes/normal_font_size = 24
+text = "Texto de prueba con la descripción de la carta que se han currado nuestros compañeros artistas que menudo curro se han metido por favor entrad en esta pantallita para ver todas las cartas os lo suplico."
+
 [node name="LibroCerrado" type="Panel" parent="."]
 visible = false
 layout_mode = 1
@@ -668,9 +755,17 @@ offset_top = 9.0
 offset_right = 408.0
 offset_bottom = 548.0
 
+[node name="MusicaMenu" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_y6b0s")
+autoplay = true
+
+[node name="MazoCartas" parent="." instance=ExtResource("16_twf7g")]
+position = Vector2(1767, 754)
+
 [connection signal="pressed" from="LibroAbierto/PaginaInicio/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="LibroAbierto/PaginaInicio/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="LibroAbierto/PaginaInicio/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="LibroAbierto/PaginaInicio/Galeria" to="." method="_on_galeria_pressed"]
 [connection signal="pressed" from="LibroAbierto/PaginaInicio/Exit" to="." method="_on_exit_pressed"]
 [connection signal="value_changed" from="LibroAbierto/PaginaSettings/Settings/VolumenMusica" to="." method="_on_volumen_musica_value_changed"]
 [connection signal="pressed" from="LibroAbierto/PaginaSettings/Settings/VolumenMusica/MuteMusica" to="." method="_on_mute_musica_pressed"]
@@ -680,9 +775,13 @@ offset_bottom = 548.0
 [connection signal="pressed" from="LibroAbierto/PaginaFinal/Final/Home2" to="." method="_on_home_pressed"]
 [connection signal="pressed" from="LibroAbierto/PaginaTutorial/start_game" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="LibroAbierto/PaginaCredits/Home3" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="LibroAbierto/PaginaGaleria/Home3" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="LibroAbierto/PaginaGaleria/BtnSiguiente" to="." method="_on_btn_siguiente_pressed"]
+[connection signal="pressed" from="LibroAbierto/PaginaGaleria/Anterior" to="." method="_on_anterior_pressed"]
 [connection signal="pressed" from="LibroCerrado/TituloJuego" to="." method="_on_titulo_juego_pressed"]
 
 [editable path="LibroAbierto/PaginaSettings/Settings"]
 [editable path="LibroAbierto/PaginaFinal/Final"]
 [editable path="LibroAbierto/PaginaTutorial/ObjetivoJuego/medidor_locura"]
 [editable path="LibroAbierto/PaginaCredits/Credits"]
+[editable path="LibroAbierto/PaginaGaleria/Panel"]
