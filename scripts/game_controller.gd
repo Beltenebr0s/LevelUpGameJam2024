@@ -194,10 +194,10 @@ func actualizar_reloj(turno_jugador : bool):
 		reloj.hacer_de_dia()
 	await reloj.animation_finished
 
-func _input(event):
-	if event.is_action_pressed("Pausa"):
-		get_tree().paused = true
-		scena_menu_pausa.visible = true
+#func _input(event):
+#	if event.is_action_pressed("Pausa"):
+#		get_tree().paused = true
+#		scena_menu_pausa.visible = true
 
 func audio_repartir_mano():
 	sfx_audio_player.stream = lista_sfx_repartir_cartas.pick_random()

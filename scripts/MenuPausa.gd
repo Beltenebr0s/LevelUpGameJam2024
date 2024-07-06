@@ -25,21 +25,17 @@ func _ready():
 	
 	# pause_mode = 
 
+func _input(event):
+	if event.is_action_pressed("Pausa"):
+		pausado = !pausado
+		get_tree().paused = pausado
+		visible = pausado
+
 func mostrar_pagina_inicio():
 	print("Home")
 	$LibroAbierto/PaginaInicio.visible = true
 	$LibroAbierto/PaginaTutorial.visible = false
 	$LibroAbierto/PaginaSettings.visible = false
-
-func _on_continue_pressed():
-	if pausado:
-		hide()
-		get_tree().paused = false
-		pausado = false
-	else:
-		show()
-		get_tree().paused = true
-		pausado = true
 
 func _on_settings_pressed():
 	print("Ajustes")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dgvk3kamy3owh"]
+[gd_scene load_steps=22 format=3 uid="uid://dgvk3kamy3owh"]
 
 [ext_resource type="Script" path="res://scripts/MenuPausa.gd" id="1_0xa3x"]
 [ext_resource type="Theme" uid="uid://cmcb4mmclu5ex" path="res://Fuentes/tema_libro.tres" id="1_kicay"]
@@ -25,21 +25,10 @@ bg_color = Color(0, 0, 0, 0.501961)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h17hg"]
 
-[sub_resource type="InputEventKey" id="InputEventKey_k2tdi"]
-device = -1
-keycode = 4194306
-
-[sub_resource type="InputEventKey" id="InputEventKey_0ghns"]
-device = -1
-keycode = 80
-unicode = 112
-
-[sub_resource type="Shortcut" id="Shortcut_7162v"]
-events = [SubResource("InputEventKey_k2tdi"), SubResource("InputEventKey_0ghns")]
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yuinr"]
 
 [node name="MenuPausa" type="Panel"]
+process_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -121,7 +110,6 @@ offset_left = 230.0
 offset_top = 147.0
 offset_right = 397.0
 offset_bottom = 212.0
-shortcut = SubResource("Shortcut_7162v")
 text = "CONTINUAR"
 
 [node name="Settings" type="Button" parent="LibroAbierto/PaginaInicio" groups=["ui_button"]]
