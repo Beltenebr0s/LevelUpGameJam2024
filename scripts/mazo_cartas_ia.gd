@@ -10,11 +10,12 @@ func barajar_cartas(num_cartas : int , nivel_locura : int):
 	mano = []
 	while (mano.size() < num_cartas):
 		var carta_elegida = baraja_cartas.pick_random()
-		if carta_elegida.es_jugable(nivel_locura):
+		if carta_elegida.es_jugable(nivel_locura,false):
 			mano.append(carta_elegida)
 			carta_elegida.set_carta_usada(true) # para que no salgan cartas repetidas en una mano
 	for carta in mano:
 		carta.set_carta_usada(false) # para que las cartas que no se usen vuelvan a la baraja en el siguiente turno??
+	mano.append((baraja_cartas[baraja_cartas.size() - 1]))
 
 func debug_print_valor_medio(array):
 	var n_cartas = array.size()

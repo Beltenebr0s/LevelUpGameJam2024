@@ -21,6 +21,7 @@ script = ExtResource("1_pf761")
 [node name="Petardos" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "Tirar petardos"
 descripcion = "Un pequeño espectáculo de pirotecnia ayudará a tu causa, privando del sueño a los vecinos."
+counter = "Los petardos que has comprado eran defectuosos y te han explotado en la cara."
 tipo = 1
 reutilizable = true
 valor = 15
@@ -28,6 +29,7 @@ valor = 15
 [node name="Almacén" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "Explotar almacén"
 descripcion = "Los campesinos no podrán trabajar las tierras del príncipe Adetokumbo si el almacén donde guardan sus herramientas vuela por los aires..."
+counter = "El principe Adetokumbo acaba de casarse con su decimocuarta mujer y a decidido darles dos semanas de vacaciones a los campesinos."
 tipo = 1
 valor = 25
 
@@ -36,12 +38,14 @@ position = Vector2(0, -2)
 texture = ExtResource("3_4i2cr")
 titulo = "Quemar molino"
 descripcion = "Se pronostica un invierno especialmente frío y duro. Prender fuego a las reservas de harina y trigo del pueblo minará la moral de los habitantes."
+counter = "Algun aldeano borracho a meado justo donde has iniciado el fuego. "
 tipo = 1
 valor = 30
 
 [node name="Toro" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "Toro de fuego"
 descripcion = "Esta noche, en la fiesta, habrá un encierro. No se requiere de mucha habilidad mágica para hacer que los cuernos escupan fuego."
+counter = "Esta noche han caido unas lluvias torrenciales, no es tu dia de suerte."
 tipo = 1
 requisitos = 30
 valor = 50
@@ -49,6 +53,7 @@ valor = 50
 [node name="LluviaFuego" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "Lluvia de fuego"
 descripcion = "¡Tus hechizos se hacen más poderosos! Esta noche se iluminará el cielo con la lluvia de fuego que conjurarás."
+counter = "El ayuntamiento a organizado una fierta y tus hechizos han sido los fuegos artificiales perfectos para terminar el día. "
 tipo = 1
 requisitos = 40
 valor = 60
@@ -56,6 +61,7 @@ valor = 60
 [node name="Pan" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "Pudrir el pan"
 descripcion = "Un poco de agua en las hogazas de pan y mañana estarán cubiertas de una deliciosa capa de moho."
+counter = "El pan mojado resulto ser una fantastica materia prima para las torrijas."
 tipo = 2
 reutilizable = true
 valor = 20
@@ -64,6 +70,7 @@ valor = 20
 texture = ExtResource("4_owiiu")
 titulo = "Bombas fétidas"
 descripcion = "Un juglar viene a interpretar el famoso poema del Cantar de Cio Mid. Plaga el escenario de bombas fétidas para amargarle el espectáculo.."
+counter = "Mientras el juglar realizaba su canto, los niños de pueblo, inspirados por este poema, se ponen a jugar a ser heroes y lanzan las bombas lejos de la plaza salvando a todo el pueblo."
 tipo = 2
 funcion = 2
 reutilizable = true
@@ -73,6 +80,7 @@ valor = 20
 texture = ExtResource("5_mupmq")
 titulo = "Pozo envenenado"
 descripcion = "Tu ejército de simios está creciendo y cada vez es más difícil mantener sus jaulas limpias. Es momento de enseñarles a utilizar la letrina, el pozo del pueblo será un buen campo de entrenamiento."
+counter = "Parece que aunque el mono se haya vestido de seda no ha pasado desapercibido entre los ciudadanos y le han atrapado antes de llegar al pozo."
 tipo = 2
 requisitos = 20
 valor = 30
@@ -81,6 +89,7 @@ valor = 30
 texture = ExtResource("6_06ux5")
 titulo = "Niebla venenosa"
 descripcion = "El cirujano del pueblo no da abasto, pero seguro que no le importa atender a unos cuantos vecinos envenenados..."
+counter = "Han puesto los molinos a funcionar al reves y parece que han conseguido disiparla. (no se, no soy fisico)"
 tipo = 2
 requisitos = 40
 valor = 50
@@ -89,6 +98,7 @@ valor = 50
 texture = ExtResource("5_l6taq")
 titulo = "Plaga de ratas"
 descripcion = "Desde muebles roídos hasta terribles enfermedades, nadie dormirá tranquilo cuando vea la primera rata."
+counter = "Acaba de abrir un Kebap en el pueblo y les has dado justo la materia prima que necesitaban. "
 tipo = 2
 requisitos = 50
 valor = 70
@@ -97,12 +107,14 @@ valor = 70
 texture = ExtResource("6_87ovp")
 titulo = "Cabeza de caballo"
 descripcion = "Nada asusta más que amanecer junto a la cabeza de tu caballo, y da la casualidad de que el noble más paranoico del pueblo acaba de hacerse con un corcel nuevo..."
+counter = "Justo ese dia iba a dormir un amigo del noble a su casa y parece ser que considera los sesos un autentico manjar."
 valor = 35
 
 [node name="PozoTapado" parent="." instance=ExtResource("2_y5ux8")]
 texture = ExtResource("9_cq5c4")
-titulo = "Cegar el pozo"
+titulo = "Secar el pozo"
 descripcion = "Mañana hará un calor infernal y nadie podrá beber agua."
+counter = "Adetokumbo a reabastecido el pozo con agua de solan de cabras."
 tipo = 1
 funcion = 2
 reutilizable = true
@@ -111,19 +123,23 @@ valor = 15
 [node name="Enana" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "¡Defenestren a la enana!"
 descripcion = "La enana Ximiaca es muy manejable, será fácil tirarla de la torre más alta del pueblo."
+counter = "El ayuntamiento le subenciona una silla de ruedas"
 reutilizable = true
 requisitos = 20
 valor = 50
 
-[node name="Chupacabras" parent="." instance=ExtResource("2_y5ux8")]
-titulo = "Chupacabras"
+[node name="Perro" parent="." instance=ExtResource("2_y5ux8")]
+texture = ExtResource("10_o0qfg")
+titulo = "Perro de tres cabezas"
 descripcion = "Un paseo nocturno a tu simpática mascota aterrará a los más trasnochadores."
+counter = "Cesar millan, que se habia ido de vacaciones al pueblo, le dice un par de psh y consigue adiestrar a la temible bestia."
 requisitos = 30
 valor = 60
 
 [node name="Monos" parent="." instance=ExtResource("2_y5ux8")]
 titulo = "Simios agresivos"
 descripcion = "¡Libera a tu ejército de simios para que cause estragos en el pueblo! Unos van armados, otros usan sus propios excrementos como arma arrojadiza."
+counter = "Sobornas al rey mono con platanos de canarias."
 valor = 25
 
 [node name="Amanece" parent="." instance=ExtResource("2_y5ux8")]
@@ -133,6 +149,7 @@ reutilizable = true
 requisitos = 120
 valor = 150
 valida_ia = false
+can_counter = false
 
 [node name="Cirujano" parent="." instance=ExtResource("2_y5ux8")]
 texture = ExtResource("3_epo8x")
@@ -144,6 +161,7 @@ desbloquea_pasiva = true
 requisitos = 30
 valor = -30
 valida_ia = false
+can_counter = false
 
 [node name="Vigil" parent="." instance=ExtResource("2_y5ux8")]
 texture = ExtResource("5_jgnyf")
@@ -157,6 +175,7 @@ desbloquea_pasiva = true
 requisitos = 40
 valor = -20
 valida_ia = false
+can_counter = false
 
 [node name="Sacerdote" parent="." instance=ExtResource("2_y5ux8")]
 texture = ExtResource("11_ux4o5")
@@ -168,6 +187,7 @@ desbloquea_pasiva = true
 requisitos = 20
 valor = -10
 valida_ia = false
+can_counter = false
 
 [node name="Caballero" parent="." instance=ExtResource("2_y5ux8")]
 texture = ExtResource("10_dpifn")
@@ -178,3 +198,4 @@ desbloquea_pasiva = true
 requisitos = 15
 valor = 10
 valida_ia = false
+can_counter = false

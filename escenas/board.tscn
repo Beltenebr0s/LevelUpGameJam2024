@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://0k1iv56f0qty"]
+[gd_scene load_steps=4 format=3 uid="uid://0k1iv56f0qty"]
 
 [ext_resource type="Texture2D" uid="uid://dfeko6syo3wqv" path="res://Fondo_Mapa_incluido.jpg" id="1_6o4c3"]
 [ext_resource type="PackedScene" uid="uid://b80mbbnuqe78v" path="res://escenas/mazo_cartas.tscn" id="2_hmrd3"]
+[ext_resource type="PackedScene" uid="uid://c423gt07q3j6h" path="res://escenas/mazo_cartas_ia.tscn" id="3_1u22f"]
 
 [node name="Board" type="Node2D"]
 
@@ -13,4 +14,4 @@ expand_mode = 1
 
 [node name="MazoCartas" parent="." instance=ExtResource("2_hmrd3")]
 
-[node name="MazoCartasIA" parent="." instance=ExtResource("2_hmrd3")]
+[node name="MazoCartasIA" parent="." instance=ExtResource("3_1u22f")]

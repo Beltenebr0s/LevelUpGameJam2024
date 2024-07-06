@@ -4,6 +4,7 @@ var cartas_en_mano = []
 var mano = []
 var mano_lista = false
 var n_cartas_turno = 1
+var prob_counter : float = 0.25
 
 signal play_sonido_carta
 

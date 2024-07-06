@@ -72,16 +72,13 @@ bus = &"Musica"
 
 [node name="MedidorDia" type="AudioStreamPlayer" parent="SFX/InGame"]
 stream = ExtResource("2_hscaa")
-bus = &"SFX"
 
 [node name="AlertaCombo" type="AudioStreamPlayer" parent="SFX/InGame"]
-bus = &"SFX"
 
 [node name="CartasPasivas" type="AudioStreamPlayer" parent="SFX/InGame"]
 stream = SubResource("AudioStreamRandomizer_01lag")
-bus = &"SFX"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/InGame"]
+[node name="JugarCarta" type="AudioStreamPlayer" parent="SFX/InGame"]
 stream = SubResource("AudioStreamRandomizer_3mp1k")
 max_polyphony = 3
 bus = &"SFX"
@@ -91,13 +88,11 @@ bus = &"SFX"
 
 [node name="Reload" type="AudioStreamPlayer" parent="SFX/InGame"]
 stream = SubResource("AudioStreamRandomizer_ec6wu")
-bus = &"SFX"
 
 [node name="Menus" type="Node" parent="SFX"]
 
 [node name="BotonDown" type="AudioStreamPlayer" parent="SFX/Menus"]
 stream = SubResource("AudioStreamRandomizer_rso0g")
-bus = &"SFX"
 
 [node name="BotonSelect" type="AudioStreamPlayer" parent="SFX/Menus"]
 stream = SubResource("AudioStreamRandomizer_16ukn")

@@ -77,7 +77,7 @@ func jugar_turno():
 	
 func crear_manos():
 	mazo_jugador.barajar_cartas(5, medidor_locura.locos, false)
-	mazo_ia.barajar_cartas(n_cartas_turno_ia, medidor_locura.locos, true)
+	mazo_ia.barajar_cartas(n_cartas_turno_ia, medidor_locura.locos)
 
 func seleccionar_cartas(cartas_a_jugar):
 	selected_cards = cartas_a_jugar
@@ -92,10 +92,25 @@ func jugada_ia():
 	await get_tree().create_timer(1.0).timeout
 	for carta in mano_ia.mano:
 		print("		* Carta seleccionada por la IA:", carta.titulo)
+	aplicar_counter()
 	mano_ia.animar_mano()
 	aplicar_efecto_cartas(false)
 	await get_tree().create_timer(2.0).timeout
 	mano_ia.ocultar_cartas(false)
+	
+func aplicar_counter():
+	if randf() <= mano_ia.prob_counter:
+		print("counter")
+		for carta in selected_cards: 
+			if !carta.desbloquea_pasiva && carta.can_counter:
+				mano_ia.mano[mano_ia.mano.size() - 1].descripcion = carta.counter
+				mano_ia.mano[mano_ia.mano.size() - 1].valor = carta.valor
+				mano_ia.mano.remove_at(0)
+				break
+		if mano_ia.mano.size() > n_cartas_turno_ia:
+			mano_ia.mano.remove_at(mano_ia.mano.size() - 1)
+	else:
+		mano_ia.mano.remove_at(mano_ia.mano.size() - 1)
 
 func aplicar_efecto_cartas(b_is_player : bool):
 	var resultado : int
@@ -113,6 +128,8 @@ func aplicar_efecto_cartas(b_is_player : bool):
 	print("			-> Resultado del turno: ", resultado)
 
 func nerf_card_to_ia(carta):
+	if carta.name == 'Counter':
+		return carta.valor
 	return carta.valor * 0.8 * -1
 
 func activar_pasiva(carta):
@@ -179,10 +196,5 @@ func actualizar_reloj(turno_jugador : bool):
 	else:
 		reloj.hacer_de_dia()
 	await reloj.animation_finished
-
-#func _input(event):
-#	if event.is_action_pressed("Pausa"):
-#		get_tree().paused = true
-#		scena_menu_pausa.visible = true
 
 

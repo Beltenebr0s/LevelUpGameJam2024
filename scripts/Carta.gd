@@ -6,6 +6,7 @@ enum FuncionCarta { NORMAL, PASIVA, MULTIPLICADOR }
 
 @export var titulo : String
 @export_multiline var descripcion : String
+@export_multiline var counter : String
 @export var tipo : TipoCarta
 @export var funcion : FuncionCarta 
 @export var reutilizable : bool = false
@@ -13,6 +14,7 @@ enum FuncionCarta { NORMAL, PASIVA, MULTIPLICADOR }
 @export var requisitos : int
 @export var valor : int
 @export var valida_ia: bool = true
+@export var can_counter: bool = true
 
 @onready var carta_usada : bool = false
 

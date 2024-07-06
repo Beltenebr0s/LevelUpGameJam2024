@@ -1,6 +1,126 @@
-[gd_scene load_steps=2 format=3 uid="uid://c423gt07q3j6h"]
+[gd_scene load_steps=4 format=3 uid="uid://c423gt07q3j6h"]
 
 [ext_resource type="Script" path="res://scripts/mazo_cartas_ia.gd" id="1_3prkw"]
+[ext_resource type="PackedScene" uid="uid://b47xbta5payek" path="res://escenas/carta.tscn" id="2_42mh6"]
+[ext_resource type="Texture2D" uid="uid://xoqa74owwt2o" path="res://texturas/Dorso_Negro.png" id="3_kimog"]
 
 [node name="mazo_cartas_ia" type="Node2D"]
 script = ExtResource("1_3prkw")
+
+[node name="Petardos" parent="." instance=ExtResource("2_42mh6")]
+texture = ExtResource("3_kimog")
+titulo = "Tirar petardos"
+descripcion = "Tras ver estos sucesos paranormales han llamado a la santa inquisicion pero parece que les han puesto en espera, hay demasiadas brujas en Zugarramurdi."
+tipo = 1
+reutilizable = true
+valor = 15
+
+[node name="PozoTapado" parent="." instance=ExtResource("2_42mh6")]
+texture = ExtResource("3_kimog")
+titulo = "Cegar el pozo"
+descripcion = "Adetokumbo ha puesto parterres con flores en la plaza mayor"
+tipo = 1
+funcion = 2
+reutilizable = true
+valor = 15
+
+[node name="Monos" parent="." instance=ExtResource("2_42mh6")]
+texture = ExtResource("3_kimog")
+titulo = "Simios agresivos"
+descripcion = "El ayuntamiento a organizado una cata de quesos."
+reutilizable = true
+valor = 25
+
+[node name="Pan" parent="." instance=ExtResource("2_42mh6")]
+texture = ExtResource("3_kimog")
+titulo = "Pudrir el pan"
+descripcion = "Una comida en la plaza del pueblo siempre levanta la moral."
+tipo = 2
+reutilizable = true
+valor = 20
+
+[node name="Molino" parent="." instance=ExtResource("2_42mh6")]
+position = Vector2(0, -2)
+texture = ExtResource("3_kimog")
+titulo = "Quemar molino"
+descripcion = "Han sacado a la virgen de las penurias en procesion."
+tipo = 1
+reutilizable = true
+valor = 30
+
+[node name="PozoEnvenenado" parent="." instance=ExtResource("2_42mh6")]
+texture = ExtResource("3_kimog")
+titulo = "Pozo envenenado"
+descripcion = "Un payazo para animar a los que han pasado por el cirujano, que lo necesitan."
+tipo = 2
+reutilizable = true
+requisitos = 20
+valor = 30
+
+[node name="Caballo" parent="." instance=ExtResource("2_42mh6")]
+texture = ExtResource("3_kimog")
+titulo = "Cabeza de caballo"
+descripcion = "El alcalde a invitado al prueblo a brindar con hidromiel."
+reutilizable = true
+valor = 35
+
+[node name="Enana" parent="." instance=ExtResource("2_42mh6")]
+texture = ExtResource("3_kimog")
+titulo = "¡Defenestren a la enana!"
+descripcion = "Vino gratis hasta el amanecer."
+reutilizable = true
+requisitos = 20
+valor = 50
+
+[node name="Toro" parent="." instance=ExtResource("2_42mh6")]
+texture = ExtResource("3_kimog")
+titulo = "Toro de fuego"
+descripcion = "Adetokumbo en su ansia de riqueza a contruido un casino, parece que esto aumenta la moral."
+tipo = 1
+reutilizable = true
+requisitos = 30
+valor = 50
+
+[node name="Niebla" parent="." instance=ExtResource("2_42mh6")]
+texture = ExtResource("3_kimog")
+titulo = "Niebla venenosa"
+descripcion = "Han contratado un grupo de esgrima historica, ver a alguien hacer el ridiculo siempre anima."
+tipo = 2
+reutilizable = true
+requisitos = 40
+valor = 50
+
+[node name="LluviaFuego" parent="." instance=ExtResource("2_42mh6")]
+texture = ExtResource("3_kimog")
+titulo = "Lluvia de fuego"
+descripcion = "Han contratado a un loquero en la clinica del pueblo."
+tipo = 1
+reutilizable = true
+requisitos = 40
+valor = 60
+
+[node name="Perro" parent="." instance=ExtResource("2_42mh6")]
+texture = ExtResource("3_kimog")
+titulo = "Perro de tres cabezas"
+descripcion = "A aparecido una camada de gatos muy majos en el pueblo, esto anima a cualquiera."
+reutilizable = true
+requisitos = 30
+valor = 60
+
+[node name="Plaga" parent="." instance=ExtResource("2_42mh6")]
+texture = ExtResource("3_kimog")
+titulo = "Plaga de ratas"
+descripcion = "El príncipe Adetokumbo a decidido reabastecer las reservas de aceite de oliva virgen extra."
+tipo = 2
+reutilizable = true
+requisitos = 50
+valor = 70
+
+[node name="Counter" parent="." instance=ExtResource("2_42mh6")]
+texture = ExtResource("3_kimog")
+titulo = "Counter"
+descripcion = "Counter"
+funcion = 1
+reutilizable = true
+requisitos = 100000
+valida_ia = false

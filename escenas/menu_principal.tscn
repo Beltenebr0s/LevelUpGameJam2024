@@ -109,7 +109,6 @@ texture = ExtResource("2_7wfuc")
 expand_mode = 1
 
 [node name="PaginaInicio" type="Panel" parent="LibroAbierto"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -184,6 +183,7 @@ texture = ExtResource("6_xlrri")
 expand_mode = 1
 
 [node name="PaginaSettings" type="Panel" parent="LibroAbierto"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -299,7 +299,6 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_qebxr")
 
 [node name="Final" parent="LibroAbierto/PaginaFinal" instance=ExtResource("2_rx15a")]
-visible = false
 layout_mode = 0
 offset_left = 520.5
 offset_top = 54.5
