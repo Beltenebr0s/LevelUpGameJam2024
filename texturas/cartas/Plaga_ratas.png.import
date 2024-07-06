@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bk1b5bs1xirll"
-path="res://.godot/imported/Dia_Noche.png-2960db0b18b5d9f7198dcf17822feb77.ctex"
+path="res://.godot/imported/Plaga_ratas.png-f357997d60f3bb5ddfe2a4c34dd5cd64.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://texturas/cartas/Dia_Noche.png"
-dest_files=["res://.godot/imported/Dia_Noche.png-2960db0b18b5d9f7198dcf17822feb77.ctex"]
+source_file="res://texturas/cartas/Plaga_ratas.png"
+dest_files=["res://.godot/imported/Plaga_ratas.png-f357997d60f3bb5ddfe2a4c34dd5cd64.ctex"]
 
 [params]
 
