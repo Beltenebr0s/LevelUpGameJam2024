@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://byeqj6jd7r2vl"]
+[gd_scene load_steps=38 format=3 uid="uid://byeqj6jd7r2vl"]
 
 [ext_resource type="Theme" uid="uid://cmcb4mmclu5ex" path="res://Fuentes/tema_libro.tres" id="1_rgpyg"]
 [ext_resource type="Script" path="res://scripts/MenuPrincipal.gd" id="1_xdxr6"]
@@ -14,9 +14,14 @@
 [ext_resource type="Texture2D" uid="uid://cgrucv55xpoo3" path="res://texturas/menus/Menu_Inicio_Ilustracion.png" id="6_xlrri"]
 [ext_resource type="Texture2D" uid="uid://d5m6ymst3es7" path="res://texturas/menus/Victoria_Libro.png" id="8_05w7k"]
 [ext_resource type="Texture2D" uid="uid://cr5qcqw6tj6aw" path="res://texturas/menus/Derrota_Libro.png" id="9_86xqj"]
+[ext_resource type="PackedScene" uid="uid://cu4ruf7b0vci4" path="res://escenas/medidor_locura.tscn" id="12_nd3xq"]
 [ext_resource type="AudioStream" uid="uid://dm1qm3nbvhosa" path="res://audio/musica/menu_1.wav" id="14_y6b0s"]
+[ext_resource type="Texture2D" uid="uid://ctcb2b3n18aix" path="res://texturas/cartas/sacerdote.png" id="15_kit4b"]
+[ext_resource type="Texture2D" uid="uid://c4g4cu7tbfmo4" path="res://texturas/cartas/Borde_Purpura.png" id="16_2442e"]
 [ext_resource type="PackedScene" uid="uid://b80mbbnuqe78v" path="res://escenas/mazo_cartas.tscn" id="16_twf7g"]
+[ext_resource type="Texture2D" uid="uid://bsoujiee88glm" path="res://texturas/cartas/Incenciar_Molino.jpg" id="17_dyobb"]
 [ext_resource type="Texture2D" uid="uid://bovmgp7c4a3kg" path="res://texturas/cartas/Borde_Dorado.png" id="18_1akmy"]
+[ext_resource type="Texture2D" uid="uid://dihxcwbah6160" path="res://texturas/cartas/Borde_Rojo.png" id="18_5pail"]
 [ext_resource type="Texture2D" uid="uid://bk1b5bs1xirll" path="res://texturas/cartas/Plaga_ratas.png" id="18_82vj4"]
 [ext_resource type="Texture2D" uid="uid://cxqvuum4hfm88" path="res://texturas/menus/Pasar_pagina.png" id="19_5jf37"]
 [ext_resource type="Texture2D" uid="uid://c23a6r0v6jh2v" path="res://texturas/menus/Volver_pagina.png" id="20_ma2qo"]
@@ -32,6 +37,8 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fxx0q"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mqjlx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_criba"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i5bd0"]
 
@@ -126,42 +133,42 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_qebxr")
 [node name="Play" type="Button" parent="LibroAbierto/PaginaInicio" groups=["ui_button"]]
 layout_mode = 0
 offset_left = 225.5
-offset_top = 143.5
+offset_top = 126.0
 offset_right = 390.5
-offset_bottom = 208.5
+offset_bottom = 191.0
 text = "JUGAR"
 
 [node name="Settings" type="Button" parent="LibroAbierto/PaginaInicio" groups=["ui_button"]]
 layout_mode = 0
 offset_left = 225.5
-offset_top = 208.5
+offset_top = 192.5
 offset_right = 390.5
-offset_bottom = 273.5
+offset_bottom = 257.5
 text = "AJUSTES"
-
-[node name="Credits" type="Button" parent="LibroAbierto/PaginaInicio" groups=["ui_button"]]
-layout_mode = 0
-offset_left = 225.5
-offset_top = 336.5
-offset_right = 390.5
-offset_bottom = 401.5
-text = "CRÉDITOS
-"
 
 [node name="Galeria" type="Button" parent="LibroAbierto/PaginaInicio" groups=["ui_button"]]
 layout_mode = 0
 offset_left = 225.5
-offset_top = 279.5
+offset_top = 259.0
 offset_right = 390.5
-offset_bottom = 344.5
+offset_bottom = 324.0
 text = "GALERÍA"
+
+[node name="Credits" type="Button" parent="LibroAbierto/PaginaInicio" groups=["ui_button"]]
+layout_mode = 0
+offset_left = 225.5
+offset_top = 325.5
+offset_right = 390.5
+offset_bottom = 390.5
+text = "CRÉDITOS
+"
 
 [node name="Exit" type="Button" parent="LibroAbierto/PaginaInicio" groups=["ui_button"]]
 layout_mode = 0
 offset_left = 225.5
-offset_top = 392.5
+offset_top = 392.0
 offset_right = 390.5
-offset_bottom = 457.5
+offset_bottom = 457.0
 text = "SALIR"
 
 [node name="BordeIlustracion3" type="TextureRect" parent="LibroAbierto/PaginaInicio"]
@@ -427,7 +434,8 @@ dijo el pez
 C><"
 scroll_active = false
 
-[node name="PaginaTutorial" type="Panel" parent="LibroAbierto"]
+[node name="PaginaHistoria" type="Panel" parent="LibroAbierto"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -442,15 +450,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_qebxr")
 
-[node name="start_game" type="Button" parent="LibroAbierto/PaginaTutorial" groups=["ui_button"]]
-layout_mode = 0
-offset_left = 545.5
-offset_top = 421.5
-offset_right = 863.5
-offset_bottom = 480.5
-text = "Presiona para comenzar"
-
-[node name="RichTextLabel" type="RichTextLabel" parent="LibroAbierto/PaginaTutorial"]
+[node name="RichTextLabel" type="RichTextLabel" parent="LibroAbierto/PaginaHistoria"]
 layout_mode = 0
 offset_left = 154.5
 offset_top = 91.5
@@ -458,7 +458,7 @@ offset_right = 473.5
 offset_bottom = 259.5
 text = "Bienvenido a Airegin, una de las muchas tierras del rey Adetokumbo. Como siervo del rey demonio Pepapofo se te ha encomendado su ritual de invocación."
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="LibroAbierto/PaginaTutorial"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="LibroAbierto/PaginaHistoria"]
 layout_mode = 0
 offset_left = 152.5
 offset_top = 244.5
@@ -466,13 +466,202 @@ offset_right = 471.5
 offset_bottom = 485.5
 text = "Dentro de una semana será el momento preciso para invocar a tu señor y para ello tendrás que ganar adeptos para el ritual. Cada noche podrás usar dos cartas para sembrar el pánico entre la gente de Airegin y llenar el medidor de locura colectiva. "
 
-[node name="RichTextLabel3" type="RichTextLabel" parent="LibroAbierto/PaginaTutorial"]
+[node name="RichTextLabel3" type="RichTextLabel" parent="LibroAbierto/PaginaHistoria"]
 layout_mode = 0
 offset_left = 553.5
 offset_top = 79.5
 offset_right = 872.5
 offset_bottom = 270.5
 text = "Pero ten cuidado, porque el rey podrá jugar dos cartas por el día para mantener la paz y el orden. Para ganar al rey deberás elegir bien tus cartas y conseguir al menos cien adeptos para el séptimo día."
+
+[node name="Siguiente" type="Button" parent="LibroAbierto/PaginaHistoria" groups=["ui_button"]]
+layout_mode = 0
+offset_left = 799.5
+offset_top = 435.5
+offset_right = 925.5
+offset_bottom = 606.5
+scale = Vector2(0.567926, 0.567926)
+icon = ExtResource("19_5jf37")
+
+[node name="PaginaTutorial" type="Panel" parent="LibroAbierto"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -513.0
+offset_top = -287.5
+offset_right = 513.0
+offset_bottom = 287.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_criba")
+
+[node name="ComoJugar" type="Label" parent="LibroAbierto/PaginaTutorial"]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 259.5
+offset_right = 340.0
+offset_bottom = 296.5
+theme_type_variation = &"HeaderMedium"
+text = "Reglas:"
+
+[node name="parrafo" type="RichTextLabel" parent="LibroAbierto/PaginaTutorial/ComoJugar"]
+clip_contents = false
+layout_mode = 0
+offset_left = 7.0
+offset_top = 35.0
+offset_right = 328.0
+offset_bottom = 222.0
+text = "La partida dura 6 turnos. Cada noche podrás usar dos cartas para sembrar el pánico  y llenar el medidor de locura colectiva. Por el día, el rey podrá jugar dos cartas para bajar el medidor."
+
+[node name="Cartas" type="Label" parent="LibroAbierto/PaginaTutorial"]
+layout_mode = 0
+offset_left = 533.0
+offset_top = 41.5
+offset_right = 722.0
+offset_bottom = 78.5
+theme_type_variation = &"HeaderMedium"
+text = "Cartas:"
+
+[node name="parrafo" type="RichTextLabel" parent="LibroAbierto/PaginaTutorial/Cartas"]
+clip_contents = false
+layout_mode = 0
+offset_left = 7.0
+offset_top = 35.0
+offset_right = 320.0
+offset_bottom = 131.0
+text = "Durante tu turno tendrás distintos tipos de cartas para jugar.
+"
+
+[node name="parrafo4" type="RichTextLabel" parent="LibroAbierto/PaginaTutorial/Cartas"]
+clip_contents = false
+layout_mode = 0
+offset_left = 7.5
+offset_top = 99.0
+offset_right = 320.5
+offset_bottom = 195.0
+text = "Existen dos tipos de cartas:
+"
+
+[node name="parrafo2" type="RichTextLabel" parent="LibroAbierto/PaginaTutorial/Cartas"]
+clip_contents = false
+layout_mode = 0
+offset_left = 104.5
+offset_top = 128.0
+offset_right = 341.5
+offset_bottom = 279.0
+text = "Las cartas de personajes te consigues mejoras permanentes, pero a cambio no te da adeptos."
+
+[node name="TextureRect" type="TextureRect" parent="LibroAbierto/PaginaTutorial/Cartas/parrafo2"]
+layout_mode = 0
+offset_left = -90.0
+offset_top = 12.0
+offset_right = -21.0
+offset_bottom = 113.0
+texture = ExtResource("15_kit4b")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="LibroAbierto/PaginaTutorial/Cartas/parrafo2/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.5
+offset_top = -57.5
+offset_right = 41.5
+offset_bottom = 57.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16_2442e")
+expand_mode = 1
+
+[node name="parrafo3" type="RichTextLabel" parent="LibroAbierto/PaginaTutorial/Cartas"]
+clip_contents = false
+layout_mode = 0
+offset_left = 104.5
+offset_top = 247.0
+offset_right = 341.5
+offset_bottom = 421.0
+text = "Las cartas de acción te proporcionarán adeptos y tienen distintos atributos que, junto con otras cartas, pueden provocar un combo."
+
+[node name="TextureRect2" type="TextureRect" parent="LibroAbierto/PaginaTutorial/Cartas/parrafo3"]
+layout_mode = 0
+offset_left = -90.0
+offset_top = 36.0
+offset_right = -21.0
+offset_bottom = 137.0
+texture = ExtResource("17_dyobb")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="LibroAbierto/PaginaTutorial/Cartas/parrafo3/TextureRect2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.5
+offset_top = -57.5
+offset_right = 41.5
+offset_bottom = 57.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("18_5pail")
+expand_mode = 1
+
+[node name="ObjetivoJuego" type="Label" parent="LibroAbierto/PaginaTutorial"]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 89.5
+offset_right = 385.0
+offset_bottom = 131.5
+theme_type_variation = &"HeaderMedium"
+text = "Objetivo del juego:
+"
+
+[node name="parrafo" type="RichTextLabel" parent="LibroAbierto/PaginaTutorial/ObjetivoJuego"]
+clip_contents = false
+layout_mode = 0
+offset_left = 12.0
+offset_top = 37.0
+offset_right = 256.0
+offset_bottom = 160.0
+text = "Consigue 100 adeptos a la secta ganar la partida. La barra lateral te indicará tu progreso."
+
+[node name="medidor_locura" parent="LibroAbierto/PaginaTutorial/ObjetivoJuego" instance=ExtResource("12_nd3xq")]
+offset_left = 233.0
+offset_top = -209.0
+offset_right = 425.0
+offset_bottom = 855.0
+scale = Vector2(0.458087, 0.458087)
+script = null
+
+[node name="medidor" parent="LibroAbierto/PaginaTutorial/ObjetivoJuego/medidor_locura" index="0"]
+offset_left = 56.7578
+offset_top = 187.737
+offset_right = 176.758
+offset_bottom = 851.737
+value = 50.0
+nine_patch_stretch = true
+
+[node name="Sprite2D" parent="LibroAbierto/PaginaTutorial/ObjetivoJuego/medidor_locura" index="1"]
+position = Vector2(-157.175, 790.243)
+
+[node name="TextEdit" parent="LibroAbierto/PaginaTutorial/ObjetivoJuego/medidor_locura/Sprite2D" index="0"]
+metadata/_edit_use_anchors_ = true
+
+[node name="Siguiente2" type="Button" parent="LibroAbierto/PaginaTutorial" groups=["ui_button"]]
+layout_mode = 0
+offset_left = 799.5
+offset_top = 435.5
+offset_right = 925.5
+offset_bottom = 606.5
+scale = Vector2(0.567926, 0.567926)
+icon = ExtResource("19_5jf37")
 
 [node name="PaginaCredits" type="Panel" parent="LibroAbierto"]
 visible = false
@@ -735,14 +924,15 @@ position = Vector2(1767, 754)
 
 [connection signal="pressed" from="LibroAbierto/PaginaInicio/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="LibroAbierto/PaginaInicio/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="LibroAbierto/PaginaInicio/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="LibroAbierto/PaginaInicio/Galeria" to="." method="_on_galeria_pressed"]
+[connection signal="pressed" from="LibroAbierto/PaginaInicio/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="LibroAbierto/PaginaInicio/Exit" to="." method="_on_exit_pressed"]
 [connection signal="value_changed" from="LibroAbierto/PaginaSettings/Settings/VolumenMusica" to="." method="_on_volumen_musica_value_changed"]
 [connection signal="pressed" from="LibroAbierto/PaginaSettings/Settings/VolumenMusica/MuteMusica" to="." method="_on_mute_musica_pressed"]
 [connection signal="value_changed" from="LibroAbierto/PaginaSettings/Settings/VolumenSFX" to="." method="_on_volumen_sfx_value_changed"]
 [connection signal="pressed" from="LibroAbierto/PaginaSettings/Settings/VolumenSFX/MuteSFX" to="." method="_on_mute_sfx_pressed"]
-[connection signal="pressed" from="LibroAbierto/PaginaTutorial/start_game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="LibroAbierto/PaginaHistoria/Siguiente" to="." method="_on_tutorial_press"]
+[connection signal="pressed" from="LibroAbierto/PaginaTutorial/Siguiente2" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="LibroAbierto/PaginaGaleria/BtnSiguiente" to="." method="_on_btn_siguiente_pressed"]
 [connection signal="pressed" from="LibroAbierto/PaginaGaleria/Anterior" to="." method="_on_anterior_pressed"]
 [connection signal="pressed" from="LibroAbierto/Home" to="." method="_on_home_pressed"]
@@ -750,5 +940,6 @@ position = Vector2(1767, 754)
 
 [editable path="LibroAbierto/PaginaSettings/Settings"]
 [editable path="LibroAbierto/PaginaFinal/Final"]
+[editable path="LibroAbierto/PaginaTutorial/ObjetivoJuego/medidor_locura"]
 [editable path="LibroAbierto/PaginaCredits/Credits"]
 [editable path="LibroAbierto/PaginaGaleria/Panel"]

@@ -4,6 +4,7 @@ var SAVE_FILE_DIRECTION = 'user://gamescores.save'
 @onready var ranking_text = $LibroAbierto/PaginaFinal/Final/Ranking/RankingTextLabel
 @onready var libro_cerrado = $LibroCerrado
 @onready var libro_abierto = $LibroAbierto
+@onready var historia = $LibroAbierto/PaginaHistoria
 @onready var tutorial = $LibroAbierto/PaginaTutorial
 @onready var slider_musica = $LibroAbierto/PaginaSettings/Settings/VolumenMusica
 @onready var slider_SFX = $LibroAbierto/PaginaSettings/Settings/VolumenSFX
@@ -40,6 +41,7 @@ func _ready():
 	libro_cerrado.visible = Global.b_first_game
 	galeria.visible = false
 	tutorial.visible = false
+	historia.visible = false
 	if (!Global.b_first_game):
 		$LibroAbierto.visible = !Global.b_first_game
 		$LibroAbierto/PaginaInicio.visible = false
@@ -83,13 +85,17 @@ func _on_play_pressed():
 	if (Global.b_first_game):
 		libro_abierto.visible = true
 		libro_cerrado.visible = false
-		tutorial.visible = true
+		historia.visible = true
 		$LibroAbierto/PaginaInicio.visible = false
 		$LibroAbierto/PaginaSettings.visible = false
 		$LibroAbierto/PaginaCredits.visible = false
 	else:
 		_on_start_game_pressed()
 
+func _on_tutorial_press():
+	if (Global.b_first_game):
+		tutorial.visible = true
+		historia.visible = false
 
 func _on_start_game_pressed():
 	get_tree().change_scene_to_packed(escena_juego)

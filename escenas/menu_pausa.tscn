@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dgvk3kamy3owh"]
+[gd_scene load_steps=23 format=3 uid="uid://dgvk3kamy3owh"]
 
 [ext_resource type="Script" path="res://scripts/MenuPausa.gd" id="1_0xa3x"]
 [ext_resource type="Theme" uid="uid://cmcb4mmclu5ex" path="res://Fuentes/tema_libro.tres" id="1_kicay"]
@@ -26,6 +26,8 @@ bg_color = Color(0, 0, 0, 0.501961)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h17hg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yuinr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_te7fc"]
 
 [node name="MenuPausa" type="Panel"]
 process_mode = 3
@@ -71,7 +73,6 @@ texture = ExtResource("2_1307c")
 expand_mode = 1
 
 [node name="PaginaInicio" type="Panel" parent="LibroAbierto"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -106,26 +107,26 @@ expand_mode = 1
 
 [node name="Continue" type="Button" parent="LibroAbierto/PaginaInicio" groups=["ui_button"]]
 layout_mode = 0
-offset_left = 230.0
+offset_left = 228.46
 offset_top = 147.0
-offset_right = 397.0
+offset_right = 395.46
 offset_bottom = 212.0
 text = "CONTINUAR"
 
 [node name="Settings" type="Button" parent="LibroAbierto/PaginaInicio" groups=["ui_button"]]
 layout_mode = 0
-offset_left = 230.0
+offset_left = 225.935
 offset_top = 216.0
-offset_right = 395.0
+offset_right = 390.935
 offset_bottom = 281.0
 text = "AJUSTES"
 
 [node name="Explicacion" type="Button" parent="LibroAbierto/PaginaInicio" groups=["ui_button"]]
-offset_left = 216.0
+offset_left = 205.0
 offset_top = 285.0
-offset_right = 402.0
+offset_right = 425.0
 offset_bottom = 350.0
-text = "EXPLICACION
+text = "INSTRUCCIONES
 "
 
 [node name="Exit" type="Button" parent="LibroAbierto/PaginaInicio" groups=["ui_button"]]
@@ -259,7 +260,8 @@ offset_right = 213.0
 offset_bottom = 47.6605
 text = "Mute"
 
-[node name="PaginaTutorial" type="Panel" parent="LibroAbierto"]
+[node name="PaginaTutorial123" type="Panel" parent="LibroAbierto"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -273,6 +275,178 @@ offset_bottom = 287.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_yuinr")
+
+[node name="ComoJugar" type="Label" parent="LibroAbierto/PaginaTutorial123"]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 259.5
+offset_right = 340.0
+offset_bottom = 296.5
+theme_type_variation = &"HeaderMedium"
+text = "Reglas:"
+
+[node name="parrafo" type="RichTextLabel" parent="LibroAbierto/PaginaTutorial123/ComoJugar"]
+clip_contents = false
+layout_mode = 0
+offset_left = 7.0
+offset_top = 35.0
+offset_right = 328.0
+offset_bottom = 222.0
+text = "La partida dura 6 turnos. Cada noche podrás usar dos cartas para sembrar el pánico  y llenar el medidor de locura colectiva. Por el día el rey podrá jugar dos cartas para bajar el medidor."
+
+[node name="Cartas" type="Label" parent="LibroAbierto/PaginaTutorial123"]
+layout_mode = 0
+offset_left = 533.0
+offset_top = 41.5
+offset_right = 722.0
+offset_bottom = 78.5
+theme_type_variation = &"HeaderMedium"
+text = "Cartas:"
+
+[node name="parrafo" type="RichTextLabel" parent="LibroAbierto/PaginaTutorial123/Cartas"]
+clip_contents = false
+layout_mode = 0
+offset_left = 7.0
+offset_top = 35.0
+offset_right = 320.0
+offset_bottom = 131.0
+text = "Durante tu turno tendras distintos tipos de cartas para jugar.
+"
+
+[node name="parrafo4" type="RichTextLabel" parent="LibroAbierto/PaginaTutorial123/Cartas"]
+clip_contents = false
+layout_mode = 0
+offset_left = 11.0
+offset_top = 104.0
+offset_right = 324.0
+offset_bottom = 200.0
+text = "Existen dos tipos de cartas:
+"
+
+[node name="parrafo2" type="RichTextLabel" parent="LibroAbierto/PaginaTutorial123/Cartas"]
+clip_contents = false
+layout_mode = 0
+offset_left = 9.0
+offset_top = 132.0
+offset_right = 246.0
+offset_bottom = 283.0
+text = "Las cartas de personajes te consigues mejoras permanentes a cambio no te da adeptos."
+
+[node name="TextureRect" type="TextureRect" parent="LibroAbierto/PaginaTutorial123/Cartas/parrafo2"]
+layout_mode = 0
+offset_left = 247.0
+offset_top = 11.0
+offset_right = 316.0
+offset_bottom = 112.0
+texture = ExtResource("11_f2cjj")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="LibroAbierto/PaginaTutorial123/Cartas/parrafo2/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.5
+offset_top = -57.5
+offset_right = 41.5
+offset_bottom = 57.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_1a5la")
+expand_mode = 1
+
+[node name="parrafo3" type="RichTextLabel" parent="LibroAbierto/PaginaTutorial123/Cartas"]
+clip_contents = false
+layout_mode = 0
+offset_left = 7.0
+offset_top = 283.0
+offset_right = 244.0
+offset_bottom = 457.0
+text = " Las cartas de accion te proporcionaran adeptos y tienen distintos atributos que junto con otras cartas pueden provocar un combo. "
+
+[node name="TextureRect2" type="TextureRect" parent="LibroAbierto/PaginaTutorial123/Cartas/parrafo3"]
+layout_mode = 0
+offset_left = 251.0
+offset_top = 32.0
+offset_right = 320.0
+offset_bottom = 133.0
+texture = ExtResource("13_5c7bm")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="LibroAbierto/PaginaTutorial123/Cartas/parrafo3/TextureRect2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.5
+offset_top = -57.5
+offset_right = 41.5
+offset_bottom = 57.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_60v2e")
+expand_mode = 1
+
+[node name="ObjetivoJuego" type="Label" parent="LibroAbierto/PaginaTutorial123"]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 89.5
+offset_right = 385.0
+offset_bottom = 131.5
+theme_type_variation = &"HeaderMedium"
+text = "Objetivo del juego:
+"
+
+[node name="parrafo" type="RichTextLabel" parent="LibroAbierto/PaginaTutorial123/ObjetivoJuego"]
+clip_contents = false
+layout_mode = 0
+offset_left = 12.0
+offset_top = 37.0
+offset_right = 256.0
+offset_bottom = 160.0
+text = "Consigue 100 adeptos a la secta ganar la partida. La barra lateral te indicara tu progreso."
+
+[node name="medidor_locura" parent="LibroAbierto/PaginaTutorial123/ObjetivoJuego" instance=ExtResource("13_ef1al")]
+offset_left = 233.0
+offset_top = -209.0
+offset_right = 425.0
+offset_bottom = 855.0
+scale = Vector2(0.458087, 0.458087)
+script = null
+
+[node name="medidor" parent="LibroAbierto/PaginaTutorial123/ObjetivoJuego/medidor_locura" index="0"]
+offset_left = 56.7578
+offset_top = 187.737
+offset_right = 176.758
+offset_bottom = 851.737
+value = 50.0
+nine_patch_stretch = true
+
+[node name="Sprite2D" parent="LibroAbierto/PaginaTutorial123/ObjetivoJuego/medidor_locura" index="1"]
+position = Vector2(-157.175, 790.243)
+
+[node name="TextEdit" parent="LibroAbierto/PaginaTutorial123/ObjetivoJuego/medidor_locura/Sprite2D" index="0"]
+metadata/_edit_use_anchors_ = true
+
+[node name="PaginaTutorial" type="Panel" parent="LibroAbierto"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -513.0
+offset_top = -287.5
+offset_right = 513.0
+offset_bottom = 287.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_te7fc")
 
 [node name="ComoJugar" type="Label" parent="LibroAbierto/PaginaTutorial"]
 layout_mode = 0
@@ -290,7 +464,7 @@ offset_left = 7.0
 offset_top = 35.0
 offset_right = 328.0
 offset_bottom = 222.0
-text = "La partida dura 6 turnos. Cada noche podrás usar dos cartas para sembrar el pánico  y llenar el medidor de locura colectiva. Por el día el rey podrá jugar dos cartas para bajar el medidor."
+text = "La partida dura 6 turnos. Cada noche podrás usar dos cartas para sembrar el pánico  y llenar el medidor de locura colectiva. Por el día, el rey podrá jugar dos cartas para bajar el medidor."
 
 [node name="Cartas" type="Label" parent="LibroAbierto/PaginaTutorial"]
 layout_mode = 0
@@ -308,34 +482,34 @@ offset_left = 7.0
 offset_top = 35.0
 offset_right = 320.0
 offset_bottom = 131.0
-text = "Durante tu turno tendras distintos tipos de cartas para jugar.
+text = "Durante tu turno tendrás distintos tipos de cartas para jugar.
 "
 
 [node name="parrafo4" type="RichTextLabel" parent="LibroAbierto/PaginaTutorial/Cartas"]
 clip_contents = false
 layout_mode = 0
-offset_left = 11.0
-offset_top = 104.0
-offset_right = 324.0
-offset_bottom = 200.0
+offset_left = 7.5
+offset_top = 99.0
+offset_right = 320.5
+offset_bottom = 195.0
 text = "Existen dos tipos de cartas:
 "
 
 [node name="parrafo2" type="RichTextLabel" parent="LibroAbierto/PaginaTutorial/Cartas"]
 clip_contents = false
 layout_mode = 0
-offset_left = 9.0
-offset_top = 132.0
-offset_right = 246.0
-offset_bottom = 283.0
-text = "Las cartas de personajes te consigues mejoras permanentes a cambio no te da adeptos."
+offset_left = 104.5
+offset_top = 128.0
+offset_right = 341.5
+offset_bottom = 279.0
+text = "Las cartas de personajes te consigues mejoras permanentes, pero a cambio no te da adeptos."
 
 [node name="TextureRect" type="TextureRect" parent="LibroAbierto/PaginaTutorial/Cartas/parrafo2"]
 layout_mode = 0
-offset_left = 247.0
-offset_top = 11.0
-offset_right = 316.0
-offset_bottom = 112.0
+offset_left = -90.0
+offset_top = 12.0
+offset_right = -21.0
+offset_bottom = 113.0
 texture = ExtResource("11_f2cjj")
 expand_mode = 1
 
@@ -358,18 +532,18 @@ expand_mode = 1
 [node name="parrafo3" type="RichTextLabel" parent="LibroAbierto/PaginaTutorial/Cartas"]
 clip_contents = false
 layout_mode = 0
-offset_left = 7.0
-offset_top = 283.0
-offset_right = 244.0
-offset_bottom = 457.0
-text = " Las cartas de accion te proporcionaran adeptos y tienen distintos atributos que junto con otras cartas pueden provocar un combo. "
+offset_left = 104.5
+offset_top = 247.0
+offset_right = 341.5
+offset_bottom = 421.0
+text = "Las cartas de acción te proporcionarán adeptos y tienen distintos atributos que, junto con otras cartas, pueden provocar un combo."
 
 [node name="TextureRect2" type="TextureRect" parent="LibroAbierto/PaginaTutorial/Cartas/parrafo3"]
 layout_mode = 0
-offset_left = 251.0
-offset_top = 32.0
-offset_right = 320.0
-offset_bottom = 133.0
+offset_left = -90.0
+offset_top = 36.0
+offset_right = -21.0
+offset_bottom = 137.0
 texture = ExtResource("13_5c7bm")
 expand_mode = 1
 
@@ -406,7 +580,7 @@ offset_left = 12.0
 offset_top = 37.0
 offset_right = 256.0
 offset_bottom = 160.0
-text = "Consigue 100 adeptos a la secta ganar la partida. La barra lateral te indicara tu progreso."
+text = "Consigue 100 adeptos a la secta ganar la partida. La barra lateral te indicará tu progreso."
 
 [node name="medidor_locura" parent="LibroAbierto/PaginaTutorial/ObjetivoJuego" instance=ExtResource("13_ef1al")]
 offset_left = 233.0
@@ -443,7 +617,7 @@ stretch_mode = 0
 
 [node name="SFX" type="AudioStreamPlayer2D" parent="."]
 
-[connection signal="pressed" from="LibroAbierto/PaginaInicio/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="LibroAbierto/PaginaInicio/Continue" to="." method="pausa"]
 [connection signal="pressed" from="LibroAbierto/PaginaInicio/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="LibroAbierto/PaginaInicio/Explicacion" to="." method="_on_explicacion_pressed"]
 [connection signal="pressed" from="LibroAbierto/PaginaInicio/Exit" to="." method="_on_exit_pressed"]
@@ -454,4 +628,5 @@ stretch_mode = 0
 [connection signal="pressed" from="LibroAbierto/Home" to="." method="_on_home_pressed"]
 
 [editable path="LibroAbierto/PaginaSettings/Settings"]
+[editable path="LibroAbierto/PaginaTutorial123/ObjetivoJuego/medidor_locura"]
 [editable path="LibroAbierto/PaginaTutorial/ObjetivoJuego/medidor_locura"]

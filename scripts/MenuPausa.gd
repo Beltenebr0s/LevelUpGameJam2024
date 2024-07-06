@@ -27,9 +27,13 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("Pausa"):
-		pausado = !pausado
-		get_tree().paused = pausado
-		visible = pausado
+		pausa()
+
+func pausa():
+	pausado = !pausado
+	get_tree().paused = pausado
+	visible = pausado
+	mostrar_pagina_inicio()
 
 func mostrar_pagina_inicio():
 	print("Home")
