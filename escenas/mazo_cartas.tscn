@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b80mbbnuqe78v"]
+[gd_scene load_steps=12 format=3 uid="uid://b80mbbnuqe78v"]
 
 [ext_resource type="Script" path="res://scripts/MazoCartas.gd" id="1_pf761"]
 [ext_resource type="PackedScene" uid="uid://b47xbta5payek" path="res://escenas/carta.tscn" id="2_y5ux8"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://wtrb7t5nuou6" path="res://texturas/cartas/Vigil.jpg" id="5_jgnyf"]
 [ext_resource type="Texture2D" uid="uid://bk1b5bs1xirll" path="res://texturas/cartas/Plaga_ratas.png" id="5_l6taq"]
 [ext_resource type="Texture2D" uid="uid://d2v7o0fwrj8gk" path="res://texturas/cartas/Envenenar_el_pozo.jpg" id="5_mupmq"]
+[ext_resource type="Texture2D" uid="uid://ua6tddjd5q4d" path="res://texturas/cartas/Niebla_venenosa.jpg" id="6_06ux5"]
 [ext_resource type="Texture2D" uid="uid://cs0xqdvio6sf0" path="res://texturas/cartas/Cabeza_de_caballo.png" id="6_87ovp"]
 [ext_resource type="Texture2D" uid="uid://dxysl04btnj38" path="res://texturas/cartas/Caballero_Maldito.jpg" id="10_dpifn"]
 
@@ -74,6 +75,7 @@ requisitos = 20
 valor = 30
 
 [node name="Niebla" parent="." instance=ExtResource("2_y5ux8")]
+texture = ExtResource("6_06ux5")
 titulo = "Niebla venenosa"
 descripcion = "El cirujano del pueblo no da abasto, pero seguro que no le importa atender a unos cuantos vecinos envenenados..."
 tipo = 2

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://byeqj6jd7r2vl"]
+[gd_scene load_steps=31 format=3 uid="uid://byeqj6jd7r2vl"]
 
 [ext_resource type="Theme" uid="uid://cmcb4mmclu5ex" path="res://Fuentes/tema_libro.tres" id="1_rgpyg"]
 [ext_resource type="Script" path="res://scripts/MenuPrincipal.gd" id="1_xdxr6"]
@@ -17,10 +17,12 @@
 [ext_resource type="Texture2D" uid="uid://dtkhu4jup0q2u" path="res://texturas/Dorso_Azul.png" id="10_8eiqc"]
 [ext_resource type="Texture2D" uid="uid://cn3c3uw325306" path="res://texturas/Dorso_Rojo.png" id="11_n3wqh"]
 [ext_resource type="PackedScene" uid="uid://cu4ruf7b0vci4" path="res://escenas/medidor_locura.tscn" id="12_nd3xq"]
-[ext_resource type="Texture2D" uid="uid://dxysl04btnj38" path="res://texturas/cartas/Caballero_Maldito.jpg" id="13_ssq6f"]
 [ext_resource type="AudioStream" uid="uid://dm1qm3nbvhosa" path="res://audio/musica/menu_1.wav" id="14_y6b0s"]
 [ext_resource type="PackedScene" uid="uid://b80mbbnuqe78v" path="res://escenas/mazo_cartas.tscn" id="16_twf7g"]
 [ext_resource type="Texture2D" uid="uid://bovmgp7c4a3kg" path="res://texturas/cartas/Borde_Dorado.png" id="18_1akmy"]
+[ext_resource type="Texture2D" uid="uid://bk1b5bs1xirll" path="res://texturas/cartas/Plaga_ratas.png" id="18_82vj4"]
+[ext_resource type="Texture2D" uid="uid://cxqvuum4hfm88" path="res://texturas/menus/Pasar_pagina.png" id="19_5jf37"]
+[ext_resource type="Texture2D" uid="uid://c23a6r0v6jh2v" path="res://texturas/menus/Volver_pagina.png" id="20_ma2qo"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gt4ad"]
 
@@ -671,32 +673,58 @@ offset_bottom = 517.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_i5bd0")
 
 [node name="Titulo" parent="LibroAbierto/PaginaGaleria/Panel" index="0"]
-offset_left = 62.0
-offset_top = 38.0
-offset_right = 428.0
-offset_bottom = 106.0
-theme_override_font_sizes/font_size = 30
+offset_left = -330.5
+offset_top = 56.5
+offset_right = 35.5
+offset_bottom = 124.5
+theme_override_font_sizes/font_size = 32
 text = "Titulo de la carta"
 
-[node name="ImagenCarta" type="TextureRect" parent="LibroAbierto/PaginaGaleria/Panel/Titulo" index="0"]
-layout_mode = 0
-offset_left = 61.5
-offset_top = 77.5
-offset_right = 306.5
-offset_bottom = 448.5
-texture = ExtResource("13_ssq6f")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="MarcoCarta" type="TextureRect" parent="LibroAbierto/PaginaGaleria/Panel/Titulo/ImagenCarta"]
-layout_mode = 0
-offset_left = -17.0
-offset_top = -19.0
-offset_right = 287.0
-offset_bottom = 375.0
+[node name="MarcoCarta" type="TextureRect" parent="LibroAbierto/PaginaGaleria/Panel/Titulo" index="0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 257.0
+offset_top = -8.0
+offset_right = 539.0
+offset_bottom = 383.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("18_1akmy")
 expand_mode = 3
 stretch_mode = 4
+
+[node name="ImagenCarta" type="TextureRect" parent="LibroAbierto/PaginaGaleria/Panel/Titulo/MarcoCarta"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.878
+offset_top = -169.5
+offset_right = 111.011
+offset_bottom = 165.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.01274, 1.01274)
+texture = ExtResource("18_82vj4")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Descripcion" type="RichTextLabel" parent="LibroAbierto/PaginaGaleria"]
+clip_contents = false
+layout_mode = 0
+offset_left = 160.5
+offset_top = 133.5
+offset_right = 460.5
+offset_bottom = 491.5
+theme_override_font_sizes/normal_font_size = 24
+text = "Texto de prueba con la descripción de la carta que se han currado nuestros compañeros artistas que menudo curro se han metido por favor entrad en esta pantallita para ver todas las cartas os lo suplico."
 
 [node name="BordeIlustracion3" type="TextureRect" parent="LibroAbierto/PaginaGaleria"]
 layout_mode = 0
@@ -718,31 +746,24 @@ text = "/--\\
 
 [node name="BtnSiguiente" type="Button" parent="LibroAbierto/PaginaGaleria" groups=["ui_button"]]
 layout_mode = 0
-offset_left = 337.5
-offset_top = 451.5
-offset_right = 481.5
-offset_bottom = 495.5
-text = "SIGUIENTE"
+offset_left = 398.5
+offset_top = 448.5
+offset_right = 521.5
+offset_bottom = 618.5
+scale = Vector2(0.567926, 0.567926)
+icon = ExtResource("19_5jf37")
 
 [node name="Anterior" type="Button" parent="LibroAbierto/PaginaGaleria" groups=["ui_button"]]
 layout_mode = 0
-offset_left = 141.5
-offset_top = 451.5
-offset_right = 285.5
-offset_bottom = 495.5
-text = "ANTERIOR"
-
-[node name="Descripcion" type="RichTextLabel" parent="LibroAbierto/PaginaGaleria"]
-clip_contents = false
-layout_mode = 0
-offset_left = 161.0
-offset_top = 93.0
-offset_right = 461.0
-offset_bottom = 451.0
-theme_override_font_sizes/normal_font_size = 24
-text = "Texto de prueba con la descripción de la carta que se han currado nuestros compañeros artistas que menudo curro se han metido por favor entrad en esta pantallita para ver todas las cartas os lo suplico."
+offset_left = 137.0
+offset_top = 448.5
+offset_right = 263.0
+offset_bottom = 619.5
+scale = Vector2(0.567926, 0.567926)
+icon = ExtResource("20_ma2qo")
 
 [node name="LibroCerrado" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

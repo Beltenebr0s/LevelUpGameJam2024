@@ -189,7 +189,7 @@ func mostrar_carta():
 	var carta = lista_cartas[indice_carta]
 	var titulo_carta = $LibroAbierto/PaginaGaleria/Panel/Titulo
 	var desc_carta = $LibroAbierto/PaginaGaleria/Descripcion
-	var imagen = $LibroAbierto/PaginaGaleria/Panel/Titulo/ImagenCarta
+	var imagen = $LibroAbierto/PaginaGaleria/Panel/Titulo/MarcoCarta/ImagenCarta
 	titulo_carta.text = carta.titulo
 	desc_carta.text = carta.descripcion
 	imagen.texture = carta.texture

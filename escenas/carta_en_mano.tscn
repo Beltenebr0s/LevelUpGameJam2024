@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://ox8ij1qdjkkh"]
 
 [ext_resource type="Script" path="res://scripts/CartaEnMano.gd" id="1_qjok4"]
-[ext_resource type="Texture2D" uid="uid://cn3c3uw325306" path="res://texturas/Dorso_Rojo.png" id="2_vg7fl"]
+[ext_resource type="Texture2D" uid="uid://bk1b5bs1xirll" path="res://texturas/cartas/Plaga_ratas.png" id="2_pb24e"]
 [ext_resource type="Texture2D" uid="uid://0u1l81ja0ixj" path="res://texturas/cartas/Borde_Azul.png" id="3_snlwa"]
 [ext_resource type="Theme" uid="uid://cmcb4mmclu5ex" path="res://Fuentes/tema_libro.tres" id="4_asa80"]
 [ext_resource type="LabelSettings" uid="uid://begwl5binonky" path="res://Fuentes/titulo_cartas.tres" id="5_tbp84"]
@@ -131,8 +131,9 @@ libraries = {
 [node name="Carta" type="Sprite2D" parent="."]
 
 [node name="TexturaCarta" type="Sprite2D" parent="Carta"]
-scale = Vector2(0.162162, 0.162162)
-texture = ExtResource("2_vg7fl")
+position = Vector2(-0.452664, 0)
+scale = Vector2(0.15825, 0.160194)
+texture = ExtResource("2_pb24e")
 
 [node name="Borde" type="Sprite2D" parent="Carta"]
 scale = Vector2(0.162162, 0.162162)
