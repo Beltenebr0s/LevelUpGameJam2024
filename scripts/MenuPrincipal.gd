@@ -115,6 +115,8 @@ func _on_home_pressed():
 	print("Inicio")
 	$LibroAbierto.visible = true
 	$LibroAbierto/PaginaInicio.visible = true
+	$LibroAbierto/PaginaTutorial.visible = false
+	$LibroAbierto/PaginaHistoria.visible = false
 	$LibroAbierto/PaginaSettings.visible = false
 	$LibroAbierto/PaginaCredits.visible = false
 	$LibroAbierto/PaginaFinal.visible = false
