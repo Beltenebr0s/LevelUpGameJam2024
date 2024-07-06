@@ -1,12 +1,16 @@
-[gd_scene load_steps=25 format=3 uid="uid://byeqj6jd7r2vl"]
+[gd_scene load_steps=29 format=3 uid="uid://byeqj6jd7r2vl"]
 
 [ext_resource type="Theme" uid="uid://cmcb4mmclu5ex" path="res://Fuentes/tema_libro.tres" id="1_rgpyg"]
 [ext_resource type="Script" path="res://scripts/MenuPrincipal.gd" id="1_xdxr6"]
 [ext_resource type="Texture2D" uid="uid://uo6y72gka3i6" path="res://texturas/menus/Mesa_Oscura.png" id="2_2wova"]
 [ext_resource type="Texture2D" uid="uid://du0j2ib4uoe6b" path="res://texturas/menus/Libro_para_Victoria_y_derrota.png" id="2_7wfuc"]
 [ext_resource type="PackedScene" uid="uid://c3dvk21fhqeoi" path="res://escenas/panel_menu.tscn" id="2_rx15a"]
+[ext_resource type="AudioStream" uid="uid://kjrneifcnnpy" path="res://audio/UI/UI_Menu_Click1.wav" id="3_xndw2"]
+[ext_resource type="AudioStream" uid="uid://brg4gclc5vnyo" path="res://audio/UI/UI_Menu_Click2.wav" id="4_ydhq0"]
 [ext_resource type="Texture2D" uid="uid://b332yv2t8kynt" path="res://texturas/menus/libro_cerrado.png" id="5_ic5la"]
 [ext_resource type="Texture2D" uid="uid://ds8j1l4sv3678" path="res://texturas/menus/Borde_Ilustraciones_Libro.png" id="5_ma7rj"]
+[ext_resource type="AudioStream" uid="uid://cwhr08vrienrq" path="res://audio/UI/UI_Menu_Click3.wav" id="5_pglig"]
+[ext_resource type="AudioStream" uid="uid://bu2olhf2dkmpf" path="res://audio/UI/UI_Menu_Click4.wav" id="6_u2eia"]
 [ext_resource type="Texture2D" uid="uid://cgrucv55xpoo3" path="res://texturas/menus/Menu_Inicio_Ilustracion.png" id="6_xlrri"]
 [ext_resource type="Texture2D" uid="uid://d5m6ymst3es7" path="res://texturas/menus/Victoria_Libro.png" id="8_05w7k"]
 [ext_resource type="Texture2D" uid="uid://cr5qcqw6tj6aw" path="res://texturas/menus/Derrota_Libro.png" id="9_86xqj"]
@@ -45,6 +49,7 @@ grow_vertical = 2
 theme = ExtResource("1_rgpyg")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_gt4ad")
 script = ExtResource("1_xdxr6")
+lista_sfx_ui_buttons = Array[AudioStreamWAV]([ExtResource("3_xndw2"), ExtResource("4_ydhq0"), ExtResource("5_pglig"), ExtResource("6_u2eia")])
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -108,7 +113,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_qebxr")
 
-[node name="Play" type="Button" parent="LibroAbierto/PaginaInicio"]
+[node name="Play" type="Button" parent="LibroAbierto/PaginaInicio" groups=["ui_button"]]
 layout_mode = 0
 offset_left = 225.5
 offset_top = 143.5
@@ -116,7 +121,7 @@ offset_right = 390.5
 offset_bottom = 208.5
 text = "JUGAR"
 
-[node name="Settings" type="Button" parent="LibroAbierto/PaginaInicio"]
+[node name="Settings" type="Button" parent="LibroAbierto/PaginaInicio" groups=["ui_button"]]
 layout_mode = 0
 offset_left = 225.5
 offset_top = 208.5
@@ -124,24 +129,24 @@ offset_right = 390.5
 offset_bottom = 273.5
 text = "AJUSTES"
 
-[node name="Credits" type="Button" parent="LibroAbierto/PaginaInicio"]
+[node name="Credits" type="Button" parent="LibroAbierto/PaginaInicio" groups=["ui_button"]]
 layout_mode = 0
 offset_left = 225.5
-offset_top = 273.5
+offset_top = 336.5
 offset_right = 390.5
-offset_bottom = 338.5
+offset_bottom = 401.5
 text = "CRÉDITOS
 "
 
-[node name="Galeria" type="Button" parent="LibroAbierto/PaginaInicio"]
+[node name="Galeria" type="Button" parent="LibroAbierto/PaginaInicio" groups=["ui_button"]]
 layout_mode = 0
 offset_left = 225.5
-offset_top = 338.5
+offset_top = 279.5
 offset_right = 390.5
-offset_bottom = 403.5
+offset_bottom = 344.5
 text = "GALERÍA"
 
-[node name="Exit" type="Button" parent="LibroAbierto/PaginaInicio"]
+[node name="Exit" type="Button" parent="LibroAbierto/PaginaInicio" groups=["ui_button"]]
 layout_mode = 0
 offset_left = 225.5
 offset_top = 392.5
@@ -265,7 +270,7 @@ offset_right = 213.0
 offset_bottom = 47.0
 text = "Mute"
 
-[node name="Home" type="Button" parent="LibroAbierto/PaginaSettings"]
+[node name="Home" type="Button" parent="LibroAbierto/PaginaSettings" groups=["ui_button"]]
 layout_mode = 0
 offset_left = 29.5
 offset_top = 84.5
@@ -422,7 +427,7 @@ dijo el pez
 C><"
 scroll_active = false
 
-[node name="Home2" type="Button" parent="LibroAbierto/PaginaFinal/Final"]
+[node name="Home2" type="Button" parent="LibroAbierto/PaginaFinal/Final" groups=["ui_button"]]
 layout_mode = 0
 offset_left = -491.0
 offset_top = 30.0
@@ -532,7 +537,7 @@ script = null
 [node name="medidor" parent="LibroAbierto/PaginaTutorial/ObjetivoJuego/medidor_locura" index="0"]
 value = 50.0
 
-[node name="start_game" type="Button" parent="LibroAbierto/PaginaTutorial"]
+[node name="start_game" type="Button" parent="LibroAbierto/PaginaTutorial" groups=["ui_button"]]
 layout_mode = 0
 offset_left = 542.5
 offset_top = 383.5
@@ -632,7 +637,7 @@ offset_bottom = 121.0
 text = "Pulgadrummer
 Andres2751"
 
-[node name="Home3" type="Button" parent="LibroAbierto/PaginaCredits"]
+[node name="Home3" type="Button" parent="LibroAbierto/PaginaCredits" groups=["ui_button"]]
 layout_mode = 0
 offset_left = 29.5
 offset_top = 84.5
@@ -693,7 +698,7 @@ texture = ExtResource("14_d2hke")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Home3" type="Button" parent="LibroAbierto/PaginaGaleria"]
+[node name="Home3" type="Button" parent="LibroAbierto/PaginaGaleria" groups=["ui_button"]]
 layout_mode = 0
 offset_left = 29.5
 offset_top = 84.5
@@ -702,7 +707,7 @@ offset_bottom = 172.5
 text = "/--\\
 |__|"
 
-[node name="BtnSiguiente" type="Button" parent="LibroAbierto/PaginaGaleria"]
+[node name="BtnSiguiente" type="Button" parent="LibroAbierto/PaginaGaleria" groups=["ui_button"]]
 layout_mode = 0
 offset_left = 337.5
 offset_top = 451.5
@@ -710,7 +715,7 @@ offset_right = 481.5
 offset_bottom = 495.5
 text = "SIGUIENTE"
 
-[node name="Anterior" type="Button" parent="LibroAbierto/PaginaGaleria"]
+[node name="Anterior" type="Button" parent="LibroAbierto/PaginaGaleria" groups=["ui_button"]]
 layout_mode = 0
 offset_left = 141.5
 offset_top = 451.5

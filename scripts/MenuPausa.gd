@@ -6,8 +6,13 @@ extends Panel
 @onready var slider_SFX = $LibroAbierto/PaginaSettings/Settings/VolumenSFX
 @onready var mute_musica = $LibroAbierto/PaginaSettings/Settings/VolumenMusica/MuteMusica
 @onready var mute_SFX = $LibroAbierto/PaginaSettings/Settings/VolumenSFX/MuteSFX
-
+@export var lista_sfx_ui_buttons : Array[AudioStreamWAV]
+@onready var sfx_audio_player = $SFX
+var ui_buttons
 func _ready():
+	ui_buttons = get_tree().get_nodes_in_group("ui_button")
+	for button in ui_buttons:
+		button.mouse_entered.connect(_on_button_mouse_entered)
 	slider_musica.value = Global.volumen_musica
 	slider_SFX.value = Global.volumen_SFX
 	mute_musica.button_pressed = Global.musica_muted
@@ -49,3 +54,7 @@ func _on_mute_sfx_pressed():
 
 func _on_home_pressed():
 	mostrar_pagina_inicio()
+
+func _on_button_mouse_entered():
+	sfx_audio_player.stream = lista_sfx_ui_buttons.pick_random()
+	sfx_audio_player.play()

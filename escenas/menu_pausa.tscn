@@ -1,11 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://dgvk3kamy3owh"]
+[gd_scene load_steps=14 format=3 uid="uid://dgvk3kamy3owh"]
 
 [ext_resource type="Script" path="res://scripts/MenuPausa.gd" id="1_0xa3x"]
 [ext_resource type="Theme" uid="uid://cmcb4mmclu5ex" path="res://Fuentes/tema_libro.tres" id="1_kicay"]
 [ext_resource type="Texture2D" uid="uid://du0j2ib4uoe6b" path="res://texturas/menus/Libro_para_Victoria_y_derrota.png" id="2_1307c"]
 [ext_resource type="PackedScene" uid="uid://c3dvk21fhqeoi" path="res://escenas/panel_menu.tscn" id="2_o7frk"]
+[ext_resource type="AudioStream" uid="uid://kjrneifcnnpy" path="res://audio/UI/UI_Menu_Click1.wav" id="3_0h0na"]
 [ext_resource type="Texture2D" uid="uid://ds8j1l4sv3678" path="res://texturas/menus/Borde_Ilustraciones_Libro.png" id="3_t8ss2"]
+[ext_resource type="AudioStream" uid="uid://brg4gclc5vnyo" path="res://audio/UI/UI_Menu_Click2.wav" id="4_7pd0p"]
 [ext_resource type="Texture2D" uid="uid://cgrucv55xpoo3" path="res://texturas/menus/Menu_Inicio_Ilustracion.png" id="4_jbp41"]
+[ext_resource type="AudioStream" uid="uid://cwhr08vrienrq" path="res://audio/UI/UI_Menu_Click3.wav" id="5_ek0xf"]
+[ext_resource type="AudioStream" uid="uid://bu2olhf2dkmpf" path="res://audio/UI/UI_Menu_Click4.wav" id="6_2flh8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cspp3"]
 bg_color = Color(0, 0, 0, 0.501961)
@@ -23,6 +27,7 @@ grow_vertical = 2
 theme = ExtResource("1_kicay")
 theme_override_styles/panel = SubResource("StyleBoxFlat_cspp3")
 script = ExtResource("1_0xa3x")
+lista_sfx_ui_buttons = Array[AudioStreamWAV]([ExtResource("3_0h0na"), ExtResource("4_7pd0p"), ExtResource("5_ek0xf"), ExtResource("6_2flh8")])
 
 [node name="LibroAbierto" type="Panel" parent="."]
 layout_mode = 1
@@ -88,7 +93,7 @@ offset_bottom = 461.0
 texture = ExtResource("4_jbp41")
 expand_mode = 1
 
-[node name="Continue" type="Button" parent="LibroAbierto/PaginaInicio"]
+[node name="Continue" type="Button" parent="LibroAbierto/PaginaInicio" groups=["ui_button"]]
 layout_mode = 0
 offset_left = 230.0
 offset_top = 146.0
@@ -96,15 +101,15 @@ offset_right = 395.0
 offset_bottom = 211.0
 text = "CONTINUAR"
 
-[node name="Settings" type="Button" parent="LibroAbierto/PaginaInicio"]
+[node name="Settings" type="Button" parent="LibroAbierto/PaginaInicio" groups=["ui_button"]]
 layout_mode = 0
 offset_left = 230.0
 offset_top = 252.0
 offset_right = 395.0
 offset_bottom = 317.0
-text = "SETTINGS"
+text = "AJUSTES"
 
-[node name="Exit" type="Button" parent="LibroAbierto/PaginaInicio"]
+[node name="Exit" type="Button" parent="LibroAbierto/PaginaInicio" groups=["ui_button"]]
 layout_mode = 0
 offset_left = 230.0
 offset_top = 354.0
@@ -234,7 +239,7 @@ offset_right = 213.0
 offset_bottom = 47.6605
 text = "Mute"
 
-[node name="Home" type="Button" parent="LibroAbierto/PaginaSettings"]
+[node name="Home" type="Button" parent="LibroAbierto/PaginaSettings" groups=["ui_button"]]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -284,7 +289,7 @@ offset_bottom = 461.0
 texture = ExtResource("4_jbp41")
 expand_mode = 1
 
-[node name="Home" type="Button" parent="LibroAbierto/PaginaSettings2"]
+[node name="Home" type="Button" parent="LibroAbierto/PaginaSettings2" groups=["ui_button"]]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -299,6 +304,8 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "/--\\
 |__|"
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="pressed" from="LibroAbierto/PaginaInicio/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="LibroAbierto/PaginaInicio/Settings" to="." method="_on_settings_pressed"]

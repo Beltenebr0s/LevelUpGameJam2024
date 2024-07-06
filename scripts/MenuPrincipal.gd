@@ -13,13 +13,18 @@ var SAVE_FILE_DIRECTION = 'user://gamescores.save'
 
 @onready var music_audio_player = $Musica
 @onready var sfx_audio_player = $SFX
+@export var lista_sfx_ui_buttons : Array[AudioStreamWAV]
 
 @onready var escena_juego = preload("res://escenas/game.tscn")
 
-var lista_cartas
+var lista_cartas = []
 @onready var indice_carta = 0
+var ui_buttons = []
 
 func _ready():
+	ui_buttons = get_tree().get_nodes_in_group("ui_button")
+	for button in ui_buttons:
+		button.mouse_entered.connect(_on_button_mouse_entered)
 	Global.cambio_volumen_musica.connect(cambiar_vol_musica)
 	Global.cambio_volumen_SFX.connect(cambiar_vol_SFX)
 	lista_cartas = $MazoCartas.get_children()
@@ -190,7 +195,7 @@ func _on_anterior_pressed():
 	if indice_carta > 0:
 		indice_carta -= 1
 	elif indice_carta == 0:
-		indice_carta = lista_cartas.size()
+		indice_carta = lista_cartas.size()-1
 	mostrar_carta()
 
 
@@ -210,3 +215,7 @@ func cambiar_vol_SFX():
 		sfx_audio_player.volume_db = (Global.volumen_SFX - 80)
 	else:
 		sfx_audio_player.volume_db = -80
+
+func _on_button_mouse_entered():
+	sfx_audio_player.stream = lista_sfx_ui_buttons.pick_random()
+	sfx_audio_player.play()
