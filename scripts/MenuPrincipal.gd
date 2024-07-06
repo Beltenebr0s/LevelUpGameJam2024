@@ -28,10 +28,14 @@ func _ready():
 	Global.cambio_volumen_musica.connect(cambiar_vol_musica)
 	Global.cambio_volumen_SFX.connect(cambiar_vol_SFX)
 	lista_cartas = $MazoCartas.get_children()
+	
 	slider_musica.value = Global.volumen_musica
 	slider_SFX.value = Global.volumen_SFX
 	mute_musica.button_pressed = Global.musica_muted
 	mute_SFX.button_pressed = Global.SFX_muted
+	cambiar_vol_musica()
+	cambiar_vol_SFX()
+	
 	libro_abierto.visible = !Global.b_first_game
 	libro_cerrado.visible = Global.b_first_game
 	galeria.visible = false
@@ -72,9 +76,8 @@ func _ready():
 			position+=1;
 
 func _on_titulo_juego_pressed():
-	libro_abierto.visible = true
 	libro_cerrado.visible = false
-
+	_on_home_pressed()
 
 func _on_play_pressed():
 	if (Global.b_first_game):
@@ -106,6 +109,7 @@ func _on_credits_pressed():
 	$LibroAbierto/PaginaSettings.visible = false
 	$LibroAbierto/PaginaCredits.visible = true
 	$LibroAbierto/PaginaFinal.visible = false
+	galeria.visible = false
 
 func _on_home_pressed():
 	print("Inicio")

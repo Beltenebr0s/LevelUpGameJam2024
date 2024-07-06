@@ -99,6 +99,7 @@ texture = ExtResource("2_7wfuc")
 expand_mode = 1
 
 [node name="PaginaInicio" type="Panel" parent="LibroAbierto"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -647,7 +648,6 @@ text = "/--\\
 |__|"
 
 [node name="PaginaGaleria" type="Panel" parent="LibroAbierto"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -672,31 +672,40 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_i5bd0")
 
 [node name="Titulo" parent="LibroAbierto/PaginaGaleria/Panel" index="0"]
 offset_left = 62.0
-offset_top = 18.0
+offset_top = 38.0
 offset_right = 428.0
-offset_bottom = 86.0
+offset_bottom = 106.0
 theme_override_font_sizes/font_size = 30
 text = "Titulo de la carta"
 
 [node name="ImagenCarta" type="TextureRect" parent="LibroAbierto/PaginaGaleria/Panel/Titulo" index="0"]
 layout_mode = 0
 offset_left = 61.5
-offset_top = 76.5
+offset_top = 77.5
 offset_right = 306.5
-offset_bottom = 447.5
+offset_bottom = 448.5
 texture = ExtResource("13_ssq6f")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="MarcoCarta" type="TextureRect" parent="LibroAbierto/PaginaGaleria/Panel/Titulo" index="1"]
+[node name="MarcoCarta" type="TextureRect" parent="LibroAbierto/PaginaGaleria/Panel/Titulo/ImagenCarta"]
 layout_mode = 0
-offset_left = 44.5
-offset_top = 57.5
-offset_right = 348.5
-offset_bottom = 451.5
+offset_left = -17.0
+offset_top = -19.0
+offset_right = 287.0
+offset_bottom = 375.0
 texture = ExtResource("18_1akmy")
 expand_mode = 3
 stretch_mode = 4
+
+[node name="BordeIlustracion3" type="TextureRect" parent="LibroAbierto/PaginaGaleria"]
+layout_mode = 0
+offset_left = 528.5
+offset_top = 47.5
+offset_right = 873.5
+offset_bottom = 535.5
+texture = ExtResource("5_ma7rj")
+expand_mode = 1
 
 [node name="Home3" type="Button" parent="LibroAbierto/PaginaGaleria" groups=["ui_button"]]
 layout_mode = 0
@@ -724,6 +733,7 @@ offset_bottom = 495.5
 text = "ANTERIOR"
 
 [node name="Descripcion" type="RichTextLabel" parent="LibroAbierto/PaginaGaleria"]
+clip_contents = false
 layout_mode = 0
 offset_left = 161.0
 offset_top = 93.0
@@ -733,7 +743,6 @@ theme_override_font_sizes/normal_font_size = 24
 text = "Texto de prueba con la descripción de la carta que se han currado nuestros compañeros artistas que menudo curro se han metido por favor entrad en esta pantallita para ver todas las cartas os lo suplico."
 
 [node name="LibroCerrado" type="Panel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -765,7 +774,6 @@ scale = Vector2(0.35, 0.35)
 texture = ExtResource("5_ic5la")
 
 [node name="TituloJuego" type="TextureButton" parent="LibroCerrado"]
-z_index = 1
 layout_mode = 0
 offset_left = 37.0
 offset_top = 9.0

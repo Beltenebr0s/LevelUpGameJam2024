@@ -4,7 +4,8 @@ var carta_jugada = false
 var carta_oculta = false
 var carta = null
 
-var borde_funciones = ["res://texturas/cartas/Borde_Rojo.png", "res://texturas/cartas/Borde_Azul.png", "res://texturas/cartas/Borde_Verde.png"]
+var borde_tipos = ["res://texturas/cartas/Borde_Azul.png", "res://texturas/cartas/Borde_Rojo.png", "res://texturas/cartas/Borde_Verde.png"]
+var borde_pasiva = "res://texturas/cartas/Borde_Purpura.png"
 
 @onready var animation_player = $AnimationPlayer 
 @onready var titulo = $Carta/descripcion/titulo
@@ -91,7 +92,10 @@ func actualizar_descripcion():
 	self.descripcion.text = self.carta.descripcion
 
 func actualizar_borde():
-	self.borde.texture = load(borde_funciones[carta.funcion])
+	if carta.funcion == 1:
+		self.borde.texture = load(borde_pasiva)
+	else:
+		self.borde.texture = load(borde_tipos[carta.tipo])
 
 func set_carta(_carta):
 	carta_jugada = false

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/carta_pasiva.gd" id="2_kbbva"]
 [ext_resource type="PackedScene" uid="uid://b47xbta5payek" path="res://escenas/carta.tscn" id="2_m2n4f"]
 [ext_resource type="Texture2D" uid="uid://dtkhu4jup0q2u" path="res://texturas/Dorso_Azul.png" id="3_xfggq"]
-[ext_resource type="Texture2D" uid="uid://0u1l81ja0ixj" path="res://texturas/cartas/Borde_Azul.png" id="4_cnoe4"]
+[ext_resource type="Texture2D" uid="uid://c4g4cu7tbfmo4" path="res://texturas/cartas/Borde_Purpura.png" id="4_hxnjj"]
 [ext_resource type="LabelSettings" uid="uid://dt1tfgdc64y" path="res://Fuentes/texto_cartas.tres" id="4_l3yr0"]
 
 [sub_resource type="Animation" id="Animation_gs28s"]
@@ -99,7 +99,7 @@ scale = Vector2(0.144144, 0.142179)
 texture = ExtResource("3_xfggq")
 
 [node name="Borde" type="Sprite2D" parent="Carta"]
-texture = ExtResource("4_cnoe4")
+texture = ExtResource("4_hxnjj")
 
 [node name="descripcion" type="Sprite2D" parent="Carta"]
 position = Vector2(854.491, 0)
