@@ -35,8 +35,10 @@ func _ready():
 		$LibroAbierto/PaginaFinal/Final/Score.text = str(Global.puntos_locura)
 		if (Global.puntos_locura > 100):
 			$LibroAbierto/PaginaFinal/Final/Victoria.visible = true
+			$LibroAbierto/PaginaFinal/Final/Derrota.visible = false
 		else:
 			$LibroAbierto/PaginaFinal/Final/Derrota.visible = true
+			$LibroAbierto/PaginaFinal/Final/Victoria.visible = false
 		
 		
 		#var node : RichTextLabel = get_node("$LibroAbierto/PaginaFinal/Final/Historia/TextoHistoria")

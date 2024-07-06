@@ -298,6 +298,7 @@ offset_bottom = 573.5
 theme_override_styles/panel = SubResource("StyleBoxEmpty_mqjlx")
 
 [node name="Titulo" parent="LibroAbierto/PaginaFinal/Final" index="0"]
+visible = false
 offset_left = -384.0
 offset_top = 15.0
 offset_right = -29.0
@@ -338,9 +339,9 @@ text = "fhfhfhfhfhfhnnhnh"
 [node name="Victoria" type="Label" parent="LibroAbierto/PaginaFinal/Final"]
 layout_mode = 0
 offset_left = -415.0
-offset_top = 393.0
+offset_top = 19.0
 offset_right = -11.0
-offset_bottom = 461.0
+offset_bottom = 87.0
 theme_type_variation = &"HeaderLarge"
 text = "Victoria"
 horizontal_alignment = 1
@@ -349,9 +350,9 @@ vertical_alignment = 1
 [node name="BordeIlustracion2" type="TextureRect" parent="LibroAbierto/PaginaFinal/Final/Victoria"]
 layout_mode = 0
 offset_left = 423.0
-offset_top = -400.0
+offset_top = -27.0
 offset_right = 768.0
-offset_bottom = 88.0
+offset_bottom = 461.0
 texture = ExtResource("5_ma7rj")
 expand_mode = 1
 
@@ -368,9 +369,9 @@ expand_mode = 1
 visible = false
 layout_mode = 0
 offset_left = -415.0
-offset_top = 390.0
+offset_top = 18.0
 offset_right = -11.0
-offset_bottom = 458.0
+offset_bottom = 86.0
 theme_type_variation = &"HeaderLarge"
 text = "Derrota"
 horizontal_alignment = 1
@@ -379,9 +380,9 @@ vertical_alignment = 1
 [node name="BordeIlustracion3" type="TextureRect" parent="LibroAbierto/PaginaFinal/Final/Derrota"]
 layout_mode = 0
 offset_left = 423.0
-offset_top = -397.0
+offset_top = -26.0
 offset_right = 768.0
-offset_bottom = 91.0
+offset_bottom = 462.0
 texture = ExtResource("5_ma7rj")
 expand_mode = 1
 
