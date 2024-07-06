@@ -1,10 +1,10 @@
 extends Node
 
 @export var vol_min : float = -20
-@export var vol_max : float = 20
+@export var vol_max : float = 10
 
-var porcentaje_musica : float = 50
-var porcentaje_sfx : float = 50
+var porcentaje_musica : float = 66
+var porcentaje_sfx : float = 66
 var musica_muted : bool = false
 var sfx_muted : bool = false
 
