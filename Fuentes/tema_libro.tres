@@ -1,6 +1,8 @@
-[gd_resource type="Theme" load_steps=12 format=3 uid="uid://cmcb4mmclu5ex"]
+[gd_resource type="Theme" load_steps=18 format=3 uid="uid://cmcb4mmclu5ex"]
 
 [ext_resource type="FontFile" uid="uid://b0jqr7aj1vrop" path="res://DarumadropOne-Regular.ttf" id="1_l758e"]
+[ext_resource type="Texture2D" uid="uid://dwcwv5q38nktm" path="res://texturas/menus/bolita.png" id="1_vqm50"]
+[ext_resource type="Texture2D" uid="uid://l8ehblmtngk2" path="res://texturas/menus/slider.png" id="2_uov2s"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qujfo"]
 
@@ -11,6 +13,19 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pjk7l"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6g0rx"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_vsess"]
+diffuse_texture = ExtResource("1_vqm50")
+specular_texture = ExtResource("2_uov2s")
+specular_color = Color(0.541176, 0.439216, 0.262745, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pgiyl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wf1gd"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_gnr1a"]
+color = Color(0.576471, 0.501961, 0.258824, 1)
+thickness = 8
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wb5ic"]
 
@@ -39,6 +54,12 @@ Button/styles/focus = SubResource("StyleBoxEmpty_mskue")
 Button/styles/hover = SubResource("StyleBoxEmpty_0vur6")
 Button/styles/normal = SubResource("StyleBoxEmpty_pjk7l")
 Button/styles/pressed = SubResource("StyleBoxEmpty_6g0rx")
+HSlider/icons/grabber = SubResource("CanvasTexture_vsess")
+HSlider/icons/grabber_disabled = ExtResource("1_vqm50")
+HSlider/icons/grabber_highlight = ExtResource("1_vqm50")
+HSlider/styles/grabber_area = SubResource("StyleBoxEmpty_pgiyl")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxEmpty_wf1gd")
+HSlider/styles/slider = SubResource("StyleBoxLine_gnr1a")
 HeaderLarge/font_sizes/font_size = 40
 HeaderMedium/font_sizes/font_size = 28
 Label/colors/font_color = Color(0.439216, 0.352941, 0.203922, 1)

@@ -216,6 +216,7 @@ offset_left = 74.0
 offset_top = 135.0
 offset_right = 330.0
 offset_bottom = 151.0
+theme = ExtResource("1_rgpyg")
 
 [node name="Label" type="Label" parent="LibroAbierto/PaginaSettings/Settings/VolumenMusica"]
 layout_mode = 1
