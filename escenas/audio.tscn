@@ -33,9 +33,9 @@ stream_2/weight = 1.0
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ec6wu"]
 playback_mode = 1
 streams_count = 2
-stream_0/stream = ExtResource("7_4lyan")
+stream_0/stream = ExtResource("8_dq4fd")
 stream_0/weight = 1.0
-stream_1/stream = ExtResource("8_dq4fd")
+stream_1/stream = ExtResource("7_4lyan")
 stream_1/weight = 1.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_rso0g"]
@@ -56,8 +56,10 @@ script = ExtResource("1_5m82e")
 [node name="Musica" type="Node" parent="."]
 
 [node name="MenuPrincipal" type="AudioStreamPlayer" parent="Musica"]
+bus = &"Musica"
 
 [node name="Juego" type="AudioStreamPlayer" parent="Musica"]
+bus = &"Musica"
 
 [node name="SFX" type="Node" parent="."]
 
@@ -76,6 +78,7 @@ bus = &"SFX"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/InGame"]
 stream = SubResource("AudioStreamRandomizer_3mp1k")
+max_polyphony = 3
 bus = &"SFX"
 
 [node name="SeleccionarCarta" type="AudioStreamPlayer" parent="SFX/InGame"]
