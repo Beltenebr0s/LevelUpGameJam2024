@@ -1,8 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://8qk3hkffat5c"]
+[gd_scene load_steps=18 format=3 uid="uid://8qk3hkffat5c"]
 
 [ext_resource type="Script" path="res://scripts/Audio.gd" id="1_5m82e"]
 [ext_resource type="AudioStream" uid="uid://ca1ing13r184l" path="res://audio/SFX/SFX_TurnIndicator.wav" id="2_hscaa"]
-[ext_resource type="AudioStream" uid="uid://da8ie513wwh3" path="res://audio/SFX/SFX_Card_PassBy.wav" id="3_e5dw7"]
 [ext_resource type="AudioStream" uid="uid://b43j6l2hua7ab" path="res://audio/SFX/SFX_Card_Play1.wav" id="4_ll207"]
 [ext_resource type="AudioStream" uid="uid://dcsrjfs2arrlc" path="res://audio/SFX/SFX_Card_Play2.wav" id="5_m0mtf"]
 [ext_resource type="AudioStream" uid="uid://dnils5hbsv5iq" path="res://audio/SFX/SFX_Card_Play3.wav" id="6_b7nmh"]
@@ -12,11 +11,11 @@
 [ext_resource type="AudioStream" uid="uid://brg4gclc5vnyo" path="res://audio/UI/UI_Menu_Click2.wav" id="10_jyjog"]
 [ext_resource type="AudioStream" uid="uid://cwhr08vrienrq" path="res://audio/UI/UI_Menu_Click3.wav" id="11_id1tu"]
 [ext_resource type="AudioStream" uid="uid://bu2olhf2dkmpf" path="res://audio/UI/UI_Menu_Click4.wav" id="12_34c64"]
+[ext_resource type="AudioStream" uid="uid://caby8ixvpcyaq" path="res://audio/SFX/SFX_Card_PassBy_v2.wav" id="12_a6gee"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_01lag"]
 playback_mode = 1
 streams_count = 1
-stream_0/stream = ExtResource("3_e5dw7")
 stream_0/weight = 1.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_3mp1k"]
@@ -50,6 +49,12 @@ stream_2/weight = 1.0
 stream_3/stream = ExtResource("12_34c64")
 stream_3/weight = 1.0
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_16ukn"]
+random_pitch = 1.05
+streams_count = 1
+stream_0/stream = ExtResource("12_a6gee")
+stream_0/weight = 1.0
+
 [node name="Audio" type="Node"]
 script = ExtResource("1_5m82e")
 
@@ -82,7 +87,6 @@ max_polyphony = 3
 bus = &"SFX"
 
 [node name="SeleccionarCarta" type="AudioStreamPlayer" parent="SFX/InGame"]
-stream = ExtResource("3_e5dw7")
 bus = &"SFX"
 
 [node name="Reload" type="AudioStreamPlayer" parent="SFX/InGame"]
@@ -96,4 +100,7 @@ stream = SubResource("AudioStreamRandomizer_rso0g")
 bus = &"SFX"
 
 [node name="BotonSelect" type="AudioStreamPlayer" parent="SFX/Menus"]
+stream = SubResource("AudioStreamRandomizer_16ukn")
+volume_db = -5.0
+max_polyphony = 3
 bus = &"SFX"
