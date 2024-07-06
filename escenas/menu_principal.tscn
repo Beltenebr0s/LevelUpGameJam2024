@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://byeqj6jd7r2vl"]
+[gd_scene load_steps=25 format=3 uid="uid://byeqj6jd7r2vl"]
 
 [ext_resource type="Theme" uid="uid://cmcb4mmclu5ex" path="res://Fuentes/tema_libro.tres" id="1_rgpyg"]
 [ext_resource type="Script" path="res://scripts/MenuPrincipal.gd" id="1_xdxr6"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cn3c3uw325306" path="res://texturas/Dorso_Rojo.png" id="11_n3wqh"]
 [ext_resource type="PackedScene" uid="uid://cu4ruf7b0vci4" path="res://escenas/medidor_locura.tscn" id="12_nd3xq"]
 [ext_resource type="Texture2D" uid="uid://dxysl04btnj38" path="res://texturas/Caballero_Maldito.jpg" id="13_ssq6f"]
+[ext_resource type="Texture2D" uid="uid://0u1l81ja0ixj" path="res://texturas/cartas/Borde_Azul.png" id="14_d2hke"]
 [ext_resource type="AudioStream" uid="uid://dm1qm3nbvhosa" path="res://audio/musica/menu_1.wav" id="14_y6b0s"]
 [ext_resource type="PackedScene" uid="uid://b80mbbnuqe78v" path="res://escenas/mazo_cartas.tscn" id="16_twf7g"]
 
@@ -641,7 +642,6 @@ text = "/--\\
 |__|"
 
 [node name="PaginaGaleria" type="Panel" parent="LibroAbierto"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -679,6 +679,16 @@ offset_top = 76.5
 offset_right = 306.5
 offset_bottom = 447.5
 texture = ExtResource("13_ssq6f")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="MarcoCarta" type="TextureRect" parent="LibroAbierto/PaginaGaleria/Panel/Titulo" index="1"]
+layout_mode = 0
+offset_left = 44.5
+offset_top = 57.5
+offset_right = 348.5
+offset_bottom = 451.5
+texture = ExtResource("14_d2hke")
 expand_mode = 3
 stretch_mode = 4
 
