@@ -11,9 +11,10 @@ config_version=5
 [application]
 
 config/name="LevelUpGameJam2024"
-run/main_scene="res://escenas/menu_principal.tscn"
+run/main_scene="res://escenas/splash.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+boot_splash/minimum_display_time=3
 
 [autoload]
 

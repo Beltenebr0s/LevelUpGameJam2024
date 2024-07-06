@@ -1,0 +1,168 @@
+[gd_scene load_steps=9 format=3 uid="uid://crs1m4ahttkt5"]
+
+[ext_resource type="Script" path="res://escenas/splash.gd" id="1_bia1e"]
+[ext_resource type="Texture2D" uid="uid://bs32oucqojtkb" path="res://texturas/Logo_LevelUp_HUB_Positivo.png" id="1_jha85"]
+[ext_resource type="Texture2D" uid="uid://56idjmhvhaq8" path="res://texturas/Godot_logo.png" id="2_dcby6"]
+[ext_resource type="Texture2D" uid="uid://niktagdi6bm4" path="res://texturas/Adetokumbo.png" id="3_m41uk"]
+[ext_resource type="FontFile" uid="uid://b0jqr7aj1vrop" path="res://DarumadropOne-Regular.ttf" id="5_mxdkk"]
+
+[sub_resource type="Animation" id="Animation_7s8lv"]
+resource_name = "mostrar_logos"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Logos/LevelUp:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.5, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Logos/Godot:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 1.5, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AdetokumboProductions/Adetokumbo:modulate")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 3.3, 4, 4.8, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"iniciar_juego"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6i0yf"]
+_data = {
+"mostrar_logos": SubResource("Animation_7s8lv")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_xbeu5"]
+line_spacing = 1.0
+font = ExtResource("5_mxdkk")
+font_size = 50
+font_color = Color(0.619834, 0.462252, 0.304712, 1)
+outline_size = 7
+outline_color = Color(0.0836473, 0.0546632, 0.0215282, 1)
+shadow_size = 12
+shadow_color = Color(0.0785631, 0.0506388, 0.019677, 1)
+shadow_offset = Vector2(3, 2)
+
+[node name="Splash" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bia1e")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6i0yf")
+}
+
+[node name="Fondo" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.133197, 0.133196, 0.133196, 1)
+
+[node name="Logos" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LevelUp" type="TextureRect" parent="Logos"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 61.0
+offset_top = -80.0
+offset_right = 617.0
+offset_bottom = 80.0
+grow_vertical = 2
+texture = ExtResource("1_jha85")
+expand_mode = 1
+
+[node name="Godot" type="TextureRect" parent="Logos"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 634.0
+offset_top = -91.5
+offset_right = 1086.0
+offset_bottom = 91.5
+grow_vertical = 2
+texture = ExtResource("2_dcby6")
+expand_mode = 1
+
+[node name="AdetokumboProductions" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Adetokumbo" type="TextureRect" parent="AdetokumboProductions"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 294.0
+offset_top = 17.0
+offset_right = 818.0
+offset_bottom = 591.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_m41uk")
+
+[node name="Label" type="Label" parent="AdetokumboProductions/Adetokumbo"]
+layout_mode = 0
+offset_left = -75.0
+offset_top = 328.0
+offset_right = 575.0
+offset_bottom = 608.0
+text = "UN JUEGO DE
+ADETOKUMBO PRODUCTIONS"
+label_settings = SubResource("LabelSettings_xbeu5")
+horizontal_alignment = 1
+vertical_alignment = 1
