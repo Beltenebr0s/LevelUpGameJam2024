@@ -6,9 +6,9 @@
 line_spacing = 1.0
 font = ExtResource("1_gddva")
 font_size = 25
-font_color = Color(0.615686, 0.458824, 0.301961, 1)
-outline_size = 5
-outline_color = Color(0.247059, 0.184314, 0.105882, 1)
-shadow_size = 10
-shadow_color = Color(0.247059, 0.184314, 0.105882, 1)
-shadow_offset = Vector2(2, 1)
+font_color = Color(0.619834, 0.462252, 0.304712, 1)
+outline_size = 7
+outline_color = Color(0.0836473, 0.0546632, 0.0215282, 1)
+shadow_size = 12
+shadow_color = Color(0.0785631, 0.0506388, 0.019677, 1)
+shadow_offset = Vector2(3, 2)
