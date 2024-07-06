@@ -4,7 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://b47xbta5payek" path="res://escenas/carta.tscn" id="2_m2n4f"]
 [ext_resource type="Texture2D" uid="uid://dtkhu4jup0q2u" path="res://texturas/Dorso_Azul.png" id="3_xfggq"]
 [ext_resource type="Texture2D" uid="uid://c4g4cu7tbfmo4" path="res://texturas/cartas/Borde_Purpura.png" id="4_hxnjj"]
-[ext_resource type="LabelSettings" uid="uid://dt1tfgdc64y" path="res://Fuentes/texto_cartas.tres" id="4_l3yr0"]
+[ext_resource type="Theme" uid="uid://cmcb4mmclu5ex" path="res://Fuentes/tema_libro.tres" id="5_25q06"]
+[ext_resource type="Texture2D" uid="uid://dyyo2h1vnf3i5" path="res://texturas/menus/pergamino.png" id="5_glwna"]
 
 [sub_resource type="Animation" id="Animation_gs28s"]
 resource_name = "zoom"
@@ -63,8 +64,6 @@ _data = {
 "zoom": SubResource("Animation_gs28s")
 }
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_vsbf5"]
-
 [node name="carta_pasiva" type="Control"]
 layout_mode = 3
 anchors_preset = 0
@@ -101,10 +100,14 @@ texture = ExtResource("3_xfggq")
 [node name="Borde" type="Sprite2D" parent="Carta"]
 texture = ExtResource("4_hxnjj")
 
-[node name="descripcion" type="Sprite2D" parent="Carta"]
+[node name="descripcion" type="Node2D" parent="Carta"]
 position = Vector2(854.491, 0)
 scale = Vector2(6.28303, 6.36987)
-texture = SubResource("PlaceholderTexture2D_vsbf5")
+
+[node name="pergamino" type="Sprite2D" parent="Carta/descripcion"]
+position = Vector2(39.7499, -5.52081)
+scale = Vector2(0.970167, 1.02622)
+texture = ExtResource("5_glwna")
 
 [node name="TextEdit" type="Label" parent="Carta/descripcion"]
 anchors_preset = 8
@@ -112,13 +115,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -80.5
-offset_top = -100.5
-offset_right = 121.5
-offset_bottom = 92.5
+offset_left = -43.5833
+offset_top = -70.875
+offset_right = 146.417
+offset_bottom = 76.125
 grow_horizontal = 2
 grow_vertical = 2
-label_settings = ExtResource("4_l3yr0")
+theme = ExtResource("5_25q06")
+theme_type_variation = &"TooltipLabel"
+text = "El sacerdote ligó con el demonio que invocaste. Juntos, hacen un ritual que te permite robar otra mano de cartas sin perder el turno (click para activar)."
 vertical_alignment = 1
 autowrap_mode = 2
 

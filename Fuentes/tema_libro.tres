@@ -54,3 +54,4 @@ TextEdit/font_sizes/font_size = 20
 TextEdit/styles/focus = SubResource("StyleBoxEmpty_4m3ty")
 TextEdit/styles/normal = SubResource("StyleBoxEmpty_aclww")
 TextEdit/styles/read_only = SubResource("StyleBoxEmpty_wuocp")
+TooltipLabel/font_sizes/font_size = 16

@@ -66,14 +66,16 @@ scale = Vector2(0.564775, 0.564775)
 
 [node name="alerta_combo" parent="." instance=ExtResource("14_3bj1k")]
 position = Vector2(544, 320)
-scale = Vector2(0.474195, 0.474195)
+scale = Vector2(0.233773, 0.233773)
 
 [node name="Musica" type="AudioStreamPlayer2D" parent="."]
 process_mode = 3
 stream = ExtResource("7_hca7m")
 autoplay = true
+panning_strength = 0.0
 
 [node name="SFX" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(0, -1)
+panning_strength = 0.0
 
 [editable path="Board"]

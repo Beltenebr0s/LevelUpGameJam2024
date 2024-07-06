@@ -8,8 +8,9 @@ var borde_tipos = ["res://texturas/cartas/Borde_Azul.png", "res://texturas/carta
 var borde_pasiva = "res://texturas/cartas/Borde_Purpura.png"
 
 @onready var animation_player = $AnimationPlayer 
-@onready var titulo = $Carta/descripcion/titulo
-@onready var descripcion = $Carta/descripcion/descripcion
+@onready var titulo = $Carta/popup/titulo
+@onready var descripcion = $Carta/popup/descripcion
+@onready var popup = $Carta/popup
 @onready var textura = $Carta/TexturaCarta
 @onready var borde = $Carta/Borde
 
@@ -50,7 +51,7 @@ func ocultar_carta(no_jugada : bool):
 	else:
 		animation_player.play("ocultar_carta")
 		carta_oculta = true
-		descripcion.visible = false
+		ocultar_descripcion()
 
 func subir_carta_mas():
 	animation_player.play("subir_carta_mas")
@@ -60,12 +61,10 @@ func seleccionar_carta():
 	animation_player.play("seleccionar_carta")
 
 func mostrar_descripcion():
-	self.titulo.visible = true
-	self.descripcion.visible = true
+	self.popup.visible = true
 	
 func ocultar_descripcion():
-	self.titulo.visible = false
-	self.descripcion.visible = false
+	self.popup.visible = false
 
 func visibilidad_descripcion():
 	var es_visible = animation_player.get_playing_speed() > 0
@@ -95,7 +94,7 @@ func actualizar_borde():
 	if carta.funcion == 1:
 		self.borde.texture = load(borde_pasiva)
 	else:
-		self.borde.texture = load(borde_tipos[carta.tipo])
+		self.borde.texture = load("res://texturas/cartas/Borde_Rojo.png")
 
 func set_carta(_carta):
 	carta_jugada = false

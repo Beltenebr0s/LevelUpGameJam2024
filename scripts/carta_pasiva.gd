@@ -3,8 +3,6 @@ extends Control
 @export_multiline var texto_descripcion : String
 @export var sprite : Texture
 
-var raton_dentro = false
-
 @onready var descripcion = $Carta/descripcion
 @onready var animador = $AnimationPlayer
 
@@ -23,22 +21,19 @@ func _ready():
 func mostrar_icono():
 	animador.play_backwards("zoom")
 	visible = true
+	await animador.animation_finished
+	descripcion.visible = true
 
 func ocultar_icono():
 	visible = false
 
 func _on_boton_mouse_entered():
 	carta_seleccionada.emit()
-	raton_dentro = true
 	animador.play("zoom")
 	await animador.animation_finished
-	if raton_dentro:
-		descripcion.visible = true
 
 func _on_boton_mouse_exited():
 	animador.play_backwards("zoom")
-	raton_dentro = false
-	descripcion.visible = false
 
 func _on_boton_pressed():
 	accion.emit()

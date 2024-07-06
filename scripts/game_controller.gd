@@ -59,6 +59,8 @@ func _process(delta):
 		pasivas_ui.activar(2)
 	if Input.is_action_just_pressed("Desbloquear Sacerdote"):
 		pasivas_ui.activar(3)
+	if Input.is_action_just_pressed("Triggerear Combo"):
+		alerta_combo.mostrar_alerta_combo()
 
 func inicar_juego():
 	Global.cartas_jugadas = []
@@ -193,7 +195,7 @@ func actualizar_reloj(turno_jugador : bool):
 	await reloj.animation_finished
 
 func _input(event):
-	if event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("Pausa"):
 		get_tree().paused = true
 		scena_menu_pausa.visible = true
 

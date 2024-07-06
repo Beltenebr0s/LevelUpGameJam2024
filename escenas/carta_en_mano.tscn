@@ -1,8 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://ox8ij1qdjkkh"]
+[gd_scene load_steps=15 format=3 uid="uid://ox8ij1qdjkkh"]
 
 [ext_resource type="Script" path="res://scripts/CartaEnMano.gd" id="1_qjok4"]
 [ext_resource type="Texture2D" uid="uid://bk1b5bs1xirll" path="res://texturas/cartas/Plaga_ratas.png" id="2_pb24e"]
-[ext_resource type="Texture2D" uid="uid://0u1l81ja0ixj" path="res://texturas/cartas/Borde_Azul.png" id="3_snlwa"]
+[ext_resource type="Texture2D" uid="uid://c4g4cu7tbfmo4" path="res://texturas/cartas/Borde_Purpura.png" id="3_ga0xh"]
 [ext_resource type="Theme" uid="uid://cmcb4mmclu5ex" path="res://Fuentes/tema_libro.tres" id="4_asa80"]
 [ext_resource type="LabelSettings" uid="uid://begwl5binonky" path="res://Fuentes/titulo_cartas.tres" id="5_tbp84"]
 [ext_resource type="LabelSettings" uid="uid://dt1tfgdc64y" path="res://Fuentes/texto_cartas.tres" id="6_4wv3p"]
@@ -114,6 +114,13 @@ _data = {
 "subir_carta_mas": SubResource("Animation_j8v1y")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btr25"]
+bg_color = Color(0.176471, 0.0980392, 0.054902, 0.658824)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [node name="CartaEnMano" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -137,7 +144,7 @@ texture = ExtResource("2_pb24e")
 
 [node name="Borde" type="Sprite2D" parent="Carta"]
 scale = Vector2(0.162162, 0.162162)
-texture = ExtResource("3_snlwa")
+texture = ExtResource("3_ga0xh")
 
 [node name="BotonCarta" type="TextureButton" parent="Carta"]
 offset_left = -54.0
@@ -145,14 +152,24 @@ offset_top = -75.0
 offset_right = 54.0
 offset_bottom = 204.0
 
-[node name="descripcion" type="Control" parent="Carta"]
+[node name="popup" type="Control" parent="Carta"]
 layout_mode = 3
 anchors_preset = 0
 offset_top = -75.0
 offset_bottom = -75.0
 theme = ExtResource("4_asa80")
 
-[node name="titulo" type="Label" parent="Carta/descripcion"]
+[node name="panel" type="Panel" parent="Carta/popup"]
+custom_minimum_size = Vector2(6.9, 2.78)
+layout_mode = 0
+offset_left = -151.0
+offset_top = -227.0
+offset_right = -81.0
+offset_bottom = -213.0
+scale = Vector2(4.16959, 15.6297)
+theme_override_styles/panel = SubResource("StyleBoxFlat_btr25")
+
+[node name="titulo" type="Label" parent="Carta/popup"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -171,7 +188,7 @@ text = "Titulo guachi"
 label_settings = ExtResource("5_tbp84")
 horizontal_alignment = 1
 
-[node name="descripcion" type="Label" parent="Carta/descripcion"]
+[node name="descripcion" type="Label" parent="Carta/popup"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

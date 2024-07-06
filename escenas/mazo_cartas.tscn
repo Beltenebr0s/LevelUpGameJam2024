@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b80mbbnuqe78v"]
+[gd_scene load_steps=13 format=3 uid="uid://b80mbbnuqe78v"]
 
 [ext_resource type="Script" path="res://scripts/MazoCartas.gd" id="1_pf761"]
 [ext_resource type="PackedScene" uid="uid://b47xbta5payek" path="res://escenas/carta.tscn" id="2_y5ux8"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ua6tddjd5q4d" path="res://texturas/cartas/Niebla_venenosa.jpg" id="6_06ux5"]
 [ext_resource type="Texture2D" uid="uid://cs0xqdvio6sf0" path="res://texturas/cartas/Cabeza_de_caballo.png" id="6_87ovp"]
 [ext_resource type="Texture2D" uid="uid://dxysl04btnj38" path="res://texturas/cartas/Caballero_Maldito.jpg" id="10_dpifn"]
+[ext_resource type="Texture2D" uid="uid://ctcb2b3n18aix" path="res://texturas/cartas/sacerdote.png" id="11_ux4o5"]
 
 [node name="MazoCartas" type="Node2D"]
 script = ExtResource("1_pf761")
@@ -156,7 +157,7 @@ valor = -20
 valida_ia = false
 
 [node name="Sacerdote" parent="." instance=ExtResource("2_y5ux8")]
-texture = ExtResource("3_epo8x")
+texture = ExtResource("11_ux4o5")
 titulo = "El sacerdote"
 descripcion = "Puede que aún no tengas poder para invocar a tu dios, pero algún demonio menor puede atraer al sacerdote a tu causa."
 tipo = 3

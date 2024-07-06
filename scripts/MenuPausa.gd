@@ -8,7 +8,10 @@ extends Panel
 @onready var mute_SFX = $LibroAbierto/PaginaSettings/Settings/VolumenSFX/MuteSFX
 @export var lista_sfx_ui_buttons : Array[AudioStreamWAV]
 @onready var sfx_audio_player = $SFX
+
 var ui_buttons
+var pausado : bool = false
+
 func _ready():
 	ui_buttons = get_tree().get_nodes_in_group("ui_button")
 	for button in ui_buttons:
@@ -27,8 +30,14 @@ func mostrar_pagina_inicio():
 	$LibroAbierto/PaginaSettings.visible = false
 
 func _on_continue_pressed():
-	hide()
-	get_tree().paused = false
+	if pausado:
+		hide()
+		get_tree().paused = false
+		pausado = false
+	else:
+		show()
+		get_tree().paused = true
+		pausado = true
 
 func _on_settings_pressed():
 	print("Ajustes")
