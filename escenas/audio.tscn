@@ -21,6 +21,7 @@ stream_0/weight = 1.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_3mp1k"]
 playback_mode = 1
+random_pitch = 1.2
 streams_count = 3
 stream_0/stream = ExtResource("4_ll207")
 stream_0/weight = 1.0
@@ -73,7 +74,7 @@ bus = &"SFX"
 stream = SubResource("AudioStreamRandomizer_01lag")
 bus = &"SFX"
 
-[node name="JugarCarta" type="AudioStreamPlayer" parent="SFX/InGame"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/InGame"]
 stream = SubResource("AudioStreamRandomizer_3mp1k")
 bus = &"SFX"
 
