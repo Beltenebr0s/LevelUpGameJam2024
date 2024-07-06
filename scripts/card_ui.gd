@@ -20,11 +20,24 @@ func colocar_cartas_en_mano(mano):
 
 func colocar_cartas_en_mano_mulligan(mano):
 	ocultar_cartas(true)
-	var n = mano.size()
-	for i in range(n):
-		if !cartas[i].carta_jugada:
-			cartas[i].set_carta(mano[i])
-			cartas[i].mostrar_carta()
+	var cartas_jugadas = []
+	for hueco_carta in cartas:
+		if hueco_carta.carta_jugada:
+			cartas_jugadas.append(hueco_carta.carta)
+	print(mano) 
+	print(cartas_jugadas)
+	var j = 0
+	for i in range(mano.size()):
+		print(i- j)
+		if mano[i - j] in cartas_jugadas:
+			mano.pop_at(i- j)
+			j += 1
+	var i = 0
+	for hueco_carta in cartas:
+		if !hueco_carta.carta_jugada:
+			hueco_carta.set_carta(mano[i])
+			hueco_carta.mostrar_carta()
+			i += 1
 	mano_lista = true
 
 func mostrar_cartas():
