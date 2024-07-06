@@ -26,7 +26,9 @@ func _ready():
 	# pause_mode = 
 
 func mostrar_pagina_inicio():
+	print("Home")
 	$LibroAbierto/PaginaInicio.visible = true
+	$LibroAbierto/PaginaTutorial.visible = false
 	$LibroAbierto/PaginaSettings.visible = false
 
 func _on_continue_pressed():
@@ -42,6 +44,13 @@ func _on_continue_pressed():
 func _on_settings_pressed():
 	print("Ajustes")
 	$LibroAbierto/PaginaSettings.visible = true
+	$LibroAbierto/PaginaTutorial.visible = false
+	$LibroAbierto/PaginaInicio.visible = false
+	
+func _on_explicacion_pressed():
+	print("Explicacion")
+	$LibroAbierto/PaginaSettings.visible = false
+	$LibroAbierto/PaginaTutorial.visible = true
 	$LibroAbierto/PaginaInicio.visible = false
 
 func _on_exit_pressed():
