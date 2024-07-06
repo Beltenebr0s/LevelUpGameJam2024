@@ -767,7 +767,11 @@ offset_top = 9.0
 offset_right = 408.0
 offset_bottom = 548.0
 
-[node name="MusicaMenu" type="AudioStreamPlayer2D" parent="."]
+[node name="Musica" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_y6b0s")
+autoplay = true
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_y6b0s")
 autoplay = true
 

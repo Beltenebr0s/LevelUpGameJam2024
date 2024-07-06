@@ -11,12 +11,17 @@ var SAVE_FILE_DIRECTION = 'user://gamescores.save'
 @onready var mute_SFX = $LibroAbierto/PaginaSettings/Settings/VolumenSFX/MuteSFX
 @onready var galeria = $LibroAbierto/PaginaGaleria
 
+@onready var music_audio_player = $Musica
+@onready var sfx_audio_player = $SFX
+
 @onready var escena_juego = preload("res://escenas/game.tscn")
 
 var lista_cartas
 @onready var indice_carta = 0
 
 func _ready():
+	Global.cambio_volumen_musica.connect(cambiar_vol_musica)
+	Global.cambio_volumen_SFX.connect(cambiar_vol_SFX)
 	lista_cartas = $MazoCartas.get_children()
 	slider_musica.value = Global.volumen_musica
 	slider_SFX.value = Global.volumen_SFX
@@ -192,3 +197,16 @@ func _on_anterior_pressed():
 func _on_btn_siguiente_pressed():
 	indice_carta = (indice_carta + 1) % lista_cartas.size()
 	mostrar_carta()
+
+
+func cambiar_vol_musica():
+	if !Global.musica_muted:
+		music_audio_player.volume_db = (Global.volumen_musica - 80)
+	else:
+		music_audio_player.volume_db = -80
+
+func cambiar_vol_SFX():
+	if !Global.SFX_muted:
+		sfx_audio_player.volume_db = (Global.volumen_SFX - 80)
+	else:
+		sfx_audio_player.volume_db = -80
