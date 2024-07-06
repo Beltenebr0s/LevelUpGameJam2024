@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b80mbbnuqe78v"]
+[gd_scene load_steps=10 format=3 uid="uid://b80mbbnuqe78v"]
 
 [ext_resource type="Script" path="res://scripts/MazoCartas.gd" id="1_pf761"]
 [ext_resource type="PackedScene" uid="uid://b47xbta5payek" path="res://escenas/carta.tscn" id="2_y5ux8"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dlttx74l4b7qq" path="res://texturas/Dorso_Verde.png" id="4_owiiu"]
 [ext_resource type="Texture2D" uid="uid://wtrb7t5nuou6" path="res://texturas/cartas/Vigil.jpg" id="5_jgnyf"]
 [ext_resource type="Texture2D" uid="uid://bk1b5bs1xirll" path="res://texturas/cartas/Plaga_ratas.png" id="5_l6taq"]
+[ext_resource type="Texture2D" uid="uid://cs0xqdvio6sf0" path="res://texturas/cartas/Cabeza_de_caballo.png" id="6_87ovp"]
 [ext_resource type="Texture2D" uid="uid://dxysl04btnj38" path="res://texturas/Caballero_Maldito.jpg" id="6_rxskx"]
 
 [node name="MazoCartas" type="Node2D"]
@@ -86,6 +87,7 @@ requisitos = 50
 valor = 70
 
 [node name="Caballo" parent="." instance=ExtResource("2_y5ux8")]
+texture = ExtResource("6_87ovp")
 titulo = "Cabeza de caballo"
 descripcion = "Nada asusta más que amanecer junto a la cabeza de tu caballo, y da la casualidad de que el noble más paranoico del pueblo acaba de hacerse con un corcel nuevo..."
 valor = 35
