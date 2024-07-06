@@ -128,9 +128,6 @@ func _on_exit_pressed():
 func _on_volumen_musica_value_changed(value):
 	Audio.change_music_volume(value)
 
-func _on_volumen_sfx_value_changed(value):
-	Audio.change_sfx_volume(value)
-
 func _on_mute_musica_pressed():
 	Audio.mute_music()
 

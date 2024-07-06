@@ -89,6 +89,18 @@ bus = &"SFX"
 [node name="Reload" type="AudioStreamPlayer" parent="SFX/InGame"]
 stream = SubResource("AudioStreamRandomizer_ec6wu")
 
+[node name="MedidorSube" type="AudioStreamPlayer" parent="SFX/InGame"]
+bus = &"SFX"
+
+[node name="MedidorBaja" type="AudioStreamPlayer" parent="SFX/InGame"]
+bus = &"SFX"
+
+[node name="MedidorLoco" type="AudioStreamPlayer" parent="SFX/InGame"]
+bus = &"SFX"
+
+[node name="MedidorNormal" type="AudioStreamPlayer" parent="SFX/InGame"]
+bus = &"SFX"
+
 [node name="Menus" type="Node" parent="SFX"]
 
 [node name="BotonDown" type="AudioStreamPlayer" parent="SFX/Menus"]
@@ -99,3 +111,11 @@ stream = SubResource("AudioStreamRandomizer_16ukn")
 volume_db = -5.0
 max_polyphony = 3
 bus = &"SFX"
+
+[node name="SlideStarted" type="AudioStreamPlayer" parent="SFX/Menus"]
+
+[node name="SlideFinished" type="AudioStreamPlayer" parent="SFX/Menus"]
+
+[node name="PasarPagina" type="AudioStreamPlayer" parent="SFX/Menus"]
+
+[node name="AbrirLibro" type="AudioStreamPlayer" parent="SFX/Menus"]

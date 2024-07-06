@@ -28,14 +28,17 @@ func suma_locos(locos_nuevos : int):
 	actualizar_medidor()
 
 func actualizar_medidor():
+	Audio.play_medidor_cambio(locos - medidor.value)
 	while locos != medidor.value:
 		medidor.value += sign(locos - medidor.value)
 		texto_contador.text = str(medidor.value)
 		if !esta_loco && medidor.value == 100:
 			esta_loco = true
 			medidor.texture_over = load("res://texturas/medidor/Medidor_Marco_CRAZY.png")
+			Audio.play_medidor_estado_cambio(esta_loco)
 		elif esta_loco && medidor.value == 99:
 			esta_loco = false
 			medidor.texture_over = load("res://texturas/medidor/Medidor_Marco.png")
+			Audio.play_medidor_estado_cambio(esta_loco)
 		await get_tree().create_timer(0.015).timeout
 	
