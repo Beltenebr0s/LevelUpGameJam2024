@@ -184,7 +184,6 @@ texture = ExtResource("6_xlrri")
 expand_mode = 1
 
 [node name="PaginaSettings" type="Panel" parent="LibroAbierto"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -233,17 +232,17 @@ horizontal_alignment = 1
 
 [node name="MuteMusica" type="CheckButton" parent="LibroAbierto/PaginaSettings/Settings/VolumenMusica"]
 layout_mode = 0
-offset_left = 216.0
-offset_top = 24.0
-offset_right = 260.0
-offset_bottom = 48.0
+offset_left = 214.0
+offset_top = 23.0
+offset_right = 258.0
+offset_bottom = 67.0
 
 [node name="Label2" type="Label" parent="LibroAbierto/PaginaSettings/Settings/VolumenMusica"]
 layout_mode = 0
-offset_left = 168.0
-offset_top = 17.0
-offset_right = 213.0
-offset_bottom = 47.0
+offset_left = 165.0
+offset_top = 25.0
+offset_right = 210.0
+offset_bottom = 55.0
 text = "Mute"
 
 [node name="VolumenSFX" type="HSlider" parent="LibroAbierto/PaginaSettings/Settings"]
@@ -269,17 +268,18 @@ horizontal_alignment = 1
 
 [node name="MuteSFX" type="CheckButton" parent="LibroAbierto/PaginaSettings/Settings/VolumenSFX"]
 layout_mode = 0
-offset_left = 216.0
-offset_top = 24.0
-offset_right = 260.0
-offset_bottom = 48.0
+offset_left = 219.0
+offset_top = 23.0
+offset_right = 263.0
+offset_bottom = 67.0
+theme = ExtResource("1_rgpyg")
 
 [node name="Label2" type="Label" parent="LibroAbierto/PaginaSettings/Settings/VolumenSFX"]
 layout_mode = 0
-offset_left = 168.0
-offset_top = 17.0
-offset_right = 213.0
-offset_bottom = 47.0
+offset_left = 169.0
+offset_top = 25.0
+offset_right = 214.0
+offset_bottom = 55.0
 text = "Mute"
 
 [node name="PaginaFinal" type="Panel" parent="LibroAbierto"]
@@ -299,6 +299,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_qebxr")
 
 [node name="Final" parent="LibroAbierto/PaginaFinal" instance=ExtResource("2_rx15a")]
+visible = false
 layout_mode = 0
 offset_left = 520.5
 offset_top = 54.5
@@ -479,6 +480,7 @@ scale = Vector2(0.567926, 0.567926)
 icon = ExtResource("19_5jf37")
 
 [node name="PaginaTutorial" type="Panel" parent="LibroAbierto"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

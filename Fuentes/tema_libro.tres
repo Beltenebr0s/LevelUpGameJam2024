@@ -1,7 +1,9 @@
-[gd_resource type="Theme" load_steps=18 format=3 uid="uid://cmcb4mmclu5ex"]
+[gd_resource type="Theme" load_steps=20 format=3 uid="uid://cmcb4mmclu5ex"]
 
+[ext_resource type="Texture2D" uid="uid://bfbo5ql2ukkv3" path="res://texturas/menus/ojito_abierto.png" id="1_ct2lm"]
 [ext_resource type="FontFile" uid="uid://b0jqr7aj1vrop" path="res://DarumadropOne-Regular.ttf" id="1_l758e"]
 [ext_resource type="Texture2D" uid="uid://dwcwv5q38nktm" path="res://texturas/menus/bolita.png" id="1_vqm50"]
+[ext_resource type="Texture2D" uid="uid://bcnnm5qdm2x2x" path="res://texturas/menus/ojito_cerrado.png" id="2_tq3rs"]
 [ext_resource type="Texture2D" uid="uid://l8ehblmtngk2" path="res://texturas/menus/slider.png" id="2_uov2s"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qujfo"]
@@ -54,6 +56,8 @@ Button/styles/focus = SubResource("StyleBoxEmpty_mskue")
 Button/styles/hover = SubResource("StyleBoxEmpty_0vur6")
 Button/styles/normal = SubResource("StyleBoxEmpty_pjk7l")
 Button/styles/pressed = SubResource("StyleBoxEmpty_6g0rx")
+CheckButton/icons/checked = ExtResource("2_tq3rs")
+CheckButton/icons/unchecked = ExtResource("1_ct2lm")
 HSlider/icons/grabber = SubResource("CanvasTexture_vsess")
 HSlider/icons/grabber_disabled = ExtResource("1_vqm50")
 HSlider/icons/grabber_highlight = ExtResource("1_vqm50")
