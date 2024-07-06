@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://b80mbbnuqe78v"]
+[gd_scene load_steps=9 format=3 uid="uid://b80mbbnuqe78v"]
 
 [ext_resource type="Script" path="res://scripts/MazoCartas.gd" id="1_pf761"]
 [ext_resource type="PackedScene" uid="uid://b47xbta5payek" path="res://escenas/carta.tscn" id="2_y5ux8"]
 [ext_resource type="Texture2D" uid="uid://bsoujiee88glm" path="res://texturas/cartas/Incenciar_Molino.jpg" id="3_4i2cr"]
 [ext_resource type="Texture2D" uid="uid://dtkhu4jup0q2u" path="res://texturas/Dorso_Azul.png" id="3_epo8x"]
 [ext_resource type="Texture2D" uid="uid://bk1b5bs1xirll" path="res://texturas/cartas/Dia_Noche.png" id="4_6xgvx"]
+[ext_resource type="Texture2D" uid="uid://dlttx74l4b7qq" path="res://texturas/Dorso_Verde.png" id="4_owiiu"]
 [ext_resource type="Texture2D" uid="uid://wtrb7t5nuou6" path="res://texturas/cartas/Vigil.jpg" id="5_jgnyf"]
 [ext_resource type="Texture2D" uid="uid://dxysl04btnj38" path="res://texturas/Caballero_Maldito.jpg" id="6_rxskx"]
 
@@ -54,9 +55,11 @@ reutilizable = true
 valor = 20
 
 [node name="Carta7" parent="." instance=ExtResource("2_y5ux8")]
+texture = ExtResource("4_owiiu")
 titulo = "Bombas fétidas"
 descripcion = "Un juglar viene a interpretar el famoso poema del Cantar de Cio Mid. Plaga el escenario de bombas fétidas para amargarle el espectáculo.."
 tipo = 2
+funcion = 2
 reutilizable = true
 valor = 20
 
@@ -88,6 +91,7 @@ descripcion = "Nada asusta más que amanecer junto a la cabeza de tu caballo, y 
 valor = 35
 
 [node name="Carta12" parent="." instance=ExtResource("2_y5ux8")]
+texture = ExtResource("4_owiiu")
 titulo = "Cegar el pozo"
 descripcion = "Mañana hará un calor infernal y nadie podrá beber agua."
 tipo = 1
@@ -128,7 +132,7 @@ descripcion = "La casa del vigil ha ardido, calcinando a toda su familia. No sab
 tipo = 1
 funcion = 1
 desbloquea_pasiva = true
-requisitos = 50
+requisitos = 40
 valor = -20
 valida_ia = false
 

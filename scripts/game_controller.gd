@@ -138,7 +138,7 @@ func aplicar_pasivas_activas(carta):
 	if pasivas_ui.pasiva_activada(0):
 		resultado += 15
 	if (carta.tipo == 1 or carta.tipo == 2) and pasivas_ui.pasiva_activada(carta.tipo):
-		resultado = roundi(2 * carta.valor)
+		resultado = roundi(1.5 * carta.valor)
 	return resultado
 
 func comprobar_combo(resultado):
@@ -154,7 +154,7 @@ func comprobar_combo(resultado):
 	print(hay_multiplicador, !hay_pasiva, mismo_tipo, resultado)
 	if hay_multiplicador && !hay_pasiva && mismo_tipo:
 		alerta_combo.mostrar_alerta_combo()
-		return resultado * 2
+		return resultado * 1.5
 	else:
 		return resultado
 
