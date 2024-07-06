@@ -1,27 +1,23 @@
 extends Control
 
-var cartas = []
+var huecos_cartas = []
 var mano_lista = false
 
-signal play_sonido_carta
-
 func _ready():
-	cartas = get_children()
-	for i in cartas:
-		i.play_sonido.connect(_on_play_sonido_play_sonido_carta)
+	huecos_cartas = get_children()
 
 func colocar_cartas_en_mano(mano):
 	ocultar_cartas(false)
 	var n = mano.size()
 	for i in range(n):
-		cartas[i].set_carta(mano[i])
+		huecos_cartas[i].set_carta(mano[i])
 	mostrar_cartas()
 	mano_lista = true
 
 func colocar_cartas_en_mano_mulligan(mano):
 	ocultar_cartas(true)
 	var cartas_jugadas = []
-	for hueco_carta in cartas:
+	for hueco_carta in huecos_cartas:
 		if hueco_carta.carta_jugada:
 			cartas_jugadas.append(hueco_carta.carta)
 	print(mano) 
@@ -33,7 +29,7 @@ func colocar_cartas_en_mano_mulligan(mano):
 			mano.pop_at(i- j)
 			j += 1
 	var i = 0
-	for hueco_carta in cartas:
+	for hueco_carta in huecos_cartas:
 		if !hueco_carta.carta_jugada:
 			hueco_carta.set_carta(mano[i])
 			hueco_carta.mostrar_carta()
@@ -41,15 +37,13 @@ func colocar_cartas_en_mano_mulligan(mano):
 	mano_lista = true
 
 func mostrar_cartas():
-	for i in cartas:
-		i.mostrar_carta()
+	for hueco_carta in huecos_cartas:
+		hueco_carta.mostrar_carta()
 
 func ocultar_cartas(no_jugadas : bool):
 	# false para ocultar todas las cartas
 	# true para ocultar solo las no jugadas
 	mano_lista = false
-	for carta in cartas:
-		carta.ocultar_carta(no_jugadas)
+	for hueco_carta in huecos_cartas:
+		hueco_carta.ocultar_carta(no_jugadas)
 
-func _on_play_sonido_play_sonido_carta():
-	play_sonido_carta.emit()

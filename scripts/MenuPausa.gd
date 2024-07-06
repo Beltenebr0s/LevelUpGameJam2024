@@ -6,8 +6,6 @@ extends Panel
 @onready var slider_SFX = $LibroAbierto/PaginaSettings/Settings/VolumenSFX
 @onready var mute_musica = $LibroAbierto/PaginaSettings/Settings/VolumenMusica/MuteMusica
 @onready var mute_SFX = $LibroAbierto/PaginaSettings/Settings/VolumenSFX/MuteSFX
-@export var lista_sfx_ui_buttons : Array[AudioStreamWAV]
-@onready var sfx_audio_player = $SFX
 
 var ui_buttons
 var pausado : bool = false
@@ -16,10 +14,13 @@ func _ready():
 	ui_buttons = get_tree().get_nodes_in_group("ui_button")
 	for button in ui_buttons:
 		button.mouse_entered.connect(_on_button_mouse_entered)
-	slider_musica.value = Global.volumen_musica
-	slider_SFX.value = Global.volumen_SFX
-	mute_musica.button_pressed = Global.musica_muted
-	mute_SFX.button_pressed = Global.SFX_muted
+		button.button_down.connect(_on_button_down)
+	
+	slider_musica.value = Audio.porcentaje_musica
+	slider_SFX.value = Audio.porcentaje_sfx
+	mute_musica.button_pressed = Audio.musica_muted
+	mute_SFX.button_pressed = Audio.sfx_muted
+	
 	libro_abierto.visible = true
 	mostrar_pagina_inicio()
 	
@@ -57,22 +58,22 @@ func _on_exit_pressed():
 	get_tree().quit()
 
 func _on_volumen_musica_value_changed(value):
-	Global.cambiar_vol_musica(value)
+	Audio.change_music_volume(value)
 
 func _on_volumen_sfx_value_changed(value):
-	Global.cambiar_vol_SFX(value)
+	Audio.change_sfx_volume(value)
 
 func _on_mute_musica_pressed():
-	Global.musica_muted = mute_musica.button_pressed
-	Global.cambiar_vol_musica(slider_musica.value)
+	Audio.mute_music()
 
 func _on_mute_sfx_pressed():
-	Global.SFX_muted = mute_SFX.button_pressed
-	Global.cambiar_vol_SFX(slider_SFX.value)
+	Audio.mute_sfx()
 
 func _on_home_pressed():
 	mostrar_pagina_inicio()
 
 func _on_button_mouse_entered():
-	sfx_audio_player.stream = lista_sfx_ui_buttons.pick_random()
-	sfx_audio_player.play()
+	Audio.boton_select.play()
+
+func _on_button_down():
+	Audio.boton_down.play()

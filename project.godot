@@ -19,6 +19,7 @@ boot_splash/minimum_display_time=3
 [autoload]
 
 Global="*res://escenas/global.tscn"
+Audio="*res://escenas/audio.tscn"
 
 [display]
 

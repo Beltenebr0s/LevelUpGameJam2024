@@ -1,21 +1,16 @@
-[gd_scene load_steps=38 format=3 uid="uid://byeqj6jd7r2vl"]
+[gd_scene load_steps=33 format=3 uid="uid://byeqj6jd7r2vl"]
 
 [ext_resource type="Theme" uid="uid://cmcb4mmclu5ex" path="res://Fuentes/tema_libro.tres" id="1_rgpyg"]
 [ext_resource type="Script" path="res://scripts/MenuPrincipal.gd" id="1_xdxr6"]
 [ext_resource type="Texture2D" uid="uid://uo6y72gka3i6" path="res://texturas/menus/Mesa_Oscura.png" id="2_2wova"]
 [ext_resource type="Texture2D" uid="uid://du0j2ib4uoe6b" path="res://texturas/menus/Libro_para_Victoria_y_derrota.png" id="2_7wfuc"]
 [ext_resource type="PackedScene" uid="uid://c3dvk21fhqeoi" path="res://escenas/panel_menu.tscn" id="2_rx15a"]
-[ext_resource type="AudioStream" uid="uid://kjrneifcnnpy" path="res://audio/UI/UI_Menu_Click1.wav" id="3_xndw2"]
-[ext_resource type="AudioStream" uid="uid://brg4gclc5vnyo" path="res://audio/UI/UI_Menu_Click2.wav" id="4_ydhq0"]
 [ext_resource type="Texture2D" uid="uid://b332yv2t8kynt" path="res://texturas/menus/libro_cerrado.png" id="5_ic5la"]
 [ext_resource type="Texture2D" uid="uid://ds8j1l4sv3678" path="res://texturas/menus/Borde_Ilustraciones_Libro.png" id="5_ma7rj"]
-[ext_resource type="AudioStream" uid="uid://cwhr08vrienrq" path="res://audio/UI/UI_Menu_Click3.wav" id="5_pglig"]
-[ext_resource type="AudioStream" uid="uid://bu2olhf2dkmpf" path="res://audio/UI/UI_Menu_Click4.wav" id="6_u2eia"]
 [ext_resource type="Texture2D" uid="uid://cgrucv55xpoo3" path="res://texturas/menus/Menu_Inicio_Ilustracion.png" id="6_xlrri"]
 [ext_resource type="Texture2D" uid="uid://d5m6ymst3es7" path="res://texturas/menus/Victoria_Libro.png" id="8_05w7k"]
 [ext_resource type="Texture2D" uid="uid://cr5qcqw6tj6aw" path="res://texturas/menus/Derrota_Libro.png" id="9_86xqj"]
 [ext_resource type="PackedScene" uid="uid://cu4ruf7b0vci4" path="res://escenas/medidor_locura.tscn" id="12_nd3xq"]
-[ext_resource type="AudioStream" uid="uid://dm1qm3nbvhosa" path="res://audio/musica/menu_1.wav" id="14_y6b0s"]
 [ext_resource type="Texture2D" uid="uid://ctcb2b3n18aix" path="res://texturas/cartas/sacerdote.png" id="15_kit4b"]
 [ext_resource type="Texture2D" uid="uid://c4g4cu7tbfmo4" path="res://texturas/cartas/Borde_Purpura.png" id="16_2442e"]
 [ext_resource type="PackedScene" uid="uid://b80mbbnuqe78v" path="res://escenas/mazo_cartas.tscn" id="16_twf7g"]
@@ -65,7 +60,6 @@ grow_vertical = 2
 theme = ExtResource("1_rgpyg")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_gt4ad")
 script = ExtResource("1_xdxr6")
-lista_sfx_ui_buttons = Array[AudioStreamWAV]([ExtResource("3_xndw2"), ExtResource("4_ydhq0"), ExtResource("5_pglig"), ExtResource("6_u2eia")])
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -910,14 +904,6 @@ offset_left = 37.0
 offset_top = 9.0
 offset_right = 408.0
 offset_bottom = 548.0
-
-[node name="Musica" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("14_y6b0s")
-autoplay = true
-
-[node name="SFX" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("14_y6b0s")
-autoplay = true
 
 [node name="MazoCartas" parent="." instance=ExtResource("16_twf7g")]
 position = Vector2(1767, 754)

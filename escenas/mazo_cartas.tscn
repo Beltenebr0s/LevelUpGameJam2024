@@ -115,10 +115,9 @@ reutilizable = true
 requisitos = 20
 valor = 50
 
-[node name="Perro" parent="." instance=ExtResource("2_y5ux8")]
-texture = ExtResource("10_o0qfg")
-titulo = "Perro de tres cabezas"
-descripcion = "Un paseo nocturno a tu simpática mascota tricéfala aterrará a los más trasnochadores."
+[node name="Chupacabras" parent="." instance=ExtResource("2_y5ux8")]
+titulo = "Chupacabras"
+descripcion = "Un paseo nocturno a tu simpática mascota aterrará a los más trasnochadores."
 requisitos = 30
 valor = 60
 

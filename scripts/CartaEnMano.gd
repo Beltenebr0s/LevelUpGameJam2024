@@ -14,7 +14,6 @@ var borde_pasiva = "res://texturas/cartas/Borde_Purpura.png"
 @onready var textura = $Carta/TexturaCarta
 @onready var borde = $Carta/Borde
 
-signal play_sonido
 
 func _ready():
 	carta_oculta = true
@@ -71,7 +70,7 @@ func visibilidad_descripcion():
 	if es_visible:
 		actualizar_descripcion()
 		mostrar_descripcion()
-		play_sonido.emit()
+		Audio.play_seleccionar_carta()
 	else:
 		ocultar_descripcion()
 
@@ -105,7 +104,7 @@ func set_carta(_carta):
 
 func _on_boton_carta_pressed():
 	if !carta_jugada && !carta_oculta:
-		play_sonido.emit()
+		Audio.play_jugar_carta()
 		carta_jugada = true
 		ocultar_descripcion()
 		subir_carta_mas()

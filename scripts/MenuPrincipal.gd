@@ -12,10 +12,6 @@ var SAVE_FILE_DIRECTION = 'user://gamescores.save'
 @onready var mute_SFX = $LibroAbierto/PaginaSettings/Settings/VolumenSFX/MuteSFX
 @onready var galeria = $LibroAbierto/PaginaGaleria
 
-@onready var music_audio_player = $Musica
-@onready var sfx_audio_player = $SFX
-@export var lista_sfx_ui_buttons : Array[AudioStreamWAV]
-
 @onready var escena_juego = preload("res://escenas/game.tscn")
 
 var lista_cartas = []
@@ -26,16 +22,14 @@ func _ready():
 	ui_buttons = get_tree().get_nodes_in_group("ui_button")
 	for button in ui_buttons:
 		button.mouse_entered.connect(_on_button_mouse_entered)
-	Global.cambio_volumen_musica.connect(cambiar_vol_musica)
-	Global.cambio_volumen_SFX.connect(cambiar_vol_SFX)
+		button.button_down.connect(_on_button_down)
+		
 	lista_cartas = $MazoCartas.get_children()
 	
-	slider_musica.value = Global.volumen_musica
-	slider_SFX.value = Global.volumen_SFX
-	mute_musica.button_pressed = Global.musica_muted
-	mute_SFX.button_pressed = Global.SFX_muted
-	cambiar_vol_musica()
-	cambiar_vol_SFX()
+	slider_musica.value = Audio.porcentaje_musica
+	slider_SFX.value = Audio.porcentaje_sfx
+	mute_musica.button_pressed = Audio.musica_muted
+	mute_SFX.button_pressed = Audio.sfx_muted
 	
 	libro_abierto.visible = !Global.b_first_game
 	libro_cerrado.visible = Global.b_first_game
@@ -130,18 +124,16 @@ func _on_exit_pressed():
 	get_tree().quit()
 
 func _on_volumen_musica_value_changed(value):
-	Global.cambiar_vol_musica(value)
+	Audio.change_music_volume(value)
 
 func _on_volumen_sfx_value_changed(value):
-	Global.cambiar_vol_SFX(value)
+	Audio.change_sfx_volume(value)
 
 func _on_mute_musica_pressed():
-	Global.musica_muted = mute_musica.button_pressed
-	Global.cambiar_vol_musica(slider_musica.value)
+	Audio.mute_music()
 
 func _on_mute_sfx_pressed():
-	Global.SFX_muted = mute_SFX.button_pressed
-	Global.cambiar_vol_SFX(slider_SFX.value)
+	Audio.mute_sfx()
 
 func _save_current_score():
 	var save_game
@@ -200,7 +192,6 @@ func mostrar_carta():
 	desc_carta.text = carta.descripcion
 	imagen.texture = carta.texture
 
-
 func _on_anterior_pressed():
 	if indice_carta > 0:
 		indice_carta -= 1
@@ -208,24 +199,12 @@ func _on_anterior_pressed():
 		indice_carta = lista_cartas.size()-1
 	mostrar_carta()
 
-
 func _on_btn_siguiente_pressed():
 	indice_carta = (indice_carta + 1) % lista_cartas.size()
 	mostrar_carta()
 
-
-func cambiar_vol_musica():
-	if !Global.musica_muted:
-		music_audio_player.volume_db = (Global.volumen_musica - 80)
-	else:
-		music_audio_player.volume_db = -80
-
-func cambiar_vol_SFX():
-	if !Global.SFX_muted:
-		sfx_audio_player.volume_db = (Global.volumen_SFX - 80)
-	else:
-		sfx_audio_player.volume_db = -80
-
 func _on_button_mouse_entered():
-	sfx_audio_player.stream = lista_sfx_ui_buttons.pick_random()
-	sfx_audio_player.play()
+	Audio.boton_select.play()
+
+func _on_button_down():
+	Audio.boton_down.play()

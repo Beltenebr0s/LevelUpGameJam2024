@@ -19,21 +19,7 @@ var scena_menu_pausa
 @onready var reloj = $medidor_dia
 @onready var alerta_combo = $alerta_combo
 
-@onready var music_audio_player = $Musica
-@onready var sfx_audio_player = $SFX
-@export var lista_sfx_jugar_cartas : Array[AudioStreamWAV]
-@export var lista_sfx_repartir_cartas : Array[AudioStreamWAV]
-@export var sfx_cambio_turno : AudioStreamWAV
-
 func _ready():
-	mano_ui.play_sonido_carta.connect(_on_play_sonido_carta_audio_jugar_carta)
-	mano_ia.play_sonido_carta.connect(_on_play_sonido_carta_audio_jugar_carta)
-	pasivas_ui.play_sonido_carta.connect(_on_play_sonido_carta_audio_jugar_carta)
-	Global.cambio_volumen_musica.connect(cambiar_vol_musica)
-	Global.cambio_volumen_SFX.connect(cambiar_vol_SFX)
-	cambiar_vol_musica()
-	cambiar_vol_SFX()
-	
 	pasivas_ui.mulligan.connect(mulligan)
 	mazo_jugador.cartas_seleccionadas.connect(seleccionar_cartas)
 	
@@ -166,7 +152,7 @@ func mulligan():
 		mano_ui.ocultar_cartas(-1)
 		crear_manos()
 		await get_tree().create_timer(2.0).timeout
-		audio_repartir_mano()
+		Audio.play_reload()
 		mano_ui.colocar_cartas_en_mano_mulligan(mazo_jugador.mano)
 	pass
 
@@ -178,15 +164,15 @@ func decidir_final():
 	get_tree().change_scene_to_file("res://escenas/menu_principal.tscn")
 	
 func mostrar_mano_jugador():
-	audio_repartir_mano()
+	Audio.play_reload()
 	mano_ui.colocar_cartas_en_mano(mazo_jugador.mano)
 
 func mostrar_mano_ia():
-	audio_repartir_mano()
+	Audio.play_reload()
 	mano_ia.colocar_cartas_en_mano(mazo_ia.mano)
 
 func actualizar_reloj(turno_jugador : bool):
-	audio_pasar_turno()
+	Audio.play_medidor_dia()
 	reloj.actualizar_turno(n_jugada + 1)
 	if turno_jugador:
 		reloj.hacer_de_noche()
@@ -199,28 +185,4 @@ func actualizar_reloj(turno_jugador : bool):
 #		get_tree().paused = true
 #		scena_menu_pausa.visible = true
 
-func audio_repartir_mano():
-	sfx_audio_player.stream = lista_sfx_repartir_cartas.pick_random()
-	sfx_audio_player.play()
-func audio_jugar_carta():
-	sfx_audio_player.stream = lista_sfx_jugar_cartas.pick_random()
-	sfx_audio_player.play()
-func audio_pasar_turno():
-	await get_tree().create_timer(0.1).timeout
-	sfx_audio_player.stream = sfx_cambio_turno
-	sfx_audio_player.play()
 
-func _on_play_sonido_carta_audio_jugar_carta():
-	audio_jugar_carta()
-
-func cambiar_vol_musica():
-	if !Global.musica_muted:
-		music_audio_player.volume_db = (Global.volumen_musica - 80)
-	else:
-		music_audio_player.volume_db = -80
-
-func cambiar_vol_SFX():
-	if !Global.SFX_muted:
-		sfx_audio_player.volume_db = (Global.volumen_SFX - 80)
-	else:
-		sfx_audio_player.volume_db = -80

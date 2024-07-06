@@ -1,11 +1,19 @@
-[gd_scene load_steps=11 format=3 uid="uid://ddmxbpwae2x3s"]
+[gd_scene load_steps=19 format=3 uid="uid://ddmxbpwae2x3s"]
 
 [ext_resource type="PackedScene" uid="uid://0k1iv56f0qty" path="res://escenas/board.tscn" id="1_gf5lf"]
 [ext_resource type="Script" path="res://scripts/game_controller.gd" id="1_jtev3"]
+[ext_resource type="AudioStream" uid="uid://b43j6l2hua7ab" path="res://audio/SFX/SFX_Card_Play1.wav" id="2_365pe"]
+[ext_resource type="AudioStream" uid="uid://dcsrjfs2arrlc" path="res://audio/SFX/SFX_Card_Play2.wav" id="3_ge02p"]
 [ext_resource type="PackedScene" uid="uid://bgmop8u4t4stj" path="res://escenas/card_ui.tscn" id="3_nj2pg"]
+[ext_resource type="AudioStream" uid="uid://dnils5hbsv5iq" path="res://audio/SFX/SFX_Card_Play3.wav" id="4_b0c5i"]
 [ext_resource type="PackedScene" uid="uid://cu4ruf7b0vci4" path="res://escenas/medidor_locura.tscn" id="4_yyiwp"]
 [ext_resource type="PackedScene" uid="uid://cy5urn5n1wibs" path="res://escenas/pasivas_ui.tscn" id="5_88sux"]
+[ext_resource type="AudioStream" uid="uid://da8ie513wwh3" path="res://audio/SFX/SFX_Card_PassBy.wav" id="5_jxktn"]
+[ext_resource type="AudioStream" uid="uid://d24vottd2k0fk" path="res://audio/SFX/SFX_Card_Reload1.wav" id="5_mvljd"]
 [ext_resource type="PackedScene" uid="uid://dbb1boixbt5v5" path="res://escenas/medidor_dia.tscn" id="6_amot7"]
+[ext_resource type="AudioStream" uid="uid://uw8np45fsrjb" path="res://audio/SFX/SFX_Card_Reload2.wav" id="6_sjuiu"]
+[ext_resource type="AudioStream" uid="uid://ca1ing13r184l" path="res://audio/SFX/SFX_TurnIndicator.wav" id="7_8h3i6"]
+[ext_resource type="AudioStream" uid="uid://bvoqu3tloc860" path="res://audio/musica/maqueta 2.wav" id="7_hca7m"]
 [ext_resource type="Texture2D" uid="uid://cnqvsymflifym" path="res://texturas/Baraja.png" id="9_pc2xh"]
 [ext_resource type="Texture2D" uid="uid://b4pyxl3oaudp0" path="res://texturas/Baraja_Negra.png" id="10_aub4w"]
 [ext_resource type="PackedScene" uid="uid://0m1dvsg648qd" path="res://escenas/mano_ia.tscn" id="11_4yrn7"]
@@ -13,6 +21,10 @@
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_jtev3")
+lista_sfx_jugar_cartas = Array[AudioStreamWAV]([ExtResource("2_365pe"), ExtResource("3_ge02p"), ExtResource("4_b0c5i")])
+lista_sfx_seleccionar_cartas = Array[AudioStreamWAV]([ExtResource("5_jxktn")])
+lista_sfx_repartir_cartas = Array[AudioStreamWAV]([ExtResource("5_mvljd"), ExtResource("6_sjuiu")])
+sfx_cambio_turno = ExtResource("7_8h3i6")
 
 [node name="Board" parent="." instance=ExtResource("1_gf5lf")]
 
@@ -57,5 +69,15 @@ scale = Vector2(0.564775, 0.564775)
 [node name="alerta_combo" parent="." instance=ExtResource("14_3bj1k")]
 position = Vector2(544, 320)
 scale = Vector2(0.233773, 0.233773)
+
+[node name="Musica" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("7_hca7m")
+autoplay = true
+panning_strength = 0.0
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, -1)
+panning_strength = 0.0
 
 [editable path="Board"]
