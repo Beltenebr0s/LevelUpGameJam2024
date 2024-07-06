@@ -1,5 +1,7 @@
 extends Node
 
+signal skip_IA_turn_signal
+
 var selected_cards = null
 var n_jugada = 0
 var mulligan_usado = false
@@ -47,6 +49,10 @@ func _process(delta):
 		pasivas_ui.activar(3)
 	if Input.is_action_just_pressed("Triggerear Combo"):
 		alerta_combo.mostrar_alerta_combo()
+		
+func _input(event):
+	if event.is_action_pressed("skip_IA_turn"):
+		emit_signal("skip_IA_turn_signal")
 
 func inicar_juego():
 	Global.cartas_jugadas = []
@@ -95,7 +101,8 @@ func jugada_ia():
 	aplicar_counter()
 	mano_ia.animar_mano()
 	aplicar_efecto_cartas(false)
-	await get_tree().create_timer(5.0).timeout
+	await skip_IA_turn_signal
+	#await get_tree().create_timer(5.0).timeout
 	mano_ia.ocultar_cartas(false)
 	
 func aplicar_counter():

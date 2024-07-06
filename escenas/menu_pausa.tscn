@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://du0j2ib4uoe6b" path="res://texturas/menus/Libro_para_Victoria_y_derrota.png" id="2_1307c"]
 [ext_resource type="Texture2D" uid="uid://ds8j1l4sv3678" path="res://texturas/menus/Borde_Ilustraciones_Libro.png" id="3_t8ss2"]
 [ext_resource type="Texture2D" uid="uid://cgrucv55xpoo3" path="res://texturas/menus/Menu_Inicio_Ilustracion.png" id="4_jbp41"]
-[ext_resource type="PackedScene" uid="uid://dft4y2ambv4d3" path="res://escenas/pagina_settings.tscn" id="6_jb6xe"]
+[ext_resource type="PackedScene" path="res://escenas/pagina_settings.tscn" id="6_jb6xe"]
 [ext_resource type="Texture2D" uid="uid://ctcb2b3n18aix" path="res://texturas/cartas/sacerdote.png" id="11_f2cjj"]
 [ext_resource type="Texture2D" uid="uid://c4g4cu7tbfmo4" path="res://texturas/cartas/Borde_Purpura.png" id="12_1a5la"]
 [ext_resource type="Texture2D" uid="uid://bsoujiee88glm" path="res://texturas/cartas/Incenciar_Molino.jpg" id="13_5c7bm"]

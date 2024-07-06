@@ -9,15 +9,15 @@ script = ExtResource("1_3prkw")
 
 [node name="Inquisicion" parent="." instance=ExtResource("2_42mh6")]
 texture = ExtResource("3_kimog")
-titulo = "Tirar petardos"
+titulo = "Inquisicion"
 descripcion = "Tras ver estos sucesos paranormales han llamado a la santa inquisicion pero parece que les han puesto en espera, hay demasiadas brujas en Zugarramurdi."
 tipo = 1
 reutilizable = true
 valor = 15
 
-[node name="Flores" parent="." instance=ExtResource("2_42mh6")]
+[node name="Parterre de flores" parent="." instance=ExtResource("2_42mh6")]
 texture = ExtResource("3_kimog")
-titulo = "Cegar el pozo"
+titulo = "Parterre de flores"
 descripcion = "Adetokumbo ha puesto parterres con flores en la plaza mayor"
 tipo = 1
 funcion = 2
@@ -26,14 +26,14 @@ valor = 15
 
 [node name="Cata que quesos" parent="." instance=ExtResource("2_42mh6")]
 texture = ExtResource("3_kimog")
-titulo = "Simios agresivos"
+titulo = "Cata que quesos"
 descripcion = "El ayuntamiento a organizado una cata de quesos."
 reutilizable = true
 valor = 25
 
 [node name="Comida en la plaza" parent="." instance=ExtResource("2_42mh6")]
 texture = ExtResource("3_kimog")
-titulo = "Pudrir el pan"
+titulo = "Comida en la plaza"
 descripcion = "Una comida en la plaza del pueblo siempre levanta la moral."
 tipo = 2
 reutilizable = true
@@ -42,7 +42,7 @@ valor = 20
 [node name="Virgen de las penurias" parent="." instance=ExtResource("2_42mh6")]
 position = Vector2(0, -2)
 texture = ExtResource("3_kimog")
-titulo = "Quemar molino"
+titulo = "Virgen de las penurias"
 descripcion = "Han sacado a la virgen de las penurias en procesion."
 tipo = 1
 reutilizable = true
@@ -50,40 +50,39 @@ valor = 30
 
 [node name="Payaso" parent="." instance=ExtResource("2_42mh6")]
 texture = ExtResource("3_kimog")
-titulo = "Pozo envenenado"
+titulo = "Payaso"
 descripcion = "Un payaso para animar a los que han pasado por el cirujano, que lo necesitan."
 tipo = 2
 reutilizable = true
 requisitos = 20
 valor = 30
 
-[node name="Hidromiel" parent="." instance=ExtResource("2_42mh6")]
+[node name="Brindar con hidromiel" parent="." instance=ExtResource("2_42mh6")]
 texture = ExtResource("3_kimog")
-titulo = "Cabeza de caballo"
+titulo = "Brindar con hidromiel"
 descripcion = "El alcalde a invitado al prueblo a brindar con hidromiel."
 reutilizable = true
 valor = 35
 
 [node name="Vino gratis" parent="." instance=ExtResource("2_42mh6")]
 texture = ExtResource("3_kimog")
-titulo = "¡Defenestren a la enana!"
+titulo = "Vino gratis"
 descripcion = "Vino gratis hasta el amanecer."
 reutilizable = true
 requisitos = 20
 valor = 50
 
-[node name="Casino" parent="." instance=ExtResource("2_42mh6")]
+[node name="Casino nuevo" parent="." instance=ExtResource("2_42mh6")]
 texture = ExtResource("3_kimog")
-titulo = "Toro de fuego"
+titulo = "Casino nuevo"
 descripcion = "Adetokumbo en su ansia de riqueza a contruido un casino, parece que esto aumenta la moral."
 tipo = 1
-reutilizable = true
 requisitos = 30
 valor = 50
 
-[node name="Esgrima" parent="." instance=ExtResource("2_42mh6")]
+[node name="Demostracion esgrima historica" parent="." instance=ExtResource("2_42mh6")]
 texture = ExtResource("3_kimog")
-titulo = "Niebla venenosa"
+titulo = "Demostracion esgrima historica"
 descripcion = "Han contratado un grupo de esgrima historica, ver a alguien hacer el ridiculo siempre anima."
 tipo = 2
 reutilizable = true
@@ -92,16 +91,15 @@ valor = 50
 
 [node name="Loquero" parent="." instance=ExtResource("2_42mh6")]
 texture = ExtResource("3_kimog")
-titulo = "Lluvia de fuego"
+titulo = "Loquero"
 descripcion = "Han contratado a un loquero en la clinica del pueblo."
 tipo = 1
-reutilizable = true
 requisitos = 40
 valor = 60
 
 [node name="Gatetes" parent="." instance=ExtResource("2_42mh6")]
 texture = ExtResource("3_kimog")
-titulo = "Perro de tres cabezas"
+titulo = "Gatetes"
 descripcion = "A aparecido una camada de gatos muy majos en el pueblo, esto anima a cualquiera."
 reutilizable = true
 requisitos = 30
@@ -109,7 +107,7 @@ valor = 60
 
 [node name="Aceite de oliva virgen extra" parent="." instance=ExtResource("2_42mh6")]
 texture = ExtResource("3_kimog")
-titulo = "Plaga de ratas"
+titulo = "Aceite de oliva virgen extra"
 descripcion = "El príncipe Adetokumbo a decidido reabastecer las reservas de aceite de oliva virgen extra."
 tipo = 2
 reutilizable = true
