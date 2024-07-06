@@ -33,20 +33,20 @@ position = Vector2(-478, 27)
 position = Vector2(-484, 25)
 
 [node name="baraja_roja" type="Sprite2D" parent="Board"]
-position = Vector2(91, 553)
-rotation = -0.575959
+position = Vector2(34, 598)
+rotation = -0.186719
 scale = Vector2(0.218329, 0.218329)
 texture = ExtResource("9_pc2xh")
 
 [node name="baraja_negra" type="Sprite2D" parent="Board"]
-position = Vector2(1064, 96)
-rotation = -3.71755
+position = Vector2(1105, 38)
+rotation = -3.48356
 scale = Vector2(0.218329, 0.218329)
 texture = ExtResource("10_aub4w")
 
 [node name="medidor_dia" parent="." instance=ExtResource("6_amot7")]
-position = Vector2(207, 116)
-scale = Vector2(0.346994, 0.346994)
+position = Vector2(125, 555)
+scale = Vector2(0.3, 0.3)
 
 [node name="cartasUI" parent="." instance=ExtResource("3_nj2pg")]
 
