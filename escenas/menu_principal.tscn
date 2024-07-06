@@ -111,7 +111,6 @@ texture = ExtResource("2_7wfuc")
 expand_mode = 1
 
 [node name="PaginaInicio" type="Panel" parent="LibroAbierto"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -186,6 +185,7 @@ texture = ExtResource("6_xlrri")
 expand_mode = 1
 
 [node name="PaginaSettings" type="Panel" parent="LibroAbierto"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -343,7 +343,6 @@ offset_left = 32.0
 offset_top = 60.0
 offset_right = 371.0
 offset_bottom = 290.0
-text = "fhfhfhfhfhfhnnhnh"
 
 [node name="Victoria" type="Label" parent="LibroAbierto/PaginaFinal/Final"]
 layout_mode = 0
