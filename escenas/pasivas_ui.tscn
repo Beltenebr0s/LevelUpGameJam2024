@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/pasivasUI.gd" id="1_hg818"]
 [ext_resource type="PackedScene" uid="uid://bhmjeb0ta4p58" path="res://escenas/carta_pasiva.tscn" id="2_q6wbb"]
-[ext_resource type="Texture2D" uid="uid://dxysl04btnj38" path="res://texturas/Caballero_Maldito.jpg" id="3_b4ycr"]
+[ext_resource type="Texture2D" uid="uid://dxysl04btnj38" path="res://texturas/cartas/Caballero_Maldito.jpg" id="3_b4ycr"]
 [ext_resource type="Texture2D" uid="uid://wtrb7t5nuou6" path="res://texturas/cartas/Vigil.jpg" id="4_tfpje"]
 
 [node name="pasivasUI" type="Control"]

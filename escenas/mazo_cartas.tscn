@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b80mbbnuqe78v"]
+[gd_scene load_steps=11 format=3 uid="uid://b80mbbnuqe78v"]
 
 [ext_resource type="Script" path="res://scripts/MazoCartas.gd" id="1_pf761"]
 [ext_resource type="PackedScene" uid="uid://b47xbta5payek" path="res://escenas/carta.tscn" id="2_y5ux8"]
@@ -7,8 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://dlttx74l4b7qq" path="res://texturas/Dorso_Verde.png" id="4_owiiu"]
 [ext_resource type="Texture2D" uid="uid://wtrb7t5nuou6" path="res://texturas/cartas/Vigil.jpg" id="5_jgnyf"]
 [ext_resource type="Texture2D" uid="uid://bk1b5bs1xirll" path="res://texturas/cartas/Plaga_ratas.png" id="5_l6taq"]
+[ext_resource type="Texture2D" uid="uid://d2v7o0fwrj8gk" path="res://texturas/cartas/Envenenar_el_pozo.jpg" id="5_mupmq"]
 [ext_resource type="Texture2D" uid="uid://cs0xqdvio6sf0" path="res://texturas/cartas/Cabeza_de_caballo.png" id="6_87ovp"]
-[ext_resource type="Texture2D" uid="uid://dxysl04btnj38" path="res://texturas/Caballero_Maldito.jpg" id="6_rxskx"]
+[ext_resource type="Texture2D" uid="uid://dxysl04btnj38" path="res://texturas/cartas/Caballero_Maldito.jpg" id="10_dpifn"]
 
 [node name="MazoCartas" type="Node2D"]
 script = ExtResource("1_pf761")
@@ -65,6 +66,7 @@ reutilizable = true
 valor = 20
 
 [node name="PozoEnvenenado" parent="." instance=ExtResource("2_y5ux8")]
+texture = ExtResource("5_mupmq")
 titulo = "Pozo envenenado"
 descripcion = "Tu ejército de simios está creciendo y cada vez es más difícil mantener sus jaulas limpias. Es momento de enseñarles a utilizar la letrina, el pozo del pueblo será un buen campo de entrenamiento."
 tipo = 2
@@ -163,7 +165,7 @@ valor = -10
 valida_ia = false
 
 [node name="Caballero" parent="." instance=ExtResource("2_y5ux8")]
-texture = ExtResource("6_rxskx")
+texture = ExtResource("10_dpifn")
 titulo = "El caballero maldito"
 descripcion = "El norte y lucero de la caballería oculta una maldición. Aquel que no puede perder la vida, acaba perdiendo el alma. Si los vecinos se enteran de su condición, no vivirán tranquilos a su lado."
 funcion = 1
