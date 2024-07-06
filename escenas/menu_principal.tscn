@@ -18,9 +18,9 @@
 [ext_resource type="Texture2D" uid="uid://cn3c3uw325306" path="res://texturas/Dorso_Rojo.png" id="11_n3wqh"]
 [ext_resource type="PackedScene" uid="uid://cu4ruf7b0vci4" path="res://escenas/medidor_locura.tscn" id="12_nd3xq"]
 [ext_resource type="Texture2D" uid="uid://dxysl04btnj38" path="res://texturas/cartas/Caballero_Maldito.jpg" id="13_ssq6f"]
-[ext_resource type="Texture2D" uid="uid://0u1l81ja0ixj" path="res://texturas/cartas/Borde_Azul.png" id="14_d2hke"]
 [ext_resource type="AudioStream" uid="uid://dm1qm3nbvhosa" path="res://audio/musica/menu_1.wav" id="14_y6b0s"]
 [ext_resource type="PackedScene" uid="uid://b80mbbnuqe78v" path="res://escenas/mazo_cartas.tscn" id="16_twf7g"]
+[ext_resource type="Texture2D" uid="uid://bovmgp7c4a3kg" path="res://texturas/cartas/Borde_Dorado.png" id="18_1akmy"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gt4ad"]
 
@@ -694,7 +694,7 @@ offset_left = 44.5
 offset_top = 57.5
 offset_right = 348.5
 offset_bottom = 451.5
-texture = ExtResource("14_d2hke")
+texture = ExtResource("18_1akmy")
 expand_mode = 3
 stretch_mode = 4
 
