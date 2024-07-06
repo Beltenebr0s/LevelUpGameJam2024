@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://tx7xo58hbsms"]
+
+[ext_resource type="FontFile" uid="uid://b0jqr7aj1vrop" path="res://DarumadropOne-Regular.ttf" id="1_bkha1"]
+
+[resource]
+font = ExtResource("1_bkha1")
+font_size = 20
+font_color = Color(0.473192, 0.345389, 0.214232, 1)
+outline_size = 6
+outline_color = Color(0.244638, 0.181215, 0.106551, 1)

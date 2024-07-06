@@ -13,14 +13,13 @@ func _ready():
 	mute_musica.button_pressed = Global.musica_muted
 	mute_SFX.button_pressed = Global.SFX_muted
 	libro_abierto.visible = true
-	$LibroAbierto/PaginaInicio.visible = true
-	$LibroAbierto/PaginaSettings.visible = false
+	mostrar_pagina_inicio()
 	
 	# pause_mode = 
 
-func _input(event):
-	if event.is_action_pressed("ui_cancel"):
-		_on_continue_pressed()
+func mostrar_pagina_inicio():
+	$LibroAbierto/PaginaInicio.visible = true
+	$LibroAbierto/PaginaSettings.visible = false
 
 func _on_continue_pressed():
 	hide()
@@ -47,3 +46,6 @@ func _on_mute_musica_pressed():
 func _on_mute_sfx_pressed():
 	Global.SFX_muted = mute_SFX.button_pressed
 	Global.cambiar_vol_SFX(slider_SFX.value)
+
+func _on_home_pressed():
+	mostrar_pagina_inicio()

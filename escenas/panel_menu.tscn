@@ -1,7 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c3dvk21fhqeoi"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_nye3j"]
-font_size = 25
+[ext_resource type="Theme" uid="uid://cmcb4mmclu5ex" path="res://Fuentes/tema_libro.tres" id="1_loel3"]
 
 [node name="Menu" type="Panel"]
 offset_left = 26.0
@@ -13,7 +12,11 @@ offset_bottom = 547.0
 layout_mode = 0
 offset_right = 404.0
 offset_bottom = 68.0
-text = "TÍTULO DEL MENÚ"
-label_settings = SubResource("LabelSettings_nye3j")
+theme = ExtResource("1_loel3")
+theme_type_variation = &"HeaderLarge"
+theme_override_constants/line_spacing = -25
+text = "TÍTULO DEL MENÚ JAJAJAA
+"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2

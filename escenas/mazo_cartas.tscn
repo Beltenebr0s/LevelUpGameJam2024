@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://b80mbbnuqe78v"]
+[gd_scene load_steps=8 format=3 uid="uid://b80mbbnuqe78v"]
 
 [ext_resource type="Script" path="res://scripts/MazoCartas.gd" id="1_pf761"]
 [ext_resource type="PackedScene" uid="uid://b47xbta5payek" path="res://escenas/carta.tscn" id="2_y5ux8"]
 [ext_resource type="Texture2D" uid="uid://bsoujiee88glm" path="res://texturas/cartas/Incenciar_Molino.jpg" id="3_4i2cr"]
 [ext_resource type="Texture2D" uid="uid://dtkhu4jup0q2u" path="res://texturas/Dorso_Azul.png" id="3_epo8x"]
 [ext_resource type="Texture2D" uid="uid://bk1b5bs1xirll" path="res://texturas/cartas/Dia_Noche.png" id="4_6xgvx"]
+[ext_resource type="Texture2D" uid="uid://wtrb7t5nuou6" path="res://texturas/cartas/Vigil.jpg" id="5_jgnyf"]
 [ext_resource type="Texture2D" uid="uid://dxysl04btnj38" path="res://texturas/Caballero_Maldito.jpg" id="6_rxskx"]
 
 [node name="MazoCartas" type="Node2D"]
@@ -119,7 +120,7 @@ valor = -30
 valida_ia = false
 
 [node name="Carta16" parent="." instance=ExtResource("2_y5ux8")]
-texture = ExtResource("3_epo8x")
+texture = ExtResource("5_jgnyf")
 titulo = "El vigil"
 descripcion = "La casa del vigil ha ardido, calcinando a toda su familia. No sabe quién ha sido, pero piensa vengarse y prender fuego a todo lo que pueda.
 

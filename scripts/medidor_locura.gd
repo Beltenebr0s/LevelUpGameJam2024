@@ -4,7 +4,7 @@ var locos = 10
 var esta_loco = false
 
 @onready var medidor = $medidor
-@onready var texto_contador = $TextEdit
+@onready var texto_contador = $Sprite2D/TextEdit
 
 
 # Called when the node enters the scene tree for the first time.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ddmxbpwae2x3s"]
+[gd_scene load_steps=18 format=3 uid="uid://ddmxbpwae2x3s"]
 
 [ext_resource type="PackedScene" uid="uid://0k1iv56f0qty" path="res://escenas/board.tscn" id="1_gf5lf"]
 [ext_resource type="Script" path="res://scripts/game_controller.gd" id="1_jtev3"]
@@ -13,6 +13,8 @@
 [ext_resource type="AudioStream" uid="uid://uw8np45fsrjb" path="res://audio/SFX/SFX_Card_Reload2.wav" id="6_sjuiu"]
 [ext_resource type="AudioStream" uid="uid://ca1ing13r184l" path="res://audio/SFX/SFX_TurnIndicator.wav" id="7_8h3i6"]
 [ext_resource type="AudioStream" uid="uid://bvoqu3tloc860" path="res://audio/musica/maqueta 2.wav" id="7_hca7m"]
+[ext_resource type="Texture2D" uid="uid://cnqvsymflifym" path="res://texturas/Baraja.png" id="9_pc2xh"]
+[ext_resource type="Texture2D" uid="uid://b4pyxl3oaudp0" path="res://texturas/Baraja_Negra.png" id="10_aub4w"]
 [ext_resource type="PackedScene" uid="uid://0m1dvsg648qd" path="res://escenas/mano_ia.tscn" id="11_4yrn7"]
 [ext_resource type="PackedScene" uid="uid://d2ed2213ydb0g" path="res://escenas/alerta_combo.tscn" id="14_3bj1k"]
 
@@ -30,23 +32,37 @@ position = Vector2(-478, 27)
 [node name="MazoCartasIA" parent="Board" index="2"]
 position = Vector2(-484, 25)
 
-[node name="pasivasUI" parent="." instance=ExtResource("5_88sux")]
-offset_left = 1048.0
-offset_right = 1048.0
-offset_bottom = 48.0
+[node name="baraja_roja" type="Sprite2D" parent="Board"]
+position = Vector2(91, 553)
+rotation = -0.575959
+scale = Vector2(0.218329, 0.218329)
+texture = ExtResource("9_pc2xh")
+
+[node name="baraja_negra" type="Sprite2D" parent="Board"]
+position = Vector2(1064, 96)
+rotation = -3.71755
+scale = Vector2(0.218329, 0.218329)
+texture = ExtResource("10_aub4w")
+
+[node name="medidor_dia" parent="." instance=ExtResource("6_amot7")]
+position = Vector2(207, 116)
+scale = Vector2(0.346994, 0.346994)
 
 [node name="cartasUI" parent="." instance=ExtResource("3_nj2pg")]
 
 [node name="mano_ia" parent="." instance=ExtResource("11_4yrn7")]
 
-[node name="medidor_locura" parent="." instance=ExtResource("4_yyiwp")]
-offset_left = 16.0
-offset_right = 208.0
-offset_bottom = 1064.0
-scale = Vector2(0.458087, 0.458087)
+[node name="pasivasUI" parent="." instance=ExtResource("5_88sux")]
+offset_left = 1048.0
+offset_right = 1048.0
+offset_bottom = 48.0
 
-[node name="medidor_dia" parent="." instance=ExtResource("6_amot7")]
-position = Vector2(96, 560)
+[node name="medidor_locura" parent="." instance=ExtResource("4_yyiwp")]
+offset_left = 3.0
+offset_top = -97.0
+offset_right = 195.0
+offset_bottom = 967.0
+scale = Vector2(0.564775, 0.564775)
 
 [node name="alerta_combo" parent="." instance=ExtResource("14_3bj1k")]
 position = Vector2(544, 320)

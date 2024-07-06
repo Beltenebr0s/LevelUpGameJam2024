@@ -1,0 +1,60 @@
+[gd_resource type="Theme" load_steps=12 format=3 uid="uid://cmcb4mmclu5ex"]
+
+[ext_resource type="FontFile" uid="uid://b0jqr7aj1vrop" path="res://DarumadropOne-Regular.ttf" id="1_l758e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qujfo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mskue"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0vur6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pjk7l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6g0rx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wb5ic"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rmrj5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4m3ty"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aclww"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wuocp"]
+
+[resource]
+default_font = ExtResource("1_l758e")
+default_font_size = 20
+Button/colors/font_color = Color(0.615686, 0.458824, 0.301961, 1)
+Button/colors/font_focus_color = Color(0.615686, 0.458824, 0.301961, 1)
+Button/colors/font_hover_color = Color(0.748392, 0.624, 0.379678, 1)
+Button/colors/font_outline_color = Color(0.247059, 0.184314, 0.105882, 1)
+Button/colors/font_pressed_color = Color(0.47451, 0.345098, 0.215686, 1)
+Button/constants/outline_size = 10
+Button/font_sizes/font_size = 30
+Button/styles/disabled = SubResource("StyleBoxEmpty_qujfo")
+Button/styles/focus = SubResource("StyleBoxEmpty_mskue")
+Button/styles/hover = SubResource("StyleBoxEmpty_0vur6")
+Button/styles/normal = SubResource("StyleBoxEmpty_pjk7l")
+Button/styles/pressed = SubResource("StyleBoxEmpty_6g0rx")
+HeaderLarge/font_sizes/font_size = 40
+HeaderMedium/font_sizes/font_size = 25
+Label/colors/font_color = Color(0.615686, 0.458824, 0.301961, 1)
+Label/colors/font_outline_color = Color(0.247059, 0.184314, 0.105882, 1)
+Label/constants/line_spacing = -7
+Label/constants/outline_size = 7
+Label/font_sizes/font_size = 20
+Panel/styles/panel = SubResource("StyleBoxEmpty_wb5ic")
+RichTextLabel/colors/default_color = Color(0.615686, 0.458824, 0.301961, 1)
+RichTextLabel/colors/font_outline_color = Color(0.247059, 0.184314, 0.105882, 1)
+RichTextLabel/constants/line_separation = -2
+RichTextLabel/constants/outline_size = 7
+RichTextLabel/font_sizes/normal_font_size = 20
+RichTextLabel/styles/focus = SubResource("StyleBoxEmpty_rmrj5")
+TextEdit/colors/font_color = Color(0.615686, 0.458824, 0.301961, 1)
+TextEdit/colors/font_outline_color = Color(0.247059, 0.184314, 0.105882, 1)
+TextEdit/constants/outline_size = 7
+TextEdit/font_sizes/font_size = 20
+TextEdit/styles/focus = SubResource("StyleBoxEmpty_4m3ty")
+TextEdit/styles/normal = SubResource("StyleBoxEmpty_aclww")
+TextEdit/styles/read_only = SubResource("StyleBoxEmpty_wuocp")

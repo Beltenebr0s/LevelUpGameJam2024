@@ -1,10 +1,10 @@
-[gd_scene load_steps=32 format=3 uid="uid://byeqj6jd7r2vl"]
+[gd_scene load_steps=21 format=3 uid="uid://byeqj6jd7r2vl"]
 
+[ext_resource type="Theme" uid="uid://cmcb4mmclu5ex" path="res://Fuentes/tema_libro.tres" id="1_rgpyg"]
 [ext_resource type="Script" path="res://scripts/MenuPrincipal.gd" id="1_xdxr6"]
 [ext_resource type="Texture2D" uid="uid://uo6y72gka3i6" path="res://texturas/menus/Mesa_Oscura.png" id="2_2wova"]
 [ext_resource type="Texture2D" uid="uid://du0j2ib4uoe6b" path="res://texturas/menus/Libro_para_Victoria_y_derrota.png" id="2_7wfuc"]
 [ext_resource type="PackedScene" uid="uid://c3dvk21fhqeoi" path="res://escenas/panel_menu.tscn" id="2_rx15a"]
-[ext_resource type="Texture2D" uid="uid://dpapmirwd714k" path="res://texturas/menus/boton_creditos.png" id="3_530hg"]
 [ext_resource type="Texture2D" uid="uid://b332yv2t8kynt" path="res://texturas/menus/libro_cerrado.png" id="5_ic5la"]
 [ext_resource type="Texture2D" uid="uid://ds8j1l4sv3678" path="res://texturas/menus/Borde_Ilustraciones_Libro.png" id="5_ma7rj"]
 [ext_resource type="Texture2D" uid="uid://cgrucv55xpoo3" path="res://texturas/menus/Menu_Inicio_Ilustracion.png" id="6_xlrri"]
@@ -20,32 +20,9 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qebxr"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ewe8s"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8123l"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c4df0"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8rvck"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5igvk"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jcm7g"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ux34v"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3q2n1"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2t631"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rmpmb"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fxx0q"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mqjlx"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_nye3j"]
-font_size = 25
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_347wb"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i5bd0"]
 
@@ -61,11 +38,11 @@ offset_right = -27.0
 offset_bottom = -71.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_rgpyg")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_gt4ad")
 script = ExtResource("1_xdxr6")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-z_index = -2
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -82,7 +59,6 @@ texture = ExtResource("2_2wova")
 expand_mode = 1
 
 [node name="LibroAbierto" type="Panel" parent="."]
-z_index = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -98,7 +74,6 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_oms4q")
 
 [node name="TextureLibro" type="TextureRect" parent="LibroAbierto"]
-z_index = -1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -115,7 +90,6 @@ texture = ExtResource("2_7wfuc")
 expand_mode = 1
 
 [node name="PaginaInicio" type="Panel" parent="LibroAbierto"]
-z_index = 2
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -131,7 +105,6 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_qebxr")
 
 [node name="Play" type="Button" parent="LibroAbierto/PaginaInicio"]
-z_index = 3
 layout_mode = 0
 offset_left = 225.5
 offset_top = 143.5
@@ -141,46 +114,30 @@ text = "JUGAR"
 
 [node name="Settings" type="Button" parent="LibroAbierto/PaginaInicio"]
 layout_mode = 0
-offset_left = 227.5
-offset_top = 210.5
-offset_right = 392.5
-offset_bottom = 274.5
-theme_override_styles/normal = SubResource("StyleBoxEmpty_ewe8s")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_8123l")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_c4df0")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_8rvck")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_5igvk")
-text = "SETTINGS"
-expand_icon = true
+offset_left = 225.5
+offset_top = 208.5
+offset_right = 390.5
+offset_bottom = 273.5
+text = "AJUSTES"
 
 [node name="Credits" type="Button" parent="LibroAbierto/PaginaInicio"]
-z_index = 3
 layout_mode = 0
 offset_left = 225.5
-offset_top = 258.5
-offset_right = 395.5
-offset_bottom = 334.5
-theme_override_styles/normal = SubResource("StyleBoxEmpty_jcm7g")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_ux34v")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_3q2n1")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_2t631")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_rmpmb")
-text = "
+offset_top = 273.5
+offset_right = 390.5
+offset_bottom = 338.5
+text = "CRÉDITOS
 "
-icon = ExtResource("3_530hg")
-expand_icon = true
 
 [node name="Exit" type="Button" parent="LibroAbierto/PaginaInicio"]
-z_index = 3
 layout_mode = 0
 offset_left = 225.5
-offset_top = 346.5
+offset_top = 338.5
 offset_right = 390.5
-offset_bottom = 411.5
-text = "SALIR :("
+offset_bottom = 403.5
+text = "SALIR"
 
 [node name="BordeIlustracion3" type="TextureRect" parent="LibroAbierto/PaginaInicio"]
-z_index = -1
 layout_mode = 0
 offset_left = 528.5
 offset_top = 47.5
@@ -198,25 +155,41 @@ offset_bottom = 461.0
 texture = ExtResource("6_xlrri")
 expand_mode = 1
 
-[node name="Settings" parent="LibroAbierto" instance=ExtResource("2_rx15a")]
+[node name="PaginaSettings" type="Panel" parent="LibroAbierto"]
 visible = false
-layout_mode = 0
-offset_left = 460.0
-offset_top = 55.0
-offset_right = 866.0
-offset_bottom = 581.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -513.0
+offset_top = -287.5
+offset_right = 513.0
+offset_bottom = 287.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_qebxr")
 
-[node name="Titulo" parent="LibroAbierto/Settings" index="0"]
+[node name="Settings" parent="LibroAbierto/PaginaSettings" instance=ExtResource("2_rx15a")]
+layout_mode = 0
+offset_left = 493.5
+offset_top = 32.5
+offset_right = 899.5
+offset_bottom = 558.5
+theme_override_styles/panel = SubResource("StyleBoxEmpty_fxx0q")
+
+[node name="Titulo" parent="LibroAbierto/PaginaSettings/Settings" index="0"]
 text = "AJUSTES"
 
-[node name="VolumenMusica" type="HSlider" parent="LibroAbierto/Settings"]
+[node name="VolumenMusica" type="HSlider" parent="LibroAbierto/PaginaSettings/Settings"]
 layout_mode = 0
 offset_left = 74.0
 offset_top = 135.0
 offset_right = 330.0
 offset_bottom = 151.0
 
-[node name="Label" type="Label" parent="LibroAbierto/Settings/VolumenMusica"]
+[node name="Label" type="Label" parent="LibroAbierto/PaginaSettings/Settings/VolumenMusica"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -229,29 +202,29 @@ grow_horizontal = 2
 text = "Volumen Música"
 horizontal_alignment = 1
 
-[node name="MuteMusica" type="CheckButton" parent="LibroAbierto/Settings/VolumenMusica"]
+[node name="MuteMusica" type="CheckButton" parent="LibroAbierto/PaginaSettings/Settings/VolumenMusica"]
 layout_mode = 0
 offset_left = 216.0
 offset_top = 24.0
 offset_right = 260.0
 offset_bottom = 48.0
 
-[node name="Label2" type="Label" parent="LibroAbierto/Settings/VolumenMusica"]
+[node name="Label2" type="Label" parent="LibroAbierto/PaginaSettings/Settings/VolumenMusica"]
 layout_mode = 0
 offset_left = 168.0
-offset_top = 24.0
-offset_right = 209.0
+offset_top = 17.0
+offset_right = 213.0
 offset_bottom = 47.0
 text = "Mute"
 
-[node name="VolumenSFX" type="HSlider" parent="LibroAbierto/Settings"]
+[node name="VolumenSFX" type="HSlider" parent="LibroAbierto/PaginaSettings/Settings"]
 layout_mode = 0
 offset_left = 74.0
 offset_top = 247.0
 offset_right = 330.0
 offset_bottom = 263.0
 
-[node name="Label" type="Label" parent="LibroAbierto/Settings/VolumenSFX"]
+[node name="Label" type="Label" parent="LibroAbierto/PaginaSettings/Settings/VolumenSFX"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -265,89 +238,104 @@ text = "Volumen SFX
 "
 horizontal_alignment = 1
 
-[node name="MuteSFX" type="CheckButton" parent="LibroAbierto/Settings/VolumenSFX"]
+[node name="MuteSFX" type="CheckButton" parent="LibroAbierto/PaginaSettings/Settings/VolumenSFX"]
 layout_mode = 0
 offset_left = 216.0
 offset_top = 24.0
 offset_right = 260.0
 offset_bottom = 48.0
 
-[node name="Label2" type="Label" parent="LibroAbierto/Settings/VolumenSFX"]
+[node name="Label2" type="Label" parent="LibroAbierto/PaginaSettings/Settings/VolumenSFX"]
 layout_mode = 0
 offset_left = 168.0
-offset_top = 24.0
-offset_right = 209.0
+offset_top = 17.0
+offset_right = 213.0
 offset_bottom = 47.0
 text = "Mute"
 
-[node name="Home" type="Button" parent="LibroAbierto/Settings"]
+[node name="Home" type="Button" parent="LibroAbierto/PaginaSettings"]
 layout_mode = 0
-offset_left = -492.0
-offset_top = 25.0
-offset_right = -404.0
-offset_bottom = 89.0
+offset_left = 29.5
+offset_top = 84.5
+offset_right = 117.5
+offset_bottom = 148.5
 text = "/--\\
 |__|"
 
-[node name="Final" parent="LibroAbierto" instance=ExtResource("2_rx15a")]
+[node name="PaginaFinal" type="Panel" parent="LibroAbierto"]
 visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -513.0
+offset_top = -287.5
+offset_right = 513.0
+offset_bottom = 287.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_qebxr")
+
+[node name="Final" parent="LibroAbierto/PaginaFinal" instance=ExtResource("2_rx15a")]
 layout_mode = 0
-offset_left = 459.0
-offset_top = 50.0
-offset_right = 918.0
-offset_bottom = 569.0
+offset_left = 520.5
+offset_top = 54.5
+offset_right = 979.5
+offset_bottom = 573.5
 theme_override_styles/panel = SubResource("StyleBoxEmpty_mqjlx")
 
-[node name="Titulo" parent="LibroAbierto/Final" index="0"]
-offset_left = -405.0
-offset_top = 26.0
-offset_right = -1.0
-offset_bottom = 94.0
+[node name="Titulo" parent="LibroAbierto/PaginaFinal/Final" index="0"]
+offset_left = -384.0
+offset_top = 15.0
+offset_right = -29.0
+offset_bottom = 111.0
 text = "ME CAGO EN EL MISTERIO"
 
-[node name="Score" type="Label" parent="LibroAbierto/Final"]
+[node name="Score" type="Label" parent="LibroAbierto/PaginaFinal/Final"]
 layout_mode = 0
 offset_left = -416.0
-offset_top = 80.0
+offset_top = 102.0
 offset_right = -12.0
-offset_bottom = 148.0
-label_settings = SubResource("LabelSettings_nye3j")
+offset_bottom = 170.0
+theme_type_variation = &"HeaderLarge"
+text = "666"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Ranking" type="Label" parent="LibroAbierto/Final"]
+[node name="Ranking" type="Label" parent="LibroAbierto/PaginaFinal/Final"]
 layout_mode = 0
-offset_left = -409.0
-offset_top = 142.0
-offset_right = -5.0
-offset_bottom = 210.0
+offset_left = -415.0
+offset_top = 152.0
+offset_right = -11.0
+offset_bottom = 220.0
+theme_type_variation = &"HeaderMedium"
 text = "Ranking
 "
-label_settings = SubResource("LabelSettings_nye3j")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RankingTextLabel" type="RichTextLabel" parent="LibroAbierto/Final/Ranking"]
+[node name="RankingTextLabel" type="RichTextLabel" parent="LibroAbierto/PaginaFinal/Final/Ranking"]
 layout_mode = 0
 offset_left = 32.0
 offset_top = 60.0
 offset_right = 371.0
 offset_bottom = 290.0
+text = "fhfhfhfhfhfhnnhnh"
 
-[node name="Victoria" type="Label" parent="LibroAbierto/Final"]
-visible = false
+[node name="Victoria" type="Label" parent="LibroAbierto/PaginaFinal/Final"]
 layout_mode = 0
 offset_left = -415.0
 offset_top = 393.0
 offset_right = -11.0
 offset_bottom = 461.0
+theme_type_variation = &"HeaderLarge"
 text = "Victoria"
-label_settings = SubResource("LabelSettings_nye3j")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BordeIlustracion2" type="TextureRect" parent="LibroAbierto/Final/Victoria"]
-z_index = -1
+[node name="BordeIlustracion2" type="TextureRect" parent="LibroAbierto/PaginaFinal/Final/Victoria"]
 layout_mode = 0
 offset_left = 423.0
 offset_top = -400.0
@@ -356,7 +344,7 @@ offset_bottom = 88.0
 texture = ExtResource("5_ma7rj")
 expand_mode = 1
 
-[node name="IlustracionInicio" type="TextureRect" parent="LibroAbierto/Final/Victoria/BordeIlustracion2"]
+[node name="IlustracionInicio" type="TextureRect" parent="LibroAbierto/PaginaFinal/Final/Victoria/BordeIlustracion2"]
 layout_mode = 0
 offset_left = 29.0
 offset_top = 24.0
@@ -365,20 +353,19 @@ offset_bottom = 461.0
 texture = ExtResource("8_05w7k")
 expand_mode = 1
 
-[node name="Derrota" type="Label" parent="LibroAbierto/Final"]
+[node name="Derrota" type="Label" parent="LibroAbierto/PaginaFinal/Final"]
 visible = false
 layout_mode = 0
 offset_left = -415.0
 offset_top = 390.0
 offset_right = -11.0
 offset_bottom = 458.0
+theme_type_variation = &"HeaderLarge"
 text = "Derrota"
-label_settings = SubResource("LabelSettings_nye3j")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BordeIlustracion3" type="TextureRect" parent="LibroAbierto/Final/Derrota"]
-z_index = -1
+[node name="BordeIlustracion3" type="TextureRect" parent="LibroAbierto/PaginaFinal/Final/Derrota"]
 layout_mode = 0
 offset_left = 423.0
 offset_top = -397.0
@@ -387,7 +374,7 @@ offset_bottom = 91.0
 texture = ExtResource("5_ma7rj")
 expand_mode = 1
 
-[node name="IlustracionInicio" type="TextureRect" parent="LibroAbierto/Final/Derrota/BordeIlustracion3"]
+[node name="IlustracionInicio" type="TextureRect" parent="LibroAbierto/PaginaFinal/Final/Derrota/BordeIlustracion3"]
 layout_mode = 0
 offset_left = 29.0
 offset_top = 24.0
@@ -396,23 +383,33 @@ offset_bottom = 461.0
 texture = ExtResource("9_86xqj")
 expand_mode = 1
 
-[node name="Historia" type="Label" parent="LibroAbierto/Final"]
-visible = false
+[node name="Historia" type="Label" parent="LibroAbierto/PaginaFinal/Final"]
 layout_mode = 0
-offset_left = 75.0
+offset_left = 92.0
 offset_top = 109.0
-offset_right = 257.0
-offset_bottom = 132.0
+offset_right = 274.0
+offset_bottom = 168.0
+theme_type_variation = &"HeaderLarge"
 text = "Historia"
+horizontal_alignment = 1
+justification_flags = 162
 
-[node name="TextoHistoria" type="RichTextLabel" parent="LibroAbierto/Final/Historia"]
+[node name="TextoHistoria" type="RichTextLabel" parent="LibroAbierto/PaginaFinal/Final/Historia"]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 30.0
-offset_right = 309.0
-offset_bottom = 307.0
+offset_left = -63.0
+offset_top = 60.0
+offset_right = 245.0
+offset_bottom = 337.0
+text = "Blablablablablabla
+Blebleblebleblelbe
+Blibliblibliblibliblibli
+Bloblobloblobloblo
+Blublublublublublubu
+dijo el pez
+C><"
+scroll_active = false
 
-[node name="Home2" type="Button" parent="LibroAbierto/Final"]
+[node name="Home2" type="Button" parent="LibroAbierto/PaginaFinal/Final"]
 layout_mode = 0
 offset_left = -491.0
 offset_top = 30.0
@@ -421,7 +418,7 @@ offset_bottom = 94.0
 text = "/--\\
 |__|"
 
-[node name="tutorial" type="Panel" parent="LibroAbierto"]
+[node name="PaginaTutorial" type="Panel" parent="LibroAbierto"]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -429,174 +426,205 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -208.5
-offset_top = -283.0
-offset_right = 229.5
-offset_bottom = 283.0
+offset_left = -513.0
+offset_top = -287.5
+offset_right = 513.0
+offset_bottom = 287.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_347wb")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_qebxr")
 
-[node name="IntroducciónDelJuego" type="Label" parent="LibroAbierto/tutorial"]
+[node name="IntroducciónDelJuego" type="Label" parent="LibroAbierto/PaginaTutorial"]
 layout_mode = 0
-offset_left = -152.0
-offset_top = 97.0
-offset_right = 37.0
-offset_bottom = 125.0
+offset_left = 145.0
+offset_top = 80.5
+offset_right = 334.0
+offset_bottom = 117.5
+theme_type_variation = &"HeaderMedium"
 text = "Intro del juego:"
 
-[node name="parrafo" type="RichTextLabel" parent="LibroAbierto/tutorial/IntroducciónDelJuego"]
+[node name="parrafo" type="RichTextLabel" parent="LibroAbierto/PaginaTutorial/IntroducciónDelJuego"]
+clip_contents = false
 layout_mode = 0
-offset_left = 1.0
-offset_top = 28.0
-offset_right = 311.0
-offset_bottom = 155.0
+offset_left = 7.0
+offset_top = 31.0
+offset_right = 359.0
+offset_bottom = 177.0
 text = "Bienvenido a la población XXXX gobernada por el principe Adetokumbo, tu objetivo es derrocarle sembrando la locura entre sus habitantes"
 
-[node name="ComoJugar" type="Label" parent="LibroAbierto/tutorial"]
+[node name="ComoJugar" type="Label" parent="LibroAbierto/PaginaTutorial"]
 layout_mode = 0
-offset_left = -152.0
-offset_top = 262.0
-offset_right = 37.0
-offset_bottom = 290.0
+offset_left = 144.5
+offset_top = 238.5
+offset_right = 333.5
+offset_bottom = 275.5
+theme_type_variation = &"HeaderMedium"
 text = "Como jugar:"
 
-[node name="parrafo" type="RichTextLabel" parent="LibroAbierto/tutorial/ComoJugar"]
+[node name="parrafo" type="RichTextLabel" parent="LibroAbierto/PaginaTutorial/ComoJugar"]
+clip_contents = false
 layout_mode = 0
+offset_left = 7.0
 offset_top = 35.0
-offset_right = 215.0
-offset_bottom = 244.0
+offset_right = 259.0
+offset_bottom = 295.0
 text = "Tienes 6 turnos para conseguir adeptos a tu revolución, en cada turno realizarás 2 acciones para sembrar la locura y el pánico.El príncipe y su consejo tomarán 2 acciones para calmar a la turba
 "
 
-[node name="IlustracionInicio2" type="TextureRect" parent="LibroAbierto/tutorial/ComoJugar"]
+[node name="IlustracionInicio2" type="TextureRect" parent="LibroAbierto/PaginaTutorial/ComoJugar"]
 layout_mode = 0
-offset_left = 224.0
-offset_top = 114.0
-offset_right = 320.0
-offset_bottom = 233.0
+offset_left = 246.0
+offset_top = 131.0
+offset_right = 342.0
+offset_bottom = 250.0
 texture = ExtResource("10_8eiqc")
 expand_mode = 1
 
-[node name="IlustracionInicio" type="TextureRect" parent="LibroAbierto/tutorial/ComoJugar"]
+[node name="IlustracionInicio" type="TextureRect" parent="LibroAbierto/PaginaTutorial/ComoJugar"]
 layout_mode = 0
-offset_left = 222.0
-offset_top = -13.0
-offset_right = 318.0
-offset_bottom = 106.0
+offset_left = 244.0
+offset_top = 4.0
+offset_right = 340.0
+offset_bottom = 123.0
 texture = ExtResource("11_n3wqh")
 expand_mode = 1
 
-[node name="ObjetivoJuego" type="Label" parent="LibroAbierto/tutorial"]
+[node name="ObjetivoJuego" type="Label" parent="LibroAbierto/PaginaTutorial"]
 layout_mode = 0
-offset_left = 244.0
-offset_top = 90.0
-offset_right = 433.0
-offset_bottom = 118.0
+offset_left = 540.5
+offset_top = 94.5
+offset_right = 749.5
+offset_bottom = 131.5
+theme_type_variation = &"HeaderMedium"
 text = "Objetivo del juego:
 "
 
-[node name="parrafo" type="RichTextLabel" parent="LibroAbierto/tutorial/ObjetivoJuego"]
+[node name="parrafo" type="RichTextLabel" parent="LibroAbierto/PaginaTutorial/ObjetivoJuego"]
+clip_contents = false
 layout_mode = 0
-offset_left = -5.0
+offset_left = 7.0
 offset_top = 32.0
-offset_right = 211.0
+offset_right = 223.0
 offset_bottom = 434.0
 text = "Juega bien tus cartas para conseguir 100 adeptos a la revolución para ganar la partida, iras viendo los adeptos en el medidor lateral."
 
-[node name="medidor_locura" parent="LibroAbierto/tutorial/ObjetivoJuego" instance=ExtResource("12_nd3xq")]
-offset_left = 221.0
-offset_top = -215.0
-offset_right = 413.0
-offset_bottom = 849.0
+[node name="medidor_locura" parent="LibroAbierto/PaginaTutorial/ObjetivoJuego" instance=ExtResource("12_nd3xq")]
+offset_left = 233.0
+offset_top = -209.0
+offset_right = 425.0
+offset_bottom = 855.0
 scale = Vector2(0.458087, 0.458087)
 script = null
 
-[node name="medidor" parent="LibroAbierto/tutorial/ObjetivoJuego/medidor_locura" index="0"]
+[node name="medidor" parent="LibroAbierto/PaginaTutorial/ObjetivoJuego/medidor_locura" index="0"]
 value = 50.0
 
-[node name="start_game" type="Button" parent="LibroAbierto/tutorial"]
+[node name="start_game" type="Button" parent="LibroAbierto/PaginaTutorial"]
 layout_mode = 0
-offset_left = 250.0
-offset_top = 373.0
-offset_right = 526.0
-offset_bottom = 432.0
+offset_left = 542.5
+offset_top = 383.5
+offset_right = 860.5
+offset_bottom = 442.5
 text = "Presiona para comenzar"
 
-[node name="Credits" parent="LibroAbierto" instance=ExtResource("2_rx15a")]
+[node name="PaginaCredits" type="Panel" parent="LibroAbierto"]
 visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -513.0
+offset_top = -287.5
+offset_right = 513.0
+offset_bottom = 287.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_qebxr")
+
+[node name="Credits" parent="LibroAbierto/PaginaCredits" instance=ExtResource("2_rx15a")]
 layout_mode = 0
-offset_left = 452.0
-offset_top = 47.0
-offset_right = 911.0
-offset_bottom = 550.0
+offset_left = 457.5
+offset_top = 13.5
+offset_right = 916.5
+offset_bottom = 516.5
 theme_override_styles/panel = SubResource("StyleBoxEmpty_i5bd0")
 
-[node name="Titulo" parent="LibroAbierto/Credits" index="0"]
+[node name="Titulo" parent="LibroAbierto/PaginaCredits/Credits" index="0"]
 offset_left = 31.0
 offset_top = 20.0
 offset_right = 435.0
 offset_bottom = 88.0
 text = "CRÉDITOS"
 
-[node name="SeccionArte" type="Label" parent="LibroAbierto/Credits"]
+[node name="SeccionArte" type="Label" parent="LibroAbierto/PaginaCredits/Credits"]
 layout_mode = 0
-offset_left = 51.0
-offset_top = 85.0
-offset_right = 240.0
-offset_bottom = 113.0
+offset_left = 86.0
+offset_top = 92.0
+offset_right = 275.0
+offset_bottom = 122.0
+theme_type_variation = &"HeaderMedium"
 text = "ARTE"
 
-[node name="TextoArte" type="RichTextLabel" parent="LibroAbierto/Credits/SeccionArte"]
+[node name="TextoArte" type="RichTextLabel" parent="LibroAbierto/PaginaCredits/Credits/SeccionArte"]
+clip_contents = false
 layout_mode = 0
-offset_left = 1.0
-offset_top = 28.0
-offset_right = 352.0
-offset_bottom = 118.0
-text = "Juan
-Nubi"
+offset_left = 8.0
+offset_top = 31.0
+offset_right = 359.0
+offset_bottom = 121.0
+text = "Alathosxy
+nubi_r"
 
-[node name="SeccionProgramacion" type="Label" parent="LibroAbierto/Credits"]
+[node name="SeccionProgramacion" type="Label" parent="LibroAbierto/PaginaCredits/Credits"]
 layout_mode = 0
-offset_left = 50.0
+offset_left = 86.0
 offset_top = 211.0
-offset_right = 239.0
-offset_bottom = 239.0
+offset_right = 278.0
+offset_bottom = 248.0
+theme_type_variation = &"HeaderMedium"
 text = "PROGRAMACIÓN"
 
-[node name="TextoProgramacion" type="RichTextLabel" parent="LibroAbierto/Credits/SeccionProgramacion"]
+[node name="TextoProgramacion" type="RichTextLabel" parent="LibroAbierto/PaginaCredits/Credits/SeccionProgramacion"]
+clip_contents = false
 layout_mode = 0
-offset_left = 2.0
-offset_top = 36.0
-offset_right = 353.0
-offset_bottom = 145.0
-text = "Darío
-Alejandro
-Bea
+offset_left = 9.0
+offset_top = 31.0
+offset_right = 360.0
+offset_bottom = 140.0
+text = "phoe_99
+ATM98
+bea3589
+gynk0
 "
 
-[node name="SeccionSonido" type="Label" parent="LibroAbierto/Credits"]
+[node name="SeccionSonido" type="Label" parent="LibroAbierto/PaginaCredits/Credits"]
 layout_mode = 0
-offset_left = 53.0
+offset_left = 86.0
 offset_top = 369.0
-offset_right = 242.0
-offset_bottom = 397.0
+offset_right = 275.0
+offset_bottom = 406.0
+theme_type_variation = &"HeaderMedium"
 text = "SONIDO
 "
 
-[node name="TextoSonido" type="RichTextLabel" parent="LibroAbierto/Credits/SeccionSonido"]
+[node name="TextoSonido" type="RichTextLabel" parent="LibroAbierto/PaginaCredits/Credits/SeccionSonido"]
+clip_contents = false
 layout_mode = 0
-offset_left = -1.0
+offset_left = 6.0
 offset_top = 31.0
-offset_right = 350.0
+offset_right = 357.0
 offset_bottom = 121.0
+text = "Pulgadrummer
+Andres2751"
 
-[node name="Home3" type="Button" parent="LibroAbierto/Credits"]
+[node name="Home3" type="Button" parent="LibroAbierto/PaginaCredits"]
 layout_mode = 0
-offset_left = -484.0
-offset_top = 33.0
-offset_right = -396.0
-offset_bottom = 97.0
+offset_left = 29.5
+offset_top = 84.5
+offset_right = 117.5
+offset_bottom = 172.5
 text = "/--\\
 |__|"
 
@@ -644,17 +672,17 @@ offset_bottom = 548.0
 [connection signal="pressed" from="LibroAbierto/PaginaInicio/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="LibroAbierto/PaginaInicio/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="LibroAbierto/PaginaInicio/Exit" to="." method="_on_exit_pressed"]
-[connection signal="value_changed" from="LibroAbierto/Settings/VolumenMusica" to="." method="_on_volumen_musica_value_changed"]
-[connection signal="pressed" from="LibroAbierto/Settings/VolumenMusica/MuteMusica" to="." method="_on_mute_musica_pressed"]
-[connection signal="value_changed" from="LibroAbierto/Settings/VolumenSFX" to="." method="_on_volumen_sfx_value_changed"]
-[connection signal="pressed" from="LibroAbierto/Settings/VolumenSFX/MuteSFX" to="." method="_on_mute_sfx_pressed"]
-[connection signal="pressed" from="LibroAbierto/Settings/Home" to="." method="_on_home_pressed"]
-[connection signal="pressed" from="LibroAbierto/Final/Home2" to="." method="_on_home_pressed"]
-[connection signal="pressed" from="LibroAbierto/tutorial/start_game" to="." method="_on_start_game_pressed"]
-[connection signal="pressed" from="LibroAbierto/Credits/Home3" to="." method="_on_home_pressed"]
+[connection signal="value_changed" from="LibroAbierto/PaginaSettings/Settings/VolumenMusica" to="." method="_on_volumen_musica_value_changed"]
+[connection signal="pressed" from="LibroAbierto/PaginaSettings/Settings/VolumenMusica/MuteMusica" to="." method="_on_mute_musica_pressed"]
+[connection signal="value_changed" from="LibroAbierto/PaginaSettings/Settings/VolumenSFX" to="." method="_on_volumen_sfx_value_changed"]
+[connection signal="pressed" from="LibroAbierto/PaginaSettings/Settings/VolumenSFX/MuteSFX" to="." method="_on_mute_sfx_pressed"]
+[connection signal="pressed" from="LibroAbierto/PaginaSettings/Home" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="LibroAbierto/PaginaFinal/Final/Home2" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="LibroAbierto/PaginaTutorial/start_game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="LibroAbierto/PaginaCredits/Home3" to="." method="_on_home_pressed"]
 [connection signal="pressed" from="LibroCerrado/TituloJuego" to="." method="_on_titulo_juego_pressed"]
 
-[editable path="LibroAbierto/Settings"]
-[editable path="LibroAbierto/Final"]
-[editable path="LibroAbierto/tutorial/ObjetivoJuego/medidor_locura"]
-[editable path="LibroAbierto/Credits"]
+[editable path="LibroAbierto/PaginaSettings/Settings"]
+[editable path="LibroAbierto/PaginaFinal/Final"]
+[editable path="LibroAbierto/PaginaTutorial/ObjetivoJuego/medidor_locura"]
+[editable path="LibroAbierto/PaginaCredits/Credits"]

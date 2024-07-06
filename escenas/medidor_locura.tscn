@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cu4ruf7b0vci4"]
+[gd_scene load_steps=7 format=3 uid="uid://cu4ruf7b0vci4"]
 
 [ext_resource type="Script" path="res://scripts/medidor_locura.gd" id="1_0oanv"]
 [ext_resource type="Texture2D" uid="uid://d18ve7eei63gk" path="res://texturas/medidor/Medidor_Fondo.png" id="1_gooxj"]
 [ext_resource type="Texture2D" uid="uid://bv0taq325h4pl" path="res://texturas/medidor/Medidor_Marco.png" id="2_l16nf"]
 [ext_resource type="Texture2D" uid="uid://dwwjcdtdbxnv3" path="res://texturas/medidor/Medidor_LLeno.png" id="3_ykyir"]
+[ext_resource type="Theme" uid="uid://cmcb4mmclu5ex" path="res://Fuentes/tema_libro.tres" id="5_gvhf8"]
+[ext_resource type="Texture2D" uid="uid://rqcdw7swacjb" path="res://texturas/medidor/Icono_puntuacion_in_game.png" id="6_4265v"]
 
 [node name="medidor_locura" type="Control"]
 layout_mode = 3
@@ -25,11 +27,17 @@ texture_under = ExtResource("1_gooxj")
 texture_over = ExtResource("2_l16nf")
 texture_progress = ExtResource("3_ykyir")
 
-[node name="TextEdit" type="TextEdit" parent="."]
-layout_mode = 0
-offset_left = 80.0
-offset_top = 80.0
-offset_right = 128.0
-offset_bottom = 120.0
-theme_override_font_sizes/font_size = 20
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(37.4218, 250.726)
+scale = Vector2(0.225224, 0.225224)
+texture = ExtResource("6_4265v")
+
+[node name="TextEdit" type="TextEdit" parent="Sprite2D"]
+offset_left = 207.692
+offset_top = -357.231
+offset_right = 268.692
+offset_bottom = -321.231
+scale = Vector2(16.1661, 15.9175)
+theme = ExtResource("5_gvhf8")
+text = "100"
 placeholder_text = "100"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpfn15jhr0pjh"
-path="res://.godot/imported/Dorso_Negro_Placeholder.png-3484534af88f0d419b196b195ecef45b.ctex"
+uid="uid://b4pyxl3oaudp0"
+path="res://.godot/imported/Baraja_Negra.png-f7aec3879e57d25ee6c4c4b9b8a1033a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://texturas/cartas/Dorso_Negro_Placeholder.png"
-dest_files=["res://.godot/imported/Dorso_Negro_Placeholder.png-3484534af88f0d419b196b195ecef45b.ctex"]
+source_file="res://texturas/Baraja_Negra.png"
+dest_files=["res://.godot/imported/Baraja_Negra.png-f7aec3879e57d25ee6c4c4b9b8a1033a.ctex"]
 
 [params]
 
