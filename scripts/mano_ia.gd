@@ -30,13 +30,23 @@ func ocultar_cartas(no_jugadas : bool):
 
 func animar_mano():
 	var cartas_escogidas = []
-	while cartas_escogidas.size() < mano.size():
-		var hueco_carta = cartas_en_mano.pick_random()
-		if hueco_carta.carta_jugada:
-			pass
-		else:
-			hueco_carta.seleccionar_carta()
-			cartas_escogidas.append(hueco_carta)
+	var carta_uno = randi() % cartas_en_mano.size()
+	var carta_dos = randi() % cartas_en_mano.size()
+	while carta_dos == carta_uno || carta_dos + 1 == carta_uno || carta_dos - 1 == carta_uno:
+		carta_dos = randi() % cartas_en_mano.size()
+		
+	cartas_en_mano[carta_uno].seleccionar_carta()
+	cartas_en_mano[carta_dos].seleccionar_carta()
+	cartas_escogidas.append(cartas_en_mano[carta_uno])
+	cartas_escogidas.append(cartas_en_mano[carta_dos])
+	
+	#while cartas_escogidas.size() < mano.size():
+	#	var hueco_carta = cartas_en_mano.pick_random()
+	#	if hueco_carta.carta_jugada:
+	#		pass
+	#	else:
+	#		hueco_carta.seleccionar_carta()
+	#		cartas_escogidas.append(hueco_carta)
 	ocultar_cartas(true)
 	play_sonido_carta.emit()
 	for i in range(cartas_escogidas.size()):

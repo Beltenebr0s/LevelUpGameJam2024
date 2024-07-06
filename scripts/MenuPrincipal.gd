@@ -70,6 +70,8 @@ func _ready():
 			ranking_text.text += str(score['Time'])
 			ranking_text.text += '\n'
 			position+=1;
+			if position > 8:
+				break
 
 func _on_titulo_juego_pressed():
 	libro_cerrado.visible = false

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cy5urn5n1wibs"]
+[gd_scene load_steps=7 format=3 uid="uid://cy5urn5n1wibs"]
 
 [ext_resource type="Script" path="res://scripts/pasivasUI.gd" id="1_hg818"]
 [ext_resource type="PackedScene" uid="uid://bhmjeb0ta4p58" path="res://escenas/carta_pasiva.tscn" id="2_q6wbb"]
 [ext_resource type="Texture2D" uid="uid://dxysl04btnj38" path="res://texturas/cartas/Caballero_Maldito.jpg" id="3_b4ycr"]
 [ext_resource type="Texture2D" uid="uid://wtrb7t5nuou6" path="res://texturas/cartas/Vigil.jpg" id="4_tfpje"]
+[ext_resource type="Texture2D" uid="uid://d0mrj2m1h2apw" path="res://texturas/cartas/cirujano.jpg" id="5_kibpe"]
 [ext_resource type="Texture2D" uid="uid://ctcb2b3n18aix" path="res://texturas/cartas/sacerdote.png" id="5_qj0h5"]
 
 [node name="pasivasUI" type="Control"]
@@ -47,6 +48,7 @@ offset_top = 272.0
 offset_right = 97.0
 offset_bottom = 404.0
 texto_descripcion = "El cirujano ha decidido que su negocio es poco rentable, ayudará a propagar enfermedades. Las cartas de peste reciben una bonificación."
+sprite = ExtResource("5_kibpe")
 
 [node name="Sacerdote" parent="." instance=ExtResource("2_q6wbb")]
 layout_mode = 0

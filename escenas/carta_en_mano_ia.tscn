@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dfwncdbnb8hmh"]
+[gd_scene load_steps=14 format=3 uid="uid://dfwncdbnb8hmh"]
 
 [ext_resource type="Script" path="res://scripts/carta_en_mano_ia.gd" id="1_mbqnl"]
 [ext_resource type="Texture2D" uid="uid://xoqa74owwt2o" path="res://texturas/Dorso_Negro.png" id="2_ohkqs"]
@@ -112,6 +112,13 @@ _data = {
 "subir_carta_mas": SubResource("Animation_j8v1y")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_valx6"]
+bg_color = Color(0.176471, 0.0980392, 0.054902, 0.658824)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [sub_resource type="LabelSettings" id="LabelSettings_14y1e"]
 line_spacing = 1.0
 font = ExtResource("3_s43x6")
@@ -145,6 +152,16 @@ offset_top = 45.0
 offset_bottom = 45.0
 rotation = 3.14159
 
+[node name="panel" type="Panel" parent="Carta/descripcion"]
+custom_minimum_size = Vector2(6.9, 2.78)
+layout_mode = 0
+offset_left = -123.0
+offset_top = -203.0
+offset_right = -64.0
+offset_bottom = -192.0
+scale = Vector2(4.16959, 15.6297)
+theme_override_styles/panel = SubResource("StyleBoxFlat_valx6")
+
 [node name="titulo" type="Label" parent="Carta/descripcion"]
 layout_mode = 1
 anchors_preset = 8
@@ -165,16 +182,16 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="descripcion" type="Label" parent="Carta/descripcion"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -52.0
-offset_right = 54.0
-offset_bottom = 170.0
+offset_left = -102.0
+offset_top = -204.0
+offset_right = 107.0
+offset_bottom = -49.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "En un lugar de la mancha de cuyo nombre no quiero acordarme"

@@ -3,8 +3,7 @@
 [ext_resource type="Script" path="res://scripts/MazoCartas.gd" id="1_pf761"]
 [ext_resource type="PackedScene" uid="uid://b47xbta5payek" path="res://escenas/carta.tscn" id="2_y5ux8"]
 [ext_resource type="Texture2D" uid="uid://bsoujiee88glm" path="res://texturas/cartas/Incenciar_Molino.jpg" id="3_4i2cr"]
-[ext_resource type="Texture2D" uid="uid://dtkhu4jup0q2u" path="res://texturas/Dorso_Azul.png" id="3_epo8x"]
-[ext_resource type="Texture2D" uid="uid://dlttx74l4b7qq" path="res://texturas/Dorso_Verde.png" id="4_owiiu"]
+[ext_resource type="Texture2D" uid="uid://bch8xlvm2gyay" path="res://texturas/cartas/Bombas_Fetidas.jpg" id="4_6nxnp"]
 [ext_resource type="Texture2D" uid="uid://wtrb7t5nuou6" path="res://texturas/cartas/Vigil.jpg" id="5_jgnyf"]
 [ext_resource type="Texture2D" uid="uid://bk1b5bs1xirll" path="res://texturas/cartas/Plaga_ratas.png" id="5_l6taq"]
 [ext_resource type="Texture2D" uid="uid://d2v7o0fwrj8gk" path="res://texturas/cartas/Envenenar_el_pozo.jpg" id="5_mupmq"]
@@ -13,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bg7185unrq5nw" path="res://texturas/cartas/Pozo_sin_agua.jpg" id="9_cq5c4"]
 [ext_resource type="Texture2D" uid="uid://dxysl04btnj38" path="res://texturas/cartas/Caballero_Maldito.jpg" id="10_dpifn"]
 [ext_resource type="Texture2D" uid="uid://dm3kfdrqu7wp0" path="res://texturas/cartas/Chupacabras.jpg" id="10_o0qfg"]
+[ext_resource type="Texture2D" uid="uid://d0mrj2m1h2apw" path="res://texturas/cartas/cirujano.jpg" id="11_rb452"]
 [ext_resource type="Texture2D" uid="uid://ctcb2b3n18aix" path="res://texturas/cartas/sacerdote.png" id="11_ux4o5"]
 
 [node name="MazoCartas" type="Node2D"]
@@ -67,7 +67,7 @@ reutilizable = true
 valor = 20
 
 [node name="Bombas" parent="." instance=ExtResource("2_y5ux8")]
-texture = ExtResource("4_owiiu")
+texture = ExtResource("4_6nxnp")
 titulo = "Bombas fétidas"
 descripcion = "Un juglar viene a interpretar el famoso poema del Cantar de Cio Mid. Plaga el escenario de bombas fétidas para amargarle el espectáculo.."
 counter = "Mientras el juglar realizaba su canto, los niños de pueblo, inspirados por este poema, se ponen a jugar a ser heroes y lanzan las bombas lejos de la plaza salvando a todo el pueblo."
@@ -152,7 +152,7 @@ valida_ia = false
 can_counter = false
 
 [node name="Cirujano" parent="." instance=ExtResource("2_y5ux8")]
-texture = ExtResource("3_epo8x")
+texture = ExtResource("11_rb452")
 titulo = "El cirujano"
 descripcion = "Los pacientes del cirujano están paranoicos, acuden a él por nimiedades. Ha deicidido que les dará motivos para contratar sus servicios."
 tipo = 2

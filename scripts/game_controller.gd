@@ -95,7 +95,7 @@ func jugada_ia():
 	aplicar_counter()
 	mano_ia.animar_mano()
 	aplicar_efecto_cartas(false)
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(5.0).timeout
 	mano_ia.ocultar_cartas(false)
 	
 func aplicar_counter():
