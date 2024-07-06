@@ -37,5 +37,5 @@ func actualizar_medidor():
 		elif esta_loco && medidor.value == 99:
 			esta_loco = false
 			medidor.texture_over = load("res://texturas/medidor/Medidor_Marco.png")
-		await get_tree().create_timer(0.03).timeout
+		await get_tree().create_timer(0.015).timeout
 	
