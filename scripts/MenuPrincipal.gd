@@ -35,8 +35,8 @@ func _ready():
 	
 	postits = get_tree().get_nodes_in_group("postit")
 	for boton in postits:
-		boton.mouse_entered.connect(Audio.play_pasar_pagina)
-		boton.mouse_exited.connect(Audio.play_movimiento_posit)
+		boton.focus_entered.connect(Audio.play_pasar_pagina)
+		boton.focus_exited.connect(Audio.play_movimiento_posit)
 	
 	lista_cartas = $MazoCartas.get_children()
 	
@@ -131,6 +131,8 @@ func _on_credits_pressed():
 
 func _on_home_pressed():
 	print("Inicio")
+	if !$LibroAbierto/PaginaInicio.visible:
+		Audio.play_pasar_pagina()
 	$LibroAbierto.visible = true
 	$LibroAbierto/PaginaInicio.visible = true
 	$LibroAbierto/PaginaTutorial.visible = false

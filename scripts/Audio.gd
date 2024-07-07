@@ -60,22 +60,22 @@ func _ready():
 func change_master_volume(_volumen : float):
 	porcentaje_master = _volumen
 	AudioServer.set_bus_volume_db(master_bus, vol_min + porcentaje_master * ratio)
-func mute_master():
-	master_muted = !master_muted
+func mute_master(_toggled_on : bool):
+	master_muted = _toggled_on
 	AudioServer.set_bus_mute(master_bus, master_muted)
 
 func change_music_volume(_volumen : float):
 	porcentaje_musica = _volumen
 	AudioServer.set_bus_volume_db(music_bus, vol_min + porcentaje_musica * ratio)
-func mute_music():
-	musica_muted = !musica_muted
+func mute_music(_toggled_on : bool):
+	musica_muted = _toggled_on
 	AudioServer.set_bus_mute(music_bus, musica_muted)
 
 func change_sfx_volume(_volumen : float):
 	porcentaje_sfx = _volumen
 	AudioServer.set_bus_volume_db(sfx_bus, vol_min + porcentaje_sfx * ratio)
-func mute_sfx():
-	sfx_muted = !sfx_muted
+func mute_sfx(_toggled_on : bool):
+	sfx_muted = _toggled_on
 	AudioServer.set_bus_mute(sfx_bus, sfx_muted)
 
 func fade_in(_player):

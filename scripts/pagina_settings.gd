@@ -6,6 +6,7 @@ extends Panel
 @onready var mute_musica = $Settings/VolumenMusica/MuteMusica
 @onready var slider_SFX = $Settings/VolumenSFX
 @onready var mute_SFX = $Settings/VolumenSFX/MuteSFX
+@onready var auto_play = $Settings/SkipIa
 
 func _ready():
 	slider_master.value = Audio.porcentaje_master
@@ -14,6 +15,7 @@ func _ready():
 	mute_musica.button_pressed = Audio.musica_muted
 	slider_SFX.value = Audio.porcentaje_sfx
 	mute_SFX.button_pressed = Audio.sfx_muted
+	auto_play.button_pressed = Global.auto_skip_ia
 
 func _on_volumen_master_value_changed(value):
 	Audio.change_master_volume(value)
@@ -24,8 +26,8 @@ func _on_volumen_master_drag_started():
 func _on_volumen_master_drag_ended(value_changed):
 	Audio.play_slide_finished()
 
-func _on_mute_master_pressed():
-	Audio.mute_master()
+func _on_mute_master_toggled(toggled_on):
+	Audio.mute_master(toggled_on)
 
 func _on_volumen_musica_value_changed(value):
 	Audio.change_music_volume(value)
@@ -36,8 +38,8 @@ func _on_volumen_musica_drag_started():
 func _on_volumen_musica_drag_ended(value_changed):
 	Audio.play_slide_finished()
 
-func _on_mute_musica_pressed():
-	Audio.mute_music()
+func _on_mute_musica_toggled(toggled_on):
+	Audio.mute_music(toggled_on)
 
 func _on_volumen_sfx_value_changed(value):
 	Audio.change_sfx_volume(value)
@@ -48,5 +50,8 @@ func _on_volumen_sfx_drag_started():
 func _on_volumen_sfx_drag_ended(value_changed):
 	Audio.play_slide_finished()
 
-func _on_mute_sfx_pressed():
-	Audio.mute_sfx()
+func _on_mute_sfx_toggled(toggled_on):
+	Audio.mute_sfx(toggled_on)
+
+func _on_skip_ia_toggled(toggled_on):
+	Global.auto_skip_ia = toggled_on

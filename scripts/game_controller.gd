@@ -103,8 +103,10 @@ func jugada_ia():
 	aplicar_counter()
 	mano_ia.animar_mano()
 	aplicar_efecto_cartas(false)
-	await skip_IA_turn_signal
-	#await get_tree().create_timer(5.0).timeout
+	if !Global.auto_skip_ia:
+		await skip_IA_turn_signal
+	else:
+		await get_tree().create_timer(1.0).timeout
 	mano_ia.ocultar_cartas(false)
 	
 func aplicar_counter():

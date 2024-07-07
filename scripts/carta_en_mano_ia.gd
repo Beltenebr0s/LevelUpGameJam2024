@@ -32,6 +32,10 @@ func ocultar_carta(no_jugada : bool):
 		carta_oculta = true
 
 func seleccionar_carta():
+	if Global.auto_skip_ia:
+		self.descripcion.visible = false
+	else:
+		self.descripcion.visible = true
 	carta_jugada = true
 	animador.play("seleccionar_carta")
 

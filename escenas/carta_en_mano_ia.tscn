@@ -112,13 +112,6 @@ _data = {
 "subir_carta_mas": SubResource("Animation_j8v1y")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_valx6"]
-bg_color = Color(0.176471, 0.0980392, 0.054902, 0.658824)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
 [sub_resource type="LabelSettings" id="LabelSettings_14y1e"]
 line_spacing = 1.0
 font = ExtResource("3_s43x6")
@@ -129,6 +122,13 @@ outline_color = Color(0, 0, 0, 1)
 shadow_size = 10
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(2, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_valx6"]
+bg_color = Color(0.176471, 0.0980392, 0.054902, 0.658824)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="carta_en_mano_ia" type="Node2D"]
 rotation = 3.14159
@@ -151,16 +151,6 @@ anchors_preset = 0
 offset_top = 45.0
 offset_bottom = 45.0
 rotation = 3.14159
-
-[node name="panel" type="Panel" parent="Carta/descripcion"]
-custom_minimum_size = Vector2(6.9, 2.78)
-layout_mode = 0
-offset_left = -123.0
-offset_top = -203.0
-offset_right = -64.0
-offset_bottom = -192.0
-scale = Vector2(4.16959, 15.6297)
-theme_override_styles/panel = SubResource("StyleBoxFlat_valx6")
 
 [node name="titulo" type="Label" parent="Carta/descripcion"]
 layout_mode = 1
@@ -198,4 +188,14 @@ text = "En un lugar de la mancha de cuyo nombre no quiero acordarme"
 label_settings = ExtResource("4_ppdfi")
 horizontal_alignment = 1
 autowrap_mode = 2
-clip_text = true
+
+[node name="panel" type="Panel" parent="Carta/descripcion/descripcion"]
+show_behind_parent = true
+custom_minimum_size = Vector2(6.9, 2.78)
+layout_mode = 0
+offset_left = -21.0
+offset_top = 1.0
+offset_right = 38.0
+offset_bottom = 12.0
+scale = Vector2(4.16959, 15.6297)
+theme_override_styles/panel = SubResource("StyleBoxFlat_valx6")

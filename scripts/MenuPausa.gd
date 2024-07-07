@@ -23,8 +23,8 @@ func _ready():
 	
 	postits = get_tree().get_nodes_in_group("postit")
 	for boton in postits:
-		boton.mouse_entered.connect(Audio.play_pasar_pagina)
-		boton.mouse_exited.connect(Audio.play_movimiento_posit)
+		boton.focus_entered.connect(Audio.play_pasar_pagina)
+		boton.focus_exited.connect(Audio.play_movimiento_posit)
 	
 	libro_abierto.visible = true
 	mostrar_pagina_inicio()
