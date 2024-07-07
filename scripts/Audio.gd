@@ -4,8 +4,8 @@ extends Node
 @export var vol_max : float = 10
 
 var porcentaje_master : float = 66
-var porcentaje_musica : float = 66
-var porcentaje_sfx : float = 66
+var porcentaje_musica : float = 44
+var porcentaje_sfx : float = 44
 var master_muted : bool = false
 var musica_muted : bool = false
 var sfx_muted : bool = false
