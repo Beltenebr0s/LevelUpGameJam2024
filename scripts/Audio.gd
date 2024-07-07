@@ -34,7 +34,7 @@ var ratio : float
 @onready var tipo_normal = $SFX/InGame/TipoDeCartas/TipoNormal
 @onready var tipo_fuego = $SFX/InGame/TipoDeCartas/TipoFuego
 @onready var tipo_peste = $SFX/InGame/TipoDeCartas/TipoPeste
-@onready var tipo_pasiva = $SFX/InGame/TipoDeCartas/TipoPasiva
+@onready var tipo_pasiva = $SFX/InGame/TipoDeCartas/TipoPasiva	
 
 @onready var boton_down = $SFX/Menus/BotonDown
 @onready var boton_select = $SFX/Menus/BotonSelect
