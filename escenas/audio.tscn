@@ -1,10 +1,12 @@
-[gd_scene load_steps=33 format=3 uid="uid://8qk3hkffat5c"]
+[gd_scene load_steps=35 format=3 uid="uid://8qk3hkffat5c"]
 
 [ext_resource type="Script" path="res://scripts/Audio.gd" id="1_5m82e"]
 [ext_resource type="AudioStream" uid="uid://5cb0p3snho5r" path="res://audio/musica/menu.wav" id="2_6opo5"]
 [ext_resource type="AudioStream" uid="uid://ca1ing13r184l" path="res://audio/SFX/SFX_TurnIndicator.wav" id="2_hscaa"]
+[ext_resource type="AudioStream" uid="uid://dn7gvm64x6bca" path="res://audio/musica/gameplay.wav" id="3_06ckq"]
 [ext_resource type="AudioStream" uid="uid://d2sghtanrqoig" path="res://audio/SFX/SFX_CrazyBar_Over100.wav" id="3_hddw4"]
 [ext_resource type="AudioStream" uid="uid://b43j6l2hua7ab" path="res://audio/SFX/SFX_Card_Play1.wav" id="4_ll207"]
+[ext_resource type="AudioStream" uid="uid://d3lq3ip73u3xu" path="res://audio/AMB/AMB_V1.wav" id="4_whf2o"]
 [ext_resource type="AudioStream" uid="uid://dcsrjfs2arrlc" path="res://audio/SFX/SFX_Card_Play2.wav" id="5_m0mtf"]
 [ext_resource type="AudioStream" uid="uid://dnils5hbsv5iq" path="res://audio/SFX/SFX_Card_Play3.wav" id="6_b7nmh"]
 [ext_resource type="AudioStream" uid="uid://d24vottd2k0fk" path="res://audio/SFX/SFX_Card_Reload1.wav" id="7_4lyan"]
@@ -100,6 +102,7 @@ stream = ExtResource("2_6opo5")
 bus = &"Musica_int"
 
 [node name="MusicaJuego" type="AudioStreamPlayer" parent="Musica"]
+stream = ExtResource("3_06ckq")
 bus = &"Musica_int"
 
 [node name="JingleVictoria" type="AudioStreamPlayer" parent="Musica"]
@@ -113,7 +116,7 @@ bus = &"Musica_int"
 [node name="InGame" type="Node" parent="SFX"]
 
 [node name="SonidoAmbiente" type="AudioStreamPlayer" parent="SFX/InGame"]
-stream = ExtResource("2_hscaa")
+stream = ExtResource("4_whf2o")
 bus = &"SFX"
 
 [node name="MedidorDia" type="AudioStreamPlayer" parent="SFX/InGame"]

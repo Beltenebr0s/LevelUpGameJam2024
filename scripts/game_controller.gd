@@ -14,8 +14,8 @@ var carta_combo = null
 @export var n_cartas_turno_jugador = 2
 @export var n_cartas_turno_ia = 2
 
-@onready var mazo_jugador = $Board/MazoCartas
-@onready var mazo_ia = $Board/MazoCartasIA
+@onready var mazo_jugador = $MazoCartas
+@onready var mazo_ia = $MazoCartasIA
 @onready var mano_ui = $cartasUI
 @onready var mano_ia = $mano_ia
 @onready var medidor_locura = $medidor_locura
@@ -26,7 +26,7 @@ var carta_combo = null
 
 func _ready():
 	fade.set_siguiente_escena(Global.escena_menu)
-	fade.fade_in()
+	fade.fade_in(true)
 	pasivas_ui.mulligan.connect(mulligan)
 	mazo_jugador.cartas_seleccionadas.connect(seleccionar_cartas)
 	
@@ -68,6 +68,7 @@ func inicar_juego():
 		await actualizar_reloj(false)
 		await jugada_ia()
 		n_jugada = n_jugada+1    
+	await skip_IA_turn_signal
 	decidir_final()
 
 func iniciar_turno():
@@ -207,6 +208,7 @@ func decidir_final():
 	n_jugada = 0
 	Global.puntos_locura = medidor_locura.locos
 	Global.b_first_game = false
+	Audio.transition_to_menu()
 	fade.fade_out()
 	
 func mostrar_mano_jugador():

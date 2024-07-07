@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://d5m6ymst3es7" path="res://texturas/menus/Victoria_Libro.png" id="8_05w7k"]
 [ext_resource type="Texture2D" uid="uid://cr5qcqw6tj6aw" path="res://texturas/menus/Derrota_Libro.png" id="9_86xqj"]
 [ext_resource type="PackedScene" uid="uid://cu4ruf7b0vci4" path="res://escenas/medidor_locura.tscn" id="12_nd3xq"]
+[ext_resource type="Texture2D" uid="uid://b7jk4ojghdi8l" path="res://texturas/menus/Smol_Boi.png" id="12_y0qd2"]
 [ext_resource type="Texture2D" uid="uid://ctcb2b3n18aix" path="res://texturas/cartas/sacerdote.png" id="15_kit4b"]
 [ext_resource type="Texture2D" uid="uid://c4g4cu7tbfmo4" path="res://texturas/cartas/Borde_Purpura.png" id="16_2442e"]
 [ext_resource type="PackedScene" uid="uid://b80mbbnuqe78v" path="res://escenas/mazo_cartas.tscn" id="16_twf7g"]
@@ -110,7 +111,6 @@ texture = ExtResource("2_7wfuc")
 expand_mode = 1
 
 [node name="PaginaInicio" type="Panel" parent="LibroAbierto"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -415,6 +415,15 @@ offset_bottom = 606.5
 scale = Vector2(0.567926, 0.567926)
 icon = ExtResource("19_5jf37")
 
+[node name="TextureRect" type="TextureRect" parent="LibroAbierto/PaginaHistoria"]
+layout_mode = 0
+offset_left = 540.5
+offset_top = 276.5
+offset_right = 819.5
+offset_bottom = 489.5
+texture = ExtResource("12_y0qd2")
+expand_mode = 1
+
 [node name="PaginaTutorial" type="Panel" parent="LibroAbierto"]
 visible = false
 layout_mode = 1
@@ -597,6 +606,7 @@ scale = Vector2(0.567926, 0.567926)
 icon = ExtResource("19_5jf37")
 
 [node name="PaginaCredits" type="Panel" parent="LibroAbierto"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -850,10 +860,15 @@ position = Vector2(1767, 754)
 [node name="Fade" parent="." instance=ExtResource("24_b6nnq")]
 visible = false
 layout_mode = 1
-offset_left = -631.0
-offset_top = -441.0
-offset_right = 1333.0
-offset_bottom = 836.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -581.0
+offset_top = -312.0
+offset_right = -581.0
+offset_bottom = -312.0
 
 [node name="ScoreRequest" parent="." instance=ExtResource("25_j1t5w")]
 

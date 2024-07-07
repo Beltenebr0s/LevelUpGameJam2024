@@ -3,10 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://0k1iv56f0qty" path="res://escenas/board.tscn" id="1_gf5lf"]
 [ext_resource type="Script" path="res://scripts/game_controller.gd" id="1_jtev3"]
 [ext_resource type="PackedScene" uid="uid://bgmop8u4t4stj" path="res://escenas/card_ui.tscn" id="3_nj2pg"]
+[ext_resource type="PackedScene" uid="uid://b80mbbnuqe78v" path="res://escenas/mazo_cartas.tscn" id="3_waqm1"]
+[ext_resource type="PackedScene" uid="uid://c423gt07q3j6h" path="res://escenas/mazo_cartas_ia.tscn" id="4_4yv4y"]
 [ext_resource type="PackedScene" uid="uid://cu4ruf7b0vci4" path="res://escenas/medidor_locura.tscn" id="4_yyiwp"]
 [ext_resource type="PackedScene" uid="uid://cy5urn5n1wibs" path="res://escenas/pasivas_ui.tscn" id="5_88sux"]
 [ext_resource type="PackedScene" uid="uid://dbb1boixbt5v5" path="res://escenas/medidor_dia.tscn" id="6_amot7"]
-[ext_resource type="Texture2D" uid="uid://cnqvsymflifym" path="res://texturas/Baraja.png" id="9_pc2xh"]
 [ext_resource type="PackedScene" uid="uid://0m1dvsg648qd" path="res://escenas/mano_ia.tscn" id="11_4yrn7"]
 [ext_resource type="PackedScene" uid="uid://b50qc4rv6vsgo" path="res://escenas/fade.tscn" id="11_hthis"]
 [ext_resource type="PackedScene" uid="uid://d2ed2213ydb0g" path="res://escenas/alerta_combo.tscn" id="14_3bj1k"]
@@ -16,22 +17,11 @@ script = ExtResource("1_jtev3")
 
 [node name="Board" parent="." instance=ExtResource("1_gf5lf")]
 
-[node name="MazoCartas" parent="Board" index="1"]
-position = Vector2(-478, 27)
+[node name="MazoCartas" parent="." instance=ExtResource("3_waqm1")]
+position = Vector2(-373, 4)
 
-[node name="MazoCartasIA" parent="Board" index="2"]
-position = Vector2(-484, 25)
-
-[node name="baraja_roja" type="Sprite2D" parent="Board"]
-position = Vector2(34, 598)
-rotation = -0.186719
-scale = Vector2(0.218329, 0.218329)
-texture = ExtResource("9_pc2xh")
-
-[node name="baraja_dorada" type="Sprite2D" parent="Board"]
-position = Vector2(1105, 38)
-rotation = -3.48356
-scale = Vector2(0.218329, 0.218329)
+[node name="MazoCartasIA" parent="." instance=ExtResource("4_4yv4y")]
+position = Vector2(-373, 4)
 
 [node name="medidor_dia" parent="." instance=ExtResource("6_amot7")]
 position = Vector2(125, 555)
@@ -58,9 +48,11 @@ position = Vector2(544, 320)
 scale = Vector2(0.233773, 0.233773)
 
 [node name="Fade" parent="." instance=ExtResource("11_hthis")]
-offset_left = -1326.0
-offset_top = -873.0
-offset_right = 2028.0
-offset_bottom = 1268.0
-
-[editable path="Board"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 0.0
+offset_bottom = 0.0

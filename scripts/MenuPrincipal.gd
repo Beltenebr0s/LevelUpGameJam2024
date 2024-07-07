@@ -25,7 +25,7 @@ func _ready():
 	score_request.received_scores.connect(print_score)
 	score_request.ranking_error.connect(disable_ranking)
 	fade.set_siguiente_escena(Global.escena_game)
-	fade.fade_in()
+	fade.fade_in(!Global.b_first_game)
 	ui_buttons = get_tree().get_nodes_in_group("ui_button")
 	for button in ui_buttons:
 		button.mouse_entered.connect(Audio.play_boton_select)
@@ -93,8 +93,8 @@ func _on_tutorial_press():
 		historia.visible = false
 
 func _on_start_game_pressed():
+	Audio.transition_to_game()
 	fade.fade_out()
-	pass
 
 func _on_settings_pressed():
 	print("Ajustes")

@@ -1,13 +1,21 @@
 extends Control
 
 @onready var animation_player = $AnimationPlayer
+@onready var sprite_diablillo = $Fondo/Sprite2D
+@onready var fondo = $Fondo
 
 var siguiente_escena : PackedScene
 
-func fade_in():
+
+func fade_in(_diablillo_on):
 	print("empieza fade in")
+	if !_diablillo_on:
+		self.sprite_diablillo.visible = false
+	self.fondo.modulate = Color(1,1,1,1)
 	self.visible = true
 	animation_player.play("fade_in")
+	await animation_player.animation_finished
+	self.sprite_diablillo.visible = true
 
 func ocultar_fade():
 	print("acaba fade in")
@@ -15,6 +23,7 @@ func ocultar_fade():
 
 func fade_out():
 	print("empieza fade out")
+	self.fondo.modulate = Color(1,1,1,0)
 	self.visible = true
 	animation_player.play("fade_out")
 

@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scripts/pagina_settings.gd" id="1_14rop"]
 [ext_resource type="Theme" uid="uid://cmcb4mmclu5ex" path="res://Fuentes/tema_libro.tres" id="1_eteud"]
 [ext_resource type="Texture2D" uid="uid://ds8j1l4sv3678" path="res://texturas/menus/Borde_Ilustraciones_Libro.png" id="1_ogg57"]
-[ext_resource type="Texture2D" uid="uid://cgrucv55xpoo3" path="res://texturas/menus/Menu_Inicio_Ilustracion.png" id="2_rk8on"]
 [ext_resource type="PackedScene" uid="uid://c3dvk21fhqeoi" path="res://escenas/panel_menu.tscn" id="3_4gcmi"]
+[ext_resource type="Texture2D" uid="uid://dhjtgwdq5ra7s" path="res://texturas/menus/Engranaje_de_opciones.png" id="4_12l2d"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h17hg"]
 
@@ -35,12 +35,13 @@ expand_mode = 1
 
 [node name="IlustracionInicio" type="TextureRect" parent="BordeIlustracion3"]
 layout_mode = 0
-offset_left = 29.0
-offset_top = 24.0
-offset_right = 318.0
-offset_bottom = 461.0
-texture = ExtResource("2_rk8on")
+offset_left = 42.0
+offset_top = 44.0
+offset_right = 306.0
+offset_bottom = 443.0
+texture = ExtResource("4_12l2d")
 expand_mode = 1
+stretch_mode = 5
 
 [node name="Settings" parent="." instance=ExtResource("3_4gcmi")]
 layout_mode = 1

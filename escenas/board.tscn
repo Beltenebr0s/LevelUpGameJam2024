@@ -1,17 +1,41 @@
-[gd_scene load_steps=4 format=3 uid="uid://0k1iv56f0qty"]
+[gd_scene load_steps=5 format=3 uid="uid://0k1iv56f0qty"]
 
-[ext_resource type="Texture2D" uid="uid://dfeko6syo3wqv" path="res://Fondo_Mapa_incluido.jpg" id="1_6o4c3"]
-[ext_resource type="PackedScene" uid="uid://b80mbbnuqe78v" path="res://escenas/mazo_cartas.tscn" id="2_hmrd3"]
-[ext_resource type="PackedScene" uid="uid://c423gt07q3j6h" path="res://escenas/mazo_cartas_ia.tscn" id="3_1u22f"]
+[ext_resource type="Texture2D" uid="uid://b7tdwebys2k3o" path="res://texturas/menus/Mesa.png" id="1_r83jd"]
+[ext_resource type="Texture2D" uid="uid://dhhm0mew8evh7" path="res://texturas/menus/Tablero.png" id="2_4yahp"]
+[ext_resource type="Texture2D" uid="uid://cnqvsymflifym" path="res://texturas/Baraja.png" id="4_kepyt"]
+[ext_resource type="Texture2D" uid="uid://n2ard2350hea" path="res://texturas/Mazo_Dorado.png" id="5_67kxc"]
 
 [node name="Board" type="Node2D"]
 
-[node name="Polygon2D" type="TextureRect" parent="."]
+[node name="mesa" type="TextureRect" parent="."]
 offset_right = 1152.0
 offset_bottom = 650.0
-texture = ExtResource("1_6o4c3")
+texture = ExtResource("1_r83jd")
 expand_mode = 1
 
-[node name="MazoCartas" parent="." instance=ExtResource("2_hmrd3")]
+[node name="tablero" type="TextureRect" parent="."]
+offset_left = 110.0
+offset_top = 59.0
+offset_right = 1081.0
+offset_bottom = 606.0
+texture = ExtResource("2_4yahp")
+expand_mode = 1
+stretch_mode = 4
 
-[node name="MazoCartasIA" parent="." instance=ExtResource("3_1u22f")]
+[node name="baraja_roja" type="TextureRect" parent="."]
+offset_left = -65.0
+offset_top = 522.0
+offset_right = 672.0
+offset_bottom = 1533.0
+rotation = -0.186719
+scale = Vector2(0.218329, 0.218329)
+texture = ExtResource("4_kepyt")
+
+[node name="baraja_dorada" type="TextureRect" parent="."]
+offset_left = 1220.0
+offset_top = 121.0
+offset_right = 1957.0
+offset_bottom = 1132.0
+rotation = -3.48356
+scale = Vector2(0.218329, 0.218329)
+texture = ExtResource("5_67kxc")
