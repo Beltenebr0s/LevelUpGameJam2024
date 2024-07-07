@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="LevelUpGameJam2024"
+config/name="Demonios&Descartes"
 run/main_scene="res://escenas/splash.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
