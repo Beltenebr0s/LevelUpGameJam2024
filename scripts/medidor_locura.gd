@@ -11,34 +11,30 @@ var esta_loco = false
 func _ready():
 	esta_loco = false
 	medidor.value = 1
-	actualizar_medidor()
+	var tween = create_tween()
+	tween.tween_property(medidor, "value", locos, 2)
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	actualizar_medidor()
 	pass
 
 func suma_locos(locos_nuevos : int):
 	locos += locos_nuevos
-	#if medidor.value > 100 and locos < 100:
-	#	locos = 101
 	if locos < 1:
 		locos = 1
-	actualizar_medidor()
+	Audio.play_medidor_cambio(locos - medidor.value)
+	var tween = create_tween()
+	tween.tween_property(medidor, "value", locos, 0.5)
 
 func actualizar_medidor():
-	Audio.play_medidor_cambio(locos - medidor.value)
-	while locos != medidor.value:
-		medidor.value += sign(locos - medidor.value)
-		texto_contador.text = str(medidor.value)
-		if !esta_loco && medidor.value == 100:
-			esta_loco = true
-			medidor.texture_over = load("res://texturas/medidor/Medidor_Marco_CRAZY.png")
-			Audio.play_medidor_estado_cambio(esta_loco)
-		elif esta_loco && medidor.value == 99:
-			esta_loco = false
-			medidor.texture_over = load("res://texturas/medidor/Medidor_Marco.png")
-			Audio.play_medidor_estado_cambio(esta_loco)
-		await get_tree().create_timer(0.015).timeout
+	texto_contador.text = str(medidor.value)
+	if !esta_loco && medidor.value == 100:
+		esta_loco = true
+		medidor.texture_over = load("res://texturas/medidor/Medidor_Marco_CRAZY.png")
+		Audio.play_medidor_estado_cambio(esta_loco)
+	elif esta_loco && medidor.value == 99:
+		esta_loco = false
+		medidor.texture_over = load("res://texturas/medidor/Medidor_Marco.png")
+		Audio.play_medidor_estado_cambio(esta_loco)
 	

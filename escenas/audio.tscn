@@ -1,6 +1,7 @@
-[gd_scene load_steps=32 format=3 uid="uid://8qk3hkffat5c"]
+[gd_scene load_steps=33 format=3 uid="uid://8qk3hkffat5c"]
 
 [ext_resource type="Script" path="res://scripts/Audio.gd" id="1_5m82e"]
+[ext_resource type="AudioStream" uid="uid://5cb0p3snho5r" path="res://audio/musica/menu.wav" id="2_6opo5"]
 [ext_resource type="AudioStream" uid="uid://ca1ing13r184l" path="res://audio/SFX/SFX_TurnIndicator.wav" id="2_hscaa"]
 [ext_resource type="AudioStream" uid="uid://d2sghtanrqoig" path="res://audio/SFX/SFX_CrazyBar_Over100.wav" id="3_hddw4"]
 [ext_resource type="AudioStream" uid="uid://b43j6l2hua7ab" path="res://audio/SFX/SFX_Card_Play1.wav" id="4_ll207"]
@@ -95,16 +96,17 @@ script = ExtResource("1_5m82e")
 [node name="Musica" type="Node" parent="."]
 
 [node name="MusicaMenuPrincipal" type="AudioStreamPlayer" parent="Musica"]
-bus = &"Musica"
+stream = ExtResource("2_6opo5")
+bus = &"Musica_int"
 
 [node name="MusicaJuego" type="AudioStreamPlayer" parent="Musica"]
-bus = &"Musica"
+bus = &"Musica_int"
 
 [node name="JingleVictoria" type="AudioStreamPlayer" parent="Musica"]
-bus = &"Musica"
+bus = &"Musica_int"
 
 [node name="JingleDerrota" type="AudioStreamPlayer" parent="Musica"]
-bus = &"Musica"
+bus = &"Musica_int"
 
 [node name="SFX" type="Node" parent="."]
 
@@ -112,11 +114,14 @@ bus = &"Musica"
 
 [node name="SonidoAmbiente" type="AudioStreamPlayer" parent="SFX/InGame"]
 stream = ExtResource("2_hscaa")
+bus = &"SFX"
 
 [node name="MedidorDia" type="AudioStreamPlayer" parent="SFX/InGame"]
 stream = ExtResource("2_hscaa")
+bus = &"SFX"
 
 [node name="AlertaCombo" type="AudioStreamPlayer" parent="SFX/InGame"]
+bus = &"SFX"
 
 [node name="Medidor" type="Node" parent="SFX/InGame"]
 
@@ -136,6 +141,7 @@ bus = &"SFX"
 [node name="Cartas" type="Node" parent="SFX/InGame"]
 
 [node name="CartasPasivas" type="AudioStreamPlayer" parent="SFX/InGame/Cartas"]
+bus = &"SFX"
 
 [node name="JugarCarta" type="AudioStreamPlayer" parent="SFX/InGame/Cartas"]
 stream = SubResource("AudioStreamRandomizer_3mp1k")
@@ -149,26 +155,32 @@ bus = &"SFX"
 
 [node name="Reload" type="AudioStreamPlayer" parent="SFX/InGame/Cartas"]
 stream = SubResource("AudioStreamRandomizer_ec6wu")
+bus = &"SFX"
 
 [node name="TipoDeCartas" type="Node" parent="SFX/InGame"]
 
 [node name="TipoNormal" type="AudioStreamPlayer" parent="SFX/InGame/TipoDeCartas"]
 max_polyphony = 2
+bus = &"SFX"
 
 [node name="TipoFuego" type="AudioStreamPlayer" parent="SFX/InGame/TipoDeCartas"]
 max_polyphony = 2
+bus = &"SFX"
 
 [node name="TipoPeste" type="AudioStreamPlayer" parent="SFX/InGame/TipoDeCartas"]
 stream = ExtResource("10_3uvl3")
 max_polyphony = 2
+bus = &"SFX"
 
 [node name="TipoPasiva" type="AudioStreamPlayer" parent="SFX/InGame/TipoDeCartas"]
 max_polyphony = 2
+bus = &"SFX"
 
 [node name="Menus" type="Node" parent="SFX"]
 
 [node name="BotonDown" type="AudioStreamPlayer" parent="SFX/Menus"]
 stream = SubResource("AudioStreamRandomizer_rso0g")
+bus = &"SFX"
 
 [node name="BotonSelect" type="AudioStreamPlayer" parent="SFX/Menus"]
 stream = SubResource("AudioStreamRandomizer_16ukn")
@@ -178,15 +190,20 @@ bus = &"SFX"
 
 [node name="SlideStarted" type="AudioStreamPlayer" parent="SFX/Menus"]
 stream = SubResource("AudioStreamRandomizer_k1iax")
+bus = &"SFX"
 
 [node name="SlideFinished" type="AudioStreamPlayer" parent="SFX/Menus"]
 stream = SubResource("AudioStreamRandomizer_jp878")
+bus = &"SFX"
 
 [node name="MovimientoPosit" type="AudioStreamPlayer" parent="SFX/Menus"]
+bus = &"SFX"
 
 [node name="PasarPagina" type="AudioStreamPlayer" parent="SFX/Menus"]
 stream = SubResource("AudioStreamRandomizer_la0vi")
 max_polyphony = 4
+bus = &"SFX"
 
 [node name="AbrirLibro" type="AudioStreamPlayer" parent="SFX/Menus"]
 stream = ExtResource("24_e5amx")
+bus = &"SFX"

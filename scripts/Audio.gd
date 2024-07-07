@@ -49,8 +49,10 @@ var music_bus = AudioServer.get_bus_index("Musica")
 var sfx_bus = AudioServer.get_bus_index("SFX")
 
 var lista_sonidos_tipos = []
+var tween
 
 func _ready():
+	tween = create_tween()
 	lista_sonidos_tipos = [tipo_normal, tipo_fuego, tipo_peste, tipo_pasiva]
 	ratio = (abs(vol_max) + abs(vol_min))/100
 	pass
@@ -75,6 +77,25 @@ func change_sfx_volume(_volumen : float):
 func mute_sfx():
 	sfx_muted = !sfx_muted
 	AudioServer.set_bus_mute(sfx_bus, sfx_muted)
+
+func fade_in(_player):
+	_player.volume_db = -80
+	_player.play()
+	tween.tween_property(_player, "volume_db", 0, 4)
+
+func fade_out(_player):
+	_player.volume_db = 0
+	tween.tween_property(_player, "volume_db", -80, 4)
+	_player.stop()
+
+func start_music():
+	fade_in(musica_menu_principal)
+func transition_to_game():
+	await fade_out(musica_menu_principal)
+	await fade_in(musica_juego)
+func transition_to_menu():
+	await fade_out(musica_juego)
+	await fade_in(musica_menu_principal)
 
 func play_medidor_dia():
 	await get_tree().create_timer(0.1).timeout
