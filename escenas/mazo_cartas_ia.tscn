@@ -108,7 +108,7 @@ valor = 60
 [node name="Aceite de oliva virgen extra" parent="." instance=ExtResource("2_42mh6")]
 texture = ExtResource("3_kimog")
 titulo = "Aceite de oliva virgen extra"
-descripcion = "El príncipe Adetokumbo a decidido reabastecer las reservas de aceite de oliva virgen extra."
+descripcion = "El rey Adetokumbo a decidido reabastecer las reservas de aceite de oliva virgen extra."
 tipo = 2
 reutilizable = true
 requisitos = 50
