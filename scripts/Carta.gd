@@ -19,6 +19,7 @@ enum FuncionCarta { NORMAL, PASIVA, MULTIPLICADOR }
 @onready var carta_usada : bool = false
 
 signal jugar_carta(carta)
+signal desjugar_carta(carta)
 
 func iniciar_carta():
 	self.carta_usada = false
@@ -26,7 +27,14 @@ func iniciar_carta():
 func jugar():
 	if !reutilizable:
 		self.carta_usada = true
+	if self.carta_usada:
+		self.carta_usada = false
 	jugar_carta.emit(self)
+	
+func desjugar():
+	if self.carta_usada:
+		self.carta_usada = false
+	desjugar_carta.emit(self)
 	
 func es_jugable(nivel_locura : int, b_ia : bool):
 	var b_carta_valida = true

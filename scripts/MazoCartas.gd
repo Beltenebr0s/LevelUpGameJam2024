@@ -12,6 +12,7 @@ func _ready():
 	baraja_cartas = get_children()
 	for carta in baraja_cartas:
 		carta.jugar_carta.connect(carta_jugada)
+		carta.desjugar_carta.connect(desjugar_carta)
 
 func barajar_cartas(num_cartas : int , nivel_locura : int, b_ia : bool):
 	mano = []
@@ -39,3 +40,5 @@ func carta_jugada(carta):
 	if cartas_a_jugar.size() == n_cartas_turno:
 		cartas_seleccionadas.emit(cartas_a_jugar)
 		cartas_a_jugar = []
+func desjugar_carta(carta):
+	cartas_a_jugar.pop_back()

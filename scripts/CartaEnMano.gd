@@ -110,3 +110,8 @@ func _on_boton_carta_pressed():
 		ocultar_descripcion()
 		subir_carta_mas()
 		self.carta.jugar()
+	elif !carta_oculta && carta_jugada:
+		carta_jugada = false
+		bajar_carta()
+		self.carta.desjugar()
+		
