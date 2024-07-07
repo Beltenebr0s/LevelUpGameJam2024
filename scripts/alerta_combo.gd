@@ -6,13 +6,6 @@ extends Node2D
 func _ready():
 	self.visible = false
 	$Sprite2D.scale = Vector2(0.5, 0.5)
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 
 func mostrar_alerta_combo():
 	self.visible = true

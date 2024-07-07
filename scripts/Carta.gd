@@ -42,5 +42,5 @@ func es_jugable(nivel_locura : int, b_ia : bool):
 		b_carta_valida = b_carta_valida && nivel_locura > self.valor
 	return b_carta_valida
 	
-func set_carta_usada(valor):
-	carta_usada = valor
+func set_carta_usada(_valor):
+	carta_usada = _valor

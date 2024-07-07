@@ -43,7 +43,7 @@ func _ready():
 	
 	inicar_juego()
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("Desbloquear Caballero"):
 		pasivas_ui.activar(0)
 	if Input.is_action_just_pressed("Desbloquear Vigil"):
@@ -135,7 +135,7 @@ func aplicar_counter():
 	carta_combo = null
 
 func aplicar_efecto_cartas(b_is_player : bool):
-	var resultado : int
+	var resultado = 0
 	print("		-- Aplicando efecto de la carta:" )	
 	if(b_is_player):
 		for carta in selected_cards:

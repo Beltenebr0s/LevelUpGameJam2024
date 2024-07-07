@@ -23,7 +23,7 @@ func _on_volumen_master_value_changed(value):
 func _on_volumen_master_drag_started():
 	Audio.play_slide_started()
 
-func _on_volumen_master_drag_ended(value_changed):
+func _on_volumen_master_drag_ended(_value_changed):
 	Audio.play_slide_finished()
 
 func _on_mute_master_toggled(toggled_on):
@@ -35,7 +35,7 @@ func _on_volumen_musica_value_changed(value):
 func _on_volumen_musica_drag_started():
 	Audio.play_slide_started()
 
-func _on_volumen_musica_drag_ended(value_changed):
+func _on_volumen_musica_drag_ended(_value_changed):
 	Audio.play_slide_finished()
 
 func _on_mute_musica_toggled(toggled_on):
@@ -47,7 +47,7 @@ func _on_volumen_sfx_value_changed(value):
 func _on_volumen_sfx_drag_started():
 	Audio.play_slide_started()
 
-func _on_volumen_sfx_drag_ended(value_changed):
+func _on_volumen_sfx_drag_ended(_value_changed):
 	Audio.play_slide_finished()
 
 func _on_mute_sfx_toggled(toggled_on):

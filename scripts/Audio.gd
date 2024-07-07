@@ -49,10 +49,11 @@ var music_bus = AudioServer.get_bus_index("Musica")
 var sfx_bus = AudioServer.get_bus_index("SFX")
 
 var lista_sonidos_tipos = []
-var tween
+var tween : Tween
 
 func _ready():
-	tween = create_tween()
+	tween = get_tree().create_tween()
+	tween.stop()
 	lista_sonidos_tipos = [tipo_normal, tipo_fuego, tipo_peste, tipo_pasiva]
 	ratio = (abs(vol_max) + abs(vol_min))/100
 	pass
@@ -81,11 +82,11 @@ func mute_sfx(_toggled_on : bool):
 func fade_in(_player):
 	_player.volume_db = -80
 	_player.play()
-	tween.tween_property(_player, "volume_db", 0, 4)
+	tween.tween_property(_player, "volume_db", 0, 1.5)
 
 func fade_out(_player):
 	_player.volume_db = 0
-	tween.tween_property(_player, "volume_db", -80, 4)
+	tween.tween_property(_player, "volume_db", -80, 1.5)
 	_player.stop()
 
 func start_music():
@@ -95,7 +96,17 @@ func transition_to_game():
 	await fade_in(musica_juego)
 func transition_to_menu():
 	await fade_out(musica_juego)
-	await fade_in(musica_menu_principal)
+
+func play_victoria():
+	if jingle_victoria.stream != null:
+		jingle_victoria.play()
+		await jingle_victoria.finished
+	musica_menu_principal.play()
+func play_derrota():
+	if jingle_derrota.stream != null:
+		jingle_derrota.play()
+		await jingle_derrota.finished
+	musica_menu_principal.play()
 
 func play_medidor_dia():
 	await get_tree().create_timer(0.1).timeout

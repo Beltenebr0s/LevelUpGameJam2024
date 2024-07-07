@@ -40,5 +40,5 @@ func carta_jugada(carta):
 	if cartas_a_jugar.size() == n_cartas_turno:
 		cartas_seleccionadas.emit(cartas_a_jugar)
 		cartas_a_jugar = []
-func desjugar_carta(carta):
+func desjugar_carta(_carta):
 	cartas_a_jugar.pop_back()

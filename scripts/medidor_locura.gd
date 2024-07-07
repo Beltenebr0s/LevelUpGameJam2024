@@ -13,11 +13,9 @@ func _ready():
 	medidor.value = 1
 	var tween = create_tween()
 	tween.tween_property(medidor, "value", locos, 2)
-	pass # Replace with function body.
 
-func _process(delta):
+func _process(_delta):
 	actualizar_medidor()
-	pass
 
 func suma_locos(locos_nuevos : int):
 	locos += locos_nuevos

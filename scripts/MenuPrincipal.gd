@@ -62,9 +62,11 @@ func _ready():
 		$LibroAbierto/PaginaFinal.visible = !Global.b_first_game
 		$LibroAbierto/PaginaFinal/Final/Score.text = str(Global.puntos_locura)
 		if (Global.puntos_locura > 100):
+			Audio.play_victoria()
 			$LibroAbierto/PaginaFinal/Final/Victoria.visible = true
 			$LibroAbierto/PaginaFinal/Final/Derrota.visible = false
 		else:
+			Audio.play_derrota()
 			$LibroAbierto/PaginaFinal/Final/Derrota.visible = true
 			$LibroAbierto/PaginaFinal/Final/Victoria.visible = false
 		_save_current_score()
