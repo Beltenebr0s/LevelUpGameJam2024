@@ -13,6 +13,7 @@ func _ready():
 	for button in ui_buttons:
 		button.mouse_entered.connect(_on_button_mouse_entered)
 		button.button_down.connect(_on_button_down)
+		button.pressed.connect(_on_button_pressed)
 	libro_abierto.visible = true
 	mostrar_pagina_inicio()
 	
@@ -53,8 +54,13 @@ func _on_home_pressed():
 	mostrar_pagina_inicio()
 
 func _on_button_mouse_entered():
-	Audio.boton_select.play()
-
+	Audio.play_boton_select()
 func _on_button_down():
-	Audio.boton_down.play()
+	Audio.play_boton_down()
+func _on_button_pressed():
+	Audio.play_pasar_pagina()
 
+func _on_home_focus_entered():
+	Audio.play_movimiento_posit()
+func _on_home_focus_exited():
+	Audio.play_movimiento_posit()

@@ -6,8 +6,6 @@ var mano_lista = false
 var n_cartas_turno = 1
 var prob_counter : float = 0.25
 
-signal play_sonido_carta
-
 func _ready():
 	cartas_en_mano = get_children()
 
@@ -48,7 +46,7 @@ func animar_mano():
 	#		hueco_carta.seleccionar_carta()
 	#		cartas_escogidas.append(hueco_carta)
 	ocultar_cartas(true)
-	play_sonido_carta.emit()
+	Audio.play_jugar_carta()
 	for i in range(cartas_escogidas.size()):
 		cartas_escogidas[i].mostrar_descripcion(mano[i].titulo, mano[i].descripcion)
 

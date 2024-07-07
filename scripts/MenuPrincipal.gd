@@ -23,6 +23,7 @@ func _ready():
 	for button in ui_buttons:
 		button.mouse_entered.connect(_on_button_mouse_entered)
 		button.button_down.connect(_on_button_down)
+		button.pressed.connect(_on_button_pressed)
 		
 	lista_cartas = $MazoCartas.get_children()
 	
@@ -37,6 +38,7 @@ func _ready():
 	tutorial.visible = false
 	historia.visible = false
 	if (!Global.b_first_game):
+		Audio.play_abrir_libro()
 		$LibroAbierto.visible = !Global.b_first_game
 		$LibroAbierto/PaginaInicio.visible = false
 		$LibroAbierto/PaginaSettings.visible = false
@@ -75,6 +77,7 @@ func _ready():
 
 func _on_titulo_juego_pressed():
 	libro_cerrado.visible = false
+	Audio.play_abrir_libro()
 	_on_home_pressed()
 
 func _on_play_pressed():
@@ -199,13 +202,16 @@ func _on_anterior_pressed():
 	elif indice_carta == 0:
 		indice_carta = lista_cartas.size()-1
 	mostrar_carta()
+	Audio.play_pasar_pagina()
 
 func _on_btn_siguiente_pressed():
 	indice_carta = (indice_carta + 1) % lista_cartas.size()
 	mostrar_carta()
+	Audio.play_pasar_pagina()
 
 func _on_button_mouse_entered():
-	Audio.boton_select.play()
-
+	Audio.play_boton_select()
 func _on_button_down():
-	Audio.boton_down.play()
+	Audio.play_boton_down()
+func _on_button_pressed():
+	Audio.play_pasar_pagina()

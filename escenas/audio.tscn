@@ -1,22 +1,29 @@
-[gd_scene load_steps=18 format=3 uid="uid://8qk3hkffat5c"]
+[gd_scene load_steps=32 format=3 uid="uid://8qk3hkffat5c"]
 
 [ext_resource type="Script" path="res://scripts/Audio.gd" id="1_5m82e"]
 [ext_resource type="AudioStream" uid="uid://ca1ing13r184l" path="res://audio/SFX/SFX_TurnIndicator.wav" id="2_hscaa"]
+[ext_resource type="AudioStream" uid="uid://d2sghtanrqoig" path="res://audio/SFX/SFX_CrazyBar_Over100.wav" id="3_hddw4"]
 [ext_resource type="AudioStream" uid="uid://b43j6l2hua7ab" path="res://audio/SFX/SFX_Card_Play1.wav" id="4_ll207"]
 [ext_resource type="AudioStream" uid="uid://dcsrjfs2arrlc" path="res://audio/SFX/SFX_Card_Play2.wav" id="5_m0mtf"]
 [ext_resource type="AudioStream" uid="uid://dnils5hbsv5iq" path="res://audio/SFX/SFX_Card_Play3.wav" id="6_b7nmh"]
 [ext_resource type="AudioStream" uid="uid://d24vottd2k0fk" path="res://audio/SFX/SFX_Card_Reload1.wav" id="7_4lyan"]
 [ext_resource type="AudioStream" uid="uid://uw8np45fsrjb" path="res://audio/SFX/SFX_Card_Reload2.wav" id="8_dq4fd"]
 [ext_resource type="AudioStream" uid="uid://kjrneifcnnpy" path="res://audio/UI/UI_Menu_Click1.wav" id="9_jfgib"]
+[ext_resource type="AudioStream" uid="uid://cnmhccvaj4jn7" path="res://audio/SFX/SFX_Card_Action_Poison_v3.wav" id="10_3uvl3"]
 [ext_resource type="AudioStream" uid="uid://brg4gclc5vnyo" path="res://audio/UI/UI_Menu_Click2.wav" id="10_jyjog"]
 [ext_resource type="AudioStream" uid="uid://cwhr08vrienrq" path="res://audio/UI/UI_Menu_Click3.wav" id="11_id1tu"]
 [ext_resource type="AudioStream" uid="uid://bu2olhf2dkmpf" path="res://audio/UI/UI_Menu_Click4.wav" id="12_34c64"]
 [ext_resource type="AudioStream" uid="uid://caby8ixvpcyaq" path="res://audio/SFX/SFX_Card_PassBy_v2.wav" id="12_a6gee"]
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_01lag"]
-playback_mode = 1
-streams_count = 1
-stream_0/weight = 1.0
+[ext_resource type="AudioStream" uid="uid://bnnwig8hf3se2" path="res://audio/UI/UI_Menu_GrabSlider1.wav" id="15_7c7tl"]
+[ext_resource type="AudioStream" uid="uid://1hhf4tlp7pc3" path="res://audio/UI/UI_Menu_GrabSlider2.wav" id="16_rdml2"]
+[ext_resource type="AudioStream" uid="uid://du6pvqyvwu0cj" path="res://audio/UI/UI_Menu_ReleaseSlider1.wav" id="17_l1gvw"]
+[ext_resource type="AudioStream" uid="uid://bu36rc5avqnja" path="res://audio/UI/UI_Menu_ReleaseSlider2.wav" id="18_uliyj"]
+[ext_resource type="AudioStream" uid="uid://24t21efiugjs" path="res://audio/UI/UI_Menu_PassPageGallery1.wav" id="19_j4r3y"]
+[ext_resource type="AudioStream" uid="uid://kro0ovc0cjdm" path="res://audio/UI/UI_Menu_PassPageGallery2.wav" id="20_e3jpa"]
+[ext_resource type="AudioStream" uid="uid://by10uj8igj6jg" path="res://audio/UI/UI_Menu_PassPageGallery3.wav" id="21_ngr14"]
+[ext_resource type="AudioStream" uid="uid://bewv03ms2w2ji" path="res://audio/UI/UI_Menu_PassPageGallery4.wav" id="22_7vt12"]
+[ext_resource type="AudioStream" uid="uid://c4wsysvmp6bhy" path="res://audio/UI/UI_Menu_PassPageGallery5.wav" id="23_ygnpj"]
+[ext_resource type="AudioStream" uid="uid://b3i05o1dajb3f" path="res://audio/UI/UI_Menu_Enter.wav" id="24_e5amx"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_3mp1k"]
 playback_mode = 1
@@ -51,55 +58,112 @@ stream_3/weight = 1.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_16ukn"]
 random_pitch = 1.05
-streams_count = 1
-stream_0/stream = ExtResource("12_a6gee")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_k1iax"]
+playback_mode = 1
+streams_count = 2
+stream_0/stream = ExtResource("15_7c7tl")
 stream_0/weight = 1.0
+stream_1/stream = ExtResource("16_rdml2")
+stream_1/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_jp878"]
+playback_mode = 1
+streams_count = 2
+stream_0/stream = ExtResource("17_l1gvw")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("18_uliyj")
+stream_1/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_la0vi"]
+playback_mode = 1
+streams_count = 5
+stream_0/stream = ExtResource("19_j4r3y")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("20_e3jpa")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("21_ngr14")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("22_7vt12")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("23_ygnpj")
+stream_4/weight = 1.0
 
 [node name="Audio" type="Node"]
 script = ExtResource("1_5m82e")
 
 [node name="Musica" type="Node" parent="."]
 
-[node name="MenuPrincipal" type="AudioStreamPlayer" parent="Musica"]
+[node name="MusicaMenuPrincipal" type="AudioStreamPlayer" parent="Musica"]
 bus = &"Musica"
 
-[node name="Juego" type="AudioStreamPlayer" parent="Musica"]
+[node name="MusicaJuego" type="AudioStreamPlayer" parent="Musica"]
+bus = &"Musica"
+
+[node name="JingleVictoria" type="AudioStreamPlayer" parent="Musica"]
+bus = &"Musica"
+
+[node name="JingleDerrota" type="AudioStreamPlayer" parent="Musica"]
 bus = &"Musica"
 
 [node name="SFX" type="Node" parent="."]
 
 [node name="InGame" type="Node" parent="SFX"]
 
+[node name="SonidoAmbiente" type="AudioStreamPlayer" parent="SFX/InGame"]
+stream = ExtResource("2_hscaa")
+
 [node name="MedidorDia" type="AudioStreamPlayer" parent="SFX/InGame"]
 stream = ExtResource("2_hscaa")
 
 [node name="AlertaCombo" type="AudioStreamPlayer" parent="SFX/InGame"]
 
-[node name="CartasPasivas" type="AudioStreamPlayer" parent="SFX/InGame"]
-stream = SubResource("AudioStreamRandomizer_01lag")
+[node name="Medidor" type="Node" parent="SFX/InGame"]
 
-[node name="JugarCarta" type="AudioStreamPlayer" parent="SFX/InGame"]
+[node name="MedidorSube" type="AudioStreamPlayer" parent="SFX/InGame/Medidor"]
+bus = &"SFX"
+
+[node name="MedidorBaja" type="AudioStreamPlayer" parent="SFX/InGame/Medidor"]
+bus = &"SFX"
+
+[node name="MedidorLoco" type="AudioStreamPlayer" parent="SFX/InGame/Medidor"]
+stream = ExtResource("3_hddw4")
+bus = &"SFX"
+
+[node name="MedidorNormal" type="AudioStreamPlayer" parent="SFX/InGame/Medidor"]
+bus = &"SFX"
+
+[node name="Cartas" type="Node" parent="SFX/InGame"]
+
+[node name="CartasPasivas" type="AudioStreamPlayer" parent="SFX/InGame/Cartas"]
+
+[node name="JugarCarta" type="AudioStreamPlayer" parent="SFX/InGame/Cartas"]
 stream = SubResource("AudioStreamRandomizer_3mp1k")
-max_polyphony = 3
+max_polyphony = 2
 bus = &"SFX"
 
-[node name="SeleccionarCarta" type="AudioStreamPlayer" parent="SFX/InGame"]
+[node name="SeleccionarCarta" type="AudioStreamPlayer" parent="SFX/InGame/Cartas"]
+stream = ExtResource("12_a6gee")
+max_polyphony = 2
 bus = &"SFX"
 
-[node name="Reload" type="AudioStreamPlayer" parent="SFX/InGame"]
+[node name="Reload" type="AudioStreamPlayer" parent="SFX/InGame/Cartas"]
 stream = SubResource("AudioStreamRandomizer_ec6wu")
 
-[node name="MedidorSube" type="AudioStreamPlayer" parent="SFX/InGame"]
-bus = &"SFX"
+[node name="TipoDeCartas" type="Node" parent="SFX/InGame"]
 
-[node name="MedidorBaja" type="AudioStreamPlayer" parent="SFX/InGame"]
-bus = &"SFX"
+[node name="TipoNormal" type="AudioStreamPlayer" parent="SFX/InGame/TipoDeCartas"]
+max_polyphony = 2
 
-[node name="MedidorLoco" type="AudioStreamPlayer" parent="SFX/InGame"]
-bus = &"SFX"
+[node name="TipoFuego" type="AudioStreamPlayer" parent="SFX/InGame/TipoDeCartas"]
+max_polyphony = 2
 
-[node name="MedidorNormal" type="AudioStreamPlayer" parent="SFX/InGame"]
-bus = &"SFX"
+[node name="TipoPeste" type="AudioStreamPlayer" parent="SFX/InGame/TipoDeCartas"]
+stream = ExtResource("10_3uvl3")
+max_polyphony = 2
+
+[node name="TipoPasiva" type="AudioStreamPlayer" parent="SFX/InGame/TipoDeCartas"]
+max_polyphony = 2
 
 [node name="Menus" type="Node" parent="SFX"]
 
@@ -113,9 +177,16 @@ max_polyphony = 3
 bus = &"SFX"
 
 [node name="SlideStarted" type="AudioStreamPlayer" parent="SFX/Menus"]
+stream = SubResource("AudioStreamRandomizer_k1iax")
 
 [node name="SlideFinished" type="AudioStreamPlayer" parent="SFX/Menus"]
+stream = SubResource("AudioStreamRandomizer_jp878")
+
+[node name="MovimientoPosit" type="AudioStreamPlayer" parent="SFX/Menus"]
 
 [node name="PasarPagina" type="AudioStreamPlayer" parent="SFX/Menus"]
+stream = SubResource("AudioStreamRandomizer_la0vi")
+max_polyphony = 4
 
 [node name="AbrirLibro" type="AudioStreamPlayer" parent="SFX/Menus"]
+stream = ExtResource("24_e5amx")

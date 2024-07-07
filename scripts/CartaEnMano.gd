@@ -105,6 +105,7 @@ func set_carta(_carta):
 func _on_boton_carta_pressed():
 	if !carta_jugada && !carta_oculta:
 		Audio.play_jugar_carta()
+		Audio.play_sonido_tipo(self.carta.tipo, self.carta.desbloquea_pasiva)
 		carta_jugada = true
 		ocultar_descripcion()
 		subir_carta_mas()

@@ -166,6 +166,7 @@ func comprobar_combo(resultado):
 	print(hay_multiplicador, !hay_pasiva, mismo_tipo, resultado)
 	if hay_multiplicador && !hay_pasiva && mismo_tipo:
 		alerta_combo.mostrar_alerta_combo()
+		Audio.play_alerta_combo()
 		return resultado * 1.5
 	else:
 		return resultado

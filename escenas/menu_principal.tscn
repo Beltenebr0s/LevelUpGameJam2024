@@ -108,6 +108,7 @@ texture = ExtResource("2_7wfuc")
 expand_mode = 1
 
 [node name="PaginaInicio" type="Panel" parent="LibroAbierto"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -182,6 +183,7 @@ texture = ExtResource("6_xlrri")
 expand_mode = 1
 
 [node name="PaginaSettings" parent="LibroAbierto" instance=ExtResource("7_krxbc")]
+visible = false
 layout_mode = 1
 
 [node name="PaginaFinal" type="Panel" parent="LibroAbierto"]
@@ -654,7 +656,6 @@ text = "Pulgadrummer
 Andres2751"
 
 [node name="PaginaGaleria" type="Panel" parent="LibroAbierto"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -765,6 +766,7 @@ offset_top = 45.0
 offset_right = 76.0
 offset_bottom = 200.0
 shortcut = SubResource("Shortcut_n7q0k")
+shortcut_in_tooltip = false
 texture_normal = ExtResource("21_4qava")
 texture_hover = ExtResource("22_ly484")
 ignore_texture_size = true

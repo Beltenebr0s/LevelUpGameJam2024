@@ -495,6 +495,8 @@ stretch_mode = 0
 [connection signal="pressed" from="LibroAbierto/PaginaInicio/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="LibroAbierto/PaginaInicio/Explicacion" to="." method="_on_explicacion_pressed"]
 [connection signal="pressed" from="LibroAbierto/PaginaInicio/Exit" to="." method="_on_exit_pressed"]
+[connection signal="focus_entered" from="LibroAbierto/Home" to="." method="_on_home_focus_entered"]
+[connection signal="focus_exited" from="LibroAbierto/Home" to="." method="_on_home_focus_exited"]
 [connection signal="pressed" from="LibroAbierto/Home" to="." method="_on_home_pressed"]
 
 [editable path="LibroAbierto/PaginaTutorial123/ObjetivoJuego/medidor_locura"]
