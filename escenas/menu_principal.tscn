@@ -308,6 +308,7 @@ texture = ExtResource("9_86xqj")
 expand_mode = 1
 
 [node name="Historia" type="Label" parent="LibroAbierto/PaginaFinal/Final"]
+visible = false
 layout_mode = 0
 offset_left = 92.0
 offset_top = 109.0
