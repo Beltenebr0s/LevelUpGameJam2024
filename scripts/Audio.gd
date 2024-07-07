@@ -56,6 +56,10 @@ var tween : Tween
 func _ready():
 	lista_sonidos_tipos = [tipo_normal, tipo_fuego, tipo_peste, tipo_pasiva]
 	ratio = (abs(vol_max) + abs(vol_min))/100
+	
+	change_master_volume(porcentaje_master)
+	change_music_volume(porcentaje_musica)
+	change_sfx_volume(porcentaje_sfx)
 	pass
 
 func change_master_volume(_volumen : float):
@@ -84,6 +88,7 @@ func fade_in(_player, _time):
 	_player.play()
 	tween = get_tree().create_tween()
 	await tween.tween_property(_player, "volume_db", 0, _time).finished
+	_player.volume_db = 0
 
 func fade_out(_player, _time):
 	_player.volume_db = 0
@@ -103,15 +108,15 @@ func transition_to_menu():
 	fade_out(musica_juego, 1.5)
 
 func play_victoria():
-	if jingle_victoria.stream != null:
-		jingle_victoria.play()
-		await jingle_victoria.finished
-	musica_menu_principal.play()
+	jingle_victoria.play()
+	await jingle_victoria.finished
+	if !musica_juego.playing:
+		musica_menu_principal.play()
 func play_derrota():
-	if jingle_derrota.stream != null:
-		jingle_derrota.play()
-		await jingle_derrota.finished
-	musica_menu_principal.play()
+	jingle_derrota.play()
+	await jingle_derrota.finished
+	if !musica_juego.playing:
+		musica_menu_principal.play()
 
 func play_medidor_dia():
 	await get_tree().create_timer(0.1).timeout

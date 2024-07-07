@@ -21,7 +21,7 @@ func _ready():
 	auto_play.button_pressed = Global.auto_skip_ia
 	graficos_4k.button_pressed = Global.graficos_4k
 	
-	for button in [mute_master, mute_musica, mute_SFX, auto_play]:
+	for button in [mute_master, mute_musica, mute_SFX, auto_play, graficos_4k]:
 		button.toggled.connect(Audio.play_toggle_eye)
 
 func _on_volumen_master_value_changed(value):

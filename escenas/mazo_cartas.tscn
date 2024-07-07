@@ -92,6 +92,7 @@ descripcion = "¡Tus hechizos se hacen más poderosos! Esta noche se iluminará 
 counter = "El ayuntamiento ha organizado una fiesta y tus hechizos han sido los fuegos artificiales perfectos para terminar el día. "
 tipo = 3
 funcion = 2
+reutilizable = true
 requisitos = 40
 valor = 60
 can_counter = false

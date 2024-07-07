@@ -32,11 +32,11 @@
 [ext_resource type="Texture2D" uid="uid://dtkotbexj23ao" path="res://texturas/Creditos/Catwitch_boceto_creditos.png" id="23_6qc8v"]
 [ext_resource type="PackedScene" uid="uid://b50qc4rv6vsgo" path="res://escenas/fade.tscn" id="24_b6nnq"]
 [ext_resource type="Texture2D" uid="uid://do8wo4v6n4ymn" path="res://texturas/Creditos/yo.png" id="24_gopgn"]
-[ext_resource type="Texture2D" uid="uid://ca1fsldhjwru" path="res://texturas/rey.png" id="24_qcham"]
+[ext_resource type="Texture2D" uid="uid://ca1fsldhjwru" path="res://texturas/rey.png" id="24_iixgb"]
 [ext_resource type="PackedScene" uid="uid://dheidflovtqfd" path="res://escenas/score_request.tscn" id="25_j1t5w"]
 [ext_resource type="Texture2D" uid="uid://cy3shejisbqk6" path="res://texturas/Creditos/Its_a_me.png" id="25_kev21"]
-[ext_resource type="Texture2D" uid="uid://bkeqxly40g1wu" path="res://texturas/luna.png" id="27_gngbf"]
-[ext_resource type="Texture2D" uid="uid://bjedldqpabi2k" path="res://texturas/Laser.png" id="28_42ux0"]
+[ext_resource type="Texture2D" uid="uid://bkeqxly40g1wu" path="res://texturas/luna.png" id="27_x2nep"]
+[ext_resource type="Texture2D" uid="uid://bjedldqpabi2k" path="res://texturas/Laser.png" id="28_nptvp"]
 [ext_resource type="Texture2D" uid="uid://debi4dgu31aad" path="res://texturas/Titulo_no_sombra_dorado.png" id="28_tjudq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gt4ad"]
@@ -207,6 +207,7 @@ texture = ExtResource("6_xlrri")
 expand_mode = 1
 
 [node name="PaginaSettings" parent="LibroAbierto" instance=ExtResource("7_krxbc")]
+visible = false
 layout_mode = 1
 
 [node name="PaginaFinal" type="Panel" parent="LibroAbierto"]
@@ -617,7 +618,6 @@ scale = Vector2(0.567926, 0.567926)
 icon = ExtResource("19_5jf37")
 
 [node name="PaginaCredits" type="Panel" parent="LibroAbierto"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -799,7 +799,7 @@ offset_left = 760.5
 offset_top = 266.5
 offset_right = 844.5
 offset_bottom = 329.5
-texture = ExtResource("24_qcham")
+texture = ExtResource("24_iixgb")
 expand_mode = 1
 stretch_mode = 4
 
@@ -831,7 +831,7 @@ offset_top = 348.5
 offset_right = 890.5
 offset_bottom = 458.5
 rotation = 0.339992
-texture = ExtResource("27_gngbf")
+texture = ExtResource("27_x2nep")
 expand_mode = 1
 stretch_mode = 4
 
@@ -843,7 +843,7 @@ offset_top = 89.5
 offset_right = 764.5
 offset_bottom = 123.5
 rotation = 0.418508
-texture = ExtResource("28_42ux0")
+texture = ExtResource("28_nptvp")
 expand_mode = 1
 stretch_mode = 4
 

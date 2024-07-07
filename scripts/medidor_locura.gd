@@ -23,7 +23,7 @@ func suma_locos(locos_nuevos : int):
 		locos = 1
 	Audio.play_medidor_cambio(locos - medidor.value)
 	var tween = create_tween()
-	tween.tween_property(medidor, "value", locos, 0.5)
+	tween.tween_property(medidor, "value", locos, 1)
 
 func actualizar_medidor():
 	texto_contador.text = str(medidor.value)
