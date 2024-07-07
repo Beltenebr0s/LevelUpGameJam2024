@@ -1,25 +1,32 @@
-[gd_scene load_steps=15 format=3 uid="uid://b80mbbnuqe78v"]
+[gd_scene load_steps=22 format=3 uid="uid://b80mbbnuqe78v"]
 
 [ext_resource type="Script" path="res://scripts/MazoCartas.gd" id="1_pf761"]
 [ext_resource type="PackedScene" uid="uid://b47xbta5payek" path="res://escenas/carta.tscn" id="2_y5ux8"]
+[ext_resource type="Texture2D" uid="uid://b5dxr0iyainy1" path="res://texturas/cartas/Petardos.jpg" id="3_2t35l"]
 [ext_resource type="Texture2D" uid="uid://bsoujiee88glm" path="res://texturas/cartas/Incenciar_Molino.jpg" id="3_4i2cr"]
 [ext_resource type="Texture2D" uid="uid://bch8xlvm2gyay" path="res://texturas/cartas/Bombas_Fetidas.jpg" id="4_6nxnp"]
 [ext_resource type="Texture2D" uid="uid://wtrb7t5nuou6" path="res://texturas/cartas/Vigil.jpg" id="5_jgnyf"]
 [ext_resource type="Texture2D" uid="uid://bk1b5bs1xirll" path="res://texturas/cartas/Plaga_ratas.png" id="5_l6taq"]
 [ext_resource type="Texture2D" uid="uid://d2v7o0fwrj8gk" path="res://texturas/cartas/Envenenar_el_pozo.jpg" id="5_mupmq"]
+[ext_resource type="Texture2D" uid="uid://j1jili5h3aj2" path="res://texturas/cartas/Toro_de_fuego.jpg" id="5_t1u4y"]
 [ext_resource type="Texture2D" uid="uid://ua6tddjd5q4d" path="res://texturas/cartas/Niebla_venenosa.jpg" id="6_06ux5"]
 [ext_resource type="Texture2D" uid="uid://cs0xqdvio6sf0" path="res://texturas/cartas/Cabeza_de_caballo.png" id="6_87ovp"]
+[ext_resource type="Texture2D" uid="uid://tv5qitvrfac2" path="res://texturas/cartas/Lluvia_de_sangre.jpg" id="6_126jb"]
+[ext_resource type="Texture2D" uid="uid://dce4aveal15a8" path="res://texturas/cartas/Luna_de_sangre.jpg" id="6_crg15"]
+[ext_resource type="Texture2D" uid="uid://dedfp5by0rsum" path="res://texturas/cartas/pudrir_el_pan.jpg" id="7_7u2fu"]
 [ext_resource type="Texture2D" uid="uid://bg7185unrq5nw" path="res://texturas/cartas/Pozo_sin_agua.jpg" id="9_cq5c4"]
 [ext_resource type="Texture2D" uid="uid://dxysl04btnj38" path="res://texturas/cartas/Caballero_Maldito.jpg" id="10_dpifn"]
 [ext_resource type="Texture2D" uid="uid://dm3kfdrqu7wp0" path="res://texturas/cartas/Chupacabras.jpg" id="10_o0qfg"]
 [ext_resource type="Texture2D" uid="uid://d0mrj2m1h2apw" path="res://texturas/cartas/cirujano.jpg" id="11_rb452"]
 [ext_resource type="Texture2D" uid="uid://ctcb2b3n18aix" path="res://texturas/cartas/sacerdote.png" id="11_ux4o5"]
+[ext_resource type="Texture2D" uid="uid://bp1s1qskrqx7v" path="res://texturas/cartas/Defenestrar_a_la_enana.jpg" id="14_bob7k"]
+[ext_resource type="Texture2D" uid="uid://bvxucmmipmk18" path="res://texturas/cartas/simios_agresivos_pix.jpg" id="16_fgw5d"]
 
 [node name="MazoCartas" type="Node2D"]
 script = ExtResource("1_pf761")
 
 [node name="Petardos" parent="." instance=ExtResource("2_y5ux8")]
-texture = null
+texture = ExtResource("3_2t35l")
 titulo = "Tirar petardos"
 descripcion = "Un pequeño espectáculo de pirotecnia ayudará a tu causa, privando del sueño a los vecinos."
 counter = "Los petardos que has comprado eran defectuosos y te han explotado en la cara."
@@ -44,7 +51,7 @@ tipo = 1
 valor = 30
 
 [node name="Toro" parent="." instance=ExtResource("2_y5ux8")]
-texture = null
+texture = ExtResource("5_t1u4y")
 titulo = "Toro de fuego"
 descripcion = "Esta noche, en la fiesta, habrá un encierro. No se requiere de mucha habilidad mágica para hacer que los cuernos escupan fuego."
 counter = "Esta noche han caído unas lluvias torrenciales, no es tu día de suerte."
@@ -53,14 +60,18 @@ requisitos = 30
 valor = 50
 
 [node name="LluviaFuego" parent="." instance=ExtResource("2_y5ux8")]
-titulo = "Lluvia de fuego"
-descripcion = "¡Tus hechizos se hacen más poderosos! Esta noche se iluminará el cielo con la lluvia de fuego que conjurarás."
+texture = ExtResource("6_126jb")
+titulo = "Lluvia de sangre"
+descripcion = "¡Tus hechizos se hacen más poderosos! Esta noche se iluminará el cielo con la lluvia de sangre que conjurarás."
 counter = "El ayuntamiento ha organizado una fiesta y tus hechizos han sido los fuegos artificiales perfectos para terminar el día. "
-tipo = 1
+tipo = 3
+funcion = 2
 requisitos = 40
 valor = 60
+can_counter = false
 
 [node name="Pan" parent="." instance=ExtResource("2_y5ux8")]
+texture = ExtResource("7_7u2fu")
 titulo = "Pudrir el pan"
 descripcion = "Un poco de agua en las hogazas de pan y mañana estarán cubiertas de una deliciosa capa de moho."
 counter = "El pan mojado resultó ser una fantástica materia prima para las torrijas."
@@ -123,6 +134,7 @@ reutilizable = true
 valor = 15
 
 [node name="Enana" parent="." instance=ExtResource("2_y5ux8")]
+texture = ExtResource("14_bob7k")
 titulo = "¡Defenestren a la enana!"
 descripcion = "La enana Ximiaca es muy manejable, será fácil tirarla de la torre más alta del pueblo."
 counter = "El ayuntamiento le subvenciona una silla de ruedas."
@@ -139,16 +151,17 @@ requisitos = 30
 valor = 60
 
 [node name="Monos" parent="." instance=ExtResource("2_y5ux8")]
-texture = null
+texture = ExtResource("16_fgw5d")
 titulo = "Simios agresivos"
 descripcion = "¡Libera a tu ejército de simios para que cause estragos en el pueblo! Unos van armados, otros usan sus propios excrementos como arma arrojadiza."
 counter = "Adetokumbo soborna al rey mono con platános de Canarias."
 valor = 25
 
 [node name="Amanece" parent="." instance=ExtResource("2_y5ux8")]
-texture = null
+texture = ExtResource("6_crg15")
 titulo = "Anochece, que no es poco"
 descripcion = "El Astro Sangriento se eleva por el oeste, tiñiendo de carmesí los bosques del pueblo. Ahora somos imparables."
+tipo = 3
 reutilizable = true
 requisitos = 120
 valor = 150

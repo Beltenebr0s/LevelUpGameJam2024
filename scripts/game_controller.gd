@@ -115,7 +115,7 @@ func jugada_ia():
 func aplicar_counter():
 	if randf() <= mano_ia.prob_counter:
 		print("counter")
-		selected_cards.shafel()
+		selected_cards.shuffle()
 		for carta in selected_cards: 
 			if !carta.desbloquea_pasiva && carta.can_counter:
 				mano_ia.mano[mano_ia.mano.size() - 1].descripcion = carta.counter
@@ -181,7 +181,11 @@ func comprobar_combo(resultado):
 	for i in range(selected_cards.size() - 1):
 		mismo_tipo = mismo_tipo && (selected_cards[i].tipo == selected_cards[i + 1].tipo)
 	print(hay_multiplicador, !hay_pasiva, mismo_tipo, resultado)
-	if hay_multiplicador && !hay_pasiva && mismo_tipo:
+	if carta_combo.tipo == 3 && hay_multiplicador && !hay_pasiva && mismo_tipo:
+		alerta_combo.mostrar_alerta_combo()
+		Audio.play_alerta_combo()
+		return carta_combo.valor * 5
+	elif hay_multiplicador && !hay_pasiva && mismo_tipo:
 		alerta_combo.mostrar_alerta_combo()
 		Audio.play_alerta_combo()
 		return carta_combo.valor * 0.5
@@ -221,5 +225,3 @@ func actualizar_reloj(turno_jugador : bool):
 	else:
 		reloj.hacer_de_dia()
 	await reloj.animation_finished
-
-
