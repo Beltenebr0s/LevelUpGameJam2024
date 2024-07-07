@@ -50,22 +50,24 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -906.0
-offset_top = -245.0
+offset_top = -230.0
 offset_right = -500.0
-offset_bottom = 281.0
+offset_bottom = 296.0
 grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(0.946448, 0.946448)
 
 [node name="Titulo" parent="Settings" index="0"]
+offset_top = 12.679
+offset_bottom = 80.679
 text = "AJUSTES"
 
 [node name="VolumenMaster" type="HSlider" parent="Settings"]
 layout_mode = 0
-offset_left = 74.0
-offset_top = 148.0
-offset_right = 330.0
-offset_bottom = 164.0
+offset_left = 73.9607
+offset_top = 119.394
+offset_right = 329.961
+offset_bottom = 148.394
 
 [node name="Label" type="Label" parent="Settings/VolumenMaster"]
 layout_mode = 1
@@ -90,17 +92,17 @@ offset_bottom = 48.0
 [node name="Label2" type="Label" parent="Settings/VolumenMaster"]
 layout_mode = 0
 offset_left = 168.0
-offset_top = 16.6039
+offset_top = 27.0
 offset_right = 213.0
-offset_bottom = 46.6039
+offset_bottom = 57.0
 text = "Mute"
 
 [node name="VolumenMusica" type="HSlider" parent="Settings"]
 layout_mode = 0
-offset_left = 74.0
-offset_top = 260.0
-offset_right = 330.0
-offset_bottom = 276.0
+offset_left = 73.9607
+offset_top = 231.394
+offset_right = 329.961
+offset_bottom = 260.394
 
 [node name="Label" type="Label" parent="Settings/VolumenMusica"]
 layout_mode = 1
@@ -125,17 +127,17 @@ offset_bottom = 48.0
 [node name="Label2" type="Label" parent="Settings/VolumenMusica"]
 layout_mode = 0
 offset_left = 168.0
-offset_top = 16.6039
+offset_top = 27.0
 offset_right = 213.0
-offset_bottom = 46.6039
+offset_bottom = 57.0
 text = "Mute"
 
 [node name="VolumenSFX" type="HSlider" parent="Settings"]
 layout_mode = 0
-offset_left = 74.0
-offset_top = 372.0
-offset_right = 330.0
-offset_bottom = 388.0
+offset_left = 73.9607
+offset_top = 343.394
+offset_right = 329.961
+offset_bottom = 372.394
 
 [node name="Label" type="Label" parent="Settings/VolumenSFX"]
 layout_mode = 1
@@ -161,10 +163,23 @@ offset_bottom = 48.0
 [node name="Label2" type="Label" parent="Settings/VolumenSFX"]
 layout_mode = 0
 offset_left = 168.0
-offset_top = 17.6605
+offset_top = 27.0
 offset_right = 213.0
-offset_bottom = 47.6605
+offset_bottom = 57.0
 text = "Mute"
+
+[node name="SkipIa" type="CheckButton" parent="Settings"]
+offset_left = 265.62
+offset_top = 433.875
+offset_right = 309.62
+offset_bottom = 477.875
+
+[node name="Label" type="Label" parent="Settings/SkipIa"]
+offset_left = -166.341
+offset_top = 3.47112
+offset_right = -6.34064
+offset_bottom = 33.4711
+text = "Auto skip turno IA"
 
 [connection signal="drag_ended" from="Settings/VolumenMaster" to="." method="_on_volumen_master_drag_ended"]
 [connection signal="drag_started" from="Settings/VolumenMaster" to="." method="_on_volumen_master_drag_started"]
@@ -178,5 +193,6 @@ text = "Mute"
 [connection signal="drag_started" from="Settings/VolumenSFX" to="." method="_on_volumen_sfx_drag_started"]
 [connection signal="value_changed" from="Settings/VolumenSFX" to="." method="_on_volumen_sfx_value_changed"]
 [connection signal="pressed" from="Settings/VolumenSFX/MuteSFX" to="." method="_on_mute_sfx_pressed"]
+[connection signal="pressed" from="Settings/SkipIa" to="." method="_on_mute_master_pressed"]
 
 [editable path="Settings"]

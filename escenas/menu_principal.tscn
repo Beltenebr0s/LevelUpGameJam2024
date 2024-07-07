@@ -374,7 +374,7 @@ offset_right = 872.5
 offset_bottom = 270.5
 text = "Pero ten cuidado, porque el rey podrá jugar dos cartas por el día para mantener la paz y el orden. Para ganar al rey deberás elegir bien tus cartas y conseguir al menos cien adeptos para el séptimo día."
 
-[node name="Siguiente" type="Button" parent="LibroAbierto/PaginaHistoria" groups=["ui_button"]]
+[node name="Siguiente" type="Button" parent="LibroAbierto/PaginaHistoria" groups=["boton_pagina"]]
 layout_mode = 0
 offset_left = 799.5
 offset_top = 435.5
@@ -555,7 +555,7 @@ position = Vector2(-157.175, 790.243)
 [node name="TextEdit" parent="LibroAbierto/PaginaTutorial/ObjetivoJuego/medidor_locura/Sprite2D" index="0"]
 metadata/_edit_use_anchors_ = true
 
-[node name="Siguiente2" type="Button" parent="LibroAbierto/PaginaTutorial" groups=["ui_button"]]
+[node name="Siguiente2" type="Button" parent="LibroAbierto/PaginaTutorial" groups=["boton_pagina"]]
 layout_mode = 0
 offset_left = 799.5
 offset_top = 435.5
@@ -565,7 +565,6 @@ scale = Vector2(0.567926, 0.567926)
 icon = ExtResource("19_5jf37")
 
 [node name="PaginaCredits" type="Panel" parent="LibroAbierto"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -617,9 +616,9 @@ nubi_r"
 [node name="SeccionProgramacion" type="Label" parent="LibroAbierto/PaginaCredits/Credits"]
 layout_mode = 0
 offset_left = 86.0
-offset_top = 211.0
-offset_right = 278.0
-offset_bottom = 248.0
+offset_top = 199.0
+offset_right = 301.0
+offset_bottom = 241.0
 theme_type_variation = &"HeaderMedium"
 text = "PROGRAMACIÓN"
 
@@ -629,7 +628,7 @@ layout_mode = 0
 offset_left = 9.0
 offset_top = 31.0
 offset_right = 360.0
-offset_bottom = 140.0
+offset_bottom = 150.0
 text = "phoe_99
 ATM98
 bea3589
@@ -743,7 +742,7 @@ offset_bottom = 535.5
 texture = ExtResource("5_ma7rj")
 expand_mode = 1
 
-[node name="BtnSiguiente" type="Button" parent="LibroAbierto/PaginaGaleria" groups=["ui_button"]]
+[node name="BtnSiguiente" type="Button" parent="LibroAbierto/PaginaGaleria" groups=["boton_pagina"]]
 layout_mode = 0
 offset_left = 398.5
 offset_top = 448.5
@@ -752,7 +751,7 @@ offset_bottom = 618.5
 scale = Vector2(0.567926, 0.567926)
 icon = ExtResource("19_5jf37")
 
-[node name="Anterior" type="Button" parent="LibroAbierto/PaginaGaleria" groups=["ui_button"]]
+[node name="Anterior" type="Button" parent="LibroAbierto/PaginaGaleria" groups=["boton_pagina"]]
 layout_mode = 0
 offset_left = 137.0
 offset_top = 448.5
@@ -761,7 +760,7 @@ offset_bottom = 619.5
 scale = Vector2(0.567926, 0.567926)
 icon = ExtResource("20_ma2qo")
 
-[node name="Home" type="TextureButton" parent="LibroAbierto" groups=["ui_button"]]
+[node name="Home" type="TextureButton" parent="LibroAbierto" groups=["postit"]]
 layout_mode = 0
 offset_left = -61.0
 offset_top = 45.0

@@ -17,14 +17,25 @@ var SAVE_FILE_DIRECTION = 'user://gamescores.save'
 var lista_cartas = []
 @onready var indice_carta = 0
 var ui_buttons = []
+var botones_pagina = []
+var postits = []
 
 func _ready():
 	ui_buttons = get_tree().get_nodes_in_group("ui_button")
 	for button in ui_buttons:
-		button.mouse_entered.connect(_on_button_mouse_entered)
-		button.button_down.connect(_on_button_down)
-		button.pressed.connect(_on_button_pressed)
-		
+		button.mouse_entered.connect(Audio.play_boton_select)
+		button.button_down.connect(Audio.play_boton_down)
+		button.pressed.connect(Audio.play_pasar_pagina)
+	
+	botones_pagina = get_tree().get_nodes_in_group("boton_pagina")
+	for boton in botones_pagina:
+		boton.pressed.connect(Audio.play_pasar_pagina)
+	
+	postits = get_tree().get_nodes_in_group("postit")
+	for boton in postits:
+		boton.mouse_entered.connect(Audio.play_pasar_pagina)
+		boton.mouse_exited.connect(Audio.play_movimiento_posit)
+	
 	lista_cartas = $MazoCartas.get_children()
 	
 	slider_musica.value = Audio.porcentaje_musica
@@ -209,9 +220,3 @@ func _on_btn_siguiente_pressed():
 	mostrar_carta()
 	Audio.play_pasar_pagina()
 
-func _on_button_mouse_entered():
-	Audio.play_boton_select()
-func _on_button_down():
-	Audio.play_boton_down()
-func _on_button_pressed():
-	Audio.play_pasar_pagina()

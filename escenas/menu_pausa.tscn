@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://du0j2ib4uoe6b" path="res://texturas/menus/Libro_para_Victoria_y_derrota.png" id="2_1307c"]
 [ext_resource type="Texture2D" uid="uid://ds8j1l4sv3678" path="res://texturas/menus/Borde_Ilustraciones_Libro.png" id="3_t8ss2"]
 [ext_resource type="Texture2D" uid="uid://cgrucv55xpoo3" path="res://texturas/menus/Menu_Inicio_Ilustracion.png" id="4_jbp41"]
-[ext_resource type="PackedScene" path="res://escenas/pagina_settings.tscn" id="6_jb6xe"]
+[ext_resource type="PackedScene" uid="uid://dft4y2ambv4d3" path="res://escenas/pagina_settings.tscn" id="6_jb6xe"]
 [ext_resource type="Texture2D" uid="uid://ctcb2b3n18aix" path="res://texturas/cartas/sacerdote.png" id="11_f2cjj"]
 [ext_resource type="Texture2D" uid="uid://c4g4cu7tbfmo4" path="res://texturas/cartas/Borde_Purpura.png" id="12_1a5la"]
 [ext_resource type="Texture2D" uid="uid://bsoujiee88glm" path="res://texturas/cartas/Incenciar_Molino.jpg" id="13_5c7bm"]
@@ -134,6 +134,7 @@ offset_bottom = 419.0
 text = "SALIR :("
 
 [node name="PaginaSettings" parent="LibroAbierto" instance=ExtResource("6_jb6xe")]
+visible = false
 layout_mode = 1
 
 [node name="PaginaTutorial123" type="Panel" parent="LibroAbierto"]
@@ -480,7 +481,7 @@ position = Vector2(-157.175, 790.243)
 [node name="TextEdit" parent="LibroAbierto/PaginaTutorial/ObjetivoJuego/medidor_locura/Sprite2D" index="0"]
 metadata/_edit_use_anchors_ = true
 
-[node name="Home" type="TextureButton" parent="LibroAbierto"]
+[node name="Home" type="TextureButton" parent="LibroAbierto" groups=["postit"]]
 layout_mode = 0
 offset_left = -59.5
 offset_top = 47.0
@@ -495,8 +496,6 @@ stretch_mode = 0
 [connection signal="pressed" from="LibroAbierto/PaginaInicio/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="LibroAbierto/PaginaInicio/Explicacion" to="." method="_on_explicacion_pressed"]
 [connection signal="pressed" from="LibroAbierto/PaginaInicio/Exit" to="." method="_on_exit_pressed"]
-[connection signal="focus_entered" from="LibroAbierto/Home" to="." method="_on_home_focus_entered"]
-[connection signal="focus_exited" from="LibroAbierto/Home" to="." method="_on_home_focus_exited"]
 [connection signal="pressed" from="LibroAbierto/Home" to="." method="_on_home_pressed"]
 
 [editable path="LibroAbierto/PaginaTutorial123/ObjetivoJuego/medidor_locura"]
