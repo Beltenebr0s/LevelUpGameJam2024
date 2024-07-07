@@ -196,10 +196,10 @@ func print_score(score):
 	ordenar_y_mostrar_ranking(ranking_score_list)
 
 func ordenar_y_mostrar_ranking(scores):
-	var position : int = 1
+	var posicion : int = 1
 	scores.sort_custom(func(a, b): return a['Score'] > b['Score'])
 	for score in scores:
-		ranking_text.text += str(position)
+		ranking_text.text += str(posicion)
 		ranking_text.text += '. '
 		ranking_text.text += str(score['Score'])
 		ranking_text.text += ' - - - - - - - '
@@ -207,13 +207,13 @@ func ordenar_y_mostrar_ranking(scores):
 		ranking_text.text += ' '
 		ranking_text.text += str(score['Time'])
 		ranking_text.text += '\n'
-		position+=1;
-		if position > 8:
+		posicion+=1;
+		if posicion > 8:
 			break
 
 func convert_score_str_to_dict(score_str : String):
 	var score_split = score_str.split(",") # 0 Username, 1 Score, 2 Time
-	var raw_username
+	var _raw_username
 	var raw_score = int(get_score(score_split[1]))
 	var raw_time = get_time(score_split[2])
 	var save_dict = {
@@ -222,7 +222,7 @@ func convert_score_str_to_dict(score_str : String):
 		"Time" : raw_time
 	}
 	return save_dict
-func get_username(str_user : String) -> String:
+func get_username(_str_user : String) -> String:
 	return ""
 func get_score(str_score : String) -> String:
 	var regex = RegEx.new()

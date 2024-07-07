@@ -1,10 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://b80mbbnuqe78v"]
+[gd_scene load_steps=23 format=3 uid="uid://b80mbbnuqe78v"]
 
 [ext_resource type="Script" path="res://scripts/MazoCartas.gd" id="1_pf761"]
 [ext_resource type="PackedScene" uid="uid://b47xbta5payek" path="res://escenas/carta.tscn" id="2_y5ux8"]
 [ext_resource type="Texture2D" uid="uid://b5dxr0iyainy1" path="res://texturas/cartas/Petardos.jpg" id="3_2t35l"]
 [ext_resource type="Texture2D" uid="uid://bsoujiee88glm" path="res://texturas/cartas/Incenciar_Molino.jpg" id="3_4i2cr"]
 [ext_resource type="Texture2D" uid="uid://bch8xlvm2gyay" path="res://texturas/cartas/Bombas_Fetidas.jpg" id="4_6nxnp"]
+[ext_resource type="Texture2D" uid="uid://csuynl0wqgna3" path="res://texturas/cartas/almacen_explo.jpg" id="4_pr83y"]
 [ext_resource type="Texture2D" uid="uid://wtrb7t5nuou6" path="res://texturas/cartas/Vigil.jpg" id="5_jgnyf"]
 [ext_resource type="Texture2D" uid="uid://bk1b5bs1xirll" path="res://texturas/cartas/Plaga_ratas.png" id="5_l6taq"]
 [ext_resource type="Texture2D" uid="uid://d2v7o0fwrj8gk" path="res://texturas/cartas/Envenenar_el_pozo.jpg" id="5_mupmq"]
@@ -35,6 +36,7 @@ reutilizable = true
 valor = 15
 
 [node name="Almacén" parent="." instance=ExtResource("2_y5ux8")]
+texture = ExtResource("4_pr83y")
 titulo = "Explotar almacén"
 descripcion = "Los campesinos no podrán trabajar las tierras del rey Adetokumbo si el almacén donde guardan sus herramientas vuela por los aires..."
 counter = "El rey Adetokumbo acaba de casarse con su decimocuarta mujer y ha decidido darle dos semanas de vacaciones a los campesinos."

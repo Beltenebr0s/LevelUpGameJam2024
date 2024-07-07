@@ -163,20 +163,16 @@ bus = &"SFX"
 [node name="TipoDeCartas" type="Node" parent="SFX/InGame"]
 
 [node name="TipoNormal" type="AudioStreamPlayer" parent="SFX/InGame/TipoDeCartas"]
-max_polyphony = 2
 bus = &"SFX"
 
 [node name="TipoFuego" type="AudioStreamPlayer" parent="SFX/InGame/TipoDeCartas"]
-max_polyphony = 2
 bus = &"SFX"
 
 [node name="TipoPeste" type="AudioStreamPlayer" parent="SFX/InGame/TipoDeCartas"]
 stream = ExtResource("10_3uvl3")
-max_polyphony = 2
 bus = &"SFX"
 
 [node name="TipoPasiva" type="AudioStreamPlayer" parent="SFX/InGame/TipoDeCartas"]
-max_polyphony = 2
 bus = &"SFX"
 
 [node name="Menus" type="Node" parent="SFX"]

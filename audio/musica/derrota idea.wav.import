@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cdk1kf5cs5r7k"
+path="res://.godot/imported/derrota idea.wav-444a70ce185d84dc761af366b4c3b328.sample"
+
+[deps]
+
+source_file="res://audio/musica/derrota idea.wav"
+dest_files=["res://.godot/imported/derrota idea.wav-444a70ce185d84dc761af366b4c3b328.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -43,18 +43,6 @@ func _ready():
 	
 	inicar_juego()
 
-func _process(_delta):
-	if Input.is_action_just_pressed("Desbloquear Caballero"):
-		pasivas_ui.activar(0)
-	if Input.is_action_just_pressed("Desbloquear Vigil"):
-		pasivas_ui.activar(1)
-	if Input.is_action_just_pressed("Desbloquear Cirujano"):
-		pasivas_ui.activar(2)
-	if Input.is_action_just_pressed("Desbloquear Sacerdote"):
-		pasivas_ui.activar(3)
-	if Input.is_action_just_pressed("Triggerear Combo"):
-		alerta_combo.mostrar_alerta_combo()
-		
 func _input(event):
 	if event.is_action_pressed("skip_IA_turn"):
 		emit_signal("skip_IA_turn_signal")

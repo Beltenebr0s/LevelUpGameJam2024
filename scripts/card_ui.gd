@@ -29,6 +29,10 @@ func colocar_cartas_en_mano_mulligan(mano):
 			mano.pop_at(i- j)
 			j += 1
 	var i = 0
+	for hueco_carta in huecos_cartas:
+		if !hueco_carta.carta_jugada:
+			hueco_carta.set_carta(mano[i])
+			i += 1
 	mostrar_cartas()
 	mano_lista = true
 

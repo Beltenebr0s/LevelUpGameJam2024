@@ -10,7 +10,7 @@ script = ExtResource("1_3prkw")
 [node name="Inquisicion" parent="." instance=ExtResource("2_42mh6")]
 texture = ExtResource("3_kimog")
 titulo = "Inquisición"
-descripcion = "Tras ver estos sucesos paranormales han llamado a la Santa Inquisición, pero parece que les han puesto en espera, hay demasiadas brujas en Zugarramurdi."
+descripcion = "El consejo ha llamado a la Santa Inquisición, pero les han puesto en espera: hay demasiadas brujas en Zugarramurdi."
 tipo = 1
 reutilizable = true
 valor = 15

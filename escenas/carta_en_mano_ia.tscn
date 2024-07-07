@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://dfwncdbnb8hmh"]
+[gd_scene load_steps=14 format=3 uid="uid://dfwncdbnb8hmh"]
 
 [ext_resource type="Script" path="res://scripts/carta_en_mano_ia.gd" id="1_mbqnl"]
+[ext_resource type="Texture2D" uid="uid://bhc2itrft4xct" path="res://texturas/Dorso_Dorado.png" id="2_hsg5n"]
 [ext_resource type="FontFile" uid="uid://b0jqr7aj1vrop" path="res://DarumadropOne-Regular.ttf" id="3_s43x6"]
 [ext_resource type="LabelSettings" uid="uid://dt1tfgdc64y" path="res://Fuentes/texto_cartas.tres" id="4_ppdfi"]
 
@@ -114,7 +115,7 @@ _data = {
 [sub_resource type="LabelSettings" id="LabelSettings_14y1e"]
 line_spacing = 1.0
 font = ExtResource("3_s43x6")
-font_size = 19
+font_size = 20
 font_color = Color(0.835537, 0.711223, 0.916408, 1)
 outline_size = 5
 outline_color = Color(0, 0, 0, 1)
@@ -142,6 +143,7 @@ libraries = {
 
 [node name="TexturaCarta" type="Sprite2D" parent="Carta"]
 scale = Vector2(0.162162, 0.162162)
+texture = ExtResource("2_hsg5n")
 
 [node name="descripcion" type="Control" parent="Carta"]
 layout_mode = 3
@@ -164,6 +166,7 @@ offset_bottom = 118.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+text = "Jejejejeeje"
 label_settings = SubResource("LabelSettings_14y1e")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -182,7 +185,7 @@ offset_right = 107.0
 offset_bottom = -49.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "En un lugar de la mancha de cuyo nombre no quiero acordarme"
+text = "El consejo ha llamado a la Santa Inquisición, pero les han puesto en espera: hay demasiadas brujas en Zugarramurdi."
 label_settings = ExtResource("4_ppdfi")
 horizontal_alignment = 1
 autowrap_mode = 2
