@@ -11,6 +11,7 @@ var SAVE_FILE_DIRECTION = 'user://gamescores.save'
 @onready var mute_musica = $LibroAbierto/PaginaSettings/Settings/VolumenMusica/MuteMusica
 @onready var mute_SFX = $LibroAbierto/PaginaSettings/Settings/VolumenSFX/MuteSFX
 @onready var galeria = $LibroAbierto/PaginaGaleria
+@onready var fade = $Fade
 
 @onready var escena_juego = preload("res://escenas/game.tscn")
 
@@ -21,6 +22,7 @@ var botones_pagina = []
 var postits = []
 
 func _ready():
+	fade.fade_in()
 	ui_buttons = get_tree().get_nodes_in_group("ui_button")
 	for button in ui_buttons:
 		button.mouse_entered.connect(Audio.play_boton_select)
@@ -108,7 +110,7 @@ func _on_tutorial_press():
 		historia.visible = false
 
 func _on_start_game_pressed():
-	get_tree().change_scene_to_packed(escena_juego)
+	fade.fade_out()
 
 func _on_settings_pressed():
 	print("Ajustes")

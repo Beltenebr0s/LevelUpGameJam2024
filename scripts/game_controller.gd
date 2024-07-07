@@ -20,8 +20,10 @@ var scena_menu_pausa
 @onready var pasivas_ui = $pasivasUI
 @onready var reloj = $medidor_dia
 @onready var alerta_combo = $alerta_combo
+@onready var fade = $Fade
 
 func _ready():
+	fade.fade_in()
 	pasivas_ui.mulligan.connect(mulligan)
 	mazo_jugador.cartas_seleccionadas.connect(seleccionar_cartas)
 	
@@ -186,7 +188,7 @@ func decidir_final():
 	n_jugada = 0
 	Global.puntos_locura = medidor_locura.locos
 	Global.b_first_game = false
-	get_tree().change_scene_to_file("res://escenas/menu_principal.tscn")
+	fade.fade_out()
 	
 func mostrar_mano_jugador():
 	Audio.play_reload()
