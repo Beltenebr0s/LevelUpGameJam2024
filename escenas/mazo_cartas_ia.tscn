@@ -26,7 +26,7 @@ valor = 15
 
 [node name="Cata que quesos" parent="." instance=ExtResource("2_42mh6")]
 texture = ExtResource("3_kimog")
-titulo = "Cata que quesos"
+titulo = "Cata de quesos"
 descripcion = "El ayuntamiento ha organizado una cata de quesos."
 reutilizable = true
 valor = 25
