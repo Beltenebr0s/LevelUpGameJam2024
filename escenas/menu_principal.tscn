@@ -453,7 +453,7 @@ offset_left = 104.5
 offset_top = 128.0
 offset_right = 341.5
 offset_bottom = 279.0
-text = "Las cartas de personajes te consigues mejoras permanentes, pero a cambio no te da adeptos."
+text = "Las cartas de personajes te consiguen mejoras permanentes, pero a cambio no te da adeptos."
 
 [node name="TextureRect" type="TextureRect" parent="LibroAbierto/PaginaTutorial/Cartas/parrafo2"]
 layout_mode = 0
@@ -657,6 +657,7 @@ text = "Pulgadrummer
 Andres2751"
 
 [node name="PaginaGaleria" type="Panel" parent="LibroAbierto"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

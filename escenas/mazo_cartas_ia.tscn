@@ -9,8 +9,8 @@ script = ExtResource("1_3prkw")
 
 [node name="Inquisicion" parent="." instance=ExtResource("2_42mh6")]
 texture = ExtResource("3_kimog")
-titulo = "Inquisicion"
-descripcion = "Tras ver estos sucesos paranormales han llamado a la santa inquisicion pero parece que les han puesto en espera, hay demasiadas brujas en Zugarramurdi."
+titulo = "Inquisición"
+descripcion = "Tras ver estos sucesos paranormales han llamado a la Santa Inquisición, pero parece que les han puesto en espera, hay demasiadas brujas en Zugarramurdi."
 tipo = 1
 reutilizable = true
 valor = 15
@@ -18,7 +18,7 @@ valor = 15
 [node name="Parterre de flores" parent="." instance=ExtResource("2_42mh6")]
 texture = ExtResource("3_kimog")
 titulo = "Parterre de flores"
-descripcion = "Adetokumbo ha puesto parterres con flores en la plaza mayor"
+descripcion = "Adetokumbo ha puesto parterres con flores en la plaza mayor."
 tipo = 1
 funcion = 2
 reutilizable = true
@@ -27,7 +27,7 @@ valor = 15
 [node name="Cata que quesos" parent="." instance=ExtResource("2_42mh6")]
 texture = ExtResource("3_kimog")
 titulo = "Cata que quesos"
-descripcion = "El ayuntamiento a organizado una cata de quesos."
+descripcion = "El ayuntamiento ha organizado una cata de quesos."
 reutilizable = true
 valor = 25
 
@@ -43,7 +43,7 @@ valor = 20
 position = Vector2(0, -2)
 texture = ExtResource("3_kimog")
 titulo = "Virgen de las penurias"
-descripcion = "Han sacado a la virgen de las penurias en procesion."
+descripcion = "Han sacado a la Virgen de las Penurias en procesión."
 tipo = 1
 reutilizable = true
 valor = 30
@@ -60,13 +60,13 @@ valor = 30
 [node name="Brindar con hidromiel" parent="." instance=ExtResource("2_42mh6")]
 texture = ExtResource("3_kimog")
 titulo = "Brindar con hidromiel"
-descripcion = "El alcalde a invitado al prueblo a brindar con hidromiel."
+descripcion = "El alcalde ha invitado al pueblo a brindar con hidromiel."
 reutilizable = true
 valor = 35
 
 [node name="Vino gratis" parent="." instance=ExtResource("2_42mh6")]
 texture = ExtResource("3_kimog")
-titulo = "Vino gratis"
+titulo = "¡Viva el vino!"
 descripcion = "Vino gratis hasta el amanecer."
 reutilizable = true
 requisitos = 20
@@ -75,15 +75,15 @@ valor = 50
 [node name="Casino nuevo" parent="." instance=ExtResource("2_42mh6")]
 texture = ExtResource("3_kimog")
 titulo = "Casino nuevo"
-descripcion = "Adetokumbo en su ansia de riqueza a contruido un casino, parece que esto aumenta la moral."
+descripcion = "Adetokumbo en su ansia de riqueza ha contruido un casino, parece que esto aumenta la moral."
 tipo = 1
 requisitos = 30
 valor = 50
 
 [node name="Demostracion esgrima historica" parent="." instance=ExtResource("2_42mh6")]
 texture = ExtResource("3_kimog")
-titulo = "Demostracion esgrima historica"
-descripcion = "Han contratado un grupo de esgrima historica, ver a alguien hacer el ridiculo siempre anima."
+titulo = "Demostración esgrima histórica"
+descripcion = "Han contratado un grupo de esgrima histórica, ver a alguien hacer el ridículo siempre anima."
 tipo = 2
 reutilizable = true
 requisitos = 40
@@ -92,7 +92,7 @@ valor = 50
 [node name="Loquero" parent="." instance=ExtResource("2_42mh6")]
 texture = ExtResource("3_kimog")
 titulo = "Loquero"
-descripcion = "Han contratado a un loquero en la clinica del pueblo."
+descripcion = "Han contratado a un loquero en la clínica del pueblo."
 tipo = 1
 requisitos = 40
 valor = 60
@@ -100,7 +100,7 @@ valor = 60
 [node name="Gatetes" parent="." instance=ExtResource("2_42mh6")]
 texture = ExtResource("3_kimog")
 titulo = "Gatetes"
-descripcion = "A aparecido una camada de gatos muy majos en el pueblo, esto anima a cualquiera."
+descripcion = "Ha aparecido una camada de gatos muy majos en el pueblo, esto anima a cualquiera."
 reutilizable = true
 requisitos = 30
 valor = 60
