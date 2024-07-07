@@ -141,6 +141,15 @@ offset_right = 390.5
 offset_bottom = 257.5
 text = "AJUSTES"
 
+[node name="GaleriaFake" type="Button" parent="LibroAbierto/PaginaInicio"]
+layout_mode = 0
+offset_left = 225.5
+offset_top = 259.0
+offset_right = 390.5
+offset_bottom = 324.0
+disabled = true
+text = "GALERÍA"
+
 [node name="Galeria" type="Button" parent="LibroAbierto/PaginaInicio" groups=["ui_button"]]
 layout_mode = 0
 offset_left = 225.5
@@ -839,6 +848,7 @@ offset_bottom = 548.0
 position = Vector2(1767, 754)
 
 [node name="Fade" parent="." instance=ExtResource("24_b6nnq")]
+visible = false
 layout_mode = 1
 offset_left = -631.0
 offset_top = -441.0

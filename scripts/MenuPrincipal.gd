@@ -67,7 +67,6 @@ func _ready():
 		else:
 			$LibroAbierto/PaginaFinal/Final/Derrota.visible = true
 			$LibroAbierto/PaginaFinal/Final/Victoria.visible = false
-
 		_save_current_score()
 
 func _on_titulo_juego_pressed():
@@ -124,6 +123,7 @@ func _on_home_pressed():
 	$LibroAbierto/PaginaCredits.visible = false
 	$LibroAbierto/PaginaFinal.visible = false
 	galeria.visible = false
+	$LibroAbierto/PaginaInicio/Galeria.visible = !Global.b_first_game
 
 func _on_exit_pressed():
 	get_tree().quit()
