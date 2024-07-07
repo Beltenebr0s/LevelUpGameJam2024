@@ -43,6 +43,8 @@ var ratio : float
 @onready var movimiento_posit = $SFX/Menus/MovimientoPosit
 @onready var pasar_pagina = $SFX/Menus/PasarPagina
 @onready var abrir_libro = $SFX/Menus/AbrirLibro
+@onready var ojo_cerrar = $SFX/Menus/OjoCerrar
+@onready var ojo_abrir = $SFX/Menus/OjoAbrir
 
 var master_bus = AudioServer.get_bus_index("Master")
 var music_bus = AudioServer.get_bus_index("Musica")
@@ -78,7 +80,7 @@ func mute_sfx(_toggled_on : bool):
 	AudioServer.set_bus_mute(sfx_bus, sfx_muted)
 
 func fade_in(_player, _time):
-	_player.volume_db = -80
+	_player.volume_db = -40
 	_player.play()
 	tween = get_tree().create_tween()
 	await tween.tween_property(_player, "volume_db", 0, _time).finished
@@ -86,7 +88,7 @@ func fade_in(_player, _time):
 func fade_out(_player, _time):
 	_player.volume_db = 0
 	tween = get_tree().create_tween()
-	await tween.tween_property(_player, "volume_db", -80, _time).finished
+	await tween.tween_property(_player, "volume_db", -40, _time).finished
 	_player.stop()
 	_player.volume_db = 0
 
@@ -142,6 +144,12 @@ func play_sonido_tipo(_tipo : int, _pasiva : bool):
 		lista_sonidos_tipos[3].play()
 	else:
 		lista_sonidos_tipos[_tipo].play()
+
+func play_toggle_eye(_is_on : bool):
+	if _is_on:
+		ojo_cerrar.play()
+	else:
+		ojo_abrir.play()
 
 func play_boton_select():
 	boton_select.play()

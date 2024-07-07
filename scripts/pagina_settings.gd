@@ -8,6 +8,8 @@ extends Panel
 @onready var mute_SFX = $Settings/VolumenSFX/MuteSFX
 @onready var auto_play = $Settings/SkipIa
 
+
+
 func _ready():
 	slider_master.value = Audio.porcentaje_master
 	mute_master.button_pressed = Audio.master_muted
@@ -16,6 +18,9 @@ func _ready():
 	slider_SFX.value = Audio.porcentaje_sfx
 	mute_SFX.button_pressed = Audio.sfx_muted
 	auto_play.button_pressed = Global.auto_skip_ia
+	
+	for button in [mute_master, mute_musica, mute_SFX, auto_play]:
+		button.toggled.connect(Audio.play_toggle_eye)
 
 func _on_volumen_master_value_changed(value):
 	Audio.change_master_volume(value)

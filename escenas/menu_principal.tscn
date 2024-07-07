@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://byeqj6jd7r2vl"]
+[gd_scene load_steps=41 format=3 uid="uid://byeqj6jd7r2vl"]
 
 [ext_resource type="Theme" uid="uid://cmcb4mmclu5ex" path="res://Fuentes/tema_libro.tres" id="1_rgpyg"]
 [ext_resource type="Script" path="res://scripts/MenuPrincipal.gd" id="1_xdxr6"]
@@ -20,12 +20,17 @@
 [ext_resource type="Texture2D" uid="uid://bovmgp7c4a3kg" path="res://texturas/cartas/Borde_Dorado.png" id="18_1akmy"]
 [ext_resource type="Texture2D" uid="uid://dihxcwbah6160" path="res://texturas/cartas/Borde_Rojo.png" id="18_5pail"]
 [ext_resource type="Texture2D" uid="uid://bk1b5bs1xirll" path="res://texturas/cartas/Plaga_ratas.png" id="18_82vj4"]
+[ext_resource type="Texture2D" uid="uid://rwhc2qc8pcmr" path="res://texturas/Creditos/ciclope.png" id="18_owxxf"]
 [ext_resource type="Texture2D" uid="uid://cxqvuum4hfm88" path="res://texturas/menus/Pasar_pagina.png" id="19_5jf37"]
+[ext_resource type="Texture2D" uid="uid://bpqak5juqduoj" path="res://texturas/Creditos/eobar.png" id="19_j5f1t"]
+[ext_resource type="Texture2D" uid="uid://6cmxrcx57dcb" path="res://texturas/Creditos/exodus.png" id="20_hchrt"]
 [ext_resource type="Texture2D" uid="uid://c23a6r0v6jh2v" path="res://texturas/menus/Volver_pagina.png" id="20_ma2qo"]
 [ext_resource type="Texture2D" uid="uid://bv5a4q2yhi204" path="res://texturas/menus/home.png" id="21_4qava"]
+[ext_resource type="Texture2D" uid="uid://oe5w6hpnh3qx" path="res://texturas/Creditos/bobesponja.png" id="21_mqas0"]
 [ext_resource type="Texture2D" uid="uid://corx5wwjtbrkf" path="res://texturas/menus/home_pressed.png" id="22_ly484"]
 [ext_resource type="PackedScene" uid="uid://b50qc4rv6vsgo" path="res://escenas/fade.tscn" id="24_b6nnq"]
 [ext_resource type="PackedScene" uid="uid://dheidflovtqfd" path="res://escenas/score_request.tscn" id="25_j1t5w"]
+[ext_resource type="Texture2D" uid="uid://debi4dgu31aad" path="res://texturas/Titulo_no_sombra_dorado.png" id="28_tjudq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gt4ad"]
 
@@ -80,6 +85,7 @@ texture = ExtResource("2_2wova")
 expand_mode = 1
 
 [node name="LibroAbierto" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -407,15 +413,6 @@ offset_right = 872.5
 offset_bottom = 270.5
 text = "Pero ten cuidado, porque el rey podrá jugar dos cartas por el día para mantener la paz y el orden. Para ganar al rey deberás elegir bien tus cartas y conseguir al menos cien adeptos para el séptimo día."
 
-[node name="Siguiente" type="Button" parent="LibroAbierto/PaginaHistoria" groups=["boton_pagina"]]
-layout_mode = 0
-offset_left = 799.5
-offset_top = 435.5
-offset_right = 925.5
-offset_bottom = 606.5
-scale = Vector2(0.567926, 0.567926)
-icon = ExtResource("19_5jf37")
-
 [node name="TextureRect" type="TextureRect" parent="LibroAbierto/PaginaHistoria"]
 layout_mode = 0
 offset_left = 540.5
@@ -424,6 +421,15 @@ offset_right = 819.5
 offset_bottom = 489.5
 texture = ExtResource("12_y0qd2")
 expand_mode = 1
+
+[node name="Siguiente" type="Button" parent="LibroAbierto/PaginaHistoria" groups=["boton_pagina"]]
+layout_mode = 0
+offset_left = 799.5
+offset_top = 435.5
+offset_right = 925.5
+offset_bottom = 606.5
+scale = Vector2(0.567926, 0.567926)
+icon = ExtResource("19_5jf37")
 
 [node name="PaginaTutorial" type="Panel" parent="LibroAbierto"]
 visible = false
@@ -607,6 +613,7 @@ scale = Vector2(0.567926, 0.567926)
 icon = ExtResource("19_5jf37")
 
 [node name="PaginaCredits" type="Panel" parent="LibroAbierto"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -631,17 +638,17 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_i5bd0")
 
 [node name="Titulo" parent="LibroAbierto/PaginaCredits/Credits" index="0"]
 offset_left = 31.0
-offset_top = 20.0
+offset_top = 3.0
 offset_right = 435.0
-offset_bottom = 88.0
+offset_bottom = 71.0
 text = "CRÉDITOS"
 
 [node name="SeccionArte" type="Label" parent="LibroAbierto/PaginaCredits/Credits"]
 layout_mode = 0
-offset_left = 86.0
-offset_top = 92.0
-offset_right = 275.0
-offset_bottom = 122.0
+offset_left = 486.0
+offset_top = 35.0
+offset_right = 675.0
+offset_bottom = 77.0
 theme_type_variation = &"HeaderMedium"
 text = "ARTE"
 
@@ -649,18 +656,18 @@ text = "ARTE"
 clip_contents = false
 layout_mode = 0
 offset_left = 32.0
-offset_top = 56.0
+offset_top = 47.0
 offset_right = 383.0
-offset_bottom = 146.0
+offset_bottom = 137.0
 text = "Alathosxy
 nubi_r"
 
 [node name="SeccionProgramacion" type="Label" parent="LibroAbierto/PaginaCredits/Credits"]
 layout_mode = 0
-offset_left = 490.0
-offset_top = 147.0
-offset_right = 705.0
-offset_bottom = 189.0
+offset_left = 86.0
+offset_top = 77.0
+offset_right = 301.0
+offset_bottom = 119.0
 theme_type_variation = &"HeaderMedium"
 text = "PROGRAMACIÓN"
 
@@ -679,10 +686,10 @@ gynk0
 
 [node name="SeccionSonido" type="Label" parent="LibroAbierto/PaginaCredits/Credits"]
 layout_mode = 0
-offset_left = 83.0
-offset_top = 279.0
-offset_right = 272.0
-offset_bottom = 321.0
+offset_left = 486.0
+offset_top = 183.0
+offset_right = 675.0
+offset_bottom = 225.0
 theme_type_variation = &"HeaderMedium"
 text = "SONIDO
 "
@@ -690,12 +697,59 @@ text = "SONIDO
 [node name="TextoSonido" type="RichTextLabel" parent="LibroAbierto/PaginaCredits/Credits/SeccionSonido"]
 clip_contents = false
 layout_mode = 0
-offset_left = 6.0
-offset_top = 31.0
-offset_right = 357.0
-offset_bottom = 121.0
+offset_left = 32.0
+offset_top = 47.0
+offset_right = 383.0
+offset_bottom = 137.0
 text = "Pulgadrummer
 Andres2751"
+
+[node name="TextureRect" type="TextureRect" parent="LibroAbierto/PaginaCredits"]
+modulate = Color(1, 1, 1, 0.627451)
+layout_mode = 0
+offset_left = 140.5
+offset_top = 377.5
+offset_right = 273.5
+offset_bottom = 499.5
+rotation = -0.221801
+texture = ExtResource("18_owxxf")
+expand_mode = 1
+stretch_mode = 4
+flip_h = true
+
+[node name="TextureRect2" type="TextureRect" parent="LibroAbierto/PaginaCredits"]
+modulate = Color(1, 1, 1, 0.627451)
+layout_mode = 0
+offset_left = 761.5
+offset_top = 407.5
+offset_right = 862.5
+offset_bottom = 524.5
+texture = ExtResource("19_j5f1t")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="LibroAbierto/PaginaCredits"]
+modulate = Color(1, 1, 1, 0.627451)
+layout_mode = 0
+offset_left = 544.5
+offset_top = 405.5
+offset_right = 652.5
+offset_bottom = 517.5
+texture = ExtResource("20_hchrt")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect4" type="TextureRect" parent="LibroAbierto/PaginaCredits"]
+modulate = Color(1, 1, 1, 0.470588)
+layout_mode = 0
+offset_left = 417.5
+offset_top = 86.5
+offset_right = 500.5
+offset_bottom = 165.5
+texture = ExtResource("21_mqas0")
+expand_mode = 1
+stretch_mode = 4
+flip_h = true
 
 [node name="PaginaGaleria" type="Panel" parent="LibroAbierto"]
 visible = false
@@ -816,7 +870,6 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="LibroCerrado" type="Panel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -846,6 +899,23 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("5_ic5la")
+
+[node name="Titulo" type="TextureRect" parent="LibroCerrado"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -139.0
+offset_top = -54.0
+offset_right = 180.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("28_tjudq")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="TituloJuego" type="TextureButton" parent="LibroCerrado"]
 layout_mode = 0

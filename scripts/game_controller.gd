@@ -108,6 +108,7 @@ func aplicar_counter():
 		for carta in selected_cards: 
 			if !carta.desbloquea_pasiva && carta.can_counter:
 				mano_ia.mano[mano_ia.mano.size() - 1].descripcion = carta.counter
+				mano_ia.mano[mano_ia.mano.size() - 1].valor = carta.valor
 				if carta_combo != null:
 					if carta == carta_combo:
 						mano_ia.mano[mano_ia.mano.size() - 1].valor = carta.valor * 1.5
@@ -140,7 +141,7 @@ func aplicar_efecto_cartas(b_is_player : bool):
 
 func nerf_card_to_ia(carta):
 	if carta.name == 'Counter':
-		return carta.valor
+		return carta.valor * -1
 	return carta.valor * 0.8 * -1
 
 func activar_pasiva(carta):
@@ -161,7 +162,7 @@ func comprobar_combo(resultado):
 	var hay_multiplicador = false
 	for carta in selected_cards:
 		hay_multiplicador = hay_multiplicador || (carta.funcion == 2)
-		if hay_multiplicador:
+		if (carta.funcion != 2):
 			carta_combo = carta
 	var hay_pasiva = false
 	for carta in selected_cards:
@@ -178,6 +179,7 @@ func comprobar_combo(resultado):
 		else:
 			return carta_combo.valor * 0.5
 	else:
+		carta_combo = null
 		return 0
 
 func mulligan():

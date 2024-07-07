@@ -206,3 +206,9 @@ bus = &"SFX"
 [node name="AbrirLibro" type="AudioStreamPlayer" parent="SFX/Menus"]
 stream = ExtResource("24_e5amx")
 bus = &"SFX"
+
+[node name="OjoCerrar" type="AudioStreamPlayer" parent="SFX/Menus"]
+bus = &"SFX"
+
+[node name="OjoAbrir" type="AudioStreamPlayer" parent="SFX/Menus"]
+bus = &"SFX"
