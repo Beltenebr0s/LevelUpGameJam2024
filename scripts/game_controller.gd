@@ -182,14 +182,13 @@ func comprobar_combo(resultado):
 	for i in range(selected_cards.size() - 1):
 		mismo_tipo = mismo_tipo && (selected_cards[i].tipo == selected_cards[i + 1].tipo)
 	print(hay_multiplicador, !hay_pasiva, mismo_tipo, resultado)
-	if carta_combo.tipo == 3 && hay_multiplicador && !hay_pasiva && mismo_tipo:
+	if  hay_multiplicador && !hay_pasiva && mismo_tipo:
 		alerta_combo.mostrar_alerta_combo()
 		Audio.play_alerta_combo()
-		return carta_combo.valor * 5
-	elif hay_multiplicador && !hay_pasiva && mismo_tipo:
-		alerta_combo.mostrar_alerta_combo()
-		Audio.play_alerta_combo()
-		return carta_combo.valor * 0.5
+		if carta_combo.tipo == 3:
+			return carta_combo.valor * 5
+		else:
+			return carta_combo.valor * 0.5
 	else:
 		return 0
 

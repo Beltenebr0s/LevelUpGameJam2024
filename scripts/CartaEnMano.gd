@@ -13,15 +13,12 @@ var borde_pasiva = "res://texturas/cartas/Borde_Purpura.png"
 @onready var popup = $Carta/popup
 @onready var textura = $Carta/TexturaCarta
 @onready var borde = $Carta/Borde
-
+@onready var boton = $Carta/BotonCarta
 
 func _ready():
 	carta_oculta = true
 	$Carta.position = Vector2(0, 200)
 	ocultar_descripcion()
-
-func mano_ia():
-	$Carta/BotonCarta.visible = false
 
 func subir_carta():
 	animation_player.play("subir_carta")
@@ -32,12 +29,16 @@ func bajar_carta():
 
 func mostrar_carta():
 	carta_oculta = false
-	carta_jugada = false
-	animation_player.play_backwards("ocultar_carta")
+	boton.show()
+	if carta_jugada:
+		pass
+	else:
+		animation_player.play_backwards("ocultar_carta")
 
 func ocultar_carta(no_jugada : bool):
 	# false para ocultar todas las cartas
 	# true para ocultar solo las no jugadas
+	boton.hide()
 	if carta_oculta:
 		pass
 	elif carta_jugada:
@@ -45,12 +46,14 @@ func ocultar_carta(no_jugada : bool):
 			pass
 		else:
 			carta_oculta = true
+			carta_jugada = false
 			ocultar_descripcion()
 			animation_player.play("ocultar_carta_jugada")
 	else:
-		animation_player.play("ocultar_carta")
 		carta_oculta = true
+		carta_jugada = false
 		ocultar_descripcion()
+		animation_player.play("ocultar_carta")
 
 func subir_carta_mas():
 	animation_player.play("subir_carta_mas")
