@@ -169,12 +169,14 @@ offset_bottom = 57.0
 text = "Mute"
 
 [node name="SkipIa" type="CheckButton" parent="Settings"]
+layout_mode = 0
 offset_left = 265.62
 offset_top = 433.875
 offset_right = 309.62
 offset_bottom = 477.875
 
 [node name="Label" type="Label" parent="Settings/SkipIa"]
+layout_mode = 0
 offset_left = -166.341
 offset_top = 3.47112
 offset_right = -6.34064

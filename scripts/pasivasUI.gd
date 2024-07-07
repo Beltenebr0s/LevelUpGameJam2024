@@ -37,4 +37,4 @@ func _on_sacerdote_accion():
 	mulligan.emit()
 	
 func _on_carta_seleccionada():
-	play_sonido_carta.emit()
+	Audio.play_seleccionar_carta()

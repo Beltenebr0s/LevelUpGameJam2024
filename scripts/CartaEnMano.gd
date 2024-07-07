@@ -70,12 +70,12 @@ func visibilidad_descripcion():
 	if es_visible:
 		actualizar_descripcion()
 		mostrar_descripcion()
-		Audio.play_seleccionar_carta()
 	else:
 		ocultar_descripcion()
 
 func _on_boton_carta_mouse_entered():
 	if !carta_jugada && !carta_oculta:
+		Audio.play_seleccionar_carta()
 		subir_carta()
 
 func _on_boton_carta_mouse_exited():
