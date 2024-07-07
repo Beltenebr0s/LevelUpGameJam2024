@@ -2,7 +2,7 @@ extends Control
 
 @onready var animation_player = $AnimationPlayer
 
-@export var siguiente_escena : PackedScene
+var siguiente_escena : PackedScene
 
 func fade_in():
 	print("empieza fade in")
@@ -22,3 +22,5 @@ func cambiar_escena():
 	print("acaba fade out")
 	get_tree().change_scene_to_packed(siguiente_escena)
 
+func set_siguiente_escena(escena : PackedScene):
+	siguiente_escena = escena

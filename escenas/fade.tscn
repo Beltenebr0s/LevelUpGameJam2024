@@ -85,7 +85,6 @@ libraries = {
 }
 
 [node name="Fondo" type="ColorRect" parent="."]
-modulate = Color(1, 1, 1, 0.333333)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

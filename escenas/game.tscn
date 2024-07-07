@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ddmxbpwae2x3s"]
+[gd_scene load_steps=12 format=3 uid="uid://ddmxbpwae2x3s"]
 
 [ext_resource type="PackedScene" uid="uid://0k1iv56f0qty" path="res://escenas/board.tscn" id="1_gf5lf"]
 [ext_resource type="Script" path="res://scripts/game_controller.gd" id="1_jtev3"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dbb1boixbt5v5" path="res://escenas/medidor_dia.tscn" id="6_amot7"]
 [ext_resource type="Texture2D" uid="uid://cnqvsymflifym" path="res://texturas/Baraja.png" id="9_pc2xh"]
 [ext_resource type="PackedScene" uid="uid://0m1dvsg648qd" path="res://escenas/mano_ia.tscn" id="11_4yrn7"]
+[ext_resource type="PackedScene" uid="uid://b50qc4rv6vsgo" path="res://escenas/fade.tscn" id="11_hthis"]
 [ext_resource type="PackedScene" uid="uid://d2ed2213ydb0g" path="res://escenas/alerta_combo.tscn" id="14_3bj1k"]
 
 [node name="Game" type="Node2D"]
@@ -57,5 +58,11 @@ scale = Vector2(0.564775, 0.564775)
 [node name="alerta_combo" parent="." instance=ExtResource("14_3bj1k")]
 position = Vector2(544, 320)
 scale = Vector2(0.233773, 0.233773)
+
+[node name="Fade" parent="." instance=ExtResource("11_hthis")]
+offset_left = -1326.0
+offset_top = -873.0
+offset_right = 2028.0
+offset_bottom = 1268.0
 
 [editable path="Board"]

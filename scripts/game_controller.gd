@@ -23,7 +23,8 @@ var scena_menu_pausa
 @onready var fade = $Fade
 
 func _ready():
-	#fade.fade_in()
+	fade.set_siguiente_escena(Global.escena_menu)
+	fade.fade_in()
 	pasivas_ui.mulligan.connect(mulligan)
 	mazo_jugador.cartas_seleccionadas.connect(seleccionar_cartas)
 	
@@ -57,7 +58,7 @@ func _input(event):
 		emit_signal("skip_IA_turn_signal")
 
 func inicar_juego():
-	Global.cartas_jugadas = []
+	Global.cartas_jugadas.clear()
 	pasivas_ui.desactivar(-1)
 	while (n_jugada < n_max_jugadas):
 		await iniciar_turno()
@@ -190,7 +191,7 @@ func decidir_final():
 	n_jugada = 0
 	Global.puntos_locura = medidor_locura.locos
 	Global.b_first_game = false
-	#fade.fade_out()
+	fade.fade_out()
 	
 func mostrar_mano_jugador():
 	Audio.play_reload()

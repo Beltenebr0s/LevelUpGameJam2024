@@ -22,7 +22,8 @@ var botones_pagina = []
 var postits = []
 
 func _ready():
-	#fade.fade_in()
+	fade.set_siguiente_escena(Global.escena_game)
+	fade.fade_in()
 	ui_buttons = get_tree().get_nodes_in_group("ui_button")
 	for button in ui_buttons:
 		button.mouse_entered.connect(Audio.play_boton_select)
@@ -110,7 +111,7 @@ func _on_tutorial_press():
 		historia.visible = false
 
 func _on_start_game_pressed():
-	#fade.fade_out()
+	fade.fade_out()
 	pass
 
 func _on_settings_pressed():
