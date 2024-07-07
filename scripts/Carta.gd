@@ -27,8 +27,6 @@ func iniciar_carta():
 func jugar():
 	if !reutilizable:
 		self.carta_usada = true
-	if self.carta_usada:
-		self.carta_usada = false
 	jugar_carta.emit(self)
 	
 func desjugar():
