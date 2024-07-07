@@ -38,8 +38,8 @@ func _ready():
 	
 	postits = get_tree().get_nodes_in_group("postit")
 	for boton in postits:
-		boton.focus_entered.connect(Audio.play_pasar_pagina)
-		boton.focus_exited.connect(Audio.play_movimiento_posit)
+		boton.mouse_entered.connect(Audio.play_movimiento_posit)
+		boton.mouse_exited.connect(Audio.play_movimiento_posit)
 	
 	lista_cartas = $MazoCartas.get_children()
 	

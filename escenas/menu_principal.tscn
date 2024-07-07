@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://byeqj6jd7r2vl"]
+[gd_scene load_steps=45 format=3 uid="uid://byeqj6jd7r2vl"]
 
 [ext_resource type="Theme" uid="uid://cmcb4mmclu5ex" path="res://Fuentes/tema_libro.tres" id="1_rgpyg"]
 [ext_resource type="Script" path="res://scripts/MenuPrincipal.gd" id="1_xdxr6"]
@@ -27,9 +27,13 @@
 [ext_resource type="Texture2D" uid="uid://c23a6r0v6jh2v" path="res://texturas/menus/Volver_pagina.png" id="20_ma2qo"]
 [ext_resource type="Texture2D" uid="uid://bv5a4q2yhi204" path="res://texturas/menus/home.png" id="21_4qava"]
 [ext_resource type="Texture2D" uid="uid://oe5w6hpnh3qx" path="res://texturas/Creditos/bobesponja.png" id="21_mqas0"]
+[ext_resource type="Texture2D" uid="uid://ct5ngw461aghf" path="res://texturas/Creditos/asdasdas.png" id="22_a35uy"]
 [ext_resource type="Texture2D" uid="uid://corx5wwjtbrkf" path="res://texturas/menus/home_pressed.png" id="22_ly484"]
+[ext_resource type="Texture2D" uid="uid://dtkotbexj23ao" path="res://texturas/Creditos/Catwitch_boceto_creditos.png" id="23_6qc8v"]
 [ext_resource type="PackedScene" uid="uid://b50qc4rv6vsgo" path="res://escenas/fade.tscn" id="24_b6nnq"]
+[ext_resource type="Texture2D" uid="uid://do8wo4v6n4ymn" path="res://texturas/Creditos/yo.png" id="24_gopgn"]
 [ext_resource type="PackedScene" uid="uid://dheidflovtqfd" path="res://escenas/score_request.tscn" id="25_j1t5w"]
+[ext_resource type="Texture2D" uid="uid://cy3shejisbqk6" path="res://texturas/Creditos/Its_a_me.png" id="25_kev21"]
 [ext_resource type="Texture2D" uid="uid://debi4dgu31aad" path="res://texturas/Titulo_no_sombra_dorado.png" id="28_tjudq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gt4ad"]
@@ -85,7 +89,6 @@ texture = ExtResource("2_2wova")
 expand_mode = 1
 
 [node name="LibroAbierto" type="Panel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -229,7 +232,6 @@ offset_bottom = 573.5
 theme_override_styles/panel = SubResource("StyleBoxEmpty_mqjlx")
 
 [node name="Titulo" parent="LibroAbierto/PaginaFinal/Final" index="0"]
-visible = false
 offset_left = -384.0
 offset_top = 15.0
 offset_right = -29.0
@@ -302,7 +304,7 @@ offset_left = 27.0
 offset_top = 56.0
 offset_right = 382.0
 offset_bottom = 132.0
-text = "Que el mundo sea engullido por las tinieblas una vez más, tu señor Pepafofo ha resurgido... ¡Bien hecho!"
+text = "Que el mundo sea engullido por las tinieblas una vez más, tu señor Pepapofo ha resurgido... ¡Bien hecho!"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -342,7 +344,7 @@ offset_left = 22.0
 offset_top = 56.0
 offset_right = 383.0
 offset_bottom = 155.0
-text = "El rey Adetokombo ha neutralizado tu patético intento de invocación y el mundo vivirá en calma un día más"
+text = "El rey Adetokumbo ha neutralizado tu patético intento de invocación y el mundo vivirá en calma un día más"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -613,7 +615,6 @@ scale = Vector2(0.567926, 0.567926)
 icon = ExtResource("19_5jf37")
 
 [node name="PaginaCredits" type="Panel" parent="LibroAbierto"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -645,10 +646,10 @@ text = "CRÉDITOS"
 
 [node name="SeccionArte" type="Label" parent="LibroAbierto/PaginaCredits/Credits"]
 layout_mode = 0
-offset_left = 486.0
-offset_top = 35.0
-offset_right = 675.0
-offset_bottom = 77.0
+offset_left = 479.0
+offset_top = 55.0
+offset_right = 668.0
+offset_bottom = 97.0
 theme_type_variation = &"HeaderMedium"
 text = "ARTE"
 
@@ -686,10 +687,10 @@ gynk0
 
 [node name="SeccionSonido" type="Label" parent="LibroAbierto/PaginaCredits/Credits"]
 layout_mode = 0
-offset_left = 486.0
-offset_top = 183.0
-offset_right = 675.0
-offset_bottom = 225.0
+offset_left = 210.0
+offset_top = 248.0
+offset_right = 399.0
+offset_bottom = 290.0
 theme_type_variation = &"HeaderMedium"
 text = "SONIDO
 "
@@ -701,17 +702,35 @@ offset_left = 32.0
 offset_top = 47.0
 offset_right = 383.0
 offset_bottom = 137.0
-text = "Pulgadrummer
-Andres2751"
+text = "Andrés Alario"
+
+[node name="SeccionMusica" type="Label" parent="LibroAbierto/PaginaCredits/Credits"]
+layout_mode = 0
+offset_left = 561.0
+offset_top = 200.0
+offset_right = 750.0
+offset_bottom = 242.0
+theme_type_variation = &"HeaderMedium"
+text = "Música
+"
+
+[node name="TextoSonido" type="RichTextLabel" parent="LibroAbierto/PaginaCredits/Credits/SeccionMusica"]
+clip_contents = false
+layout_mode = 0
+offset_left = 32.0
+offset_top = 47.0
+offset_right = 383.0
+offset_bottom = 137.0
+text = "Pulgadrummer"
 
 [node name="TextureRect" type="TextureRect" parent="LibroAbierto/PaginaCredits"]
 modulate = Color(1, 1, 1, 0.627451)
 layout_mode = 0
-offset_left = 140.5
-offset_top = 377.5
-offset_right = 273.5
-offset_bottom = 499.5
-rotation = -0.221801
+offset_left = 530.5
+offset_top = 29.5
+offset_right = 637.5
+offset_bottom = 138.5
+rotation = 0.141645
 texture = ExtResource("18_owxxf")
 expand_mode = 1
 stretch_mode = 4
@@ -720,10 +739,10 @@ flip_h = true
 [node name="TextureRect2" type="TextureRect" parent="LibroAbierto/PaginaCredits"]
 modulate = Color(1, 1, 1, 0.627451)
 layout_mode = 0
-offset_left = 761.5
-offset_top = 407.5
-offset_right = 862.5
-offset_bottom = 524.5
+offset_left = 235.5
+offset_top = 405.5
+offset_right = 336.5
+offset_bottom = 522.5
 texture = ExtResource("19_j5f1t")
 expand_mode = 1
 stretch_mode = 4
@@ -731,10 +750,10 @@ stretch_mode = 4
 [node name="TextureRect3" type="TextureRect" parent="LibroAbierto/PaginaCredits"]
 modulate = Color(1, 1, 1, 0.627451)
 layout_mode = 0
-offset_left = 544.5
-offset_top = 405.5
-offset_right = 652.5
-offset_bottom = 517.5
+offset_left = 129.5
+offset_top = 360.5
+offset_right = 237.5
+offset_bottom = 472.5
 texture = ExtResource("20_hchrt")
 expand_mode = 1
 stretch_mode = 4
@@ -750,6 +769,46 @@ texture = ExtResource("21_mqas0")
 expand_mode = 1
 stretch_mode = 4
 flip_h = true
+
+[node name="TextureRect5" type="TextureRect" parent="LibroAbierto/PaginaCredits"]
+layout_mode = 0
+offset_left = 398.5
+offset_top = 453.5
+offset_right = 472.5
+offset_bottom = 535.5
+texture = ExtResource("22_a35uy")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect6" type="TextureRect" parent="LibroAbierto/PaginaCredits"]
+layout_mode = 0
+offset_left = 546.5
+offset_top = 394.5
+offset_right = 740.5
+offset_bottom = 563.5
+texture = ExtResource("23_6qc8v")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect7" type="TextureRect" parent="LibroAbierto/PaginaCredits"]
+layout_mode = 0
+offset_left = 521.5
+offset_top = 232.5
+offset_right = 625.5
+offset_bottom = 354.5
+texture = ExtResource("24_gopgn")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect8" type="TextureRect" parent="LibroAbierto/PaginaCredits"]
+layout_mode = 0
+offset_left = 701.5
+offset_top = 108.5
+offset_right = 805.5
+offset_bottom = 230.5
+texture = ExtResource("25_kev21")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="PaginaGaleria" type="Panel" parent="LibroAbierto"]
 visible = false
@@ -870,6 +929,7 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="LibroCerrado" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -907,10 +967,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -139.0
-offset_top = -54.0
-offset_right = 180.0
-offset_bottom = 46.0
+offset_left = -161.0
+offset_top = -52.0
+offset_right = 217.0
+offset_bottom = 70.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("28_tjudq")
@@ -919,10 +979,10 @@ stretch_mode = 4
 
 [node name="TituloJuego" type="TextureButton" parent="LibroCerrado"]
 layout_mode = 0
-offset_left = 37.0
-offset_top = 9.0
-offset_right = 408.0
-offset_bottom = 548.0
+offset_left = -5.0
+offset_top = 8.0
+offset_right = 421.0
+offset_bottom = 585.0
 
 [node name="MazoCartas" parent="." instance=ExtResource("16_twf7g")]
 position = Vector2(1767, 754)
