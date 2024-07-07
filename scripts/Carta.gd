@@ -16,7 +16,11 @@ enum FuncionCarta { NORMAL, PASIVA, MULTIPLICADOR }
 @export var valida_ia: bool = true
 @export var can_counter: bool = true
 
+@export var sprite_beta: Texture
+
 @onready var carta_usada : bool = false
+
+var sprite_beta_true : bool = false
 
 signal jugar_carta(carta)
 signal desjugar_carta(carta)

@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bhmjeb0ta4p58"]
+[gd_scene load_steps=8 format=3 uid="uid://bhmjeb0ta4p58"]
 
+[ext_resource type="Texture2D" uid="uid://dxysl04btnj38" path="res://texturas/cartas/Caballero_Maldito.jpg" id="2_axvh7"]
 [ext_resource type="Script" path="res://scripts/carta_pasiva.gd" id="2_kbbva"]
-[ext_resource type="PackedScene" uid="uid://b47xbta5payek" path="res://escenas/carta.tscn" id="2_m2n4f"]
-[ext_resource type="Texture2D" uid="uid://dtkhu4jup0q2u" path="res://texturas/Dorso_Azul.png" id="3_xfggq"]
 [ext_resource type="Texture2D" uid="uid://c4g4cu7tbfmo4" path="res://texturas/cartas/Borde_Purpura.png" id="4_hxnjj"]
 [ext_resource type="Theme" uid="uid://cmcb4mmclu5ex" path="res://Fuentes/tema_libro.tres" id="5_25q06"]
 [ext_resource type="Texture2D" uid="uid://dyyo2h1vnf3i5" path="res://texturas/menus/pergamino.png" id="5_glwna"]
@@ -13,50 +12,26 @@ length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Carta:scale")
+tracks/0/path = NodePath("Carta:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(2, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0.144144, 0.142179), Vector2(0.159159, 0.156989)]
+"values": [Vector2(0, 0), Vector2(-240, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Carta:position")
-tracks/1/interp = 2
+tracks/1/path = NodePath("Carta:scale")
+tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(48, 67), Vector2(-190, 67)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Boton:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(3.12, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Boton:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(-240, 0)]
+"values": [Vector2(1, 1), Vector2(1.15, 1.15)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7i82w"]
@@ -78,31 +53,29 @@ libraries = {
 "": SubResource("AnimationLibrary_7i82w")
 }
 
-[node name="Boton" type="TextureButton" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -48.0
-offset_top = -66.5
-offset_right = 113.0
-offset_bottom = 66.5
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Carta" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 120.0
+offset_bottom = 129.0
 
-[node name="Carta" parent="." instance=ExtResource("2_m2n4f")]
-position = Vector2(48, 67)
+[node name="Sprite" type="TextureRect" parent="Carta"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 10.0
+offset_right = 86.0
+offset_bottom = 124.0
+texture = ExtResource("2_axvh7")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Borde" type="Sprite2D" parent="Carta/Sprite"]
+position = Vector2(39, 57)
 scale = Vector2(0.144144, 0.142179)
-texture = ExtResource("3_xfggq")
-
-[node name="Borde" type="Sprite2D" parent="Carta"]
 texture = ExtResource("4_hxnjj")
 
 [node name="descripcion" type="Node2D" parent="Carta"]
-position = Vector2(854.491, 0)
-scale = Vector2(6.28303, 6.36987)
+position = Vector2(163.17, 67)
+scale = Vector2(0.76235, 0.762351)
 
 [node name="pergamino" type="Sprite2D" parent="Carta/descripcion"]
 position = Vector2(39.7499, -5.52081)
@@ -126,9 +99,25 @@ theme_type_variation = &"TooltipLabel"
 text = "El sacerdote ligó con el demonio que invocaste. Juntos, hacen un ritual que te permite robar otra mano de cartas sin perder el turno (click para activar)."
 vertical_alignment = 1
 autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Boton" type="TextureButton" parent="Carta"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -64.5
+offset_right = 17.0
+offset_bottom = 68.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.12, 1)
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="Boton" to="." method="_on_boton_mouse_entered"]
-[connection signal="mouse_exited" from="Boton" to="." method="_on_boton_mouse_exited"]
-[connection signal="pressed" from="Boton" to="." method="_on_boton_pressed"]
+[connection signal="mouse_entered" from="Carta/Boton" to="." method="_on_boton_mouse_entered"]
+[connection signal="mouse_exited" from="Carta/Boton" to="." method="_on_boton_mouse_exited"]
+[connection signal="pressed" from="Carta/Boton" to="." method="_on_boton_pressed"]

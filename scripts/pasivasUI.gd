@@ -31,7 +31,7 @@ func activar(n : int):
 
 func pasiva_activada(n : int):
 	# devuelve true si la pasiva está activada
-	return cartas_pasivas[n].visible
+		return cartas_pasivas[n].visible
 
 func _on_sacerdote_accion():
 	mulligan.emit()

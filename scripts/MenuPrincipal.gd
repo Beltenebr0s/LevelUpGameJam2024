@@ -169,7 +169,10 @@ func mostrar_carta():
 	var imagen = $LibroAbierto/PaginaGaleria/Panel/Titulo/MarcoCarta/ImagenCarta
 	titulo_carta.text = carta.titulo
 	desc_carta.text = carta.descripcion
-	imagen.texture = carta.texture
+	if Global.graficos_4k:
+		imagen.texture = carta.sprite_beta
+	else:
+		imagen.texture = carta.texture
 
 func _on_anterior_pressed():
 	if indice_carta > 0:
@@ -183,7 +186,6 @@ func _on_btn_siguiente_pressed():
 	indice_carta = (indice_carta + 1) % lista_cartas.size()
 	mostrar_carta()
 	Audio.play_pasar_pagina()
-
 
 func print_score(score):
 	$LibroAbierto/PaginaFinal/Final/Ranking.visible = true

@@ -1,9 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://b80mbbnuqe78v"]
+[gd_scene load_steps=43 format=3 uid="uid://b80mbbnuqe78v"]
 
 [ext_resource type="Script" path="res://scripts/MazoCartas.gd" id="1_pf761"]
 [ext_resource type="PackedScene" uid="uid://b47xbta5payek" path="res://escenas/carta.tscn" id="2_y5ux8"]
 [ext_resource type="Texture2D" uid="uid://b5dxr0iyainy1" path="res://texturas/cartas/Petardos.jpg" id="3_2t35l"]
 [ext_resource type="Texture2D" uid="uid://bsoujiee88glm" path="res://texturas/cartas/Incenciar_Molino.jpg" id="3_4i2cr"]
+[ext_resource type="Texture2D" uid="uid://c615l4nk8ju3q" path="res://texturas/cartas/beta/petardos.png" id="4_0q4l5"]
 [ext_resource type="Texture2D" uid="uid://csuynl0wqgna3" path="res://texturas/cartas/almacen_explo.jpg" id="4_5dsgl"]
 [ext_resource type="Texture2D" uid="uid://bch8xlvm2gyay" path="res://texturas/cartas/Bombas_Fetidas.jpg" id="4_6nxnp"]
 [ext_resource type="Texture2D" uid="uid://wtrb7t5nuou6" path="res://texturas/cartas/Vigil.jpg" id="5_jgnyf"]
@@ -14,14 +15,33 @@
 [ext_resource type="Texture2D" uid="uid://cs0xqdvio6sf0" path="res://texturas/cartas/Cabeza_de_caballo.png" id="6_87ovp"]
 [ext_resource type="Texture2D" uid="uid://tv5qitvrfac2" path="res://texturas/cartas/Lluvia_de_sangre.jpg" id="6_126jb"]
 [ext_resource type="Texture2D" uid="uid://dce4aveal15a8" path="res://texturas/cartas/Luna_de_sangre.jpg" id="6_crg15"]
+[ext_resource type="Texture2D" uid="uid://bly5wwh03p5sn" path="res://texturas/cartas/beta/almacen.png" id="6_gke4a"]
 [ext_resource type="Texture2D" uid="uid://dedfp5by0rsum" path="res://texturas/cartas/pudrir_el_pan.jpg" id="7_7u2fu"]
+[ext_resource type="Texture2D" uid="uid://b4jkpsrl2xsph" path="res://texturas/cartas/beta/molino.png" id="8_4rcs2"]
 [ext_resource type="Texture2D" uid="uid://bg7185unrq5nw" path="res://texturas/cartas/Pozo_sin_agua.jpg" id="9_cq5c4"]
+[ext_resource type="Texture2D" uid="uid://1o4uq4xadoc0" path="res://texturas/cartas/beta/Torito.jpg" id="10_1sruh"]
 [ext_resource type="Texture2D" uid="uid://dxysl04btnj38" path="res://texturas/cartas/Caballero_Maldito.jpg" id="10_dpifn"]
 [ext_resource type="Texture2D" uid="uid://dm3kfdrqu7wp0" path="res://texturas/cartas/Chupacabras.jpg" id="10_o0qfg"]
 [ext_resource type="Texture2D" uid="uid://d0mrj2m1h2apw" path="res://texturas/cartas/cirujano.jpg" id="11_rb452"]
 [ext_resource type="Texture2D" uid="uid://ctcb2b3n18aix" path="res://texturas/cartas/sacerdote.png" id="11_ux4o5"]
+[ext_resource type="Texture2D" uid="uid://co3b6x1js2u1r" path="res://texturas/cartas/beta/lluvia_sangre.png" id="12_xfhqx"]
+[ext_resource type="Texture2D" uid="uid://ny32xn3vmk8l" path="res://texturas/cartas/beta/pan podrido.png" id="14_0w33e"]
 [ext_resource type="Texture2D" uid="uid://bp1s1qskrqx7v" path="res://texturas/cartas/Defenestrar_a_la_enana.jpg" id="14_bob7k"]
 [ext_resource type="Texture2D" uid="uid://bvxucmmipmk18" path="res://texturas/cartas/simios_agresivos_pix.jpg" id="16_fgw5d"]
+[ext_resource type="Texture2D" uid="uid://di372f7wh8crq" path="res://texturas/cartas/beta/bombas.png" id="16_p7bnq"]
+[ext_resource type="Texture2D" uid="uid://b0q3ynn8sp6ad" path="res://texturas/cartas/beta/pozo envenenado.png" id="18_ynvjr"]
+[ext_resource type="Texture2D" uid="uid://dus3bnxwf83hk" path="res://texturas/cartas/beta/niebla venenosa.png" id="20_d64bt"]
+[ext_resource type="Texture2D" uid="uid://bmp6tmd3mcsrd" path="res://texturas/cartas/beta/ratas.png" id="22_bc4ol"]
+[ext_resource type="Texture2D" uid="uid://cfwijk1gab08h" path="res://texturas/cartas/beta/caballo.png" id="24_n0cjt"]
+[ext_resource type="Texture2D" uid="uid://xet6bo4q1vax" path="res://texturas/cartas/beta/pozo.png" id="26_piu3m"]
+[ext_resource type="Texture2D" uid="uid://cxu12b8f07v6a" path="res://texturas/cartas/beta/enana.png" id="28_io7ag"]
+[ext_resource type="Texture2D" uid="uid://b864yh1xq3syq" path="res://texturas/cartas/beta/perro.png" id="30_cn74g"]
+[ext_resource type="Texture2D" uid="uid://oqlgofmpowpq" path="res://texturas/cartas/beta/monos.png" id="32_gmsxl"]
+[ext_resource type="Texture2D" uid="uid://bedpk4miwyj60" path="res://texturas/cartas/beta/amanece.png" id="34_aaygt"]
+[ext_resource type="Texture2D" uid="uid://b04alhl76ay5" path="res://texturas/cartas/beta/cirujano.png" id="36_duv5q"]
+[ext_resource type="Texture2D" uid="uid://dtl2wcbhbmmig" path="res://texturas/cartas/beta/vigil.png" id="38_4jaad"]
+[ext_resource type="Texture2D" uid="uid://g5x2aj6kwwye" path="res://texturas/cartas/beta/sacerdote.png" id="40_fh3bu"]
+[ext_resource type="Texture2D" uid="uid://bqv4ukuys1xom" path="res://texturas/cartas/beta/caballero.png" id="42_e138j"]
 
 [node name="MazoCartas" type="Node2D"]
 script = ExtResource("1_pf761")
@@ -34,6 +54,7 @@ counter = "Los petardos que has comprado eran defectuosos y te han explotado en 
 tipo = 1
 reutilizable = true
 valor = 15
+sprite_beta = ExtResource("4_0q4l5")
 
 [node name="Almacén" parent="." instance=ExtResource("2_y5ux8")]
 texture = ExtResource("4_5dsgl")
@@ -42,6 +63,7 @@ descripcion = "Los campesinos no podrán trabajar las tierras del rey Adetokumbo
 counter = "El rey Adetokumbo acaba de casarse con su decimocuarta mujer y ha decidido darle dos semanas de vacaciones a los campesinos."
 tipo = 1
 valor = 25
+sprite_beta = ExtResource("6_gke4a")
 
 [node name="Molino" parent="." instance=ExtResource("2_y5ux8")]
 position = Vector2(0, -2)
@@ -51,6 +73,7 @@ descripcion = "Se pronostica un invierno especialmente frío y duro. Prender fue
 counter = "Algún aldeano borracho ha meado justo donde has iniciado el fuego. "
 tipo = 1
 valor = 30
+sprite_beta = ExtResource("8_4rcs2")
 
 [node name="Toro" parent="." instance=ExtResource("2_y5ux8")]
 texture = ExtResource("5_t1u4y")
@@ -60,6 +83,7 @@ counter = "Esta noche han caído unas lluvias torrenciales, no es tu día de sue
 tipo = 1
 requisitos = 30
 valor = 50
+sprite_beta = ExtResource("10_1sruh")
 
 [node name="LluviaFuego" parent="." instance=ExtResource("2_y5ux8")]
 texture = ExtResource("6_126jb")
@@ -71,6 +95,7 @@ funcion = 2
 requisitos = 40
 valor = 60
 can_counter = false
+sprite_beta = ExtResource("12_xfhqx")
 
 [node name="Pan" parent="." instance=ExtResource("2_y5ux8")]
 texture = ExtResource("7_7u2fu")
@@ -80,6 +105,7 @@ counter = "El pan mojado resultó ser una fantástica materia prima para las tor
 tipo = 2
 reutilizable = true
 valor = 20
+sprite_beta = ExtResource("14_0w33e")
 
 [node name="Bombas" parent="." instance=ExtResource("2_y5ux8")]
 texture = ExtResource("4_6nxnp")
@@ -90,6 +116,7 @@ tipo = 2
 funcion = 2
 reutilizable = true
 valor = 20
+sprite_beta = ExtResource("16_p7bnq")
 
 [node name="PozoEnvenenado" parent="." instance=ExtResource("2_y5ux8")]
 texture = ExtResource("5_mupmq")
@@ -99,6 +126,7 @@ counter = "Parece que aunque el mono se haya vestido de seda no ha pasado desape
 tipo = 2
 requisitos = 20
 valor = 30
+sprite_beta = ExtResource("18_ynvjr")
 
 [node name="Niebla" parent="." instance=ExtResource("2_y5ux8")]
 texture = ExtResource("6_06ux5")
@@ -108,6 +136,7 @@ counter = "Han puesto los molinos a funcionar al revés y parece que han consegu
 tipo = 2
 requisitos = 40
 valor = 50
+sprite_beta = ExtResource("20_d64bt")
 
 [node name="Plaga" parent="." instance=ExtResource("2_y5ux8")]
 texture = ExtResource("5_l6taq")
@@ -117,6 +146,7 @@ counter = "Acaba de abrir un Kebab en el pueblo y les has dado justo la materia 
 tipo = 2
 requisitos = 50
 valor = 70
+sprite_beta = ExtResource("22_bc4ol")
 
 [node name="Caballo" parent="." instance=ExtResource("2_y5ux8")]
 texture = ExtResource("6_87ovp")
@@ -124,6 +154,7 @@ titulo = "Cabeza de caballo"
 descripcion = "Nada asusta más que amanecer junto a la cabeza de tu caballo, y da la casualidad de que el noble más paranoico del pueblo acaba de hacerse con un corcel nuevo..."
 counter = "Justo ese día iba a dormir un amigo del noble a su casa y parece ser que considera los sesos un autentico manjar."
 valor = 35
+sprite_beta = ExtResource("24_n0cjt")
 
 [node name="PozoTapado" parent="." instance=ExtResource("2_y5ux8")]
 texture = ExtResource("9_cq5c4")
@@ -134,6 +165,7 @@ tipo = 1
 funcion = 2
 reutilizable = true
 valor = 15
+sprite_beta = ExtResource("26_piu3m")
 
 [node name="Enana" parent="." instance=ExtResource("2_y5ux8")]
 texture = ExtResource("14_bob7k")
@@ -143,6 +175,7 @@ counter = "El ayuntamiento le subvenciona una silla de ruedas."
 reutilizable = true
 requisitos = 20
 valor = 50
+sprite_beta = ExtResource("28_io7ag")
 
 [node name="Perro" parent="." instance=ExtResource("2_y5ux8")]
 texture = ExtResource("10_o0qfg")
@@ -151,6 +184,7 @@ descripcion = "Un paseo nocturno a tu simpática mascota aterrará a los más tr
 counter = "César Millán, que se había ido de vacaciones al pueblo, le dice un par de psh y consigue adiestrar a la temible bestia."
 requisitos = 30
 valor = 60
+sprite_beta = ExtResource("30_cn74g")
 
 [node name="Monos" parent="." instance=ExtResource("2_y5ux8")]
 texture = ExtResource("16_fgw5d")
@@ -158,6 +192,7 @@ titulo = "Simios agresivos"
 descripcion = "¡Libera a tu ejército de simios para que cause estragos en el pueblo! Unos van armados, otros usan sus propios excrementos como arma arrojadiza."
 counter = "Adetokumbo soborna al rey mono con platános de Canarias."
 valor = 25
+sprite_beta = ExtResource("32_gmsxl")
 
 [node name="Amanece" parent="." instance=ExtResource("2_y5ux8")]
 texture = ExtResource("6_crg15")
@@ -169,6 +204,7 @@ requisitos = 120
 valor = 150
 valida_ia = false
 can_counter = false
+sprite_beta = ExtResource("34_aaygt")
 
 [node name="Cirujano" parent="." instance=ExtResource("2_y5ux8")]
 texture = ExtResource("11_rb452")
@@ -181,6 +217,7 @@ requisitos = 30
 valor = -30
 valida_ia = false
 can_counter = false
+sprite_beta = ExtResource("36_duv5q")
 
 [node name="Vigil" parent="." instance=ExtResource("2_y5ux8")]
 texture = ExtResource("5_jgnyf")
@@ -195,6 +232,7 @@ requisitos = 40
 valor = -20
 valida_ia = false
 can_counter = false
+sprite_beta = ExtResource("38_4jaad")
 
 [node name="Sacerdote" parent="." instance=ExtResource("2_y5ux8")]
 texture = ExtResource("11_ux4o5")
@@ -207,6 +245,7 @@ requisitos = 20
 valor = -10
 valida_ia = false
 can_counter = false
+sprite_beta = ExtResource("40_fh3bu")
 
 [node name="Caballero" parent="." instance=ExtResource("2_y5ux8")]
 texture = ExtResource("10_dpifn")
@@ -218,3 +257,4 @@ requisitos = 15
 valor = 10
 valida_ia = false
 can_counter = false
+sprite_beta = ExtResource("42_e138j")

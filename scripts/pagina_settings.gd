@@ -7,6 +7,7 @@ extends Panel
 @onready var slider_SFX = $Settings/VolumenSFX
 @onready var mute_SFX = $Settings/VolumenSFX/MuteSFX
 @onready var auto_play = $Settings/SkipIa
+@onready var graficos_4k = $Settings/Graficos4K
 
 
 
@@ -18,6 +19,7 @@ func _ready():
 	slider_SFX.value = Audio.porcentaje_sfx
 	mute_SFX.button_pressed = Audio.sfx_muted
 	auto_play.button_pressed = Global.auto_skip_ia
+	graficos_4k.button_pressed = Global.graficos_4k
 	
 	for button in [mute_master, mute_musica, mute_SFX, auto_play]:
 		button.toggled.connect(Audio.play_toggle_eye)
@@ -60,3 +62,6 @@ func _on_mute_sfx_toggled(toggled_on):
 
 func _on_skip_ia_toggled(toggled_on):
 	Global.auto_skip_ia = toggled_on
+
+func _on_graficos_4k_toggled(toggled_on):
+	Global.graficos_4k_toggle(toggled_on)

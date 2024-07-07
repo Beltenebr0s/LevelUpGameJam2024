@@ -207,7 +207,6 @@ texture = ExtResource("6_xlrri")
 expand_mode = 1
 
 [node name="PaginaSettings" parent="LibroAbierto" instance=ExtResource("7_krxbc")]
-visible = false
 layout_mode = 1
 
 [node name="PaginaFinal" type="Panel" parent="LibroAbierto"]
@@ -618,6 +617,7 @@ scale = Vector2(0.567926, 0.567926)
 icon = ExtResource("19_5jf37")
 
 [node name="PaginaCredits" type="Panel" parent="LibroAbierto"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

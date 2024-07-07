@@ -1,11 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://cy5urn5n1wibs"]
+[gd_scene load_steps=11 format=3 uid="uid://cy5urn5n1wibs"]
 
 [ext_resource type="Script" path="res://scripts/pasivasUI.gd" id="1_hg818"]
 [ext_resource type="PackedScene" uid="uid://bhmjeb0ta4p58" path="res://escenas/carta_pasiva.tscn" id="2_q6wbb"]
 [ext_resource type="Texture2D" uid="uid://dxysl04btnj38" path="res://texturas/cartas/Caballero_Maldito.jpg" id="3_b4ycr"]
+[ext_resource type="Texture2D" uid="uid://bqv4ukuys1xom" path="res://texturas/cartas/beta/caballero.png" id="4_b8ckl"]
 [ext_resource type="Texture2D" uid="uid://wtrb7t5nuou6" path="res://texturas/cartas/Vigil.jpg" id="4_tfpje"]
 [ext_resource type="Texture2D" uid="uid://d0mrj2m1h2apw" path="res://texturas/cartas/cirujano.jpg" id="5_kibpe"]
 [ext_resource type="Texture2D" uid="uid://ctcb2b3n18aix" path="res://texturas/cartas/sacerdote.png" id="5_qj0h5"]
+[ext_resource type="Texture2D" uid="uid://dtl2wcbhbmmig" path="res://texturas/cartas/beta/vigil.png" id="6_ygson"]
+[ext_resource type="Texture2D" uid="uid://b04alhl76ay5" path="res://texturas/cartas/beta/cirujano.png" id="8_nh30h"]
+[ext_resource type="Texture2D" uid="uid://g5x2aj6kwwye" path="res://texturas/cartas/beta/sacerdote.png" id="10_ynjq6"]
 
 [node name="pasivasUI" type="Control"]
 layout_mode = 3
@@ -31,6 +35,7 @@ offset_right = 97.0
 offset_bottom = 132.0
 texto_descripcion = "Todo el pueblo teme al caballero, enloquecen mínimo 10 personas en cada turno."
 sprite = ExtResource("3_b4ycr")
+sprite_beta = ExtResource("4_b8ckl")
 
 [node name="Vigil" parent="." instance=ExtResource("2_q6wbb")]
 layout_mode = 0
@@ -40,6 +45,7 @@ offset_right = 97.0
 offset_bottom = 268.0
 texto_descripcion = "El vigil esá fuera de sí, ansía vengar a su familia. Las cartas de fuego reciben una bonificación."
 sprite = ExtResource("4_tfpje")
+sprite_beta = ExtResource("6_ygson")
 
 [node name="Cirujano" parent="." instance=ExtResource("2_q6wbb")]
 layout_mode = 0
@@ -49,6 +55,7 @@ offset_right = 97.0
 offset_bottom = 404.0
 texto_descripcion = "El cirujano ha decidido que su negocio es poco rentable, ayudará a propagar enfermedades. Las cartas de peste reciben una bonificación."
 sprite = ExtResource("5_kibpe")
+sprite_beta = ExtResource("8_nh30h")
 
 [node name="Sacerdote" parent="." instance=ExtResource("2_q6wbb")]
 layout_mode = 0
@@ -58,5 +65,6 @@ offset_right = 97.0
 offset_bottom = 540.0
 texto_descripcion = "El sacerdote ligó con el demonio que invocaste. Juntos, hacen un ritual que te permite robar otra mano de cartas sin perder el turno (click para activar)."
 sprite = ExtResource("5_qj0h5")
+sprite_beta = ExtResource("10_ynjq6")
 
 [connection signal="accion" from="Sacerdote" to="." method="_on_sacerdote_accion"]

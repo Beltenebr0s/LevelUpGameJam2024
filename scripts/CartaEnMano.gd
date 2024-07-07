@@ -18,6 +18,7 @@ var borde_pasiva = "res://texturas/cartas/Borde_Purpura.png"
 func _ready():
 	carta_oculta = true
 	$Carta.position = Vector2(0, 200)
+	Global.graficos_4k_cambio.connect(actualizar_sprite)
 	ocultar_descripcion()
 
 func subir_carta():
@@ -86,7 +87,11 @@ func _on_boton_carta_mouse_exited():
 		bajar_carta()
 
 func actualizar_sprite():
-	textura.texture = carta.texture
+	if carta != null:
+		if Global.graficos_4k:
+			textura.texture = carta.sprite_beta
+		else:
+			textura.texture = carta.texture
 
 func actualizar_descripcion():
 	self.titulo.text = self.carta.titulo
