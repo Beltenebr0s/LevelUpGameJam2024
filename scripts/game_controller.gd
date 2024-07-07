@@ -115,11 +115,17 @@ func jugada_ia():
 func aplicar_counter():
 	if randf() <= mano_ia.prob_counter:
 		print("counter")
+		selected_cards.shafel()
 		for carta in selected_cards: 
-			if !carta.desbloquea_pasiva && carta.can_counter && carta.funcion != 2:
+			if !carta.desbloquea_pasiva && carta.can_counter:
 				mano_ia.mano[mano_ia.mano.size() - 1].descripcion = carta.counter
-				if carta == carta_combo:
-					mano_ia.mano[mano_ia.mano.size() - 1].valor = carta.valor * 1.5
+				if carta_combo != null:
+					if carta == carta_combo:
+						mano_ia.mano[mano_ia.mano.size() - 1].valor = carta.valor * 1.5
+					else:
+						mano_ia.mano[mano_ia.mano.size() - 1].valor = carta.valor + carta_combo.valor * 0.5
+				if (carta.tipo == 1 or carta.tipo == 2) and pasivas_ui.pasiva_activada(carta.tipo):
+					mano_ia.mano[mano_ia.mano.size() - 1].valor += mano_ia.mano[mano_ia.mano.size() - 1].valor*0.5
 				mano_ia.mano.remove_at(0)
 				break
 		if mano_ia.mano.size() > n_cartas_turno_ia:
@@ -136,7 +142,7 @@ func aplicar_efecto_cartas(b_is_player : bool):
 			resultado += aplicar_pasivas_activas(carta)
 		for carta in selected_cards:
 			activar_pasiva(carta)
-		resultado = comprobar_combo(resultado)
+		resultado += comprobar_combo(resultado)
 	else:
 		for carta in mazo_ia.mano:
 			resultado += nerf_card_to_ia(carta)
@@ -178,9 +184,9 @@ func comprobar_combo(resultado):
 	if hay_multiplicador && !hay_pasiva && mismo_tipo:
 		alerta_combo.mostrar_alerta_combo()
 		Audio.play_alerta_combo()
-		return resultado * 1.5
+		return carta_combo.valor * 0.5
 	else:
-		return resultado
+		return 0
 
 func mulligan():
 	if mano_ui.mano_lista and !mulligan_usado:

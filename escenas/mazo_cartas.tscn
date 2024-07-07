@@ -1,14 +1,12 @@
-[gd_scene load_steps=19 format=3 uid="uid://b80mbbnuqe78v"]
+[gd_scene load_steps=15 format=3 uid="uid://b80mbbnuqe78v"]
 
 [ext_resource type="Script" path="res://scripts/MazoCartas.gd" id="1_pf761"]
 [ext_resource type="PackedScene" uid="uid://b47xbta5payek" path="res://escenas/carta.tscn" id="2_y5ux8"]
 [ext_resource type="Texture2D" uid="uid://bsoujiee88glm" path="res://texturas/cartas/Incenciar_Molino.jpg" id="3_4i2cr"]
-[ext_resource type="Texture2D" uid="uid://b5dxr0iyainy1" path="res://texturas/cartas/Petardos.jpg" id="3_s5ow0"]
 [ext_resource type="Texture2D" uid="uid://bch8xlvm2gyay" path="res://texturas/cartas/Bombas_Fetidas.jpg" id="4_6nxnp"]
 [ext_resource type="Texture2D" uid="uid://wtrb7t5nuou6" path="res://texturas/cartas/Vigil.jpg" id="5_jgnyf"]
 [ext_resource type="Texture2D" uid="uid://bk1b5bs1xirll" path="res://texturas/cartas/Plaga_ratas.png" id="5_l6taq"]
 [ext_resource type="Texture2D" uid="uid://d2v7o0fwrj8gk" path="res://texturas/cartas/Envenenar_el_pozo.jpg" id="5_mupmq"]
-[ext_resource type="Texture2D" uid="uid://j1jili5h3aj2" path="res://texturas/cartas/Toro_de_fuego.jpg" id="5_ymle6"]
 [ext_resource type="Texture2D" uid="uid://ua6tddjd5q4d" path="res://texturas/cartas/Niebla_venenosa.jpg" id="6_06ux5"]
 [ext_resource type="Texture2D" uid="uid://cs0xqdvio6sf0" path="res://texturas/cartas/Cabeza_de_caballo.png" id="6_87ovp"]
 [ext_resource type="Texture2D" uid="uid://bg7185unrq5nw" path="res://texturas/cartas/Pozo_sin_agua.jpg" id="9_cq5c4"]
@@ -16,14 +14,12 @@
 [ext_resource type="Texture2D" uid="uid://dm3kfdrqu7wp0" path="res://texturas/cartas/Chupacabras.jpg" id="10_o0qfg"]
 [ext_resource type="Texture2D" uid="uid://d0mrj2m1h2apw" path="res://texturas/cartas/cirujano.jpg" id="11_rb452"]
 [ext_resource type="Texture2D" uid="uid://ctcb2b3n18aix" path="res://texturas/cartas/sacerdote.png" id="11_ux4o5"]
-[ext_resource type="Texture2D" uid="uid://bvxucmmipmk18" path="res://texturas/cartas/simios_agresivos_pix.jpg" id="13_rby53"]
-[ext_resource type="Texture2D" uid="uid://dce4aveal15a8" path="res://texturas/cartas/Luna_de_sangre.jpg" id="14_nf0k4"]
 
 [node name="MazoCartas" type="Node2D"]
 script = ExtResource("1_pf761")
 
 [node name="Petardos" parent="." instance=ExtResource("2_y5ux8")]
-texture = ExtResource("3_s5ow0")
+texture = null
 titulo = "Tirar petardos"
 descripcion = "Un pequeño espectáculo de pirotecnia ayudará a tu causa, privando del sueño a los vecinos."
 counter = "Los petardos que has comprado eran defectuosos y te han explotado en la cara."
@@ -48,7 +44,7 @@ tipo = 1
 valor = 30
 
 [node name="Toro" parent="." instance=ExtResource("2_y5ux8")]
-texture = ExtResource("5_ymle6")
+texture = null
 titulo = "Toro de fuego"
 descripcion = "Esta noche, en la fiesta, habrá un encierro. No se requiere de mucha habilidad mágica para hacer que los cuernos escupan fuego."
 counter = "Esta noche han caído unas lluvias torrenciales, no es tu día de suerte."
@@ -143,14 +139,14 @@ requisitos = 30
 valor = 60
 
 [node name="Monos" parent="." instance=ExtResource("2_y5ux8")]
-texture = ExtResource("13_rby53")
+texture = null
 titulo = "Simios agresivos"
 descripcion = "¡Libera a tu ejército de simios para que cause estragos en el pueblo! Unos van armados, otros usan sus propios excrementos como arma arrojadiza."
 counter = "Adetokumbo soborna al rey mono con platános de Canarias."
 valor = 25
 
 [node name="Amanece" parent="." instance=ExtResource("2_y5ux8")]
-texture = ExtResource("14_nf0k4")
+texture = null
 titulo = "Anochece, que no es poco"
 descripcion = "El Astro Sangriento se eleva por el oeste, tiñiendo de carmesí los bosques del pueblo. Ahora somos imparables."
 reutilizable = true
