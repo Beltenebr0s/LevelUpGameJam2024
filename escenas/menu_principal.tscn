@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://byeqj6jd7r2vl"]
+[gd_scene load_steps=33 format=3 uid="uid://byeqj6jd7r2vl"]
 
 [ext_resource type="Theme" uid="uid://cmcb4mmclu5ex" path="res://Fuentes/tema_libro.tres" id="1_rgpyg"]
 [ext_resource type="Script" path="res://scripts/MenuPrincipal.gd" id="1_xdxr6"]
@@ -23,8 +23,6 @@
 [ext_resource type="Texture2D" uid="uid://c23a6r0v6jh2v" path="res://texturas/menus/Volver_pagina.png" id="20_ma2qo"]
 [ext_resource type="Texture2D" uid="uid://bv5a4q2yhi204" path="res://texturas/menus/home.png" id="21_4qava"]
 [ext_resource type="Texture2D" uid="uid://corx5wwjtbrkf" path="res://texturas/menus/home_pressed.png" id="22_ly484"]
-[ext_resource type="PackedScene" uid="uid://b50qc4rv6vsgo" path="res://escenas/fade.tscn" id="24_n131g"]
-[ext_resource type="PackedScene" uid="uid://ddmxbpwae2x3s" path="res://escenas/game.tscn" id="25_pyp8c"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gt4ad"]
 
@@ -837,10 +835,6 @@ offset_bottom = 548.0
 
 [node name="MazoCartas" parent="." instance=ExtResource("16_twf7g")]
 position = Vector2(1767, 754)
-
-[node name="Fade" parent="." instance=ExtResource("24_n131g")]
-layout_mode = 1
-siguiente_escena = ExtResource("25_pyp8c")
 
 [connection signal="pressed" from="LibroAbierto/PaginaInicio/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="LibroAbierto/PaginaInicio/Settings" to="." method="_on_settings_pressed"]

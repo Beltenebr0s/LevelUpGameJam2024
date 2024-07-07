@@ -22,7 +22,7 @@ var botones_pagina = []
 var postits = []
 
 func _ready():
-	fade.fade_in()
+	#fade.fade_in()
 	ui_buttons = get_tree().get_nodes_in_group("ui_button")
 	for button in ui_buttons:
 		button.mouse_entered.connect(Audio.play_boton_select)
@@ -110,7 +110,8 @@ func _on_tutorial_press():
 		historia.visible = false
 
 func _on_start_game_pressed():
-	fade.fade_out()
+	#fade.fade_out()
+	pass
 
 func _on_settings_pressed():
 	print("Ajustes")
@@ -144,15 +145,6 @@ func _on_home_pressed():
 
 func _on_exit_pressed():
 	get_tree().quit()
-
-func _on_volumen_musica_value_changed(value):
-	Audio.change_music_volume(value)
-
-func _on_mute_musica_pressed():
-	Audio.mute_music()
-
-func _on_mute_sfx_pressed():
-	Audio.mute_sfx()
 
 func _save_current_score():
 	var save_game
