@@ -236,7 +236,7 @@ offset_left = -384.0
 offset_top = 15.0
 offset_right = -29.0
 offset_bottom = 111.0
-text = "ME CAGO EN EL MISTERIO"
+text = ""
 
 [node name="Score" type="Label" parent="LibroAbierto/PaginaFinal/Final"]
 layout_mode = 0
