@@ -52,6 +52,9 @@ func _on_exit_pressed():
 
 func _on_home_pressed():
 	mostrar_pagina_inicio()
+	
+func _on_continue_pressed():
+	pausa()
 
 func _on_button_mouse_entered():
 	Audio.play_boton_select()
