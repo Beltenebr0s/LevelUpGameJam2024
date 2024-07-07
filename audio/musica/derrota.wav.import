@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cdk1kf5cs5r7k"
-path="res://.godot/imported/derrota idea.wav-444a70ce185d84dc761af366b4c3b328.sample"
+path="res://.godot/imported/derrota.wav-6c8e6be4c45063282af56aa865485fad.sample"
 
 [deps]
 
-source_file="res://audio/musica/derrota idea.wav"
-dest_files=["res://.godot/imported/derrota idea.wav-444a70ce185d84dc761af366b4c3b328.sample"]
+source_file="res://audio/musica/derrota.wav"
+dest_files=["res://.godot/imported/derrota.wav-6c8e6be4c45063282af56aa865485fad.sample"]
 
 [params]
 

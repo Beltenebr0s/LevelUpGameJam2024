@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://dn7gvm64x6bca" path="res://audio/musica/gameplay.wav" id="3_06ckq"]
 [ext_resource type="AudioStream" uid="uid://d2sghtanrqoig" path="res://audio/SFX/SFX_CrazyBar_Over100.wav" id="3_hddw4"]
 [ext_resource type="AudioStream" uid="uid://b43j6l2hua7ab" path="res://audio/SFX/SFX_Card_Play1.wav" id="4_ll207"]
-[ext_resource type="AudioStream" uid="uid://cdk1kf5cs5r7k" path="res://audio/musica/derrota idea.wav" id="4_n4j8a"]
+[ext_resource type="AudioStream" uid="uid://cdk1kf5cs5r7k" path="res://audio/musica/derrota.wav" id="4_n4j8a"]
 [ext_resource type="AudioStream" uid="uid://dqexox7j55wwr" path="res://audio/musica/victoria.wav" id="4_volqc"]
 [ext_resource type="AudioStream" uid="uid://d3lq3ip73u3xu" path="res://audio/AMB/AMB_V1.wav" id="4_whf2o"]
 [ext_resource type="AudioStream" uid="uid://dcsrjfs2arrlc" path="res://audio/SFX/SFX_Card_Play2.wav" id="5_m0mtf"]
