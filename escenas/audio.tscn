@@ -111,6 +111,7 @@ bus = &"Musica_int"
 
 [node name="JingleVictoria" type="AudioStreamPlayer" parent="Musica"]
 stream = ExtResource("4_volqc")
+volume_db = 5.22
 bus = &"Musica_int"
 
 [node name="JingleDerrota" type="AudioStreamPlayer" parent="Musica"]
