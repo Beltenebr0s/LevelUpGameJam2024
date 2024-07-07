@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://byeqj6jd7r2vl"]
+[gd_scene load_steps=35 format=3 uid="uid://byeqj6jd7r2vl"]
 
 [ext_resource type="Theme" uid="uid://cmcb4mmclu5ex" path="res://Fuentes/tema_libro.tres" id="1_rgpyg"]
 [ext_resource type="Script" path="res://scripts/MenuPrincipal.gd" id="1_xdxr6"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://bv5a4q2yhi204" path="res://texturas/menus/home.png" id="21_4qava"]
 [ext_resource type="Texture2D" uid="uid://corx5wwjtbrkf" path="res://texturas/menus/home_pressed.png" id="22_ly484"]
 [ext_resource type="PackedScene" uid="uid://b50qc4rv6vsgo" path="res://escenas/fade.tscn" id="24_b6nnq"]
+[ext_resource type="PackedScene" uid="uid://dheidflovtqfd" path="res://escenas/score_request.tscn" id="25_j1t5w"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gt4ad"]
 
@@ -843,6 +844,8 @@ offset_left = -631.0
 offset_top = -441.0
 offset_right = 1333.0
 offset_bottom = 836.0
+
+[node name="ScoreRequest" parent="." instance=ExtResource("25_j1t5w")]
 
 [connection signal="pressed" from="LibroAbierto/PaginaInicio/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="LibroAbierto/PaginaInicio/Settings" to="." method="_on_settings_pressed"]

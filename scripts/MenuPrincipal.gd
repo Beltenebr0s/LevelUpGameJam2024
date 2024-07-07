@@ -12,7 +12,7 @@ var SAVE_FILE_DIRECTION = 'user://gamescores.save'
 @onready var mute_SFX = $LibroAbierto/PaginaSettings/Settings/VolumenSFX/MuteSFX
 @onready var galeria = $LibroAbierto/PaginaGaleria
 @onready var fade = $Fade
-
+@onready var score_request = $ScoreRequest
 @onready var escena_juego = preload("res://escenas/game.tscn")
 
 var lista_cartas = []
@@ -22,6 +22,8 @@ var botones_pagina = []
 var postits = []
 
 func _ready():
+	score_request.received_scores.connect(print_score)
+	score_request.ranking_error.connect(disable_ranking)
 	fade.set_siguiente_escena(Global.escena_game)
 	fade.fade_in()
 	ui_buttons = get_tree().get_nodes_in_group("ui_button")
@@ -65,29 +67,8 @@ func _ready():
 		else:
 			$LibroAbierto/PaginaFinal/Final/Derrota.visible = true
 			$LibroAbierto/PaginaFinal/Final/Victoria.visible = false
-		
-		
-		#var node : RichTextLabel = get_node("$LibroAbierto/PaginaFinal/Final/Historia/TextoHistoria")
-		#for aux in Global.cartas_jugadas:
-		#	node.text += aux
-		#	node.text += '\n'
-		
+
 		_save_current_score()
-		var scores = _get_ranking()
-		var position : int = 1
-		scores.sort_custom(func(a, b): return a['Score'] > b['Score'])
-		for score in scores:
-			ranking_text.text += str(position)
-			ranking_text.text += '. '
-			ranking_text.text += str(score['Score'])
-			ranking_text.text += ' - - - - - - - - - - - - - - '
-			ranking_text.text += score['Username']
-			ranking_text.text += ' '
-			ranking_text.text += str(score['Time'])
-			ranking_text.text += '\n'
-			position+=1;
-			if position > 8:
-				break
 
 func _on_titulo_juego_pressed():
 	libro_cerrado.visible = false
@@ -148,23 +129,7 @@ func _on_exit_pressed():
 	get_tree().quit()
 
 func _save_current_score():
-	var save_game
-	if FileAccess.file_exists(SAVE_FILE_DIRECTION):
-		save_game = FileAccess.open(SAVE_FILE_DIRECTION, FileAccess.READ_WRITE)
-		save_game.seek_end()
-	else:
-		save_game = FileAccess.open(SAVE_FILE_DIRECTION, FileAccess.WRITE)
-	print(FileAccess.get_open_error())
-	var rng = RandomNumberGenerator.new()
-	var save_dict = {
-		"Username" : "",
-		"Score" : Global.puntos_locura,
-		"Time" : Time.get_time_string_from_system()
-	}
-	var json_string = JSON.stringify(save_dict)
-	save_game.store_line(json_string)
-	save_game.close()
-	print(save_dict['Score'])
+	score_request.save_score_on_server(Global.puntos_locura)
 	
 func _get_ranking():
 	if not FileAccess.file_exists(SAVE_FILE_DIRECTION):
@@ -217,3 +182,61 @@ func _on_btn_siguiente_pressed():
 	mostrar_carta()
 	Audio.play_pasar_pagina()
 
+
+func print_score(score):
+	$LibroAbierto/PaginaFinal/Final/Ranking.visible = true
+	print("PRINT SCORE")
+	var ranking_score_list = []
+	for player_score in score:
+		var score_dict = convert_score_str_to_dict(player_score)
+		print(score_dict)
+		ranking_score_list.append(score_dict)
+	ordenar_y_mostrar_ranking(ranking_score_list)
+
+func ordenar_y_mostrar_ranking(scores):
+	var position : int = 1
+	scores.sort_custom(func(a, b): return a['Score'] > b['Score'])
+	for score in scores:
+		ranking_text.text += str(position)
+		ranking_text.text += '. '
+		ranking_text.text += str(score['Score'])
+		ranking_text.text += ' - - - - - - - '
+		ranking_text.text += score['Username']
+		ranking_text.text += ' '
+		ranking_text.text += str(score['Time'])
+		ranking_text.text += '\n'
+		position+=1;
+		if position > 8:
+			break
+
+func convert_score_str_to_dict(score_str : String):
+	var score_split = score_str.split(",") # 0 Username, 1 Score, 2 Time
+	var raw_username
+	var raw_score = int(get_score(score_split[1]))
+	var raw_time = get_time(score_split[2])
+	var save_dict = {
+		"Username" : "",
+		"Score" : raw_score,
+		"Time" : raw_time
+	}
+	return save_dict
+func get_username(str_user : String) -> String:
+	return ""
+func get_score(str_score : String) -> String:
+	var regex = RegEx.new()
+	regex.compile("\\d+")
+	var result = regex.search(str_score)
+	return result.get_string()
+func get_time(str_time : String) -> String:
+	var regex = RegEx.new()
+	regex.compile("\\d{2}\\/\\d{2}\\/\\d{4} \\d{2}:\\d{2}")
+	var result = regex.search(str_time)
+	return result.get_string()
+	
+func disable_ranking():
+	$LibroAbierto/PaginaFinal/Final/Ranking.visible = true
+	ranking_text.text = "\n"
+	ranking_text.text += "  		   MePer d0nas?¡ \n"
+	ranking_text.text += " yo habia ponido mi rankin onlin aki :(\n"
+	ranking_text.text += "   :C     no encuentro eL interNete\n"
+	ranking_text.text += "                                      D: "
