@@ -1,7 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://dfwncdbnb8hmh"]
+[gd_scene load_steps=13 format=3 uid="uid://dfwncdbnb8hmh"]
 
 [ext_resource type="Script" path="res://scripts/carta_en_mano_ia.gd" id="1_mbqnl"]
-[ext_resource type="Texture2D" uid="uid://bhc2itrft4xct" path="res://texturas/Dorso_Dorado.png" id="2_elyg5"]
 [ext_resource type="FontFile" uid="uid://b0jqr7aj1vrop" path="res://DarumadropOne-Regular.ttf" id="3_s43x6"]
 [ext_resource type="LabelSettings" uid="uid://dt1tfgdc64y" path="res://Fuentes/texto_cartas.tres" id="4_ppdfi"]
 
@@ -143,7 +142,6 @@ libraries = {
 
 [node name="TexturaCarta" type="Sprite2D" parent="Carta"]
 scale = Vector2(0.162162, 0.162162)
-texture = ExtResource("2_elyg5")
 
 [node name="descripcion" type="Control" parent="Carta"]
 layout_mode = 3

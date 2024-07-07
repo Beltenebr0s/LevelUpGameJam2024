@@ -8,6 +8,8 @@ var mulligan_usado = false
 var menu_pause_instance: Node = null
 var scena_menu_pausa
 
+var carta_combo = null
+
 @export var n_max_jugadas = 6
 @export var n_cartas_turno_jugador = 2
 @export var n_cartas_turno_ia = 2
@@ -114,15 +116,17 @@ func aplicar_counter():
 	if randf() <= mano_ia.prob_counter:
 		print("counter")
 		for carta in selected_cards: 
-			if !carta.desbloquea_pasiva && carta.can_counter:
+			if !carta.desbloquea_pasiva && carta.can_counter && carta.funcion != 2:
 				mano_ia.mano[mano_ia.mano.size() - 1].descripcion = carta.counter
-				mano_ia.mano[mano_ia.mano.size() - 1].valor = carta.valor
+				if carta == carta_combo:
+					mano_ia.mano[mano_ia.mano.size() - 1].valor = carta.valor * 1.5
 				mano_ia.mano.remove_at(0)
 				break
 		if mano_ia.mano.size() > n_cartas_turno_ia:
 			mano_ia.mano.remove_at(mano_ia.mano.size() - 1)
 	else:
 		mano_ia.mano.remove_at(mano_ia.mano.size() - 1)
+	carta_combo = null
 
 func aplicar_efecto_cartas(b_is_player : bool):
 	var resultado : int
@@ -162,6 +166,8 @@ func comprobar_combo(resultado):
 	var hay_multiplicador = false
 	for carta in selected_cards:
 		hay_multiplicador = hay_multiplicador || (carta.funcion == 2)
+		if hay_multiplicador:
+			carta_combo = carta
 	var hay_pasiva = false
 	for carta in selected_cards:
 		hay_pasiva = hay_pasiva || (carta.funcion == 1)
