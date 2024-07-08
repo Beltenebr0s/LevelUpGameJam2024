@@ -13,7 +13,8 @@ config_version=5
 config/name="Demonios&Descartes"
 run/main_scene="res://escenas/splash.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://texturas/Dorso_Rojo.png"
+config/windows_native_icon="res://texturas/dorso_rojo_j75_icon.ico"
 boot_splash/minimum_display_time=3
 
 [autoload]
