@@ -177,7 +177,7 @@ func comprobar_combo(resultado):
 		if carta_combo.tipo == 3:
 			return carta_combo.valor * 5
 		else:
-			return carta_combo.valor * 0.5
+			return carta_combo.valor * 1
 	else:
 		carta_combo = null
 		return 0
