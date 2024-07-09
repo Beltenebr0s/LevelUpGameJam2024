@@ -14,17 +14,20 @@ var borde_pasiva = "res://texturas/cartas/Borde_Purpura.png"
 @onready var textura = $Carta/TexturaCarta
 @onready var borde = $Carta/Borde
 @onready var boton = $Carta/BotonCarta
+@onready var puntos = $Carta/Puntos
 
 func _ready():
 	carta_oculta = true
 	$Carta.position = Vector2(0, 200)
 	Global.graficos_4k_cambio.connect(actualizar_sprite)
+	Global.mostrar_puntos_cambio.connect(actualizar_puntos)
 	ocultar_descripcion()
+	if Global.mostrar_puntos == true:
+		puntos.show()
 
 func subir_carta():
 	animation_player.play("subir_carta")
-	actualizar_descripcion()
-	
+
 func bajar_carta():
 	animation_player.play_backwards("subir_carta")
 
@@ -103,17 +106,27 @@ func actualizar_borde():
 	else:
 		self.borde.texture = load("res://texturas/cartas/Borde_Rojo.png")
 
+func actualizar_puntos():
+	puntos.text = str(carta.valor)
+	if Global.mostrar_puntos == true:
+		puntos.show()
+	else:
+		puntos.hide()
+
 func set_carta(_carta):
 	carta_jugada = false
 	self.carta = _carta
 	actualizar_sprite()
 	actualizar_borde()
 	actualizar_descripcion()
+	actualizar_puntos()
 
 func _on_boton_carta_pressed():
 	if !carta_jugada && !carta_oculta:
-		Audio.play_jugar_carta()
-		Audio.play_sonido_tipo(self.carta.tipo, self.carta.desbloquea_pasiva)
+		if  self.carta.desbloquea_pasiva:
+			Audio.play_sonido_tipo(self.carta.tipo, self.carta.desbloquea_pasiva)
+		else:
+			Audio.play_jugar_carta()
 		carta_jugada = true
 		ocultar_descripcion()
 		subir_carta_mas()

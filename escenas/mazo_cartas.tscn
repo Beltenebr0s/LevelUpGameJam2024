@@ -86,7 +86,7 @@ requisitos = 30
 valor = 50
 sprite_beta = ExtResource("10_1sruh")
 
-[node name="LluviaFuego" parent="." instance=ExtResource("2_y5ux8")]
+[node name="Lluvia" parent="." instance=ExtResource("2_y5ux8")]
 texture = ExtResource("6_126jb")
 titulo = "Lluvia de sangre"
 descripcion = "¡Tus hechizos se hacen más poderosos! Esta noche se iluminará el cielo con la lluvia de sangre que conjurarás."
@@ -181,7 +181,7 @@ requisitos = 20
 valor = 50
 sprite_beta = ExtResource("28_io7ag")
 
-[node name="Perro" parent="." instance=ExtResource("2_y5ux8")]
+[node name="Chupacabra" parent="." instance=ExtResource("2_y5ux8")]
 texture = ExtResource("10_o0qfg")
 titulo = "Chupacabra"
 descripcion = "Un paseo nocturno a tu simpática mascota aterrará a los más trasnochadores."
@@ -200,7 +200,7 @@ reutilizable = true
 valor = 25
 sprite_beta = ExtResource("32_gmsxl")
 
-[node name="Amanece" parent="." instance=ExtResource("2_y5ux8")]
+[node name="Luna" parent="." instance=ExtResource("2_y5ux8")]
 texture = ExtResource("6_crg15")
 titulo = "Anochece, que no es poco"
 descripcion = "El Astro Sangriento se eleva por el oeste, tiñiendo de carmesí los bosques del pueblo. Ahora somos imparables."

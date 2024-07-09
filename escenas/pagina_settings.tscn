@@ -200,6 +200,22 @@ offset_right = -6.0
 offset_bottom = 33.0
 text = "Graficos 4K"
 
+[node name="Puntos" type="CheckButton" parent="Settings"]
+layout_mode = 0
+offset_left = 471.236
+offset_top = 445.878
+offset_right = 515.236
+offset_bottom = 489.878
+scale = Vector2(0.513746, 0.513746)
+
+[node name="Label" type="Label" parent="Settings/Puntos"]
+layout_mode = 0
+offset_left = 51.36
+offset_top = 3.0
+offset_right = 184.36
+offset_bottom = 33.0
+text = "Mostrar puntos"
+
 [connection signal="drag_ended" from="Settings/VolumenMaster" to="." method="_on_volumen_master_drag_ended"]
 [connection signal="drag_started" from="Settings/VolumenMaster" to="." method="_on_volumen_master_drag_started"]
 [connection signal="value_changed" from="Settings/VolumenMaster" to="." method="_on_volumen_master_value_changed"]
@@ -214,5 +230,6 @@ text = "Graficos 4K"
 [connection signal="toggled" from="Settings/VolumenSFX/MuteSFX" to="." method="_on_mute_sfx_toggled"]
 [connection signal="toggled" from="Settings/SkipIa" to="." method="_on_skip_ia_toggled"]
 [connection signal="toggled" from="Settings/Graficos4K" to="." method="_on_graficos_4k_toggled"]
+[connection signal="toggled" from="Settings/Puntos" to="." method="_on_puntos_toggled"]
 
 [editable path="Settings"]

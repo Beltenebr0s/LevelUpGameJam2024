@@ -174,6 +174,7 @@ func comprobar_combo(resultado):
 	if  hay_multiplicador && !hay_pasiva && mismo_tipo:
 		alerta_combo.mostrar_alerta_combo()
 		Audio.play_alerta_combo()
+		Audio.play_sonido_tipo(carta_combo.tipo, false)
 		if carta_combo.tipo == 3:
 			return carta_combo.valor * 5
 		else:
