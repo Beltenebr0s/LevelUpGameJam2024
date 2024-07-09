@@ -76,7 +76,7 @@ func jugar_turno():
 	mano_ui.ocultar_cartas(false)
 	
 func crear_manos():
-	mazo_jugador.barajar_cartas(5, medidor_locura.locos, false)
+	mazo_jugador.barajar_cartas(5, medidor_locura.locos)
 	mazo_ia.barajar_cartas(n_cartas_turno_ia, medidor_locura.locos)
 
 func seleccionar_cartas(cartas_a_jugar):
@@ -135,14 +135,12 @@ func aplicar_efecto_cartas(b_is_player : bool):
 		resultado += comprobar_combo(resultado)
 	else:
 		for carta in mazo_ia.mano:
-			resultado += nerf_card_to_ia(carta)
+			if carta.name == 'Counter':
+				resultado += carta.valor * -1
+			else:
+				resultado += carta.valor * -1
 	medidor_locura.suma_locos(resultado)
 	print("			-> Resultado del turno: ", resultado)
-
-func nerf_card_to_ia(carta):
-	if carta.name == 'Counter':
-		return carta.valor * -1
-	return carta.valor * 0.8 * -1
 
 func activar_pasiva(carta):
 	if carta.desbloquea_pasiva:
@@ -154,7 +152,7 @@ func aplicar_pasivas_activas(carta):
 	var resultado = carta.valor
 	if pasivas_ui.pasiva_activada(0):
 		resultado += 15
-	if (carta.tipo == 1 or carta.tipo == 2) and pasivas_ui.pasiva_activada(carta.tipo):
+	if carta.tipo != 0 and pasivas_ui.pasiva_activada(carta.tipo):
 		resultado = roundi(1.5 * carta.valor)
 	return resultado
 

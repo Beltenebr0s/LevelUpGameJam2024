@@ -121,4 +121,3 @@ descripcion = "Counter"
 funcion = 1
 reutilizable = true
 requisitos = 100000
-valida_ia = false

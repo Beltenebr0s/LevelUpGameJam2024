@@ -13,7 +13,6 @@ enum FuncionCarta { NORMAL, PASIVA, MULTIPLICADOR }
 @export var desbloquea_pasiva : bool
 @export var requisitos : int
 @export var valor : int
-@export var valida_ia: bool = true
 @export var can_counter: bool = true
 
 @export var sprite_beta: Texture
@@ -38,9 +37,9 @@ func desjugar():
 		self.carta_usada = false
 	desjugar_carta.emit(self)
 	
-func es_jugable(nivel_locura : int, b_ia : bool):
+func es_jugable(nivel_locura : int):
 	var b_carta_valida = true
-	if ((self.carta_usada)||(b_ia && !valida_ia)||(nivel_locura < self.requisitos)):
+	if ((self.carta_usada)||(nivel_locura < self.requisitos)):
 		b_carta_valida = false
 	if (self.desbloquea_pasiva):
 		b_carta_valida = b_carta_valida && nivel_locura > self.valor
