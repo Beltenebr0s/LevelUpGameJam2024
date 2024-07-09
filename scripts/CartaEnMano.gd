@@ -107,11 +107,12 @@ func actualizar_borde():
 		self.borde.texture = load("res://texturas/cartas/Borde_Rojo.png")
 
 func actualizar_puntos():
-	puntos.text = str(carta.valor)
-	if Global.mostrar_puntos == true:
-		puntos.show()
-	else:
-		puntos.hide()
+	if carta != null:
+		puntos.text = str(carta.valor)
+		if Global.mostrar_puntos == true:
+			puntos.show()
+		else:
+			puntos.hide()
 
 func set_carta(_carta):
 	carta_jugada = false
